@@ -9,6 +9,7 @@ var flash = require('express-flash');
 var mongoose = require('mongoose');
 var i18n = require('i18n');
 var fs = require('fs');
+var passport = require('passport');
 
 /// load configuration
 var config = JSON.parse(fs.readFileSync('config.json'));
@@ -40,7 +41,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use(session({ secret: config.session.secret }))
+app.use(session({ secret: config.session.secret }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());
 app.use(i18n.init);
 app.use(express.static(path.join(__dirname, 'public')));

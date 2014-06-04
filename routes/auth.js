@@ -16,13 +16,13 @@ router.get('/login', function (req,res) {
   res.render('login');
 });
 
-router.post('/login', function (req, res, next) {
+router.post('/login', 
   passport.authenticate('local', {
-    succesRedirect: req.session.lastPage || '/',
+    successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: 'Invalid username or password.'
-  })(req,res,next);
-});
+  })
+);
 
 router.get('/signup', function (req, res) {
   res.render('signup');
@@ -31,8 +31,8 @@ router.get('/signup', function (req, res) {
 router.post('/signup', function (req, res) {
   User.register(new User({ email: req.body.email }), req.body.password, function (err, user) {
     if (err) {
-      req.flash('error', err);
-      return res.redirect('/register');
+      req.flash('error', err.message);
+      return res.redirect('/signup');
     }
     req.login(user, function (err) {
       // TODO not sure if I should ignore this error or not.
@@ -41,6 +41,11 @@ router.post('/signup', function (req, res) {
   });
 });
 
+
+router.get('/logout', function(req,res) {
+  req.logout();
+  res.redirect('/');
+})
 
 /// forgot password
 router.get('/forgot', function (req, res) {

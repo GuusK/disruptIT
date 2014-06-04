@@ -11,7 +11,7 @@ function auth(req, res, next) {
 }
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', user:req.user });
 });
 
 module.exports = router;
