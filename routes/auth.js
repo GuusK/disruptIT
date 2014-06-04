@@ -2,30 +2,30 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/login', function (req,res) {
-    res.render('login');
+  res.render('login');
 });
 
 router.post('/login', function (req, res) {
-	// TODO login logic.
+  // TODO login logic.
 });
 
 router.get('/signup', function (req, res) {
-    res.render('signup');
+  res.render('signup');
 });
 
 router.post('/signup', function (req, res) {
-	// TODO signup logic.
-});
+  // TODO signup logic.
+  );
 
 
 /// forgot password
 router.get('/forgot', function (req, res) {
-    res.render('forgot', { user: req.user });
+  res.render('forgot', { user: req.user });
 });
 
 
 router.get('/reset/:token', function (req, res) {
-	// TODO reset password logic
+  // TODO reset password logic
 });
 
 
