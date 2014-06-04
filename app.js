@@ -8,10 +8,13 @@ var session = require('express-session');
 var flash = require('express-flash');
 var mongoose = require('mongoose');
 var i18n = require('i18n');
+var fs = require('fs');
 
+/// load configuration
+var config = JSON.parse(fs.readFileSync('config.json'));
 
 /// configure database
-mongoose.connect('localhost/anonymit');
+mongoose.connect(config.mongodb.url);
 
 /// configure translations
 i18n.configure({
@@ -37,6 +40,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(session({ secret: config.session.secret }))
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
