@@ -28,7 +28,7 @@ i18n.configure({
 
 
 var routes = require('./routes/index');
-var auth = require('./routes/auth');
+var auth = require('./routes/auth')(config);
 
 var app = express();
 
