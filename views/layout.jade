@@ -28,6 +28,14 @@ html(lang=locale)
                 a(href='/login')=__('Login')
               li
                 a(href='/signup')=__('Signup')
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='?locale=en' hreflang='en')
+                img(src='images/flags/gb.png')
+            li
+              a(href='?locale=nl' hreflang='nl')
+                img(src='images/flags/nl.png')
+
 
     .container
       if messages.error

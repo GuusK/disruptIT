@@ -1,11 +1,9 @@
 {
   "Toggle navigation": "Toggle navigation",
   "Home": "Home",
-  "Login": "Login",
-  "Signup": "Signup",
-  "Email": "Email",
-  "Password": "Password",
-  "Forgot password?": "Forgot password?",
-  "Confirm Password": "Confirm Password",
-  "Logout": "Logout"
+  "Login": "Inloggen",
+  "Signup": "Registreren",
+  "Email": "E-mail",
+  "Password": "Wachtwoord",
+  "Forgot password?": "Wachtwoord vergeten?"
 }

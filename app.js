@@ -19,9 +19,9 @@ mongoose.connect(config.mongodb.url);
 
 /// configure translations
 i18n.configure({
-  locales: ['en', 'nl'],
-  directory: path.join(__dirname, 'locales'),
+  locales: ['nl', 'en'],
   defaultLocale: 'en',
+  directory: path.join(__dirname, 'locales'),
   cookie: 'locale',
   indent: '  '
 });
