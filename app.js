@@ -7,10 +7,23 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var flash = require('express-flash');
 var mongoose = require('mongoose');
+var i18n = require('i18n');
+
+
+/// configure database
+mongoose.connect('localhost/anonymit');
+
+/// configure translations
+i18n.configure({
+    locales: ['en', 'nl'],
+    directory: path.join(__dirname, 'locales'),
+    defaultLocale: 'en',
+    cookie: 'locale',
+    indent: '    '
+});
+
 
 var routes = require('./routes/index');
-
-mongoose.connect('localhost/anonymit');
 
 
 var app = express();
