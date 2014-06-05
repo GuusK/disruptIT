@@ -1,1 +1,26 @@
-{}
+{
+  "Home": "Home",
+  "Login": "Login",
+  "Signup": "Signup",
+  "Registreren": "Register",
+  "E-mail": "Email",
+  "Meld je aan voor de mailinglist.": "Subscribe to the mailing list.",
+  "Wachtwoord": "Password",
+  "Bevestig wachtwoord": "Confirm password",
+  "Navigatie activeren": "Toggle navigation",
+  "Inloggen": "Log in",
+  "Uitloggen": "Log out",
+  "Wachtwoord vergeten?": "Forgot password?",
+  "Wachtwoord vergeten": "Forgot password?",
+  "Email": "Email",
+  "Wachtwoord resetten": "Reset password",
+  "Je hebt deze e-mail ontvangen omdat jij (of ieman anders) een wachtwoordreset hebt aangevraagd. \n\nKlik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: %s://%s/reset/%s\n\nAls jij deze wachtwoordreset niet hebt aangevraagd, negeer dan deze e-mail en je wachtwoord zal onveranderd blijven.\n\n": "You have received this email, because somebody has requested a password reset for your account. \n\nClick the following link or paste it in into the address bar of your browser to complete the process: %s://%s/reset/%s\n\nIf you didn't request this password reset, please ignore this email and your user credentials will remain unchanged.\n\n",
+  "Een e-mail is gestuurd naar %s met verdere instructies om je wachtwoord te resetten": "An email has been sent to %s containing further instructions to reset your password",
+  "nieuw wachtwoord": "New password",
+  "Bevestig password": "Confirm password",
+  "Je wachtwoord is veranderd!": "Your password has been changed!",
+  "Hallo,\n\n Dit is een bevestiging dat he wacthwoord voor %s is veranerd.\n": "Hello,\n\n This is a confirmation to tell you that the password for %s has been changed.\n",
+  "Incorrecte e-mail": "Incorrect email",
+  "Incorrect wachtwoord": "Incorrect password",
+  "Incorrect e-mail of wachtwoord": "Incorrect e-mail or password"
+}
