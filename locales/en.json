@@ -1,18 +1,1 @@
-{
-  "Toggle navigation": "Toggle navigation",
-  "Home": "Home",
-  "Login": "Login",
-  "Signup": "Signup",
-  "Email": "Email",
-  "Password": "Password",
-  "Forgot password?": "Forgot password?",
-  "Password reset": "Password reset",
-  "You have received this mail because you (or someone else) has requested a password reset. \n\nClick on the following link or paste it in the address bar of your browser to complete the process: %s://%s/reset/%s \n\nIf it wasn't you who requested this password reset, please ignore this email and your password won't be changed.\n\n": "You have received this mail because you (or someone else) has requested a password reset. \n\nClick on the following link or paste it in the address bar of your browser to complete the process: %s://%s/reset/%s \n\nIf it wasn't you who requested this password reset, please ignore this email and your password won't be changed.\n\n",
-  "An email has been sent to %s with instructions on how to reset your password.": "An email has been sent to %s with instructions on how to reset your password.",
-  "Not Found": "Not Found",
-  "You password has been changed": "You password has been changed",
-  "Hello,\n\n This is a confirmation that the password for your account %s has been changed.\n": "Hello,\n\n This is a confirmation that the password for your account %s has been changed.\n",
-  "Password reset token is invalid or has expired.": "Password reset token is invalid or has expired.",
-  "Logout": "Logout",
-  "Confirm Password": "Confirm Password"
-}
+{}

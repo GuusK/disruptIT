@@ -2,12 +2,12 @@ extends layout
 
 block content
   form(method='POST')
-    legend=__('Login')
+    legend=__('Inloggen')
     .form-group
-      label(for='email')= __('Email')
+      label(for='email')= __('E-mail')
       input.form-control(type='text', name='email', autofocus)
     .form-group
-      label(for='password')=__('Password')
+      label(for='password')=__('Wachtwoord')
       input.form-control(type='password', name='password')
-    button.btn.btn-primary(type='submit')= __('Login')
-    a.btn.btn-link(href='/forgot')=__('Forgot password?')
+    button.btn.btn-primary(type='submit')= __('Inloggen')
+    a.btn.btn-link(href='/forgot')=__('Wachtwoord vergeten?')

@@ -2,14 +2,22 @@ extends layout
 
 block content
   form#signup(method='POST')
-    legend Signup
+    legend=__('Registreren')
     .form-group
-      label(for='email')= __('Email')
+      label(for='email')= __('E-mail')
       input.form-control(type='text', name='email', autofocus)
     .form-group
-      label(for='password')= __('Password')
+      .checkbox
+        label
+          input(type='checkbox',name='mailing')
+          | #{__('Meld je aan voor de mailinglist.')}
+    .form-group
+      label(for='password')= __('Wachtwoord')
       input.form-control(type='password', name='password')
     .form-group
-      label(for='confirm')= __('Confirm Password')
+      label(for='confirm')= __('Bevestig wachtwoord')
       input.form-control(type='password', name='confirm')
-    button.btn.btn-primary(type='submit')= __('Signup')
+    button.btn.btn-primary(type='submit')= __('Registreren')
+
+
+

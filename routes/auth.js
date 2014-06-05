@@ -6,7 +6,7 @@ module.exports = function (config) {
   var nodemailer = require('nodemailer');
   var i18n = require('i18n');
   var LocalStrategy = require('passport-local').Strategy;
-  var User = require('../model/User');
+  var User = require('../models/User');
 
 
   var router = express.Router();
@@ -23,7 +23,7 @@ module.exports = function (config) {
     passport.authenticate('local', {
       successRedirect: '/',
       failureRedirect: '/login',
-      failureFlash: 'Invalid username or password.'
+      failureFlash: i18n.__('Incorrect e-mail of wachtwoord')
     })
   );
 
@@ -78,7 +78,7 @@ var transport = nodemailer.createTransport('SMTP', {
       function (token, done) {
         User.findOne({ email: req.body.email}, function (err, user) {
           if (!user) {
-            req.flash('error', i18n.__('There seems to be no user with the email address %s in our system.', req.email));
+            req.flash('error', i18n.__('Er lijkt geen gebruiker met dit e-mail adres in ons systeem te zijn.', req.email));
             return res.redirect('/forgot');
           }
           user.resetPasswordToken = token;
@@ -92,14 +92,17 @@ var transport = nodemailer.createTransport('SMTP', {
         var mailOptions = {
           to: user.email,
           from: config.email.auth.user,
-          subject: i18n.__('Password reset'),
-          text: i18n.__('You have received this mail because you (or someone else) has requested a password reset. \n\n' +
-                        'Click on the following link or paste it in the address bar of your browser to complete the process: %s://%s/reset/%s \n\n' +
-                        'If it wasn\'t you who requested this password reset, please ignore this email and your password won\'t be changed.\n\n', req.protocol, req.get('host'), token)
+          subject: i18n.__('Wachtwoord resetten'),
+          text: i18n.__('Je hebt deze e-mail ontvangen omdat jij (of ieman anders) een wachtwoordreset hebt aangevraagd. \n\n' +
+                        'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: %s://%s/reset/%s\n\n'+
+                        //'Click on the following link or paste it in the address bar of your browser to complete the process: %s://%s/reset/%s \n\n' +
+                        //'If it wasn\'t you who requested this password reset, please ignore this email and your password won\'t be changed.\n\n',
+                        'Als jij deze wachtwoordreset niet hebt aangevraagd, negeer dan deze e-mail en je wachtwoord zal onveranderd blijven.\n\n',
+                        req.protocol, req.get('host'), token)
         };
 
         transport.sendMail(mailOptions, function (err) {
-          req.flash('info', i18n.__('An email has been sent to %s with instructions on how to reset your password.', user.email));
+          req.flash('info', i18n.__('Een e-mail is gestuurd naar %s met verdere instructies om je wachtwoord te resetten', user.email));
           done(err, 'done');
         })
       }
@@ -113,7 +116,7 @@ var transport = nodemailer.createTransport('SMTP', {
   router.get('/reset/:token', function (req, res) {
     User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: {$gt : Date.now() } }, function (err, user) {
       if (!user) {
-        req.flash('error', i18n.__('Password reset token is invalid or has expired.'));
+        req.flash('error', i18n.__('Wachtwoord reset token is invalid.'));
         return res.redirect('/forgot');
       }
     });
@@ -125,29 +128,32 @@ var transport = nodemailer.createTransport('SMTP', {
       function (done) {
         User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
           if (!user) {
-            req.flash('error', 'Password reset token is invalid or has expired.');
+            req.flash('error', 'Wachtwoord reset token is invalid.');
             return res.redirect('back');
           }
-          user.password = req.body.password;
-          user.resetPasswordToken = undefined;
-          user.resetPasswordExpires = undefined;
+          user.setPassword(req.body.password, function(err, user) {
+            user.resetPasswordToken = undefined;
+            user.resetPasswordExpires = undefined;
 
-          user.save(function (err) {
-            req.login(user, function (err) {
-              done(err, user);
+            user.save(function (err) {
+              console.log(user.password);
+              req.login(user, function (err) {
+                console.log(err);
+                done(err, user);
+              });
             });
-          })
+          });
         });
       },
       function (user, done) {
         var mailOptions = {
           to: user.email,
           from: config.email.auth.user,
-          subject: i18n.__('You password has been changed'),
-          text: i18n.__('Hello,\n\n This is a confirmation that the password for your account %s has been changed.\n', user.email),        
+          subject: i18n.__('Je wachtwoord is veranderd!'),
+          text: i18n.__('Hallo,\n\n Dit is een bevestiging dat he wacthwoord voor %s is veranerd.\n', user.email),        
         };
         transport.sendMail(mailOptions, function (err) {
-          req.flash('success', 'Your passwod has been changed.');
+          req.flash('success', 'Je wachtwoord is veranderd.');
           done(err);
         });
       }

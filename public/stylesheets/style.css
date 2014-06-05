@@ -1,8 +1,10 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300);
 
-a {
-  color: #00B7FF;
+
+.locale-dropdown {
+  min-width: 47px;
+  width: 47px;
+}
+.locale-dropdown li { 
+  margin-right: 10px;
 }

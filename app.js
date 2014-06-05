@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 var i18n = require('i18n');
 var fs = require('fs');
 var passport = require('passport');
+var locale = require('./locale');
 
 /// load configuration
 var config = JSON.parse(fs.readFileSync('config.json'));
@@ -19,8 +20,8 @@ mongoose.connect(config.mongodb.url);
 
 /// configure translations
 i18n.configure({
-  locales: ['nl', 'en'],
-  defaultLocale: 'en',
+  locales: ['en', 'nl'],
+  defaultLocale: 'nl',
   directory: path.join(__dirname, 'locales'),
   cookie: 'locale',
   indent: '  '
@@ -46,6 +47,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use(i18n.init);
+app.use(locale);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);

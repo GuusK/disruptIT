@@ -2,8 +2,8 @@ extends layout
 
 block content
   form(method='POST')
-    legend Forgot Password
+    legend=__('Wachtwoord vergeten')
     .form-group
-      label(for='email') Email
+      label(for='email')=__('Email')
       input.form-control(type='text', name='email', autofocus)
-    button.btn.btn-primary(type='submit') Reset Password
+    button.btn.btn-primary(type='submit')=__('Wachtwoord resetten')

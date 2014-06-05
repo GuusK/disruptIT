@@ -6,12 +6,13 @@ html(lang=locale)
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
     script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js')
+    link(rel='stylesheet', href='/stylesheets/style.css')
   body
     .navbar.navbar-inverse.navbar-static-top(role='navigation')
       .container
         .navbar-header
           button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.sr-only=__('Toggle navigation')
+            span.sr-only=__('Navigatie activeren')
             span.icon-bar
             span.icon-bar
             span.icon-bar
@@ -22,20 +23,17 @@ html(lang=locale)
               a(href='/')=__('Home')
             if user
               li
-                a(href='/logout')=__('Logout')
+                a(href='/logout')=__('Uitloggen')
             else
               li
-                a(href='/login')=__('Login')
+                a(href='/login')=__('Inloggen')
               li
-                a(href='/signup')=__('Signup')
+                a(href='/signup')=__('Registreren')
           ul.nav.navbar-nav.navbar-right
-            li
-              a(href='?locale=en' hreflang='en')
-                img(src='/images/flags/gb.png')
-            li
-              a(href='?locale=nl' hreflang='nl')
-                img(src='/images/flags/nl.png')
-
+            each l in locales
+              li(class=locale==l?'active':undefined)
+                a(, href='?locale=#{l}' hreflang=l)
+                  img(src='/images/flags/#{l}.png')
 
     .container
       if messages.error

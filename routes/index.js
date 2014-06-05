@@ -5,7 +5,7 @@ var router = express.Router();
 function auth(req, res, next) {
   if (!req.user) {
     req.session.lastPage = req.path;
-    req.flash('info', i18n.__('You need to login to visit %s', req.path));
+    req.flash('info', i18n.__('Je moet inloggen om de pagina %s te bezoeken.', req.path));
     return res.redirect('/login');
   }
 }
