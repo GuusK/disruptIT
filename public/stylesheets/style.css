@@ -1,21 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: "Roboto";
-  font-weight: 100;
-}
-
-h1 {
-  font-size: 64px;
-  line-height: 103.554px;
-}
-
-
-body {
-  font-family: "Open Sans";
-  font-weight: 400;
-}
 
 .navbar-brand {
   font-family: "Roboto";
@@ -37,3 +20,31 @@ body {
     display: none;
 }
 
+#logo {
+  background-color: #2A5769;
+}
+
+#logo {
+  display: none;
+}
+@media (min-width: 768px) {
+  .navbar-brand {
+    display: none;
+  }
+  #logo {
+    display: block;
+  }
+  #logo img {
+    width: 104px;
+    padding-bottom: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  #logo h1 {
+    margin: 0;
+    font-size: 64px;
+    line-height: 103.554px;
+    color: white;
+    display: inline-block;
+  }
+}

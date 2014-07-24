@@ -34,9 +34,9 @@ module.exports = function (config) {
     res.redirect('/');
   })
 
-  // router.get('/signup', function (req, res) {
-  //   res.render('signup');
-  // });
+  router.get('/signup', function (req, res) {
+    res.render('signup');
+  });
 
   router.post('/signup', function (req, res) {
 

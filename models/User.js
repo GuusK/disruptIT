@@ -14,8 +14,7 @@ User.plugin(plm, {
   incorrectUsernameError: i18n.__('Dit e-mailadres is niet bij ons bekend: '),
   missingUsernameError: i18n.__('Geen e-mail gegeven'),
   missingPasswordError: i18n.__('Geen wachtwoord gegeven'),
-  userExistsError: i18n.__('Een gebruiker met het volgende e-mail adres bestaat al:',
-  noSaltValueStored: 'a'
+  userExistsError: i18n.__('Een gebruiker met het volgende e-mail adres bestaat al:')
 });
 
 module.exports = mongoose.model('User', User);

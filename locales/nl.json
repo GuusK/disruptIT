@@ -25,11 +25,15 @@
   "Incorrect wachtwoord": "Incorrect wachtwoord",
   "Incorrecte e-mail of wachtwoord": "Incorrecte e-mail of wachtwoord",
   "Incorrect e-mail of wachtwoord": "Incorrect e-mail of wachtwoord",
-  "__ is not defined": "__ is not defined",
-  "/home/arian/Projects/anonymit/views/about.jade:5\n    3| mixin person(attr)\n    4|   img.text-center.img-circle(style=\"width:140px;height:140px;\",src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+\")\n  > 5|   h2=attr.name\n    6|   p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione fugiat delectus vel reprehenderit consequatur ad a perferendis possimus magnam facilis. Non officia alias placeat nulla, aut quas quos nisi quae.\n    7| \n    8| block content\n\nCannot read property 'name' of undefined": "/home/arian/Projects/anonymit/views/about.jade:5\n    3| mixin person(attr)\n    4|   img.text-center.img-circle(style=\"width:140px;height:140px;\",src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+\")\n  > 5|   h2=attr.name\n    6|   p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione fugiat delectus vel reprehenderit consequatur ad a perferendis possimus magnam facilis. Non officia alias placeat nulla, aut quas quos nisi quae.\n    7| \n    8| block content\n\nCannot read property 'name' of undefined",
   "Not Found": "Not Found",
   "Locatie": "Locatie",
   "Partners": "Partners",
   "Geen geldig e-mailadres gegeven!": "Geen geldig e-mailadres gegeven!",
-  "De wachtwoorden kwamen niet overeen!": "De wachtwoorden kwamen niet overeen!"
+  "De wachtwoorden kwamen niet overeen!": "De wachtwoorden kwamen niet overeen!",
+  "Verkeerd wachtwoord gegeven": "Verkeerd wachtwoord gegeven",
+  "Dit e-mailadres is niet bij ons bekend: ": "Dit e-mailadres is niet bij ons bekend: ",
+  "Geen e-mail gegeven": "Geen e-mail gegeven",
+  "Geen wachtwoord gegeven": "Geen wachtwoord gegeven",
+  "Een gebruiker met het volgende e-mail adres bestaat al:": "Een gebruiker met het volgende e-mail adres bestaat al:",
+  "Inloggen / Registreren": "Inloggen / Registreren"
 }
