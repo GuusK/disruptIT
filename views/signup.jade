@@ -1,11 +1,12 @@
 extends layout
 
 block content
+  h1=__('Registreren')
   form#signup(method='POST')
-    legend=__('Registreren')
+    legend(hidden)=__('Registreren')
     .form-group
       label(for='email')= __('E-mail')
-      input.form-control(type='text', name='email', autofocus)
+      input.form-control(required, type='text', name='email', autofocus)
     .form-group
       .checkbox
         label
@@ -13,10 +14,10 @@ block content
           | #{__('Meld je aan voor de mailinglist.')}
     .form-group
       label(for='password')= __('Wachtwoord')
-      input.form-control(type='password', name='password')
+      input.form-control(required. type='password', name='password')
     .form-group
       label(for='confirm')= __('Bevestig wachtwoord')
-      input.form-control(type='password', name='confirm')
+      input.form-control(required, type='password', name='confirm')
     button.btn.btn-primary(type='submit')= __('Registreren')
 
 

@@ -3,8 +3,10 @@
 extends layout
 
 block content
+  h1=__('Wachtwoord resetten')
+
   form(method='POST')
-    legend=__('Wachtwoord resetten')
+    legend(hidden)=__('Wachtwoord resetten')
     .form-group
       label(for='password')=__('nieuw wachtwoord')
       input.form-control(type='password', name='password', value='', placeholder='Nieuw wachtwoord', autofocus=true)

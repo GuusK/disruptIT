@@ -1,13 +1,34 @@
 extends layout
-
+block nav
+  - var selected = 'login'
 block content
-  form(method='POST')
-    legend=__('Inloggen')
-    .form-group
-      label(for='email')= __('E-mail')
-      input.form-control(type='text', name='email', autofocus)
-    .form-group
-      label(for='password')=__('Wachtwoord')
-      input.form-control(type='password', name='password')
-    button.btn.btn-primary(type='submit')= __('Inloggen')
-    a.btn.btn-link(href='/forgot')=__('Wachtwoord vergeten?')
+  h1=__('Inloggen')
+  .row
+    .col-md-offset-0.col-md-6
+      form#login-form(method='POST')
+        legend(hidden)=__('Inloggen')
+        .form-group
+          label(for='email')= __('E-mail')
+          input.form-control(required, type='text', name='email', autofocus)
+        .form-group
+          label(for='password')=__('Wachtwoord')
+          input.form-control(required, type='password', name='password')
+        #register-form-group.form-group.hidden
+          label(for='confirm')=__('Bevestig wachtwoord')
+          input.form-control(required, type='password', name='confirm')
+        .btn-group
+          a#register-btn.prevent.btn.btn-primary(href='/signup')=__('Registreren')
+          button#login-btn.btn.btn-primary(type='submit')= __('Inloggen')  
+        a.btn.btn-link(href='/forgot')=__('Wachtwoord vergeten?')
+  script.
+    $('#register-btn.prevent').click(function(e){
+      e.preventDefault();
+      $('#register-form-group').removeClass('hidden').removeClass('prevent');
+      $('#login-btn').remove();
+      $('#login-form').attr('action','signup');
+      $('#login-form').get(0).setAttribute('action','signup');
+      $('#register-btn').click(function(){
+        e.preventDefault();
+        $('#login-form').submit();
+      });
+    });

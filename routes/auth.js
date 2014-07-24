@@ -5,6 +5,7 @@ module.exports = function (config) {
   var async = require('async');
   var nodemailer = require('nodemailer');
   var i18n = require('i18n');
+
   var LocalStrategy = require('passport-local').Strategy;
   var User = require('../models/User');
 
@@ -33,18 +34,32 @@ module.exports = function (config) {
     res.redirect('/');
   })
 
-  router.get('/signup', function (req, res) {
-    res.render('signup');
-  });
+  // router.get('/signup', function (req, res) {
+  //   res.render('signup');
+  // });
 
   router.post('/signup', function (req, res) {
+
+    // you should also check this clientside.
+    if (!req.body.email.match(/@/i)) {
+      req.flash('error', i18n.__('Geen geldig e-mailadres gegeven!'));
+      return res.redirect('/login');
+    }
+
+    if (!(req.body.password === req.body.confirm)) {
+      req.flash('error', i18n.__('De wachtwoorden kwamen niet overeen!'));
+      return res.redirect('/login');
+    }
+
+
     User.register(new User({ email: req.body.email }), req.body.password, function (err, user) {
       if (err) {
         req.flash('error', err.message);
-        return res.redirect('/signup');
+        return res.redirect('/login');
       }
       req.login(user, function (err) {
         // TODO not sure if I should ignore this error or not.
+        req.flesh('success', i18n.__('Je bent succesvol geregistreerd!'));
         return res.redirect(req.session.lastPage || '/');
       });
     });
@@ -95,8 +110,6 @@ var transport = nodemailer.createTransport('SMTP', {
           subject: i18n.__('Wachtwoord resetten'),
           text: i18n.__('Je hebt deze e-mail ontvangen omdat jij (of ieman anders) een wachtwoordreset hebt aangevraagd. \n\n' +
                         'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: %s://%s/reset/%s\n\n'+
-                        //'Click on the following link or paste it in the address bar of your browser to complete the process: %s://%s/reset/%s \n\n' +
-                        //'If it wasn\'t you who requested this password reset, please ignore this email and your password won\'t be changed.\n\n',
                         'Als jij deze wachtwoordreset niet hebt aangevraagd, negeer dan deze e-mail en je wachtwoord zal onveranderd blijven.\n\n',
                         req.protocol, req.get('host'), token)
         };

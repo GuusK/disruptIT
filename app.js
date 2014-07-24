@@ -52,8 +52,8 @@ app.use(i18n.init);
 app.use(locale);
 
 app.use(sass.middleware({
-  src: __dirname,
-  dest: path.join(__dirname, '/public'),
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
   debug: true,
   outputStyle: 'compressed',
   prefix:  '/'
@@ -61,8 +61,26 @@ app.use(sass.middleware({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// set up locals that we use in every template
+app.use(function(req,res,next){
+  res.locals.path = req.path;
+  res.locals.user = req.user;
+  next();
+})
+
 app.use('/', routes);
 app.use('/', auth);
+
+
+var Barc = require('barc');
+var barc = new Barc();
+app.get('/barcode/:num', function(req,res) {
+  res.set('Content-Type','image/png');
+  res.send(barc.code128('yo',300,200));
+});
+
+
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

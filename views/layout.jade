@@ -1,8 +1,14 @@
 doctype html
+
+mixin navEl(name, desiredPath)
+  li(class=path==desiredPath?'active':undefined)
+    a(href=desiredPath)= name
+
 html(lang=locale)
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js')
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -19,22 +25,20 @@ html(lang=locale)
           a.navbar-brand(href='/') AnonymIT
         .collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active
-              a(href='/')=__('Home')
-            if user
-              li
-                a(href='/logout')=__('Uitloggen')
-            else
-              li
-                a(href='/login')=__('Inloggen')
-              li
-                a(href='/signup')=__('Registreren')
+            +navEl('Home', '/')
+            +navEl(__('Locatie'),'/location')
+            +navEl(__('Partners'),'/partners')
           ul.nav.navbar-nav.navbar-right
+
+            if user
+              +navEl(__('Uitloggen'),'/logout')
+            else
+              +navEl(__('Inloggen'),'/login')
+
             each l in locales
               li(class=locale==l?'active':undefined)
                 a(, href='?locale=#{l}' hreflang=l)
                   img(src='/images/flags/#{l}.png')
-
     .container
       if messages.error
         .alert.alert-danger

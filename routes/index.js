@@ -10,8 +10,17 @@ function auth(req, res, next) {
   }
 }
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express', user:req.user });
+router.get('/', function (req, res) {
+  res.render('index', { title: 'Express' });
 });
 
+
+router.get('/about', function (req,res) {
+  res.render('about', {title: 'About'});
+});
+
+
+router.get('/partners', function (req,res) {
+  res.render('partners',{title:'Partners'})
+});
 module.exports = router;
