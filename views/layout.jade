@@ -7,7 +7,7 @@ mixin navEl(name, desiredPath)
 html(lang=locale)
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.css')
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
     script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js')
@@ -55,4 +55,8 @@ html(lang=locale)
         .alert.alert-success
           div= messages.success
       block content
+      footer.topicus-banner
+        a(href='//www.topicus.nl')
+          img(src='/images/banner_topicus_800x120.gif' alt='Topicus')
+
 
