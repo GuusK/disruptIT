@@ -26,5 +26,7 @@
   "Not Found": "Not Found",
   "Locatie": "Location",
   "Partners": "Partners",
-  "Inloggen / Registreren": "Inloggen / Registreren"
+  "Inloggen / Registreren": "Inloggen / Registreren",
+  "/home/arian/Projects/anonymit/views/index.jade:2\n    1| extends layout\n  > 2| -\n    3| block content\n    4|   - var title = 'lol'\n    5|   h1= title\n\nunexpected text -\nblo": "/home/arian/Projects/anonymit/views/index.jade:2\n    1| extends layout\n  > 2| -\n    3| block content\n    4|   - var title = 'lol'\n    5|   h1= title\n\nunexpected text -\nblo",
+  "/home/arian/Projects/anonymit/views/partners/topicus.jade:1\n  > 1| extends layout\n    2| \n    3| block content\n    4|   h1=title\n\nENOENT, no such file or directory '/home/arian/Projects/anonymit/views/partners/layout.jade'": "/home/arian/Projects/anonymit/views/partners/topicus.jade:1\n  > 1| extends layout\n    2| \n    3| block content\n    4|   h1=title\n\nENOENT, no such file or directory '/home/arian/Projects/anonymit/views/partners/layout.jade'"
 }

@@ -9,4 +9,4 @@ module.exports = function (req, res, next) {
     res.locals.locale = req.query.locale;
   }
   next();
-}
+};

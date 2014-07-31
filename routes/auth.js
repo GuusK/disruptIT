@@ -6,7 +6,6 @@ module.exports = function (config) {
   var nodemailer = require('nodemailer');
   var i18n = require('i18n');
 
-  var LocalStrategy = require('passport-local').Strategy;
   var User = require('../models/User');
 
 
@@ -32,13 +31,13 @@ module.exports = function (config) {
   router.get('/logout', function(req,res) {
     req.logout();
     res.redirect('/');
-  })
+  });
 
   router.get('/signup', function (req, res) {
     res.render('signup');
   });
 
-  router.post('/signup', function (req, res) {
+  router.post('/signup', function (req, res, next) {
 
     // you should also check this clientside.
     if (!req.body.email.match(/@/i)) {
@@ -46,7 +45,7 @@ module.exports = function (config) {
       return res.redirect('/login');
     }
 
-    if (!(req.body.password === req.body.confirm)) {
+    if (req.body.password !== req.body.confirm) {
       req.flash('error', i18n.__('De wachtwoorden kwamen niet overeen!'));
       return res.redirect('/login');
     }
@@ -58,8 +57,8 @@ module.exports = function (config) {
         return res.redirect('/login');
       }
       req.login(user, function (err) {
-        // TODO not sure if I should ignore this error or not.
-        req.flesh('success', i18n.__('Je bent succesvol geregistreerd!'));
+        if (err) { return next(err); }
+        req.flash('success', i18n.__('Je bent succesvol geregistreerd!'));
         return res.redirect(req.session.lastPage || '/');
       });
     });
@@ -88,7 +87,7 @@ var transport = nodemailer.createTransport('SMTP', {
       function (done) {
         crypto.randomBytes(20, function (err, buf) {
           done(err, buf.toString('hex'));         
-        })
+        });
       },
       function (token, done) {
         User.findOne({ email: req.body.email}, function (err, user) {
@@ -117,10 +116,12 @@ var transport = nodemailer.createTransport('SMTP', {
         transport.sendMail(mailOptions, function (err) {
           req.flash('info', i18n.__('Een e-mail is gestuurd naar %s met verdere instructies om je wachtwoord te resetten', user.email));
           done(err, 'done');
-        })
+        });
       }
     ], function (err) {
-      if (err) return next(err);
+      if (err) {
+        return next(err);
+      }
       res.redirect('/forgot');
     });
   });
@@ -136,7 +137,7 @@ var transport = nodemailer.createTransport('SMTP', {
     res.render('reset', { user: req.user });
   });
 
-  router.post('/reset/:token', function (req, res) {
+  router.post('/reset/:token', function (req, res, next) {
     async.waterfall([
       function (done) {
         User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
@@ -149,6 +150,7 @@ var transport = nodemailer.createTransport('SMTP', {
             user.resetPasswordExpires = undefined;
 
             user.save(function (err) {
+              if (err) { return done(err); }
               console.log(user.password);
               req.login(user, function (err) {
                 console.log(err);
@@ -171,7 +173,9 @@ var transport = nodemailer.createTransport('SMTP', {
         });
       }
     ], function (err) {
-      if (err) return next(err);
+      if (err) {
+        return next(err);
+      }
       res.redirect('/forgot');   
     });
   });
