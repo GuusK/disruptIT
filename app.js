@@ -87,12 +87,6 @@ app.use('/', routes);
 app.use('/', auth);
 app.use('/tickets', tickets);
 
-var Barc = require('barc');
-var barc = new Barc();
-app.get('/barcode/:num', function(req,res) {
-  res.set('Content-Type','image/png');
-  res.send(barc.code128('yo',300,200));
-});
 
 
 
