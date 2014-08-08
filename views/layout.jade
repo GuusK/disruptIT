@@ -14,49 +14,55 @@ html(lang=locale)
     link(rel='stylesheet', href='/stylesheets/style.css')
     meta(name='viewport', content='width=device-width, user-scalable=no')
   body
-    #logo
+    section.wrapper
+      .navbar.navbar-inverse.navbar-static-top(role='navigation')
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.sr-only=__('Navigatie activeren')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a(href='/')
+              img#logo.pull-left(src='/images/logo.png')
+            a.navbar-brand(href='/') AnonymIT
+          .collapse.navbar-collapse
+            ul.nav.navbar-nav
+              +navEl('Home', '/')
+              +navEl(__('Locatie'),'/location')
+              +navEl(__('Partners'),'/partners')
+              +navEl(__('Organisatie'),'/organisation')
+              +navEl(__('Contact'), '/contact')
+            ul.nav.navbar-nav.navbar-right
+
+              +navEl(__('Mijn profiel'),'/profile')
+
+              each l in locales
+                li(class=locale==l?'active':undefined)
+                  a(, href='?locale=#{l}' hreflang=l)
+                    img(src='/images/flags/#{l}.png')
+      block above-content
       .container
-        header
-          img(src='/images/logo.png')
-          h1 AnonymIT
-    .navbar.navbar-inverse.navbar-static-top(role='navigation')
-      .container
-        .navbar-header
-          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-            span.sr-only=__('Navigatie activeren')
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href='/') AnonymIT
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav
-            +navEl('Home', '/')
-            +navEl(__('Locatie'),'/location')
-            +navEl(__('Partners'),'/partners')
-          ul.nav.navbar-nav.navbar-right
-
-            if user
-              +navEl(__('Uitloggen'),'/logout')
-            else
-              +navEl(__('Inloggen'),'/login')
-
-            each l in locales
-              li(class=locale==l?'active':undefined)
-                a(, href='?locale=#{l}' hreflang=l)
-                  img(src='/images/flags/#{l}.png')
-    .container
-      if messages.error
-        .alert.alert-danger
-          div= messages.error
-      if messages.info
-        .alert.alert-info
-          div= messages.info
-      if messages.success
-        .alert.alert-success
-          div= messages.success
-      block content
-      footer.topicus-banner
-        a(href='//www.topicus.nl')
-          img(src='/images/banner_topicus_800x120.gif' alt='Topicus')
-
-
+        if messages.error
+          each msg in messages.error
+            .alert.alert-danger.alert-dismissible
+              button(type='button', class='close', data-dismiss='alert') &times;
+              div= msg
+        if messages.info
+          each msg in messages.info
+            .alert.alert-info.alert-dismissible
+              button(type='button', class='close', data-dismiss='alert') &times;
+              div= msg
+        if messages.success
+          each msg in messages.success
+            .alert.alert-success.alert-dismissible
+              button(type='button', class='close', data-dismiss='alert') &times;
+              div= msg
+        block content
+      .push
+    footer.page
+      a.topicus-banner(href='//www.topicus.nl/werken')
+        img(src='/images/banner_topicus_800x120.gif' alt='Topicus')
+      p
+        :markdown
+          Copyright 2014-2015 AnonymIT | AnonymIT is onderdeel van [SnIC](http://www.snic.nl)

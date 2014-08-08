@@ -1,10 +1,12 @@
 extends layout
 block nav
   - var selected = 'login'
+block title
+  title Login
 block content
   .row
     .col-md-offset-3.col-md-6
-      h1=__('Inloggen / Registreren')
+      h1=__('Inloggen')
       form#login-form(method='POST')
         legend(hidden)=__('Inloggen')
         .form-group
@@ -13,22 +15,6 @@ block content
         .form-group
           label(for='password')=__('Wachtwoord')
           input.form-control(required, type='password', name='password')
-        #register-form-group.form-group.hidden
-          label(for='confirm')=__('Bevestig wachtwoord')
-          input.form-control(required, type='password', name='confirm')
-        .btn-group
-          a#register-btn.prevent.btn.btn-primary(href='/signup')=__('Registreren')
-          button#login-btn.btn.btn-primary(type='submit')= __('Inloggen')  
+        button#login-btn.btn.btn-primary(type='submit')= __('Inloggen')  
         a.btn.btn-link(href='/forgot')=__('Wachtwoord vergeten?')
-  script.
-    $('#register-btn.prevent').click(function(e){
-      e.preventDefault();
-      $('#register-form-group').removeClass('hidden').removeClass('prevent');
-      $('#login-btn').remove();
-      $('#login-form').attr('action','signup');
-      $('#login-form').get(0).setAttribute('action','signup');
-      $('#register-btn').click(function(){
-        e.preventDefault();
-        $('#login-form').submit();
-      });
-    });
+        a.btn.btn-link(href='/register')=__('Registreren?')

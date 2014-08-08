@@ -1,4 +1,23 @@
-extends layout
-block content
-  h1 hier komt het programma
-  img(src='/barcode/'+id)
+doctype html
+
+html
+  head
+    style.
+      @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300);
+      @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
+      h1,h2 {
+        font-weight: 100;
+        font-family: Roboto;
+      }
+      body {
+        font-family: "Open Sans";
+      }
+  body
+    h1 AnonymIT ticket
+    h2 Acivatiecode #{_id}
+    p.
+      Activeer je ticket eerst! Dit doe je op de http://anonymit.nl website.
+    p.
+      Dit ticket is overigens ook je ticket voor het congres. Als je dit ticket kwijtraakt
+      na activatie, kan je hem opnieuw uitprinten via de website.
+    img(src="/tickets/#{_id}/barcode")

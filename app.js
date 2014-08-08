@@ -12,7 +12,10 @@ var i18n = require('i18n');
 var fs = require('fs');
 var sass = require('node-sass');
 var passport = require('passport');
+var expressValidator = require('express-validator');
 var locale = require('./locale');
+
+var MongoStore = require('connect-mongo')(session);
 
 /// load configuration
 var config = JSON.parse(fs.readFileSync('config.json'));
@@ -32,6 +35,7 @@ i18n.configure({
 
 var routes = require('./routes/index');
 var auth = require('./routes/auth')(config);
+var tickets = require('./routes/tickets');
 
 var app = express();
 
@@ -39,12 +43,20 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+require('jade').filters.i18n = function (text) {
+  return i18n.__(text);
+};
+
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(expressValidator());
 app.use(cookieParser());
-app.use(session({ secret: config.session.secret }));
+app.use(session({
+  secret: config.session.secret,
+  store: new MongoStore({url: config.mongodb.url })
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
@@ -70,9 +82,10 @@ app.use(function(req,res,next){
   ;
 });
 
+
 app.use('/', routes);
 app.use('/', auth);
-
+app.use('/tickets', tickets);
 
 var Barc = require('barc');
 var barc = new Barc();

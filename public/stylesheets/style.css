@@ -1,8 +1,20 @@
 
-
+.navbar {
+  margin-bottom: 0;
+  border-color: #002E40;
+}
+.navbar-inverse .navbar-toggle {
+  border-color: #002E40;
+}
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #002E40;
+    color: #fff;
+}
 .navbar-brand {
+
+  font-size: 30px;
   font-family: "Roboto";
-  font-weight: 300;
+  font-weight: 200;
 }
 .navbar-inverse {
   background-color: #2A5769;
@@ -17,38 +29,85 @@
 }
 
 .hidden {
-    display: none;
+
 }
 
 #logo {
   background-color: #2A5769;
 }
 
-#logo {
-  display: none;
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
 }
 @media (min-width: 768px) {
+
+  .wrapper {
+    margin: 0 auto -180px;
+  }
+  footer.page, .push {
+    margin-top: 0px;
+    height: 180px;
+  }
+  ul.nav.navbar-nav {
+    padding-top: 25px;
+  }
+
+  .navbar-brand {
+      padding-top: 28px;
+  }
+  #logo{
+    width: 60px;
+    margin: 8px;
+  }
+  .topicus-banner {
+    display: block;
+  }
+}
+@media (max-width: 984px) {
   .navbar-brand {
     display: none;
   }
+}
+@media (max-width: 810px) {
+  .topicus-banner {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+    display: inline;
+  }
+
+  .wrapper {
+    margin: 0 auto -80px;
+  }
+  footer.page , .push{
+    min-height: 80px;
+  }
   #logo {
-    display: block;
-  }
-  #logo img {
-    width: 104px;
-    padding-bottom: 16px;
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-  #logo h1 {
-    margin: 0;
-    font-size: 64px;
-    line-height: 103.554px;
-    color: white;
-    display: inline-block;
+    margin: 8px;
+    width: 36px;
   }
 }
 
+
+footer.page {
+  padding-top: 10px;
+  background-color: #2A5769;
+  color: white;
+}
+
 .topicus-banner {
-  text-align: center;
+    text-align: center;
+}
+
+
+#login-form, #signup {
+  margin-bottom: 20px;
 }

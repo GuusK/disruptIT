@@ -5,9 +5,14 @@ module.exports = function (config) {
   var async = require('async');
   var nodemailer = require('nodemailer');
   var i18n = require('i18n');
+  var mcapi = require('mailchimp-api');
+
+  var mc = new mcapi.Mailchimp(config.mailchimp.key);
 
   var User = require('../models/User');
+  var Ticket = require('../models/Ticket');
 
+  var _ = require('underscore');
 
   var router = express.Router();
 
@@ -19,13 +24,13 @@ module.exports = function (config) {
     res.render('login');
   });
 
-  router.post('/login', 
-    passport.authenticate('local', {
-      successRedirect: '/',
+  router.post('/login',  function (req, res) {
+    return passport.authenticate('local', {
+      successRedirect: req.session.lastPage,
       failureRedirect: '/login',
       failureFlash: i18n.__('Incorrect e-mail of wachtwoord')
-    })
-  );
+    })(req,res);
+  });
 
 
   router.get('/logout', function(req,res) {
@@ -33,34 +38,110 @@ module.exports = function (config) {
     res.redirect('/');
   });
 
-  router.get('/signup', function (req, res) {
-    res.render('signup');
+  router.get('/register', function (req, res) {
+    res.render('register', {verenigingen: config.verenigingen, body:req.session.body || {}});
   });
 
-  router.post('/signup', function (req, res, next) {
+  router.post('/register', function (req, res, next) {
 
-    // you should also check this clientside.
-    if (!req.body.email.match(/@/i)) {
-      req.flash('error', i18n.__('Geen geldig e-mailadres gegeven!'));
-      return res.redirect('/login');
+    // #AssumeTheWorst
+
+    // if (req.body.email === undefined || !req.body.email.match(/@/i)) {
+    //   req.flash('error', i18n.__('Geen geldig e-mailadres gegeven!'));
+    //   return res.redirect('/login');
+    // }
+
+    // if (req.body.password === undefined ||
+    //     req.body.confirm  === undefined ||
+    //     (req.body.password !== req.body.confirm)) {
+    //   req.flash('error', i18n.__('De wachtwoorden kwamen niet overeen!'));
+    //   return res.redirect('/login');
+    // }
+
+    // if (req.body.firstname === undefined || )
+
+    req.checkBody('code',      i18n.__('Geen activatiecode gegeven.')).notEmpty();
+    req.checkBody('firstname', i18n.__('Geen voornaam gegeven.')).notEmpty();
+    req.checkBody('surname',   i18n.__('Geen achternaam gegeven.')).notEmpty();
+    req.checkBody('email',     i18n.__('Geen e-mailadres gegeven.')).notEmpty();
+    req.checkBody('email',     i18n.__('Geen valide e-mailadres gegeven.')).isEmail();
+    req.checkBody('password',  i18n.__('Wachtwoord moet minstens 5 karakters lang zijn')).len(5);
+    req.checkBody('password',  i18n.__('Wachtwoordden verschillen.')).equals(req.body.confirm);
+     req.checkBody('vereniging',i18n.__('Geen vereniging gegeven.')).notEmpty();
+    req.checkBody('vereniging',i18n.__('Geen valide vereniging gegeven.')).isIn(Object.keys(config.verenigingen));
+
+    req.sanitize('bus').toBoolean();
+    req.sanitize('vegeterian').toBoolean();
+    req.sanitize('subscribe').toBoolean();
+
+
+    var errors = req.validationErrors();
+
+
+    if (errors) {
+
+      var msg = '';
+      errors.forEach(function (err) {
+        req.flash('error', err.msg);
+      });
+      req.session.body = req.body;
+      return res.redirect('/register');
     }
 
-    if (req.body.password !== req.body.confirm) {
-      req.flash('error', i18n.__('De wachtwoorden kwamen niet overeen!'));
-      return res.redirect('/login');
+
+    var user = new User({
+      firstname: req.body.firstname,
+      surname: req.body.surname,
+      vereniging: req.body.vereniging,
+      email: req.body.email,
+      bus: req.body.bus,
+      vegeterian: req.body.vegeterian,
+      specialNeeds: req.body.specialNeeds
+    });
+
+    function subscribe(conf, cb) {
+      mc.lists.subscribe(conf, function () { return cb(); }, function (err) { return cb(err); });
     }
-
-
-    User.register(new User({ email: req.body.email }), req.body.password, function (err, user) {
+    async.waterfall([
+      function (next) {
+        Ticket.findById(req.body.code, next).populate('ownedBy').exec(next);
+      },
+      function (ticket, next) {
+        if (ticket) {
+          if(ticket.ownedBy) {
+            next(new Error(i18n.__('Dit ticket is al geactiveerd!')));
+          } else {
+            ticket.ownedBy = user;
+            user.ticket = ticket;
+            ticket.save(next);
+          }
+        } else {
+          next(new Error(i18n.__('Geen geldige activatiecode gegeven!')));
+        }
+      },
+      function (ticket,numbeAffected, next) {
+        User.register(user, req.body.password, next);
+      },
+      function (user,next) {
+        req.login(user,next); 
+      },
+      function (next) {
+        if (req.body.subscribe) {
+          subscribe({id:config.mailchimp.id, email:{emaik:req.body.email}}, next);
+        } else {
+          next();
+        }
+      }
+    ], function (err) {
       if (err) {
         req.flash('error', err.message);
-        return res.redirect('/login');
-      }
-      req.login(user, function (err) {
-        if (err) { return next(err); }
+        console.log(err.stack);
+        req.session.body = req.body;
+        return res.redirect('/register');
+      } else {
         req.flash('success', i18n.__('Je bent succesvol geregistreerd!'));
         return res.redirect(req.session.lastPage || '/');
-      });
+      }
     });
   });
 
@@ -151,7 +232,6 @@ var transport = nodemailer.createTransport('SMTP', {
 
             user.save(function (err) {
               if (err) { return done(err); }
-              console.log(user.password);
               req.login(user, function (err) {
                 console.log(err);
                 done(err, user);
