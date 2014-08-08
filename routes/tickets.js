@@ -9,7 +9,7 @@ var Ticket = require('../models/Ticket');
 router.get('/:id', function (req, res, next) {
   Ticket.findById(req.params.id, function (err, ticket) {
     if (err || !ticket) { return next(err); }
-    res.render('ticket', ticket);
+    res.render('tickets/ticket', ticket);
   });
 });
 

@@ -1,0 +1,12 @@
+extends layout
+block content
+  each ticket in tickets
+      h1 AnonymIT ticket
+      h2 Acivatiecode: 
+        strong #{_id}
+      p.
+        Activeer je ticket eerst! Dit doe je op de http://anonymit.nl website.
+      p.
+        Dit ticket is overigens ook je ticket voor het congres. Als je dit ticket kwijtraakt
+        na activatie, kan je hem opnieuw uitprinten via de website.
+      img(src="/tickets/#{_id}/barcode")
