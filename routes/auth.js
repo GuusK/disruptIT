@@ -70,11 +70,15 @@ module.exports = function (config) {
      req.checkBody('vereniging',i18n.__('Geen vereniging gegeven.')).notEmpty();
     req.checkBody('vereniging',i18n.__('Geen valide vereniging gegeven.')).isIn(Object.keys(config.verenigingen));
 
+    req.body.bus = req.body.bus || false;
+    req.body.vegetarian = req.body.vegetarian || false;
+    req.body.subscribe = req.body.subscribe || false;
     req.sanitize('bus').toBoolean();
-    req.sanitize('vegeterian').toBoolean();
+    req.sanitize('vegetarian').toBoolean();
     req.sanitize('subscribe').toBoolean();
 
 
+    console.log(req.body);
     var errors = req.validationErrors();
 
 
@@ -95,7 +99,7 @@ module.exports = function (config) {
       vereniging: req.body.vereniging,
       email: req.body.email,
       bus: req.body.bus,
-      vegeterian: req.body.vegeterian,
+      vegetarian: req.body.vegetarian,
       specialNeeds: req.body.specialNeeds
     });
 
@@ -111,16 +115,20 @@ module.exports = function (config) {
           if(ticket.ownedBy) {
             next(new Error(i18n.__('Dit ticket is al geactiveerd!')));
           } else {
-            ticket.ownedBy = user;
             user.ticket = ticket;
-            ticket.save(next);
+            User.register(user, req.body.password, function (err, user) {
+              next(err, ticket, user);
+            });
           }
         } else {
           next(new Error(i18n.__('Geen geldige activatiecode gegeven!')));
         }
       },
-      function (ticket,numbeAffected, next) {
-        User.register(user, req.body.password, next);
+      function (ticket,user, next) {
+        ticket.ownedBy = user;
+        ticket.save(function (err, ticket, numAffected) {
+          next(err,user);
+        });
       },
       function (user,next) {
         req.login(user,next); 
@@ -140,7 +148,7 @@ module.exports = function (config) {
         return res.redirect('/register');
       } else {
         req.flash('success', i18n.__('Je bent succesvol geregistreerd!'));
-        return res.redirect(req.session.lastPage || '/');
+        return res.redirect('/profile');
       }
     });
   });

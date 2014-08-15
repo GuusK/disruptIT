@@ -9,7 +9,7 @@ var User = new mongoose.Schema({
   surname:              { type: String,  required: true   },
   vereniging:           { type: String,  required: true   },
   bus:                  { type: Boolean, required: true   },
-  vegeterian:           { type: Boolean, required: true   },
+  vegetarian:           { type: Boolean, required: true   },
   specialNeeds:         { type: String                    },
   ticket:               { type: String,  ref: 'Ticket'    },
   aanwezig:             { type: Boolean, 'default': false }

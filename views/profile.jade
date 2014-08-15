@@ -11,6 +11,6 @@ block content
     .form-group
       label(for='specialNeeds')= __('Speciale opmerkingen (e.g. allergie)')
       input.form-control(type='text',, name="specialNeeds", value=user.speciallNeeds)
-  a.btn.btn-primary(href='/tickets/'+ user.code)=__('Ticket printen')
+  a.btn.btn-primary(href='/tickets/'+ user.ticket)=__('Ticket printen')
   div  
     a.btn(href='/logout')=__('Uitloggen')

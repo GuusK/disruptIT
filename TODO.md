@@ -1,6 +1,2 @@
-[*] fix navbar
-[ ] add schedule
-[ ] add location
-[*] add ads
-[ ] add about us 
-[ ] use svg logo
+[ ]  Profile met sane instellingen
+[ ]  Ticket check systeem

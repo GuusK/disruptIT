@@ -35,7 +35,7 @@ i18n.configure({
 
 var routes = require('./routes/index');
 var auth = require('./routes/auth')(config);
-var tickets = require('./routes/tickets');
+
 
 var app = express();
 
@@ -85,8 +85,6 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/', auth);
-app.use('/tickets', tickets);
-
 
 
 

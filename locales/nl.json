@@ -32,5 +32,19 @@
   "Registreren?": "Registreren?",
   "Hoe verandert Bitcoin de toekomst?": "Hoe verandert Bitcoin de toekomst?",
   "Alles over anonimiteit en privacy tijdens AnonymIT": "Alles over anonimiteit en privacy tijdens AnonymIT",
-  "Activeer je ticket nu!": "Activeer je ticket nu!"
+  "Activeer je ticket nu!": "Activeer je ticket nu!",
+  "Je moet als admin inloggen om de pagina %s te bezoeken.": "Je moet als admin inloggen om de pagina %s te bezoeken.",
+  "Geen activatiecode gegeven.": "Geen activatiecode gegeven.",
+  "Geen voornaam gegeven.": "Geen voornaam gegeven.",
+  "Geen achternaam gegeven.": "Geen achternaam gegeven.",
+  "Geen e-mailadres gegeven.": "Geen e-mailadres gegeven.",
+  "Geen valide e-mailadres gegeven.": "Geen valide e-mailadres gegeven.",
+  "Wachtwoord moet minstens 5 karakters lang zijn": "Wachtwoord moet minstens 5 karakters lang zijn",
+  "Wachtwoordden verschillen.": "Wachtwoordden verschillen.",
+  "Geen vereniging gegeven.": "Geen vereniging gegeven.",
+  "Geen valide vereniging gegeven.": "Geen valide vereniging gegeven.",
+  "Je bent succesvol geregistreerd!": "Je bent succesvol geregistreerd!",
+  "Profiel": "Profiel",
+  "Ticket printen": "Ticket printen",
+  "Uitloggen": "Uitloggen"
 }

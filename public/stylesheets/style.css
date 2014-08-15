@@ -45,15 +45,16 @@ html, body {
   height: auto !important;
   height: 100%;
 }
+.wrapper {
+  margin: 0 auto -210px;
+}
+footer.page, .push {
+  margin-top: 30px;
+  height: 180px;
+}
 @media (min-width: 768px) {
 
-  .wrapper {
-    margin: 0 auto -180px;
-  }
-  footer.page, .push {
-    margin-top: 0px;
-    height: 180px;
-  }
+
   ul.nav.navbar-nav {
     padding-top: 25px;
   }
@@ -74,22 +75,13 @@ html, body {
     display: none;
   }
 }
-@media (max-width: 810px) {
-  .topicus-banner {
-    display: none;
-  }
-}
+
 @media (max-width: 768px) {
   .navbar-brand {
     display: inline;
   }
 
-  .wrapper {
-    margin: 0 auto -80px;
-  }
-  footer.page , .push{
-    min-height: 80px;
-  }
+
   #logo {
     margin: 8px;
     width: 36px;
@@ -101,10 +93,11 @@ footer.page {
   padding-top: 10px;
   background-color: #2A5769;
   color: white;
+  text-align: center;
 }
 
-.topicus-banner {
-    text-align: center;
+.topicus-banner >img  {
+  width: 100%;
 }
 
 

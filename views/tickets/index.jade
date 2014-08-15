@@ -1,12 +1,20 @@
+mixin ticket(ticket)
+  h1 AnonymIT ticket
+  h2 Activatiecode:
+    strong #{ticket._id}
+  p Acitveer je ticket op http://anonymit.nl/.
+  p Blah todo explain
+  img(src="/tickets/#{ticket._id}/barcode")
+
 extends layout
 block content
-  each ticket in tickets
-      h1 AnonymIT ticket
-      h2 Acivatiecode: 
-        strong #{_id}
-      p.
-        Activeer je ticket eerst! Dit doe je op de http://anonymit.nl website.
-      p.
-        Dit ticket is overigens ook je ticket voor het congres. Als je dit ticket kwijtraakt
-        na activatie, kan je hem opnieuw uitprinten via de website.
-      img(src="/tickets/#{_id}/barcode")
+  style.
+    @media print {
+      footer {
+        page-break-after: always;
+      }
+    }
+  - for (var i = 0, x = 2; i < tickets.length; i += x)
+     - for (var j = 0; j < x; j++)
+      +ticket(tickets[i+j])
+    footer
