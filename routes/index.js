@@ -67,7 +67,7 @@ router.get('/mailing', function (req,res) {
 var barc = new Barc();
 
 
-router.get('/tickets', function (req, res, next) {
+router.get('/tickets', adminAuth, function (req, res, next) {
   Ticket.find({}, function (err, tickets) {
     if (err) { return next(err); }
     res.render('tickets', {tickets: tickets});
