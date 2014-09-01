@@ -43,6 +43,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// een filter om gemakkelijk internationalization in views te doen
 require('jade').filters.i18n = function (text) {
   return i18n.__(text);
 };

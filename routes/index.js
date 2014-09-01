@@ -55,6 +55,13 @@ router.get('/organisation', function (req, res) {
   res.render('organisation');
 });
 
+router.get('/contact', function (req, res) {
+  res.render('contact');
+})
+
+router.get('/mailing', function (req,res) {
+  res.render('mailing');
+});
 
 
 var barc = new Barc();

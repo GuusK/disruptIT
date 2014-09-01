@@ -42,6 +42,10 @@ module.exports = function (config) {
     res.render('register', {verenigingen: config.verenigingen, body:req.session.body || {}});
   });
 
+  function subscribe(conf, cb) {
+    mc.lists.subscribe(conf, function () { return cb(); }, function (err) { return cb(err); });
+  }
+
   router.post('/register', function (req, res, next) {
 
     // #AssumeTheWorst
@@ -103,9 +107,7 @@ module.exports = function (config) {
       specialNeeds: req.body.specialNeeds
     });
 
-    function subscribe(conf, cb) {
-      mc.lists.subscribe(conf, function () { return cb(); }, function (err) { return cb(err); });
-    }
+
     async.waterfall([
       function (next) {
         Ticket.findById(req.body.code, next).populate('ownedBy').exec(next);
@@ -135,7 +137,7 @@ module.exports = function (config) {
       },
       function (next) {
         if (req.body.subscribe) {
-          subscribe({id:config.mailchimp.id, email:{emaik:req.body.email}}, next);
+          subscribe({id:config.mailchimp.id, email:{email:req.body.email}}, next);
         } else {
           next();
         }
@@ -268,5 +270,15 @@ var transport = nodemailer.createTransport('SMTP', {
     });
   });
 
+  router.post('/mailing', function (req,res) {
+    subscribe({id:config.mailchimp.id, email:{email:req.body.email}}, function (err) {
+      if (err) {
+        req.flash('error', 'Registration failed.');
+      } else {
+        req.flash('success',  'Success!');
+      }
+      res.redirect('/mailing');
+    });
+  })
   return router;
 };
