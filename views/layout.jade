@@ -37,10 +37,13 @@ html(lang=locale)
 
               +navEl(__('Mijn profiel'),'/profile')
 
-              each l in locales
-                li(class=locale==l?'active':undefined)
-                  a(, href='?locale=#{l}' hreflang=l)
-                    img(src='/images/flags/#{l}.png')
+              //- each l in locales
+              //-   li(class=locale==l?'active':undefined)
+              //-     a(href='?locale=#{l}', hreflang=l)
+              //-       img(src='/images/flags/#{l}.png')
+              li.active
+                a(href='?locale=nl', hreflang='nl')
+                  img(src='/images/flags/nl.png')
       block above-content
       .container
         if messages.error
