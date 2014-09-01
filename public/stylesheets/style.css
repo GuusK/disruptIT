@@ -54,7 +54,6 @@ footer.page, .push {
 }
 @media (min-width: 768px) {
 
-
   ul.nav.navbar-nav {
     padding-top: 25px;
   }
@@ -76,17 +75,26 @@ footer.page, .push {
   }
 }
 
+.topicus-banner > img  {
+  width: 400px;
+}
+
+
 @media (max-width: 768px) {
   .navbar-brand {
     display: inline;
   }
-
+  .topicus-banner > img  {
+    width: 320px;
+  }
 
   #logo {
     margin: 8px;
     width: 36px;
   }
+
 }
+
 
 
 footer.page {
@@ -96,9 +104,6 @@ footer.page {
   text-align: center;
 }
 
-.topicus-banner > img  {
-  width: 380px;
-}
 
 
 #login-form, #signup {

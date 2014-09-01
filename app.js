@@ -120,4 +120,11 @@ app.use(function(err, req, res, next) {
 });
 
 
+process.on('message', function(message) {
+ if (message === 'shutdown') {
+   mongoose.disconnect();
+   process.exit(0);
+ }
+});
+
 module.exports = app;

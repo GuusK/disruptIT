@@ -49,8 +49,12 @@ router.get('/profile', auth, function (req, res) {
 
 router.get('/location', function (req, res) {
   res.render('location');
-
 });
+
+router.get('/organisation', function (req, res) {
+  res.render('organisation');
+});
+
 
 
 var barc = new Barc();
@@ -62,6 +66,7 @@ router.get('/tickets', function (req, res, next) {
     res.render('tickets', {tickets: tickets});
   });
 });
+
 router.get('/tickets/:id', function (req, res, next) {
   Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
     if (err) { err.code = 403; return next(err); }

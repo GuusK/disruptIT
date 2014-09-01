@@ -67,7 +67,7 @@ module.exports = function (config) {
     req.checkBody('email',     i18n.__('Geen valide e-mailadres gegeven.')).isEmail();
     req.checkBody('password',  i18n.__('Wachtwoord moet minstens 5 karakters lang zijn')).len(5);
     req.checkBody('password',  i18n.__('Wachtwoordden verschillen.')).equals(req.body.confirm);
-     req.checkBody('vereniging',i18n.__('Geen vereniging gegeven.')).notEmpty();
+    req.checkBody('vereniging',i18n.__('Geen vereniging gegeven.')).notEmpty();
     req.checkBody('vereniging',i18n.__('Geen valide vereniging gegeven.')).isIn(Object.keys(config.verenigingen));
 
     req.body.bus = req.body.bus || false;

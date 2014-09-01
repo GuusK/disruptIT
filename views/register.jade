@@ -11,6 +11,10 @@ block content
       Raak je dit blaadje onverhoopt kwijt, dan kun je deze altijd opnieuw uitprinten vanaf "Mijn Profiel",
       nadat je geregistreerd hebt.
 
+  p
+    :i18n
+      Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op "mijn Profiel".
+      
   form#signup.col-md-6.col-md-offset-3(method='POST')
     legend(hidden)=__('Registreren')
     .form-group
@@ -56,6 +60,8 @@ block content
           input(type='checkbox',name='subscribe', checked=(!body.subscribe)?undefined:checked)
           | #{__('Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)')}
     button.btn.btn-primary(type='submit')= __('Registreren')
+
+      img(src='/images/')
 
   script.
     var verenigingen = !{JSON.stringify(verenigingen)}
