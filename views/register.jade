@@ -29,9 +29,9 @@ block content
     .form-group
       label(for='vereniging')=__('Studievereniging')
       select.form-control(id='vereniging', required, name='vereniging')
-        option(value='')=__('Selecteer  ...')
+        option(value='', selected)=__('Selecteer  ...')
         each vereniging, shortName in verenigingen
-          option(value=shortName, selected = body.vereniging=shortName ? 'selected' : undefined)=vereniging.name + (vereniging.bus ? ' - ' + __('Busreis mogelijk') : '')
+          option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name + (vereniging.bus ? ' - ' + __('Busreis mogelijk') : '')
     .form-group
       .checkbox
         label
