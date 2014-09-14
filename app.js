@@ -2,7 +2,7 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
-var logger = require('morgan');
+var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
@@ -25,7 +25,7 @@ mongoose.connect(config.mongodb.url);
 
 /// configure translations
 i18n.configure({
-  locales: ['en', 'nl'],
+  locales: ['nl','en'],
   defaultLocale: 'nl',
   directory: path.join(__dirname, 'locales'),
   cookie: 'locale',
@@ -49,7 +49,7 @@ require('jade').filters.i18n = function (text) {
 };
 
 app.use(favicon());
-app.use(logger('dev'));
+app.use(morgan('default'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(expressValidator());
