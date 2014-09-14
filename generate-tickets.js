@@ -1,7 +1,6 @@
 var fs       = require('fs');
 var mongoose = require('mongoose');
 var Ticket   = require('./models/Ticket');
-var crypto   = require('crypto');
 var async    = require('async');
 var _        = require('underscore');
 

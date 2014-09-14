@@ -57,7 +57,7 @@ router.get('/organisation', function (req, res) {
 
 router.get('/contact', function (req, res) {
   res.render('contact');
-})
+});
 
 router.get('/mailing', function (req,res) {
   res.render('mailing');

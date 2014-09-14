@@ -279,6 +279,6 @@ var transport = nodemailer.createTransport('SMTP', {
       }
       res.redirect('/mailing');
     });
-  })
+  });
   return router;
 };
