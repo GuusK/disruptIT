@@ -85,7 +85,7 @@ footer.page, .push {
     display: inline;
   }
   .topicus-banner > img  {
-    width: 320px;
+    width: 100%;
   }
 
   #logo {
@@ -98,7 +98,6 @@ footer.page, .push {
 
 
 footer.page {
-  display: none;
   padding-top: 10px;
   background-color: #2A5769;
   color: white;
