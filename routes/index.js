@@ -93,7 +93,7 @@ router.get('/tickets/:id', function (req, res, next) {
 
 router.get('/tickets/:id/barcode', function (req, res) {
   res.set('Content-Type', 'image/png');
-  res.send(barc.code128(req.params.id, 219, 80));
+  res.send(barc.code128(req.params.id, 250, 80));
 });
 
  return router;

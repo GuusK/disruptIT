@@ -13,7 +13,8 @@ var User = new mongoose.Schema({
   specialNeeds:         { type: String                    },
   ticket:               { type: String,  ref: 'Ticket'    },
   aanwezig:             { type: Boolean, 'default': false },
-  admin:                { type: Boolean, 'default': false }
+  admin:                { type: Boolean, 'default': false },
+  sprekers:             { type: [String], required: false }
 });
 
 User.plugin(plm, {
