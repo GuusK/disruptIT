@@ -12,7 +12,8 @@ var User = new mongoose.Schema({
   vegetarian:           { type: Boolean, required: true   },
   specialNeeds:         { type: String                    },
   ticket:               { type: String,  ref: 'Ticket'    },
-  aanwezig:             { type: Boolean, 'default': false }
+  aanwezig:             { type: Boolean, 'default': false },
+  admin:                { type: Boolean, 'default': false }
 });
 
 User.plugin(plm, {

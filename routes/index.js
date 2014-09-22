@@ -3,8 +3,9 @@ var i18n = require('i18n');
 var Barc = require('barcode-generator');
 var Ticket = require('../models/Ticket');
 
-
+module.exports = function (config) {
 var router = express.Router();
+
 
 function auth(req, res, next) {
   if (!req.user) {
@@ -48,15 +49,19 @@ router.get('/profile', auth, function (req, res) {
 });
 
 router.get('/location', function (req, res) {
-  res.render('location');
+  res.render('location', {title:i18n.__('Locatie')});
+});
+
+router.get('/speakers', function (req, res) {
+  res.render('speakers', {title:i18n.__('Sprekers')});
 });
 
 router.get('/organisation', function (req, res) {
-  res.render('organisation');
+  res.render('organisation', {title:i18n.__('Organisatie')});
 });
 
 router.get('/contact', function (req, res) {
-  res.render('contact');
+  res.render('contact', {title:i18n.__('Contact')});
 });
 
 router.get('/mailing', function (req,res) {
@@ -77,7 +82,7 @@ router.get('/tickets', adminAuth, function (req, res, next) {
 router.get('/tickets/:id', function (req, res, next) {
   Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
     if (err) { err.code = 403; return next(err); }
-    if (!ticket || ticket.ownedBy.email !== req.session.passport.user) {
+    if (!ticket || !ticket.ownedBy || ticket.ownedBy.email !== req.session.passport.user) {
       var error = new Error("Forbidden");
       error.code =403;
       return next(error);
@@ -91,5 +96,5 @@ router.get('/tickets/:id/barcode', function (req, res) {
   res.send(barc.code128(req.params.id, 219, 80));
 });
 
-
-module.exports = router;
+ return router;
+};

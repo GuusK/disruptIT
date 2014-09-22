@@ -33,7 +33,7 @@ i18n.configure({
 });
 
 
-var routes = require('./routes/index');
+var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
 
 

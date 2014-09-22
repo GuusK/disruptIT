@@ -65,7 +65,7 @@ block content
   script.
     var verenigingen = !{JSON.stringify(verenigingen)}
     function setIt() {
-      if (verenigingen[$('#vereniging').val()].bus) {
+      if (verenigingen[$('#vereniging').val()] && verenigingen[$('#vereniging').val()].bus) {
         $('#bus').prop('disabled', false);
       } else {
         $('#bus').prop('disabled', true);     

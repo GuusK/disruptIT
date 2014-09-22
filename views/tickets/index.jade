@@ -1,10 +1,11 @@
 mixin ticket(ticket)
-  h1 AnonymIT ticket
-  h2 Activatiecode:
-    strong #{ticket._id}
-  p Acitveer je ticket op http://anonymit.nl/.
-  p Blah todo explain
-  img(src="/tickets/#{ticket._id}/barcode")
+  if ticket && !ticket.ownedBy
+    h1 AnonymIT ticket
+    h2 Activatiecode:
+      strong #{ticket._id}
+    p Acitveer je ticket op http://anonymit.nl/.
+    p Blah todo explain
+    img(src="/tickets/#{ticket._id}/barcode")
 
 extends layout
 block content
