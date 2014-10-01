@@ -39,7 +39,7 @@ module.exports = function (config) {
   });
 
   router.get('/register', function (req, res) {
-    res.render('register', {verenigingen: config.verenigingen, body:req.session.body || {}});
+    res.render('register', {verenigingen: config.verenigingen, opened:true, body:req.session.body || {}});
   });
 
   function subscribe(conf, cb) {
