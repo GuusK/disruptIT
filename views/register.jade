@@ -58,7 +58,7 @@ block content
       .form-group
         .checkbox
           label
-            input(type='checkbox',name='subscribe', checked=(!body.subscribe)?undefined:checked)
+            input(type='checkbox',name='subscribe', checked=(!body.subscribe)?'checked':checked)
             | #{__('Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)')}
       button.btn.btn-primary(type='submit')= __('Registreren')
 
