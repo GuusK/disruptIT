@@ -4,7 +4,7 @@ mixin navEl(name, desiredPath)
   li(class=path==desiredPath?'active':undefined)
     a(href=desiredPath)= name
 
-html(lang=locale)
+html(lang=locale, prefix='og: http://ogp.me/ns#')
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.css')
@@ -13,6 +13,7 @@ html(lang=locale)
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js')
     link(rel='stylesheet', href='/stylesheets/style.css')
     meta(name='viewport', content='width=device-width, user-scalable=no')
+    meta(property='og:image', content='/images/logo.png')
   body
     section.wrapper
       .navbar.navbar-inverse.navbar-static-top(role='navigation')
