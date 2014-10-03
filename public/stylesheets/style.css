@@ -114,3 +114,7 @@ footer.page {
 .fabrique {
   margin-top: 30px;
 }
+
+.thumbnail {
+  border: 0px;
+}
