@@ -81,8 +81,6 @@ module.exports = function (config) {
     req.sanitize('vegetarian').toBoolean();
     req.sanitize('subscribe').toBoolean();
 
-
-    console.log(req.body);
     var errors = req.validationErrors();
 
 
