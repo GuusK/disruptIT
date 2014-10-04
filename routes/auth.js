@@ -43,7 +43,7 @@ module.exports = function (config) {
   });
 
   function subscribe(conf, cb) {
-    mc.lists.subscribe(conf, function () { return cb(); }, function (err) { return cb(err); });
+    mc.lists.subscribe(conf, function () { return cb(null); }, function (err) { return cb(err); });
   }
 
   router.post('/register', function (req, res, next) {
@@ -110,7 +110,7 @@ module.exports = function (config) {
 
     async.waterfall([
       function (next) {
-        Ticket.findById(req.body.code, next).populate('ownedBy').exec(next);
+        Ticket.findById(req.body.code).populate('ownedBy').exec(next);
       },
       function (ticket, next) {
         if (ticket) {
@@ -137,14 +137,14 @@ module.exports = function (config) {
       },
       function (next) {
         if (req.body.subscribe) {
-          subscribe({id:config.mailchimp.id, email:{email:req.body.email}}, next);
+          subscribe({id:config.mailchimp.id, email:{email:req.body.email}, double_optin: false, send_welcome: true}, next);
         } else {
-          next();
+          next(null);
         }
       }
     ], function (err) {
       if (err) {
-        req.flash('error', err.message);
+        req.flash('error', err.message || err.error || 'Error');
         console.log(err.stack);
         req.session.body = req.body;
         return res.redirect('/register');
