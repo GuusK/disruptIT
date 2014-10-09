@@ -1,4 +1,11 @@
-
+.jumbotron {
+  background-image: url('/images/banner.png');
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  color: white;
+}
 .navbar {
   margin-bottom: 0;
   border-color: #002E40;
@@ -117,4 +124,16 @@ footer.page {
 
 .thumbnail {
   border: 0px;
+}
+
+
+.dagvoorzitter p {
+  padding-top: 20px;
+}
+.spreker {
+  padding-bottom: 20px;
+}
+.avatar {
+  width: 128px;
+  height: 128px;
 }

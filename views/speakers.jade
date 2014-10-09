@@ -1,6 +1,82 @@
 extends layout
+
+
 block content
-  h1=__('Sprekers')
-  p
-    :i18n
-      Binnekort worden de sprekers bekend gemaakt.
+  h1=__('Programma')
+  p.
+    De dag opent om 10.30. 
+  //- h3 Douwe Schmidt
+  //- h3 Thomas Markus
+  //- h3 Joost van Baal-Ilic
+  //- h3 Johan Pouwelse
+  //- h4 Founder Tribler
+  //- h3 Eric Verheul
+  //- h3 Roel Steenbergen
+
+  h2 Sprekers
+  .row
+    .col-md-6
+      .row.spreker
+        .col-sm-4
+          img.avatar(src='/images/dosch.jpg')
+        .col-sm-8
+          h3 Douwe Schmidt
+          //- h4 
+    .col-md-6
+      .row.spreker
+        .col-sm-4
+          img.avatar(src='/images/thomas.jpg')
+        .col-sm-8
+          h3 Thomas Markus
+          //- h4 
+  .row
+    .col-md-6
+      .row.spreker
+        .col-sm-4
+          img.avatar(src='/images/joost.jpg')
+        .col-sm-8
+          h3 Joost van Baal-Ilic
+          //- h4 
+    .col-md-6
+      .row.spreker
+        .col-sm-4
+          img.avatar(src='/images/johan.jpg')
+        .col-sm-8
+          h3 Johan Pouwelse 
+          //- h4 
+  .row
+    .col-md-6
+      .row.spreker
+        .col-sm-4
+          img.avatar(src='/images/eric.jpg')
+        .col-sm-8
+          h3 Eric Verheul
+          //- h4 
+    .col-md-6
+      .row.spreker
+        .col-sm-4
+          img.avatar(src='/images/roel.jpg')
+        .col-sm-8
+          h3 Roel Steenbergen
+          //- h4 
+
+  h2 Dagvoorzitters
+  .row
+    .dagvoorzitter.col-md-6
+      .row
+        .col-sm-4
+          img.avatar(src='/images/arnosiebes.jpg')
+        .col-sm-8
+          h3 Arno siebes
+          h4 Technische track
+      .row
+        .col-md-12
+          p Sinds 2000 is Arno Siebes hoofd van de Algorithmic Data Analysis onderzoeksgroep aan de Universiteit Utrecht. Hiervoor was hij 15 jaar werkzaam bij het CWI. Hoewel hij ooit begon met onderzoek naar databases verschoof dat later naar data mining (voornamelijk pattern mining). Veelal was Arno voorzitter van grote conferenties binnen de informatica.
+    .dagvoorzitter.col-md-6
+      .row
+        .col-sm-4
+          img.avatar(src='/images/xander.png')
+        .col-sm-
+          h3 Xander Bouwman
+          h4 Maatschappelijke track
+      

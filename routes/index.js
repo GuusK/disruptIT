@@ -53,7 +53,7 @@ router.get('/location', function (req, res) {
 });
 
 router.get('/speakers', function (req, res) {
-  res.render('speakers', {title:i18n.__('Sprekers')});
+  res.render('speakers', {title:i18n.__('Programma')});
 });
 
 router.get('/organisation', function (req, res) {
@@ -68,6 +68,10 @@ router.get('/mailing', function (req,res) {
   res.render('mailing');
 });
 
+router.get('/programme', function (req,res) {
+  res.render('programme', {title:'Programma'});
+});
+
 
 var barc = new Barc();
 
@@ -76,6 +80,12 @@ router.get('/tickets', adminAuth, function (req, res, next) {
   Ticket.find({}, function (err, tickets) {
     if (err) { return next(err); }
     res.render('tickets', {tickets: tickets});
+  });
+});
+
+router.get('/users', adminAuth, function (req, res, next) {
+  User.find({}, function (err, users) {
+
   });
 });
 
