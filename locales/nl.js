@@ -78,5 +78,7 @@
   "Ticket printen": "Ticket printen",
   "Uitloggen": "Uitloggen",
   "Dit ticket is al geactiveerd!": "Dit ticket is al geactiveerd!",
-  "Geen geldige activatiecode gegeven!": "Geen geldige activatiecode gegeven!"
+  "Geen geldige activatiecode gegeven!": "Geen geldige activatiecode gegeven!",
+  "Programma": "Programma",
+  "Dagprogramma": "Dagprogramma"
 }

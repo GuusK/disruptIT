@@ -31,7 +31,12 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
             ul.nav.navbar-nav
               +navEl('Home', '/')
               +navEl(__('Locatie'),'/location')
-              +navEl(__('Programma'),'/speakers')
+              
+              li(class=path=='/programme'||path=='/speakers'?'active':undefined).dropdown.my
+                a.dropdown-toggle(data-toggle='dropdown',href='#') Programma
+                ul.dropdown-menu
+                  +navEl(__('Dagprogramma'),'/programme')
+                  +navEl(__('Sprekers'),'/speakers')
               +navEl(__('Partners'),'/partners')
               +navEl(__('Organisatie'),'/organisation')
               +navEl(__('Contact'), '/contact')

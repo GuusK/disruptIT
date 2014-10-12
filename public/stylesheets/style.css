@@ -137,3 +137,8 @@ footer.page {
   width: 128px;
   height: 128px;
 }
+
+
+.dropdown.open>a, .dropdown.open>a:hover, .dropdown.open>a:focus {
+  background-color:  #002E40 !important;
+}
