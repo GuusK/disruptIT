@@ -2,6 +2,7 @@ var express = require('express');
 var i18n = require('i18n');
 var Barc = require('barcode-generator');
 var Ticket = require('../models/Ticket');
+var User   = require('../models/User');
 
 module.exports = function (config) {
 var router = express.Router();
@@ -45,7 +46,42 @@ router.get('/partners/:partner', function (req, res) {
 });
 
 router.get('/profile', auth, function (req, res) {
-  res.render('profile');
+  User.findOne({email:req.session.passport.user}, function (err,user) {
+    if (!err && user)
+    {
+      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus});
+    }
+    else
+    {
+      req.flash('error', 'lolwtf');
+      res.redirect('/profile');
+    }
+  });
+});
+
+router.post('/profile', auth, function (req, res) {
+  req.sanitize('vegetarian').toBoolean();
+  req.sanitize('bus').toBoolean();
+  console.log(req.session);
+  User.findOne({email:req.session.passport.user}, function (err, user) {
+    if (!err)
+    {
+      user.vegetarian = req.body.vegetarian ? true : false;
+      user.bus        = req.body.bus ? true : false;
+      user.specialNeeds = req.body.specialNeeds;
+      console.log(user.specialNeeds);
+      user.save();
+      req.flash('success', 'Profiel aangepast');
+      res.redirect('/profile');
+    }
+    else
+    {
+      console.log(err);
+      req.flash('error', 'er ging iets mis');
+      res.redirect('/profile');
+    }
+  });
+
 });
 
 router.get('/location', function (req, res) {
