@@ -92,6 +92,15 @@ router.get('/speakers', function (req, res) {
   res.render('speakers', {title:i18n.__('Programma')});
 });
 
+router.get('/speakers/:speaker', function (req, res) {
+  res.render('speakers/'+ req.params.speaker, {path: '/speakers'});
+});
+
+
+router.get('/partners/:partner', function (req, res) {
+  res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
+});
+
 router.get('/organisation', function (req, res) {
   res.render('organisation', {title:i18n.__('Organisatie')});
 });
