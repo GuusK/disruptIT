@@ -37,7 +37,12 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
                 ul.dropdown-menu
                   +navEl(__('Dagprogramma'),'/programme')
                   +navEl(__('Sprekers'),'/speakers')
-              +navEl(__('Partners'),'/partners')
+              li(class=path=='/partners'?'active':undefined).dropdown.my
+                a.dropdown-toggle(data-toggle='dropdown',href='#') Partners
+                ul.dropdown-menu
+                  +navEl(__('Topicus'),'/partners/topicus/')
+                  +navEl(__('Rijksoverheid'),'/partners/rijksoverheid/')
+                  +navEl(__('Samenwerkingspartners'),'/partners/')
               +navEl(__('Organisatie'),'/organisation')
               +navEl(__('Contact'), '/contact')
             ul.nav.navbar-nav.navbar-right
