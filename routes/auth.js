@@ -135,7 +135,7 @@ module.exports = function (config) {
       },
       function (next) {
         if (req.body.subscribe) {
-          subscribe({id:config.mailchimp.id, email:{email:req.body.email}, double_optin: false, send_welcome: true}, next);
+          subscribe({id:config.mailchimp.id, email:{email:req.body.email}, merge_vars : {FNAME:req.body.firstname, LNAME:req.body.surname}, double_optin: false, send_welcome: true}, next);
         } else {
           next(null);
         }
