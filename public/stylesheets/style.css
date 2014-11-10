@@ -17,6 +17,10 @@
     background-color: #002E40;
     color: #fff;
 }
+
+h4 {
+  font-weight: 500;
+}
 .navbar-brand {
 
   font-size: 30px;
