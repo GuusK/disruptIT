@@ -23,8 +23,10 @@ block content
         option(value='thomas', selected=user.lezing1=='thomas'?'selected':undefined) Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
     .form-group
       label(for='lezing2') Voorkeurlezing tweede parallelle sessie (er is pas 1 lezing bevestigd voor deze sessie)
-      select.form-control(name='lezing2', disabled)
-        option(value='', selected) Geen voorkeur 
+      select.form-control(name='lezing2')
+        option(value='', selected) Geen voorkeur
+        option(value='michiel', selected=user.lezing2=='michiel'?'selected':undefined) Terug naar de tekentafel: ARPA2.net
+        option(value='harm', selected=user.lezing2=='harm'?'selected':undefined) SBox - Tor-enabled WiFi router
     .form-group
       label(for='lezing3') Voorkeurlezing derde parallelle sessie
       select.form-control(name='lezing3')
