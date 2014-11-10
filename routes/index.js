@@ -69,6 +69,9 @@ router.post('/profile', auth, function (req, res) {
       user.vegetarian = req.body.vegetarian ? true : false;
       user.bus        = req.body.bus ? true : false;
       user.specialNeeds = req.body.specialNeeds;
+      user.lezing1 = req.body.lezing1;
+      user.lezing2 = req.body.lezing2;
+      user.lezing3 = req.body.lezing3;
       console.log(user.specialNeeds);
       user.save();
       req.flash('success', 'Profiel aangepast');

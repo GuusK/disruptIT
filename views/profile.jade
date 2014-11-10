@@ -16,8 +16,24 @@ block content
             input(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
             | Ik wil meerijden met de bus
     .form-group
+      label(for='lezing1') Voorkeurlezing eerste parallelle sessie
+      select.form-control(name='lezing1')
+        option(value='', selected=!user.lezing1?'selected':undefined) Geen voorkeur
+        option(value='eric', selected=user.lezing1=='eric'?'selected':undefined) Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
+        option(value='thomas', selected=user.lezing1=='thomas'?'selected':undefined) Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
+    .form-group
+      label(for='lezing2') Voorkeurlezing tweede parallelle sessie (er is pas 1 lezing bevestigd voor deze sessie)
+      select.form-control(name='lezing2', disabled)
+        option(value='', selected) Geen voorkeur 
+    .form-group
+      label(for='lezing3') Voorkeurlezing derde parallelle sessie
+      select.form-control(name='lezing3')
+        option(value='', selected=!user.lezing3?'selected':undefined) Geen voorkeur
+        option(value='johan', selected=user.lezing3=='johan'?'selected':undefined) Online video streamen met anonimiteit
+        option(value='roel', selected=user.lezing3=='roel'?'selected':undefined)  Rabobank en Cryptocurrencies, met open vizier?
+    .form-group
       label(for='specialNeeds')= __('Speciale opmerkingen (e.g. allergie)')
-      input.form-control(type='text',, name="specialNeeds", value=user.specialNeeds)
+      input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
     .form-group
       button.btn.btn-primary(type='submit') Sla instellingen op
   a.btn.btn-primary(href='/tickets/'+ user.ticket)=__('Ticket printen')

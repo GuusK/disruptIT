@@ -44,7 +44,23 @@ block content
           label
             input(type='checkbox',name='vegetarian', checked=body.vegetarian?'checked':undefined)
             | #{__('Ik eet vegetarisch')}
-        .form-group
+      .form-group
+        label(for='lezing1') Voorkeurlezing eerste parallelle sessie
+        select.form-control(name='lezing1')
+          option(value='', selected) Geen voorkeur
+          option(value='eric') Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
+          option(value='thomas') Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
+      .form-group
+        label(for='lezing2') Voorkeurlezing tweede parallelle sessie (er is pas 1 lezing bevestigd voor deze sessie)
+        select.form-control(name='lezing2', disabled)
+          option(value='', selected) Geen vorkeur 
+      .form-group
+        label(for='lezing3') Voorkeurlezing derde parallelle sessie
+        select.form-control(name='lezing3')
+          option(value='', selected) Geen voorkeur
+          option(value='johan') Online video streamen met anonimiteit
+          option(value='roel')  Rabobank en Cryptocurrencies, met open vizier?
+      .form-group
         label(for='specialNeeds')= __('Speciale opmerkingen (e.g. allergie)')
         input.form-control(type='text', name="specialNeeds", value=body.specialNeeds)
       .form-group

@@ -102,7 +102,10 @@ module.exports = function (config) {
       email: req.body.email,
       bus: req.body.bus,
       vegetarian: req.body.vegetarian,
-      specialNeeds: req.body.specialNeeds
+      specialNeeds: req.body.specialNeeds,
+      lezing1: req.body.lezing1,
+      lezing2: req.body.lezing2,
+      lezing3: req.body.lezing3
     });
 
 
