@@ -59,6 +59,10 @@ router.get('/profile', auth, function (req, res) {
   });
 });
 
+router.get('/opensource',function (req,res) {
+  res.render('opensource', {title:'Help het internet helpen'});
+});
+
 router.post('/profile', auth, function (req, res) {
   req.sanitize('vegetarian').toBoolean();
   req.sanitize('bus').toBoolean();
@@ -125,7 +129,7 @@ var barc = new Barc();
 
 
 router.get('/tickets', adminAuth, function (req, res, next) {
-  Ticket.find({}, function (err, tickets) {
+  Ticket.find({rev:1}, function (err, tickets) {
     if (err) { return next(err); }
     res.render('tickets', {tickets: tickets});
   });

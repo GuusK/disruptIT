@@ -7,7 +7,12 @@ var Ticket = new mongoose.Schema({
     unique: true,
     'default': shortId.generate
   },
-  ownedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: false }
+  rev : { type: Number, required: false},
+  ownedBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: false
+  }
 });
 
 
