@@ -3,6 +3,8 @@ var i18n = require('i18n');
 var Barc = require('barcode-generator');
 var Ticket = require('../models/Ticket');
 var User   = require('../models/User');
+var _      = require('underscore');
+var async  = require('async');
 
 module.exports = function (config) {
 var router = express.Router();
@@ -132,6 +134,22 @@ router.get('/tickets', adminAuth, function (req, res, next) {
   Ticket.find({rev:1}, function (err, tickets) {
     if (err) { return next(err); }
     res.render('tickets', {tickets: tickets});
+  });
+});
+
+router.get('/vn', adminAuth, function (req,res,next) {
+  var namen = _.keys(config.verenigingen);
+
+  var findTickets = function (naam,cb) {
+    User.find({vereniging:naam},{firstname:1,surname:1,email:1,bus:1},function(err, results) {
+      if (err) { return cb(err); }
+
+      cb(null, {name:naam, rows:results});
+    });
+  };
+  async.map(namen, findTickets, function (err, result) {
+    if (err) { return next(err); }
+    res.render('vn', { tables : result });
   });
 });
 
