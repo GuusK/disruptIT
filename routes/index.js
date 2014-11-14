@@ -131,7 +131,7 @@ var barc = new Barc();
 
 
 router.get('/tickets', adminAuth, function (req, res, next) {
-  Ticket.find({rev:1}, function (err, tickets) {
+  Ticket.find({rev:2}, function (err, tickets) {
     if (err) { return next(err); }
     res.render('tickets', {tickets: tickets});
   });
@@ -152,6 +152,7 @@ router.get('/vn', adminAuth, function (req,res,next) {
     res.render('vn', { tables : result });
   });
 });
+
 
 router.get('/users', adminAuth, function (req, res, next) {
   User.find({}, function (err, users) {
