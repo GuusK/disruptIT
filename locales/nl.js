@@ -80,5 +80,12 @@
   "Dit ticket is al geactiveerd!": "Dit ticket is al geactiveerd!",
   "Geen geldige activatiecode gegeven!": "Geen geldige activatiecode gegeven!",
   "Programma": "Programma",
-  "Dagprogramma": "Dagprogramma"
+  "Dagprogramma": "Dagprogramma",
+  "Op dit congres zullen wij verschillende kanten van dit onderwerp aan het licht brengen\nmet interessante lezingen. Geïntereseerd? Dan kan je kaartjes halen bij het bestuur van jouw\nstudievereniging.": "Op dit congres zullen wij verschillende kanten van dit onderwerp aan het licht brengen\nmet interessante lezingen. Geïntereseerd? Dan kan je kaartjes halen bij het bestuur van jouw\nstudievereniging.",
+  "Topicus": "Topicus",
+  "Rijksoverheid": "Rijksoverheid",
+  "Samenwerkingspartners": "Samenwerkingspartners",
+  "Voor de studenten die komen uit de richting van ": "Voor de studenten die komen uit de richting van ",
+  "Voor de studenten die komen uit de richting van Groningen, Enschede, Eindhoven, Leiden of Nijmegen komen, is het mogelijk om met de SNiC-bus mee te rijden naar de locatie. De bustijden worden t.z.t. bekendgemaakt. Studenten uit Utrecht en Amsterdam reizen met het OV. ": "Voor de studenten die komen uit de richting van Groningen, Enschede, Eindhoven, Leiden of Nijmegen komen, is het mogelijk om met de SNiC-bus mee te rijden naar de locatie. De bustijden worden t.z.t. bekendgemaakt. Studenten uit Utrecht en Amsterdam reizen met het OV. ",
+  "Voor de studenten die komen uit de richting van Groningen, Enschede, Eindhoven, Leiden of Nijmegen komen, is het mogelijk om met de SNiC-bus mee te rijden naar de locatie. De bustijden worden t.z.t. bekendgemaakt. Studenten uit Utrecht en Amsterdam reizen met het OV. \n": "Voor de studenten die komen uit de richting van Groningen, Enschede, Eindhoven, Leiden of Nijmegen komen, is het mogelijk om met de SNiC-bus mee te rijden naar de locatie. De bustijden worden t.z.t. bekendgemaakt. Studenten uit Utrecht en Amsterdam reizen met het OV. \n"
 }

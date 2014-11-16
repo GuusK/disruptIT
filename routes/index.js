@@ -127,6 +127,77 @@ router.get('/programme', function (req,res) {
 });
 
 
+router.get('/users', adminAuth, function (req,res,next) {
+  var query = {};
+
+
+  if (req.query.firstname) {
+    query.firstname = req.query.firstname;
+  }
+  if (req.query.surname) {
+    query.surname = req.query.surname;
+  }
+  if (req.query.vereniging) {
+    query.vereniging = req.query.vereniging;
+  }
+  if (req.query.ticket) {
+    query.ticket = req.query.ticket;
+  }
+  if (req.query.aanwezig) {
+    query.aanwezig = req.query.aanwezig;
+  }
+
+  User.find(query, function (err, results) {
+    if (err) { return next(err); }
+    //res.json(results);
+    res.render('users',{users:results, verenigingen:config.verenigingen});
+  });
+});
+
+
+router.get('/users/:id', adminAuth, function (req,res,next) {
+  User.findOne({_id:req.params.id}, function (err, result) {
+    if (err) { return next(err); }
+    res.render('users/edit', {user:result});
+  });
+});
+
+router.post('/users/:id', adminAuth, function (req,res,next) {
+  User.findOne({_id:req.params.id}, function (err, result) {
+    if (err) { return next(err); }
+    result.aanwezig = req.body.aanwezig;
+    result.save(function(err) {
+      if (err) {return next(err); }
+      req.flash('success', 'aangepast');
+      return res.redirect('/users/'+req.params.id);
+    });
+  });
+});
+
+router.post('/aanmelden', adminAuth, function (req,res,next) {
+  var ticket = req.body.ticket;
+  User.findOne({ticket:ticket}, function (err, result) {
+    if (err) {
+      req.flash('error', 'Iets is er misgegaan. Zoek Arian');
+      return res.redirect('/users');
+    }
+
+    if (!result) {
+      req.flash('error',  'Dit ticket is niet geactiveerd. Probeer handmatig zoeken?');
+      return res.redirect('/users');
+    }
+    if (result.aanwezig) {
+      req.flash('error', 'Ticket al aangemeld!');
+      return res.redirect('/users');
+    }
+    result.aanwezig = true;
+    result.save(function (err) {
+      if (err) { req.flash('error', 'Iets is er misgegaan. Zoek Arian'); return res.redirect('/users'); }
+      req.flash('success', 'Ticket aangemeld');
+      res.redirect('/users');
+    });
+  });
+});
 var barc = new Barc();
 
 

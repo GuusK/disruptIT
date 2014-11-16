@@ -1,0 +1,60 @@
+extends ../layout
+
+block content
+  h1 Ticket aanmelden
+  form(method='POST', action='/aanmelden')
+    .form-group
+      label(for='ticket') Ticket
+      input.form-control(type='text',name='ticket')
+    .form-group
+      button.btn.btn-primary(type='submit') Aanmelden
+  hr
+  h1 Handmatig zoeken
+  form(method='GET')
+    .form-group
+      label(for='email') Email
+      input.form-control(type='email',name='email')
+    .form-group
+      label(for='firstname') firstname
+      input.form-control(type='text',name='firstname')
+    .form-group
+      label(for='surname') surname
+      input.form-control(type='text',name='surname')
+    .form-group
+      label(for='vereniging') Vereniging
+      select.form-control(name='vereniging')
+        option(value='') Selecteer
+        each vereniging, shortName in verenigingen
+          option(value=shortName)=vereniging.name
+    .form-group
+      label(for='ticket') Ticket
+      input.form-control(type='text',name='ticket')
+
+    .form-group
+      button.btn.btn-primary(type='submit') Zoek
+  hr
+  
+  table.table
+    thead
+        th #
+        th Voornaam
+        th Achternaam
+        th Email
+        th Ticket
+        th Vereniging
+        th Aanwezig
+    tbody
+      -var i = 1;
+      for row in users 
+        
+        tr
+          td
+            a(href="/users/#{row._id}")=i
+            - i++;
+          td=row.firstname
+          td=row.surname
+          td=row.email 
+          td=row.ticket
+          td=row.vereniging
+          td=row.aanwezig
+
