@@ -1,6 +1,8 @@
-@import url("//fonts.googleapis.com/css?family=Roboto:400,100,300");
-@import url("//fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic");
 
+@import url("/fonts/Roboto-Black.ttf");
+@import url("/fonts/Roboto-Medium.ttf");
+@import url("/fonts/Robot-Thin.ttf");
+@import url("/fonts/OpenSans-Regular.ttf");
 
 // a flag to toggle asset pipeline / compass integration
 // defaults to true if twbs-font-path function is present (no function => twbs-font-path('') parsed as string == right side)
