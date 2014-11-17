@@ -156,17 +156,10 @@ module.exports = function (config) {
     });
   });
 
-var transport = nodemailer.createTransport('SMTP', {
-    resolveHostname: true,
-    host: config.email.host,
-    secureConnection: true,
-    port: config.email.port,
-    auth: {
-      user: config.email.auth.user,
-      pass: config.email.auth.pass
-    },
-  });
-  
+ var transport = nodemailer.createTransport('SMTP', {
+   service: 'Mailgun',
+   auth: config.email.auth
+   }); 
   router.get('/forgot', function(req, res) {
     res.render('forgot', {
       user: req.user
@@ -199,7 +192,7 @@ var transport = nodemailer.createTransport('SMTP', {
           to: user.email,
           from: config.email.auth.user,
           subject: i18n.__('Wachtwoord resetten'),
-          text: i18n.__('Je hebt deze e-mail ontvangen omdat jij (of ieman anders) een wachtwoordreset hebt aangevraagd. \n\n' +
+          text: i18n.__('Je hebt deze e-mail ontvangen omdat jij (of iemand anders) een wachtwoordreset hebt aangevraagd. \n\n' +
                         'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: %s://%s/reset/%s\n\n'+
                         'Als jij deze wachtwoordreset niet hebt aangevraagd, negeer dan deze e-mail en je wachtwoord zal onveranderd blijven.\n\n',
                         req.protocol, req.get('host'), token)
