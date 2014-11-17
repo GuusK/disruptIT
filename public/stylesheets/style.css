@@ -57,11 +57,11 @@ html, body {
   height: 100%;
 }
 .wrapper {
-  margin: 0 auto -200px;
+  margin: 0 auto -210px;
 }
 footer.page, .push {
   margin-top: 30px;
-  height: 170px;
+  height: 180px;
 }
 @media (min-width: 768px) {
 
