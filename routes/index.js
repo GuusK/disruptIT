@@ -147,7 +147,7 @@ router.get('/users', adminAuth, function (req,res,next) {
     query.aanwezig = req.query.aanwezig;
   }
 
-  User.find(query, function (err, results) {
+  User.find(query).sort({'vereniging':1,'firstname':1}).exec( function (err, results) {
     if (err) { return next(err); }
     //res.json(results);
     res.render('users',{users:results, verenigingen:config.verenigingen});
