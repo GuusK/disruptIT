@@ -1,5 +1,4 @@
 var express = require('express');
-var i18n = require('i18n');
 var Barc = require('barcode-generator');
 var Ticket = require('../models/Ticket');
 var User   = require('../models/User');
@@ -13,7 +12,7 @@ var router = express.Router();
 function auth(req, res, next) {
   if (!req.user) {
     req.session.lastPage = req.path;
-    req.flash('info', i18n.__('Je moet inloggen om de pagina %s te bezoeken.', req.path));
+    req.flash('info', 'Je moet inloggen om de pagina ' + req.path + ' te bezoeken');
     return res.redirect('/login');
   }
   next();
@@ -22,7 +21,7 @@ function auth(req, res, next) {
 function adminAuth(req, res, next) {
   if (!req.user || !req.user.admin) {
     req.session.lastPage = req.path;
-    req.flash('info', i18n.__('Je moet als admin inloggen om de pagina %s te bezoeken.', req.path));
+    req.flash('info', 'Je moet als admin inloggen om de pagina' + req.path + ' te bezoeken.');
     return res.redirect('/login');
   }
   next();
@@ -94,11 +93,11 @@ router.post('/profile', auth, function (req, res) {
 });
 
 router.get('/location', function (req, res) {
-  res.render('location', {title:i18n.__('Locatie')});
+  res.render('location', {title: 'Locatie'});
 });
 
 router.get('/speakers', function (req, res) {
-  res.render('speakers', {title:i18n.__('Programma')});
+  res.render('speakers', {title: 'Programma'});
 });
 
 router.get('/speakers/:speaker', function (req, res) {
@@ -111,11 +110,11 @@ router.get('/partners/:partner', function (req, res) {
 });
 
 router.get('/organisation', function (req, res) {
-  res.render('organisation', {title:i18n.__('Organisatie')});
+  res.render('organisation', {title: 'Organisatie'});
 });
 
 router.get('/contact', function (req, res) {
-  res.render('contact', {title:i18n.__('Contact')});
+  res.render('contact', {title: 'Contact'});
 });
 
 router.get('/mailing', function (req,res) {
