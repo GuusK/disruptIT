@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  h1=__('Wachtwoord vergeten')
+  h1 Wachtwoord vergeten
   form(method='POST')
     .form-group
-      label(for='email')=__('Email')
+      label(for='email') Email
       input.form-control(type='text', name='email', autofocus)
-    button.btn.btn-primary(type='submit')=__('Wachtwoord resetten')
+    button.btn.btn-primary(type='submit') Wachtwoord resetten

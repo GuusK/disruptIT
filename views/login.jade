@@ -6,15 +6,15 @@ block title
 block content
   .row
     .col-md-offset-3.col-md-6
-      h1=__('Inloggen')
+      h1 Inloggen
       form#login-form(method='POST')
-        legend(hidden)=__('Inloggen')
+        legend(hidden) Inloggen
         .form-group
-          label(for='email')= __('E-mail')
+          label(for='email') E-mail
           input.form-control(required, type='text', name='email', autofocus)
         .form-group
-          label(for='password')=__('Wachtwoord')
+          label(for='password') Wachtwoord
           input.form-control(required, type='password', name='password')
-        button#login-btn.btn.btn-primary(type='submit')= __('Inloggen')  
-        a.btn.btn-link(href='/forgot')=__('Wachtwoord vergeten?')
-        a.btn.btn-link(href='/register')=__('Registreren?')
+        button#login-btn.btn.btn-primary(type='submit') Inloggen
+        a.btn.btn-link(href='/forgot') Wachtwoord vergeten?
+        a.btn.btn-link(href='/register') Registreren?

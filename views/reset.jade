@@ -4,15 +4,15 @@ block title
 extends layout
 
 block content
-  h1=__('Wachtwoord resetten')
+  h1 Wachtwoord resetten
 
   form(method='POST')
-    legend(hidden)=__('Wachtwoord resetten')
+    legend(hidden) Wachtwoord resetten
     .form-group
-      label(for='password')=__('nieuw wachtwoord')
+      label(for='password') nieuw wachtwoord
       input.form-control(type='password', name='password', value='', placeholder='Nieuw wachtwoord', autofocus=true)
     .form-group
-      label(for='confirm')=__('Bevestig password')
+      label(for='confirm') Bevestig password
       input.form-control(type='password', name='confirm', value='', placeholder='Bevestig password')
     .form-group
-      button.btn.btn-primary(type='submit')=__('Wachtwoord resetten')
+      button.btn.btn-primary(type='submit') Wachtwoord resetten

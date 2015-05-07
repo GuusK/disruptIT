@@ -2,48 +2,45 @@ extends layout
 block title
   | Registeren
 block content
-  h1=__('Registreren')
-  p
-    :i18n
+  h1 Registreren
+  p.
       Bij je studievereniging kan je een ticketactivatiecode kopen.
-  p
-    :i18n
+  p.
       Het blaadje waar je Ticketactivatiecode op staat is overigens ook je ticket na activatie.
       Raak je dit blaadje onverhoopt kwijt, dan kun je deze altijd opnieuw uitprinten vanaf "Mijn Profiel",
       nadat je geregistreerd hebt.
 
-  p
-    :i18n
+  p.
       Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op "mijn Profiel".
 
   if opened
     form#signup.col-md-6.col-md-offset-3(method='POST')
-      legend(hidden)=__('Registreren')
+      legend(hidden) Registreren
       .form-group
-        label(for='code')= __('Ticketactivatiecode (verkrijgbaar bij je studievereniging)')
+        label(for='code') Ticketactivatiecode (verkrijgbaar bij je studievereniging)
         input.form-control( type='text', name='code', autofocus, required, value=body.code)
       .form-group
-        label(for='firstname')=__('Voornaam')
+        label(for='firstname') Voornaam
         input.form-control( type='text', name='firstname', required, value=body.firstname)
       .form-group
-        label(for='surname')=__('Achternaam')
+        label(for='surname') Achternaam
         input.form-control( type='text', name='surname', required, value=body.surname)
       .form-group
-        label(for='vereniging')=__('Studievereniging')
+        label(for='vereniging') Studievereniging
         select.form-control(id='vereniging', required, name='vereniging')
-          option(value='', selected)=__('Selecteer  ...')
+          option(value='', selected) Selecteer  ...
           each vereniging, shortName in verenigingen
-            option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name + (vereniging.bus ? ' - ' + __('Busreis mogelijk') : '')
+            option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name + (vereniging.bus ? ' - ' + 'Busreis mogelijk' : '')
       .form-group
         .checkbox
           label
             input#bus(type='checkbox',name='bus', checked=body.bus?'checked': undefined)
-            | #{__('Ik wil met de touringbus mee die vanaf mijn studievereniging naar het congres rijdt.')}
+            | Ik wil met de touringbus mee die vanaf mijn studievereniging naar het congres rijdt.
       .form-group
         .checkbox
           label
             input(type='checkbox',name='vegetarian', checked=body.vegetarian?'checked':undefined)
-            | #{__('Ik eet vegetarisch')}
+            | Ik eet vegetarisch
       .form-group
         label(for='lezing1') Voorkeurlezing eerste parallelle sessie
         select.form-control(name='lezing1')
@@ -63,23 +60,23 @@ block content
           option(value='johan') Online video streamen met anonimiteit
           option(value='roel')  Rabobank en Cryptocurrencies, met open vizier?
       .form-group
-        label(for='specialNeeds')= __('Speciale opmerkingen (e.g. allergie)')
+        label(for='specialNeeds') Speciale opmerkingen (e.g. allergie)
         input.form-control(type='text', name="specialNeeds", value=body.specialNeeds)
       .form-group
-        label(for='email')= __('E-mail')
+        label(for='email') E-mail
         input.form-control( type='email', name='email', required, value=body.email)
       .form-group
-        label(for='password')= __('Wachtwoord')
+        label(for='password') Wachtwoord
         input.form-control(required. type='password', required, name='password')
       .form-group
-        label(for='confirm')= __('Bevestig wachtwoord')
+        label(for='confirm') Bevestig wachtwoord
         input.form-control( type='password', required, name='confirm')
       .form-group
         .checkbox
           label
             input(type='checkbox',name='subscribe', checked='checked')
-            | #{__('Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)')}
-      button.btn.btn-primary(type='submit')= __('Registreren')
+            | Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)
+      button.btn.btn-primary(type='submit') Registreren
 
 
     script.

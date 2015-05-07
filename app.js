@@ -10,7 +10,7 @@ var flash = require('express-flash');
 var mongoose = require('mongoose');
 var i18n = require('i18n');
 var fs = require('fs');
-var sass = require('node-sass');
+//var sass = require('node-sass');
 var passport = require('passport');
 var expressValidator = require('express-validator');
 var locale = require('./locale');
@@ -64,13 +64,13 @@ app.use(flash());
 app.use(i18n.init);
 app.use(locale);
 
-app.use(sass.middleware({
+/*app.use(sass.middleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   debug: true,
   outputStyle: 'compressed',
   prefix:  '/'
-}));
+}));*/
 
 app.use(express.static(path.join(__dirname, 'public')));
 

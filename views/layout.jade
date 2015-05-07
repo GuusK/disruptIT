@@ -23,7 +23,7 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
         .container
           .navbar-header
             button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-              span.sr-only=__('Navigatie activeren')
+              span.sr-only Navigatie activeren
               span.icon-bar
               span.icon-bar
               span.icon-bar
@@ -33,29 +33,25 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
           .collapse.navbar-collapse
             ul.nav.navbar-nav
               +navEl('Home', '/')
-              +navEl(__('Locatie'),'/location')
+              +navEl('Locatie','/location')
               
               li(class=path=='/programme'||path=='/speakers'?'active':undefined).dropdown.my
                 a.dropdown-toggle(data-toggle='dropdown',href='#') Programma
                 ul.dropdown-menu
-                  +navEl(__('Dagprogramma'),'/programme')
-                  +navEl(__('Sprekers'),'/speakers')
+                  +navEl('Dagprogramma','/programme')
+                  +navEl('Sprekers','/speakers')
               li(class=path=='/partners'?'active':undefined).dropdown.my
                 a.dropdown-toggle(data-toggle='dropdown',href='#') Partners
                 ul.dropdown-menu
-                  +navEl(__('Topicus'),'/partners/topicus/')
-                  +navEl(__('Rijksoverheid'),'/partners/rijksoverheid/')
-                  +navEl(__('Samenwerkingspartners'),'/partners/')
-              +navEl(__('Organisatie'),'/organisation')
-              +navEl(__('Contact'), '/contact')
+                  +navEl('Topicus','/partners/topicus/')
+                  +navEl('Rijksoverheid','/partners/rijksoverheid/')
+                  +navEl('Samenwerkingspartners','/partners/')
+              +navEl('Organisatie','/organisation')
+              +navEl('Contact', '/contact')
             ul.nav.navbar-nav.navbar-right
 
-              +navEl(__('Mijn profiel'),'/profile')
+              +navEl('Mijn profiel','/profile')
 
-              //- each l in locales
-              //-   li(class=locale==l?'active':undefined)
-              //-     a(href='?locale=#{l}', hreflang=l)
-              //-       img(src='/images/flags/#{l}.png')
       block above-content
       .container
         if messages.error

@@ -8,29 +8,13 @@ block content
       .checkbox
         label
           input(type='checkbox',name='vegetarian', checked=user.vegetarian? "checked": undefined)
-          | #{__('Ik eet vegetarisch')}
+          | Ik eet vegetarisch
     if isbus_quickhack
       .form-group
         .checkbox
           label
             input(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
             | Ik wil meerijden met de bus
-    .form-goup
-      label Drankvoorkeuren
-      select.form-control
-        option Grolsch
-        option Grolssch
-        option Grolsssch
-        option Grolssssch
-        option Ketel1 (mits je dit zelf meeneemt)
-    .form-group
-      label Feestlezing
-      select.form-control
-        option Henk de Vries
-        option Bor de Kock
-        option Guillermo & Tropical Danny
-        option Tom Jones
-        option Gebroeders Scooter
  
     .form-group
       label(for='lezing1') Voorkeurlezing eerste parallelle sessie
@@ -51,10 +35,10 @@ block content
         option(value='johan', selected=user.lezing3=='johan'?'selected':undefined) Online video streamen met anonimiteit
         option(value='roel', selected=user.lezing3=='roel'?'selected':undefined)  Rabobank en Cryptocurrencies, met open vizier?
     .form-group
-      label(for='specialNeeds')= __('Speciale opmerkingen (e.g. allergie)')
+      label(for='specialNeeds') Speciale opmerkingen (e.g. allergie)
       input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
     .form-group
       button.btn.btn-primary(type='submit') Sla instellingen op
-  a.btn.btn-primary(href='/tickets/'+ user.ticket)=__('Ticket printen')
+  a.btn.btn-primary(href='/tickets/'+ user.ticket) Ticket printen
   div  
-    a.btn(href='/logout')=__('Uitloggen')
+    a.btn(href='/logout') Uitloggen
