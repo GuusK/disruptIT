@@ -13,7 +13,8 @@ Configuration files are not included in this repository. You will need to add a 
 
       "email": {
         "auth": {
-          key: "mailgun key"
+          "user": "mailgun-user",
+          "pass": "mailgun-api-key"
         }
       },
       "session": {
