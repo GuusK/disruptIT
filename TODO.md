@@ -1,5 +1,0 @@
-- Logos even groot
-- mailing opt in
-- mooie banner
-- tekst pakkender
-- logos doorlinken website.
