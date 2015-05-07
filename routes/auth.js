@@ -192,7 +192,7 @@ module.exports = function (config) {
           from: config.email.auth.user,
           subject: 'Wachtwoord resetten',
           text: 'Je hebt deze e-mail ontvangen omdat jij (of iemand anders) een wachtwoordreset hebt aangevraagd. \n\n' +
-                        'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: +'req.protocol+'://'+req.get('host')+'/reset/'+token+'\n\n'+
+                        'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: '+req.protocol+'://'+req.get('host')+'/reset/'+token+'\n\n'+
                         'Als jij deze wachtwoordreset niet hebt aangevraagd, negeer dan deze e-mail en je wachtwoord zal onveranderd blijven.\n\n'
         };
 

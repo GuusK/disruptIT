@@ -12,7 +12,10 @@ function genTicket(cb) {
 }
 var tasks = [];
 
-for (var i = 0; i < 100; i++) {
+
+var n = + process.argv[1];
+
+for (var i = 0; i < n; i++) {
   tasks.push(genTicket);
 }
 async.parallel(tasks,function (err) {
