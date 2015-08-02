@@ -29,7 +29,7 @@ function adminAuth(req, res, next) {
 
 /* GET home page. */
 router.get('/', function (req, res) {
-  res.render('index', { title: 'AutonomIT' });
+  res.render('index', { title: 'AutonomIT', ticketSaleStarts:config.ticketSaleStarts });
 });
 
 

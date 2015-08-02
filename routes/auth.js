@@ -20,7 +20,7 @@ module.exports = function (config) {
   passport.deserializeUser(User.deserializeUser());
 
   router.get('/login', function (req,res) {
-    res.render('login');
+    res.render('login', {ticketSaleStarts:config.ticketSaleStarts});
   });
 
   router.post('/login',  function (req, res) {
@@ -38,7 +38,7 @@ module.exports = function (config) {
   });
 
   router.get('/register', function (req, res) {
-    res.render('register', {verenigingen: config.verenigingen, opened:true, body:req.session.body || {}});
+    res.render('register', {verenigingen: config.verenigingen, ticketSaleStarts:config.ticketSaleStarts, body:req.session.body || {}});
   });
 
   function subscribe(conf, cb) {

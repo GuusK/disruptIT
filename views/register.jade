@@ -9,17 +9,17 @@ block content
         p.
             Bij je studievereniging kan je een ticketactivatiecode kopen.
         p.
-            Het blaadje waar je Ticketactivatiecode op staat is overigens ook je ticket na activatie.
-            Raak je dit blaadje onverhoopt kwijt, dan kun je deze altijd opnieuw uitprinten vanaf "Mijn Profiel",
+            Het blaadje waar je ticket activatiecode op staat is overigens ook je toegangsbewijs na activatie.
+            Raak je dit blaadje onverhoopt kwijt, dan kun je deze altijd opnieuw uitprinten door in te loggen,
             nadat je geregistreerd hebt.
 
         p.
-            Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op "mijn Profiel".
+            Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op je account.
 
         br(clear='all')
 
         .u8.center(class='12u$(medium)')
-          if opened
+          if new Date(ticketSaleStarts).getTime() < Date.now()
             form#signup.col-md-6.col-md-offset-3(method='POST')
               legend(hidden) Registreren
               .form-group
@@ -38,7 +38,7 @@ block content
                     option(value='', selected) Selecteer  ...
                     each vereniging, shortName in verenigingen
                       option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name + (vereniging.bus ? ' - ' + 'Busreis mogelijk' : '')
-              .form-group
+              .form-group(style='display:none')
                   input#bus(type='checkbox', name='bus', checked=body.bus?'checked': undefined)
                   label(for='bus') Ik wil met de touringbus mee die vanaf mijn studievereniging naar het congres rijdt.
               .form-group
@@ -98,5 +98,6 @@ block content
           else
             .alert.alert-info
               .icon.fa.fa-info
-              div Tickets kunnen hier vanaf 1 oktober geactiveerd worden!
+              - months = ['januari', 'februari', 'maart', 'april', 'mei','juni','juli','augustus', 'september','november','december'];
+              div= 'Tickets kunnen hier vanaf '+ new Date(ticketSaleStarts).getDate() + ' ' + months[new Date(ticketSaleStarts).getMonth()] + ' geactiveerd worden!'
 

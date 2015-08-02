@@ -8,7 +8,8 @@ Configuration files are not included in this repository. You will need to add a 
       },
 
       "mailchimp": {
-        "key": "nope"
+        "id": "list id (list > settings)"
+        "key": "api key onder account"
       },
 
       "email": {
@@ -22,10 +23,11 @@ Configuration files are not included in this repository. You will need to add a 
       },
       "verenigingen": [
         {
-          "name": "Gewis",
+          "name": "GEWIS",
           "bus": false
         }
-      ]
+      ],
+      "ticketSaleStarts": "2015-08-01T00:00:00.001Z"
     }
 
 mongodb is the url to the mongodb server

@@ -7,7 +7,10 @@ block header
     p The computer science symposium about autonomous systems
     ul.actions
       li
-        a.button.scrolly(href='#one') Discover
+        if new Date(ticketSaleStarts).getTime() < Date.now()
+          a.button.special.scrolly(href='/register') Activeer je ticket nu!
+        else 
+          a.button.scrolly(href='#one') Discover
 
 
 block content

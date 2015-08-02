@@ -1,8 +1,7 @@
 extends layout
-block nav
-  - var selected = 'login'
 block title
   | Login
+  
 block content
   section.main.style1
     .container
@@ -19,4 +18,5 @@ block content
             input.form-control(required, type='password', name='password')
             button.button.special(type='submit') Inloggen
             a(href='/forgot') Wachtwoord vergeten?
-            a(href='/register') Registreren
+            if new Date(ticketSaleStarts).getTime() < Date.now()
+              a(href='/register') Registreren
