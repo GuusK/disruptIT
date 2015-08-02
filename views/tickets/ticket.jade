@@ -1,5 +1,6 @@
 extends layout
+include index
+
 block content
-  h1 AutonomIT ticket
-  h2=_id
-  img(src="/tickets/#{_id}/barcode")
+  div
+    +ticket(ticket)

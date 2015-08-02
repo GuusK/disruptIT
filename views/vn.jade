@@ -1,20 +1,29 @@
 extends layout
 block content
-  for table in tables
-    hr
-    table.table
-      caption=table.name
-      thead
-        tr
-          th Voornaam
-          th Achternaam
-          th Email
-          th Bus
-      tbody
-        for row in table.rows
-          tr
-            td=row.firstname
-            td=row.surname
-            td=row.email 
-            td=row.bus
+  section.main.style1
+    .container
+      .row(class='0%')
+        h2 Aanwezigheidslijst
+
+        for table in tables
+          table.table
+            caption=verenigingen[table.name].name
+            thead
+              tr
+                th Voornaam
+                th Achternaam
+                th Email
+                th Bus
+            tbody
+              for row in table.rows
+                tr
+                  td=row.firstname
+                  td=row.surname
+                  td=row.email 
+                  td
+                    if row.bus
+                      span.fa.fa-check(style='color:#79bf46;')
+                    else
+                      span.fa.fa-close(style='color:#bf464c;')
+
           

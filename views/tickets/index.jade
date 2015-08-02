@@ -1,28 +1,20 @@
 mixin ticket(ticket)
-  if ticket && !ticket.ownedBy
+  if ticket
     .ticket
-      h2 Activatiecode:
+      h2 TICKET AUTONOMIT
+      p Activatiecode: 
         strong #{ticket._id}
-      p Acitveer je ticket op http://anonymit.nl/.
-      p.
-        Dit ticket is overigens je toegangsbewijs.
-        Als je dit ticket kwijtraakt kun je hem via de website opnieuw printen bij 'Mijn Profiel'.
+      p Activeer je ticket op 
+        u http://autonom.it/
+        |. Dit ticket is tevens je toegangsbewijs.
+        br
+        | Als je dit ticket kwijtraakt kun je hem via de website opnieuw printen door in te loggen.
       img(src="/tickets/#{ticket._id}/barcode")
 
 extends layout
 block content
-  style.
-    .ticket {
-     margin-top: 80px;
-     margin-bottom: 80px;
-    }
-    @media print {
-      footer {
-        page-break-after: always;
-      }
-    }
   - for (var i = 0, x = 3; i < tickets.length; i += x)
-      div
-       - for (var j = 0; j < x; j++)
-        +ticket(tickets[i+j])
-      footer
+    div
+     - for (var j = 0; j < x; j++)
+      +ticket(tickets[i+j])
+    footer

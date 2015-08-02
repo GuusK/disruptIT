@@ -3,18 +3,51 @@ doctype html
 html
   head
     style.
-      @import url(//fonts.googleapis.com/css?family=Roboto:400,100,300);
+      @font-face {
+          font-family: 'jaapokkiregular';
+          src: url('/fonts/jaapokki-regular-webfont.eot');
+          src: url('/fonts/jaapokki-regular-webfont.eot?#iefix') format('embedded-opentype'),
+               url('/fonts/jaapokki-regular-webfont.woff2') format('woff2'),
+               url('/fonts/jaapokki-regular-webfont.woff') format('woff'),
+               url('/fonts/jaapokki-regular-webfont.ttf') format('truetype'),
+               url('/fonts/jaapokki-regular-webfont.svg#jaapokkiregular') format('svg');
+          font-weight: normal;
+          font-style: normal;
+
+      }
       @import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
       h2 {
         font-size: 20px;
       }
       h1,h2 {
+        margin-top: 0;
         font-weight: 100;
-        font-family: Roboto;
+        font-family: 'jaapokkiregular';
       }
       body {
         font-family: "Open Sans";
-        margin-left: 80px;
+        font-size: 15px;
+        margin-left: 30px;
       }
+
+      @media print {
+        footer {
+          page-break-after: always;
+        }
+      }
+
+      .ticket {
+        width: 610px;
+        margin: 30px 0;
+        padding: 15px;
+        outline: 1px solid black;
+        position: relative;
+      }
+
+      .ticket img {
+        display: block;
+        margin: 0 auto;
+      }
+
   body
     block content

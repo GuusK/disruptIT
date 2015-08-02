@@ -203,15 +203,20 @@ router.post('/aanmelden', adminAuth, function (req,res,next) {
 });
 var barc = new Barc();
 
-
+/**
+ * Output alle tickets die nog niet geownt zijn door gebruikers
+ */
 router.get('/tickets', adminAuth, function (req, res, next) {
-  Ticket.find({rev:2}, function (err, tickets) {
+  Ticket.find({rev:2, ownedBy:undefined}, function (err, tickets) {
     if (err) { return next(err); }
     res.render('tickets', {tickets: tickets});
   });
 });
 
-router.get('/vn', adminAuth, function (req,res,next) {
+/**
+ * Aanwezigheidslijst per vereniging
+ */
+router.get('/aanwezigen', adminAuth, function (req,res,next) {
   var namen = _.keys(config.verenigingen);
 
   var findTickets = function (naam,cb) {
@@ -239,10 +244,10 @@ router.get('/tickets/:id', function (req, res, next) {
     if (err) { err.code = 403; return next(err); }
     if (!ticket || !ticket.ownedBy || ticket.ownedBy.email !== req.session.passport.user) {
       var error = new Error("Forbidden");
-      error.code =403;
+      error.code = 403;
       return next(error);
     }
-    res.render('tickets/ticket', ticket);
+    res.render('tickets/ticket', {ticket: ticket});
   });
 });
 

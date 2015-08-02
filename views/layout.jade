@@ -64,6 +64,7 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
               ul.dropdown-menu
                 if user.admin
                   +navEl('Gebruikers','/users')
+                  +navEl('Aanwezigen','/aanwezigen')
                   +navEl('Mailinglijst','/mailing')
                   +navEl('Tickets','/tickets')
                   li.separator
