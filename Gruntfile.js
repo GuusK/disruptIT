@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         tasks: ['jshint:gruntfile']
       },
       lib: {
-        files: '<%= jshint.lib.src %>',
+        files: ['<%= jshint.lib.src %>', 'config.json'],
         tasks: ['jshint:lib', 'express:dev'],
         options: {
           spawn: false
