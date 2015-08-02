@@ -1,60 +1,71 @@
 extends ../layout
 
 block content
-  h1 Ticket aanmelden
-  form(method='POST', action='/aanmelden')
-    .form-group
-      label(for='ticket') Ticket
-      input.form-control(type='text',name='ticket', autofocus)
-    .form-group
-      button.btn.btn-primary(type='submit') Aanmelden
-  hr
-  h1 Handmatig zoeken
-  form(method='GET')
-    .form-group
-      label(for='email') Email
-      input.form-control(type='email',name='email')
-    .form-group
-      label(for='firstname') firstname
-      input.form-control(type='text',name='firstname')
-    .form-group
-      label(for='surname') surname
-      input.form-control(type='text',name='surname')
-    .form-group
-      label(for='vereniging') Vereniging
-      select.form-control(name='vereniging')
-        option(value='') Selecteer
-        each vereniging, shortName in verenigingen
-          option(value=shortName)=vereniging.name
-    .form-group
-      label(for='ticket') Ticket
-      input.form-control(type='text',name='ticket')
+  section.main.style1.users
+    .container
+      .row(class='0%')
+        .12u
+          h2 Ticket aanmelden
+          form(method='POST', action='/aanmelden')
+            .form-group
+              label(for='ticket') Ticket
+              input.form-control(type='text',name='ticket', autofocus)
 
-    .form-group
-      button.btn.btn-primary(type='submit') Zoek
-  hr
-  
-  table.table
-    thead
-        th #
-        th Voornaam
-        th Achternaam
-        th Email
-        th Ticket
-        th Vereniging
-        th Aanwezig
-    tbody
-      -var i = 1;
-      for row in users 
-        
-        tr
-          td
-            a(href="/users/#{row._id}")=i
-            - i++;
-          td=row.firstname
-          td=row.surname
-          td=row.email 
-          td=row.ticket
-          td=row.vereniging
-          td=row.aanwezig
+              button.button.special(type='submit') Aanmelden
+
+        .12u
+          h2 Handmatig zoeken
+          form(method='GET')
+            .row.searchOptions
+              .2u 
+                .select-wrapper
+                  select
+                    option Email
+                    option(selected='selected') Voornaam
+                    option Achternaam
+                    option Vereniging
+                    option Ticket
+              .10u
+                input(type='email',name='email', placeholder='Email',style='display:none;')
+                input(type='text',name='firstname', placeholder='Voornaam', style='display:none;')
+                input(type='text',name='surname', placeholder='Achternaam', style='display:none;')
+                .select-wrapper(style='display:none;', placeholder='Vereniging')
+                  select(name='vereniging')
+                    each vereniging, shortName in verenigingen
+                      option(value=shortName)=vereniging.name
+                input(type='text',name='ticket', placeholder='Ticket', style='display:none;')
+
+                button.button.special(type='submit') Zoek
+          
+        br(clear='all')
+        br(clear='all')
+
+        .12u
+          table.table
+            thead
+                th #
+                th Voornaam
+                th Achternaam
+                th Email
+                th Ticket
+                th Vereniging
+                th Aanwezig
+            tbody
+              -var i = 1;
+              for row in users 
+                
+                tr
+                  td
+                    a(href="/users/#{row._id}")=i
+                    - i++;
+                  td=row.firstname
+                  td=row.surname
+                  td=row.email 
+                  td=row.ticket
+                  td=verenigingen[row.vereniging].name
+                  td
+                    if row.aanwezig
+                      span.fa.fa-check(style='color:#79bf46;')
+                    else
+                      span.fa.fa-close(style='color:#bf464c;')
 

@@ -1,24 +1,29 @@
 extends ../layout
 block content
-  a(href='/users') Terug
-  form(method='POST')
+  section.main.style1
+    .container
+      .row(class='0%')
+        .12u
+          form(method='POST')
 
-    table.table
-      thead
-          th Voornaam
-          th Achternaam
-          th Email
-          th Ticket
-          th Vereniging
-          th Aanwezig
-      tbody
-        tr
-          td=user.firstname
-          td=user.surname
-          td=user.email 
-          td=user.ticket
-          td=user.vereniging
-          td
-            input(type='checkbox',name='aanwezig',checked=user.aanwezig?'checked':undefined)
-    .form-group
-      button.btn.btn-primary(type='submit') Sla op
+            table
+              thead
+                  th Voornaam
+                  th Achternaam
+                  th Email
+                  th Ticket
+                  th Vereniging
+                  th Aanwezig
+              tbody
+                tr
+                  td=user.firstname
+                  td=user.surname
+                  td=user.email 
+                  td=user.ticket
+                  td=verenigingen[user.vereniging].name
+                  td
+                    input#aanwezig(type='checkbox',name='aanwezig',checked=user.aanwezig?'checked':undefined)
+                    label(for='aanwezig', style='margin-top: -5px;') &nbsp;
+
+            a.button(href='/users') Terug
+            button.button.special(type='submit', style='float:right') Sla op

@@ -82,7 +82,6 @@ module.exports = function (config) {
 
     var errors = req.validationErrors();
 
-
     if (errors) {
 
       var msg = '';
@@ -106,7 +105,6 @@ module.exports = function (config) {
       lezing2: req.body.lezing2,
       lezing3: req.body.lezing3
     });
-
 
     async.waterfall([
       function (next) {
@@ -133,11 +131,11 @@ module.exports = function (config) {
         });
       },
       function (user,next) {
-        req.login(user,next); 
+        req.login(user, next); 
       },
       function (next) {
         if (req.body.subscribe) {
-          subscribe({id:config.mailchimp.id, email:{email:req.body.email}, merge_vars : {FNAME:req.body.firstname, LNAME:req.body.surname}, double_optin: false, send_welcome: true}, next);
+          subscribe({id:config.mailchimp.id, email:{email:req.body.email}, merge_vars : {FNAME:req.body.firstname, LNAME:req.body.surname}, double_optin: false, send_welcome: false}, next);
         } else {
           next(null);
         }
@@ -197,7 +195,7 @@ module.exports = function (config) {
         };
 
         transport.sendMail(mailOptions, function (err) {
-          req.flash('info', 'Een e-mail is gestuurd naar '+user.email + 'met verdere instructies om je wachtwoord te resetten');
+          req.flash('info', 'Een e-mail is gestuurd naar '+user.email + ' met verdere instructies om je wachtwoord te resetten');
           done(err, 'done');
         });
       }
@@ -247,7 +245,7 @@ module.exports = function (config) {
           to: user.email,
           from: config.email.auth.user,
           subject: 'Je wachtwoord is veranderd!',
-          text: 'Hallo,\n\n Dit is een bevestiging dat het wacthwoord voor'+ user.email + 'is veranerd.\n'
+          text: 'Hallo,\n\n Dit is een bevestiging dat het wachtwoord voor '+ user.email + ' is veranderd.\n'
         };
         transport.sendMail(mailOptions, function (err) {
           req.flash('success', 'Je wachtwoord is veranderd.');
@@ -258,7 +256,7 @@ module.exports = function (config) {
       if (err) {
         return next(err);
       }
-      res.redirect('/forgot');   
+      res.redirect('/login');   
     });
   });
 

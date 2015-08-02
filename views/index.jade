@@ -1,23 +1,392 @@
 extends layout
 block above-content
-  .jumbotron
-    .container
-      h1  Wat betekent het om anoniem te zijn in 2014
-      h2 18 november 2014
-      p  Alles over anonimiteit en privacy tijdens AnonymIT
-      p
-        a.btn.btn-lg.btn-primary(href='/register') Activeer je ticket nu!
-block content
-  p.col-md-6.
-      Anonimiteit is op het moment een veelbesproken onderwerp; gaat het niet over de grote 
-      inbraak door (waarschijnlijk) de NSA bij DigiNotar, 
-      dan gaat het wel over het handelen in Bitcoin.
-      De behoefte om anoniem te blijven wordt steeds groter, 
-      terwijl er steeds meer persoonsgegevens digitaal worden 
-      opgeslagen. Wat zijn manieren om anonimiteit te garanderen? 
-      En welke afwegingen moeten hiervoor worden gemaakt?
 
-  p.col-md-6.
-      Op dit congres zullen wij verschillende kanten van dit onderwerp aan het licht brengen
-      met interessante lezingen. Geïntereseerd? Dan kan je kaartjes halen bij het bestuur van jouw
-      studievereniging.
+block header 
+  .inner
+    img(width='250', src='/images/logo.png')
+    p The computer science symposium about autonomous systems
+    ul.actions
+      li
+        a.button.scrolly(href='#one') Discover
+
+
+block content
+  // Symposium
+  section#one.main.style1
+    .container
+      .row(class='150%')
+        .6u(class='12u$(medium)')
+          header.major
+            h2 The symposium
+            br
+            h3 Actual themes in Nationwide context 
+          p
+            | AutonomIT is the name for the upcoming yearly symposium of the SNiC foundation. On this yearly symposium we will get to the bottom of an actual theme within the field of Computer Science. This year we choose autonomy as theme of the symposium. Nowadays everything needs to be more efficient and if possible even without human interference. Therefore the field of autonomous software and hardware is quickly developing to fulfill the demands of this new market. The first autonomous cars been tested on the Dutch roads, and there are houses relying on robotica. We also predict that robots will be better at soccer than humans by 2050.
+        div(class='6u$ 12u$(medium) important(medium)')
+          span.image.fit
+            img(src='/images/logo2.png', alt='')
+  // Talks
+  section#two.main.style2
+    .container
+      .row(class='150%')
+        .6u(class='12u$(medium)')
+          span.image.fit
+            img(src='/images/sprekers.jpg', alt='')
+        div(class='6u$ 12u$(medium)')
+          header.major
+            h2 Talks
+            br
+            h3
+              | — 
+              em The direction in which education starts a man will determine his future in life.
+              sub.pull-right (Plato)
+          p
+            | At AutonomIT we aim to provide the visitors with two diffrent tracks with a variety of talks in each of the tracks. We now aim at a technical track and a more societal track. In the technical track the speakers will elaborate about technical aspects of anonomy and in the sociatal aspect there is also a insight in current/future applications of the given subjects.
+          p
+            | We would love to give you some extra information about the talks that will give meaning to this event. Unfotunately we have yet to complete the schedule. We will provide you with an update as soon as we can, so stay interested to be the first to know.
+          p
+            | Since there are still open spaces in the schedule we need to have more interesting speakers. Do you know someone in the field of autonomy who would be able to tell us an exiting story please do not hasitate to contact us. For this matter we can be reached at sprekers@autonom.it
+  
+  // Organisation
+  section#one.main.style1
+    .container
+      .row(class='150%')
+        .6u(class='12u$(medium)')
+          header.major
+            h2 Organization
+            br
+            h3 Joining, Asking, Blaming 
+          p
+            | We hope we got you exited for our symposium. If we did you would be most interested how to get your tickets, when the event takes place and where to be at that time.
+          p
+            strong How.
+            |  The SNiC is a collaboration between the study associations A-Eskwadraat, VIA, Sticky, Thalia, Inter-Actief, Cover and s.v. GEWIS. Since there are even too few spaces for members of these associations tickets can only be bought by members of the foundation. A special exception has been made for STORM and CognAC, who both want to join the foundation. The tickets will be available at all of these associations long before the event. Please ask the board of your association for more information about how to get tickets.
+          p
+            strong When.
+            |  The symposium will take place at the 23 november 2015. We have checked with all the associations who are able to sell tickets and you will probably not be in an exam week at that time which gives you plenty of time to do some extra interesting, extra curricular events and come to Eindhoven at the 23
+            sup rd
+            | .
+          p
+            strong Where.
+            |  For the first time ever the SNiC symposium will be hosted in Eindhoven. Were we normally choose a location near Utrecht we now try to host the symposium at the Evoluon in Eindhoven. Its one of the most awesome ventures in the Netherlands and hope to host a symposium there which is just as awesome.
+          p
+            strong Contact.
+            |  When you still have questions or want to blame us for something we would be most delighted to help you if you email your concern to secretaris@autonom.it
+        div(class='6u$ 12u$(medium) important(medium)')
+          span.image.fit
+            img(src='/images/evoluon.jpg', alt='')
+          span.image.fit
+            img(src='/images/zaal.jpg', alt='')
+
+// Five
+  section#five.main.style1
+    .container
+      header.major.special
+        h2 Elements
+      section
+        h4 Text
+        p
+          | This is 
+          b bold
+          |  and this is 
+          strong strong
+          | . This is 
+          i italic
+          |  and this is 
+          em emphasized
+          | .
+          |             This is 
+          sup superscript
+          |  text and this is 
+          sub subscript
+          |  text.
+          |             This is 
+          u underlined
+          |  and this is code: 
+          code for (;;) { ... }
+          | . Finally, 
+          a(href='#') this is a link
+          | .
+        hr
+        header
+          h4 Heading with a Subtitle
+          p Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+        p
+          | Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.
+        header
+          h5 Heading with a Subtitle
+          p Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+        p
+          | Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.
+        hr
+        h2 Heading Level 2
+        h3 Heading Level 3
+        h4 Heading Level 4
+        h5 Heading Level 5
+        h6 Heading Level 6
+        hr
+        h5 Blockquote
+        blockquote
+          | Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.
+        h5 Preformatted
+        pre.
+      section
+        h4 Lists
+        .row
+          .6u(class='12u$(medium)')
+            h5 Unordered
+            ul
+              li Dolor pulvinar etiam.
+              li Sagittis adipiscing.
+              li Felis enim feugiat.
+            h5 Alternate
+            ul.alt
+              li Dolor pulvinar etiam.
+              li Sagittis adipiscing.
+              li Felis enim feugiat.
+          div(class='6u$ 12u$(medium)')
+            h5 Ordered
+            ol
+              li Dolor pulvinar etiam.
+              li Etiam vel felis viverra.
+              li Felis enim feugiat.
+              li Dolor pulvinar etiam.
+              li Etiam vel felis lorem.
+              li Felis enim et feugiat.
+            h5 Icons
+            ul.icons
+              li
+                a.icon.fa-twitter(href='#')
+                  span.label Twitter
+              li
+                a.icon.fa-facebook(href='#')
+                  span.label Facebook
+              li
+                a.icon.fa-instagram(href='#')
+                  span.label Instagram
+              li
+                a.icon.fa-github(href='#')
+                  span.label Github
+        h5 Actions
+        .row
+          .6u(class='12u$(medium)')
+            ul.actions
+              li
+                a.button.special(href='#') Default
+              li
+                a.button(href='#') Default
+            ul.actions.small
+              li
+                a.button.special.small(href='#') Small
+              li
+                a.button.small(href='#') Small
+            ul.actions.vertical
+              li
+                a.button.special(href='#') Default
+              li
+                a.button(href='#') Default
+            ul.actions.vertical.small
+              li
+                a.button.special.small(href='#') Small
+              li
+                a.button.small(href='#') Small
+          .6u(class='12u$(medium)')
+            ul.actions.vertical
+              li
+                a.button.special.fit(href='#') Default
+              li
+                a.button.fit(href='#') Default
+            ul.actions.vertical.small
+              li
+                a.button.special.small.fit(href='#') Small
+              li
+                a.button.small.fit(href='#') Small
+      section
+        h4 Table
+        h5 Default
+        .table-wrapper
+          table
+            thead
+              tr
+                th Name
+                th Description
+                th Price
+            tbody
+              tr
+                td Item One
+                td Ante turpis integer aliquet porttitor.
+                td 29.99
+              tr
+                td Item Two
+                td Vis ac commodo adipiscing arcu aliquet.
+                td 19.99
+              tr
+                td Item Three
+                td  Morbi faucibus arcu accumsan lorem.
+                td 29.99
+              tr
+                td Item Four
+                td Vitae integer tempus condimentum.
+                td 19.99
+              tr
+                td Item Five
+                td Ante turpis integer aliquet porttitor.
+                td 29.99
+            tfoot
+              tr
+                td(colspan='2')
+                td 100.00
+        h5 Alternate
+        .table-wrapper
+          table.alt
+            thead
+              tr
+                th Name
+                th Description
+                th Price
+            tbody
+              tr
+                td Item One
+                td Ante turpis integer aliquet porttitor.
+                td 29.99
+              tr
+                td Item Two
+                td Vis ac commodo adipiscing arcu aliquet.
+                td 19.99
+              tr
+                td Item Three
+                td  Morbi faucibus arcu accumsan lorem.
+                td 29.99
+              tr
+                td Item Four
+                td Vitae integer tempus condimentum.
+                td 19.99
+              tr
+                td Item Five
+                td Ante turpis integer aliquet porttitor.
+                td 29.99
+            tfoot
+              tr
+                td(colspan='2')
+                td 100.00
+      section
+        h4 Buttons
+        ul.actions
+          li
+            a.button.special(href='#') Special
+          li
+            a.button(href='#') Default
+        ul.actions
+          li
+            a.button.big(href='#') Big
+          li
+            a.button(href='#') Default
+          li
+            a.button.small(href='#') Small
+        ul.actions.fit
+          li
+            a.button.fit(href='#') Fit
+          li
+            a.button.special.fit(href='#') Fit
+          li
+            a.button.fit(href='#') Fit
+        ul.actions.fit.small
+          li
+            a.button.special.fit.small(href='#') Fit + Small
+          li
+            a.button.fit.small(href='#') Fit + Small
+          li
+            a.button.special.fit.small(href='#') Fit + Small
+        ul.actions
+          li
+            a.button.special.icon.fa-download(href='#') Icon
+          li
+            a.button.icon.fa-download(href='#') Icon
+        ul.actions
+          li
+            span.button.special.disabled Disabled
+          li
+            span.button.disabled Disabled
+      section
+        h4 Form
+        form(method='post', action='#')
+          .row.uniform(class='50%')
+            .6u(class='12u$(xsmall)')
+              input#demo-name(type='text', name='demo-name', value='', placeholder='Name')
+            div(class='6u$ 12u$(xsmall)')
+              input#demo-email(type='email', name='demo-email', value='', placeholder='Email')
+            div(class='12u$')
+              .select-wrapper
+                select#demo-category(name='demo-category')
+                  option(value='') - Category -
+                  option(value='1') Manufacturing
+                  option(value='1') Shipping
+                  option(value='1') Administration
+                  option(value='1') Human Resources
+            .4u(class='12u$(small)')
+              input#demo-priority-low(type='radio', name='demo-priority', checked='')
+              label(for='demo-priority-low') Low
+            .4u(class='12u$(small)')
+              input#demo-priority-normal(type='radio', name='demo-priority')
+              label(for='demo-priority-normal') Normal
+            div(class='4u$ 12u$(small)')
+              input#demo-priority-high(type='radio', name='demo-priority')
+              label(for='demo-priority-high') High
+            .6u(class='12u$(small)')
+              input#demo-copy(type='checkbox', name='demo-copy')
+              label(for='demo-copy') Email me a copy
+            div(class='6u$ 12u$(small)')
+              input#demo-human(type='checkbox', name='demo-human', checked='')
+              label(for='demo-human') Not a robot
+            div(class='12u$')
+              textarea#demo-message(name='demo-message', placeholder='Enter your message', rows='6')
+            div(class='12u$')
+              ul.actions
+                li
+                  input.special(type='submit', value='Send Message')
+                li
+                  input(type='reset', value='Reset')
+      section
+        h4 Image
+        h5 Fit
+        .box.alt
+          .row.uniform(class='50%')
+            .12u
+              span.image.fit
+                img(src='/images/pic06.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic02.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic03.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic04.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic03.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic04.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic02.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic04.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic02.jpg', alt='')
+            .4u
+              span.image.fit
+                img(src='/images/pic03.jpg', alt='')
+        h5 Left & Right
+        p
+          span.image.left
+            img(src='/images/pic05.jpg', alt='')
+          | Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.
+        p
+          span.image.right
+            img(src='/images/pic05.jpg', alt='')
+          | Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.

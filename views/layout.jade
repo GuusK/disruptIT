@@ -1,58 +1,88 @@
-
 doctype html
 
 mixin navEl(name, desiredPath)
-  li(class=path==desiredPath?'active':undefined)
+  li(class=path==desiredPath?'current':undefined)
     a(href=desiredPath)= name
 
 html(lang=locale, prefix='og: http://ogp.me/ns#')
   head
-    title
-      block title
-        | #{title}
-    link(rel='stylesheet', href='/stylesheets/bootstrap/bootstrap.css')
-    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
-    script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
-    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js')
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title AutonomIT - The Computer Science symposium about autonomous systems in Eindhoven
     meta(name='viewport', content='width=device-width, user-scalable=no')
     meta(property='og:image', content='/images/logo.png')
+    meta(http-equiv='content-type', content='text/html; charset=utf-8')
+    meta(name='description', content='The computer science symposium about autonomous systems')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700', rel='stylesheet', type='text/css')
+
+    //if lte IE 8
+      script(src='/css/ie/html5shiv.js')
+    script(src='/js/jquery.min.js')
+    script(src='/js/jquery.scrolly.min.js')
+    script(src='/js/jquery.droptron.min.js')
+    script(src='/js/jquery.scrollgress.min.js')
+    script(src='/js/skel.min.js')
+    script(src='/js/init.js')
+
+    noscript
+      link(rel='stylesheet', href='/css/skel.css')
+      link(rel='stylesheet', href='/css/style.css')
+      link(rel='stylesheet', href='/css/style-xlarge.css')
+
+    link(rel='stylesheet', href='/css/flag-icon.min.css')
+    link(rel='stylesheet', href='/css/font-awesome.min.css')
+    
+    //if lte IE 9
+      link(rel='stylesheet', href='/css/ie/v9.css')
+    //if lte IE 8
+      link(rel='stylesheet', href='/css/ie/v8.css')
   body
-    section.wrapper
-      .navbar.navbar-inverse.navbar-static-top(role='navigation')
-        .container
-          .navbar-header
-            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-              span.sr-only Navigatie activeren
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            a(href='/')
-              img#logo.pull-left(src='/images/logo.png')
-            a.navbar-brand(href='/') AnonymIT
-          .collapse.navbar-collapse
-            ul.nav.navbar-nav
-              +navEl('Home', '/')
-              +navEl('Locatie','/location')
-              
-              li(class=path=='/programme'||path=='/speakers'?'active':undefined).dropdown.my
-                a.dropdown-toggle(data-toggle='dropdown',href='#') Programma
-                ul.dropdown-menu
-                  +navEl('Dagprogramma','/programme')
-                  +navEl('Sprekers','/speakers')
-              li(class=path=='/partners'?'active':undefined).dropdown.my
-                a.dropdown-toggle(data-toggle='dropdown',href='#') Partners
-                ul.dropdown-menu
-                  +navEl('Topicus','/partners/topicus/')
-                  +navEl('Rijksoverheid','/partners/rijksoverheid/')
-                  +navEl('Samenwerkingspartners','/partners/')
+    // Header
+    section#header(class=path!='/'?'small':undefined)
+      nav.alt.reveal
+        a.logo(href='/')
+        ul
+          +navEl('Home', '/')
+          //+navEl('Locatie','/location')
+          
+          li(class=path=='/programme'||path=='/speakers'?'current':undefined).opener
+            a.icon.fa-angle-down Informatie
+            ul.dropdown-menu
+              +navEl('Dagprogramma','/programme')
+              +navEl('Sprekers','/speakers')
               +navEl('Organisatie','/organisation')
-              +navEl('Contact', '/contact')
-            ul.nav.navbar-nav.navbar-right
+              +navEl('Bussen','/busses')
+          li(class=path=='/partners'?'current':undefined).opener
+            a.icon.fa-angle-down Sponsoring
+            ul.dropdown-menu
+              +navEl('Topicus','/partners/topicus/')
+              +navEl('Rijksoverheid','/partners/rijksoverheid/')
+              +navEl('Partners','/partners/')
+          //+navEl('Organisatie','/organisation')
+          //+navEl('Contact', '/contact')
+          if user
+            li.opener
+              a.icon.fa-angle-down= user.email
+              ul.dropdown-menu
+                if user.admin
+                  +navEl('Gebruikers','/users')
+                  +navEl('Mailinglijst','/mailing')
+                  +navEl('Tickets','/tickets')
+                  li.separator
+                +navEl('Mijn profiel','/profile')
+                +navEl('Ticket printen','/tickets/'+ user.ticket)
+                +navEl('Uitloggen','/logout')
+          else
+            +navEl('Inloggen','/login')
+          li
+            a(href='/nl').flag
+              span.flag-icon.flag-icon-squared.flag-icon-nl
 
-              +navEl('Mijn profiel','/profile')
+        br(clear='all')
 
-      block above-content
+      block header
+        .inner
+          p The computer science symposium about autonomous systems
+
+    block above-content
       .container
         if messages.error
           each msg in messages.error
@@ -69,15 +99,26 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
             .alert.alert-success.alert-dismissible
               button(type='button', class='close', data-dismiss='alert') &times;
               div= msg
-        block content
-      .push
-    footer.page
-      .container
-        a.topicus-banner(href='http://www.topicus.nl/')
-          img(src='/images/banner_topicus_800x120.gif' alt='Topicus')
-        p
-          a(href='/opensource') AnonymIT draagt bij aan een open en vrij internet. Jij Ook?
-        //a(href='/opensource') Help mee het internet helpen
-        p
-          :markdown
-              Copyright 2014-2015 AnonymIT | AnonymIT is onderdeel van [SNiC](http://www.snic.nl)
+
+    block content
+  
+    // Footer
+    section#footer
+      ul.icons
+        li
+          a.icon.alt.fa-twitter(target='_blank', href='https://twitter.com/autonomit')
+            span.label Twitter
+        li
+          a.icon.alt.fa-facebook(target='_blank', href='https://www.facebook.com/StichtingNationaalinformaticaCongres')
+            span.label Facebook
+        // <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+        li
+          a.icon.alt.fa-github(target='_blank', href='https://github.com/iamDecode/AutonomIT')
+            span.label GitHub
+        li
+          a.icon.alt.fa-envelope(href='mailto:secretaris@autonom.it')
+            span.label Email
+      ul.copyright
+        li
+          | © AutonomIT 2015
+

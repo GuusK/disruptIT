@@ -1,0 +1,57 @@
+/*
+	Photon by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Basic */
+.u6.center,
+.u8.center {
+	width: 100%;
+}
+
+#header.small +.container +.main {
+		padding-top: 1.5em;
+	}
+
+/* List */
+
+	ul.major-icons li {
+		padding: 2em;
+	}
+
+		ul.major-icons li .icon {
+			height: 7em;
+			line-height: 7em;
+			width: 7em;
+		}
+
+/* Main */
+
+	.main {
+		padding: 5em 3em 3em 3em;
+	}
+
+/* Header */
+
+	#header {
+		padding: 8em 3em 8em 3em;
+	}
+
+/* Footer */
+
+	#footer {
+		padding: 5em 3em 5em 3em;
+	}
+
+/* One */
+
+	#one {
+		text-align: center;
+	}
+
+/* Two */
+
+	#two {
+		text-align: center;
+	}

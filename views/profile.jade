@@ -2,43 +2,48 @@ extends layout
 block title
   | Profiel
 block content
-  h1=__('Profiel')
-  form#settings(method='post')
-    .form-group
-      .checkbox
-        label
-          input(type='checkbox',name='vegetarian', checked=user.vegetarian? "checked": undefined)
-          | Ik eet vegetarisch
-    if isbus_quickhack
-      .form-group
-        .checkbox
-          label
-            input(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
-            | Ik wil meerijden met de bus
- 
-    .form-group
-      label(for='lezing1') Voorkeurlezing eerste parallelle sessie
-      select.form-control(name='lezing1')
-        option(value='', selected=!user.lezing1?'selected':undefined) Geen voorkeur
-        option(value='eric', selected=user.lezing1=='eric'?'selected':undefined) Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
-        option(value='thomas', selected=user.lezing1=='thomas'?'selected':undefined) Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
-    .form-group
-      label(for='lezing2') Voorkeurlezing tweede parallelle sessie
-      select.form-control(name='lezing2')
-        option(value='', selected) Geen voorkeur
-        option(value='michiel', selected=user.lezing2=='michiel'?'selected':undefined) Terug naar de tekentafel: ARPA2.net
-        option(value='harm', selected=user.lezing2=='harm'?'selected':undefined) SBox - Tor-enabled WiFi router
-    .form-group
-      label(for='lezing3') Voorkeurlezing derde parallelle sessie
-      select.form-control(name='lezing3')
-        option(value='', selected=!user.lezing3?'selected':undefined) Geen voorkeur
-        option(value='johan', selected=user.lezing3=='johan'?'selected':undefined) Online video streamen met anonimiteit
-        option(value='roel', selected=user.lezing3=='roel'?'selected':undefined)  Rabobank en Cryptocurrencies, met open vizier?
-    .form-group
-      label(for='specialNeeds') Speciale opmerkingen (e.g. allergie)
-      input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
-    .form-group
-      button.btn.btn-primary(type='submit') Sla instellingen op
-  a.btn.btn-primary(href='/tickets/'+ user.ticket) Ticket printen
-  div  
-    a.btn(href='/logout') Uitloggen
+  section.main.style1.profile
+    .container
+      .row(class='0%')
+        header
+          h2 Profiel
+          p= ucfirst(user.firstname) + ' ' + user.surname +' ('+ verenigingen[user.vereniging].name +')'
+
+        br(clear='all')
+
+        form#settings(method='post')
+          .form-group
+            .checkbox
+              input#vegetarian(type='checkbox',name='vegetarian', checked=user.vegetarian? "checked": undefined)
+              label(for='vegetarian') Ik eet vegetarisch
+          if isbus_quickhack
+            .form-group
+              .checkbox
+                input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
+                label(for='bus') Ik wil meerijden met de bus
+       
+          .form-group
+            label(for='lezing1') Voorkeurlezing eerste parallelle sessie
+            div.select-wrapper
+              select.form-control(name='lezing1')
+                option(value='', selected=!user.lezing1?'selected':undefined) Geen voorkeur
+                option(value='eric', selected=user.lezing1=='eric'?'selected':undefined) Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
+                option(value='thomas', selected=user.lezing1=='thomas'?'selected':undefined) Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
+          .form-group
+            label(for='lezing2') Voorkeurlezing tweede parallelle sessie
+            div.select-wrapper
+              select.form-control(name='lezing2')
+                option(value='', selected) Geen voorkeur
+                option(value='michiel', selected=user.lezing2=='michiel'?'selected':undefined) Terug naar de tekentafel: ARPA2.net
+                option(value='harm', selected=user.lezing2=='harm'?'selected':undefined) SBox - Tor-enabled WiFi router
+          .form-group
+            label(for='lezing3') Voorkeurlezing derde parallelle sessie
+            div.select-wrapper
+              select.form-control(name='lezing3')
+                option(value='', selected=!user.lezing3?'selected':undefined) Geen voorkeur
+                option(value='johan', selected=user.lezing3=='johan'?'selected':undefined) Online video streamen met anonimiteit
+                option(value='roel', selected=user.lezing3=='roel'?'selected':undefined)  Rabobank en Cryptocurrencies, met open vizier?
+          .form-group
+            label(for='specialNeeds') Speciale opmerkingen (e.g. allergie)
+            input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
+            button.button.special(type='submit') Sla instellingen op

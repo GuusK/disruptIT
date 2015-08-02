@@ -60,6 +60,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req,res,next){
   res.locals.path = req.path;
   res.locals.user = req.user;
+  res.locals.ucfirst = function(value){
+    return value.charAt(0).toUpperCase() + value.slice(1);
+  };
+  res.locals.verenigingen = config.verenigingen;
   next()
   ;
 });

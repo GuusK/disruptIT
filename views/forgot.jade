@@ -1,9 +1,14 @@
 extends layout
 
 block content
-  h1 Wachtwoord vergeten
-  form(method='POST')
-    .form-group
-      label(for='email') Email
-      input.form-control(type='text', name='email', autofocus)
-    button.btn.btn-primary(type='submit') Wachtwoord resetten
+  section.main.style1
+    .container
+      .row(class='0%')
+        .u6.center(class='12u$(medium)')
+          h2 Wachtwoord vergeten
+          form(method='POST')
+            label(for='email') Email
+            input.form-control(type='text', name='email', autofocus)
+           
+            button.button.special(type='submit') Wachtwoord resetten
+            a(href='/login') &laquo; Terug naar login

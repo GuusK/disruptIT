@@ -1,39 +1,50 @@
 extends ../layout
 
 block content
-  h1=title
-  p.
-      Zonder onze partners is het organiseren van een congres niet mogelijk. De volgende partners hebben zich bij ons congres aangesloten.
-  .row
-    .ad.col-xs-6.col-md-4.col-md-offset-2
-      a.thumbnail(href="/partners/topicus")
-        img(src="/images/topicus.png")
-    .ad.col-xs-6.col-md-4
-      a.thumbnail(href="http://www.rijksoverheid.nl/")
-            img(src="/images/rijksoverheid.png")
-  .row
-    .ad.col-xs-6.col-md-4.col-md-offset-2
-      a.thumbnail(href="http://www.asml.com/")
-        img(src="/images/asml.jpg")
-    .ad.col-xs-6.col-md-4
-      a.thumbnail(href="http://www.rabobank.nl/")
-        img(src="/images/rabobank.jpg")
-  .row
-    .ad.col-xs-6.col-md-4.col-md-offset-2
-      a.thumbnail(href="http://www.quinity.nl/")
-        img(src="/images/quinity.png")
-    .ad.col-xs-6.col-md-4
-      a.thumbnail(href="http://www.infosupport.com")
-        img(src="/images/infosupport.png")
-  .row
-    .ad.col-xs-6.col-md-4.col-md-offset-2
-      a.thumbnail(href="http://www.procam.nl/")
-        img(src="/images/procam.jpg")
-    .ad.col-xs-6.col-md-4
-      a.thumbnail(href="http://www.capgemini.nl/")
-        img(src="/images/capgemini.png")
-  .row
-    .ad.col-xs-6.col-md-4.col-md-offset-2
-      a.thumbnail(href="http://nlnet.nl/")
-        img(src="/images/nlnet.png")
+  section.main.style1.partners
+    .container
+      .row(class='0%')
+        h2=title
+        p.
+            Zonder onze partners is het organiseren van een congres niet mogelijk. De volgende partners hebben zich bij ons congres aangesloten.
+        
+        .row.uniform(class='50%')
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="/partners/topicus")
+              span.image.fit
+                img(src="/images/topicus.png")
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="http://www.rijksoverheid.nl/", target='_blank')
+              span.image.fit
+                img(src="/images/rijksoverheid.png")
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="http://www.asml.com/", target='_blank')
+              span.image.fit
+                img(src="/images/asml.jpg")
+          
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="http://www.rabobank.nl/", target='_blank')
+              span.image.fit
+                img(src="/images/rabobank.jpg")
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="http://www.quinity.nl/", target='_blank')
+              span.image.fit
+                img(src="/images/quinity.png")
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="http://www.infosupport.com", target='_blank')
+              span.image.fit
+                img(src="/images/infosupport.png")
+        
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="http://www.procam.nl/", target='_blank')
+              span.image.fit
+                img(src="/images/procam.jpg")
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="http://www.capgemini.nl/", target='_blank')
+              span.image.fit
+                img(src="/images/capgemini.png")
+          .4u(class='6u$(medium)')
+            a.thumbnail(href="http://nlnet.nl/", target='_blank')
+              span.image.fit
+                img(src="/images/nlnet.png")
 

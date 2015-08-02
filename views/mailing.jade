@@ -1,9 +1,12 @@
 extends layout
 block  content
-  .col-md-offset-3.col-md-6
-    h1 Mailinglijst
-    form(method='POST')
-      .form-group
-        label(for='email') E-mailadres
-        input.form-control(type='email', name='email', id='email', placeholder='foo@bar.com', required)
-      button(type='submit' class='btn btn-default') Meld je aan voor de mailinglijst
+  section.main.style1
+    .container
+      .row(class='0%')
+        h2 Mailinglijst
+        .6u
+          form(method='POST')
+            .form-group
+              label(for='email') E-mailadres
+              input.form-control(type='email', name='email', id='email', placeholder='foo@bar.com', required)
+            button.button.special(type='submit' class='btn btn-default') Meld je aan voor de mailinglijst

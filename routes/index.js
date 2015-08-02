@@ -21,7 +21,7 @@ function auth(req, res, next) {
 function adminAuth(req, res, next) {
   if (!req.user || !req.user.admin) {
     req.session.lastPage = req.path;
-    req.flash('info', 'Je moet als admin inloggen om de pagina' + req.path + ' te bezoeken.');
+    req.flash('info', 'Je moet als admin inloggen om de pagina ' + req.path + ' te bezoeken.');
     return res.redirect('/login');
   }
   next();
@@ -29,13 +29,13 @@ function adminAuth(req, res, next) {
 
 /* GET home page. */
 router.get('/', function (req, res) {
-  res.render('index', { title: 'AnonymIT' });
+  res.render('index', { title: 'AutonomIT' });
 });
 
 
-router.get('/about', function (req,res) {
+/*router.get('/about', function (req,res) {
   res.render('about', {title: 'About'});
-});
+});*/
 
 
 router.get('/partners', function (req,res) {
@@ -85,15 +85,19 @@ router.post('/profile', auth, function (req, res) {
     else
     {
       console.log(err);
-      req.flash('error', 'er ging iets mis');
+      req.flash('error', 'Er ging iets mis!');
       res.redirect('/profile');
     }
   });
 
 });
 
-router.get('/location', function (req, res) {
+/*router.get('/location', function (req, res) {
   res.render('location', {title: 'Locatie'});
+});*/
+
+router.get('/busses', function (req, res) {
+  res.render('busses', {title: 'Bussen'});
 });
 
 router.get('/speakers', function (req, res) {
@@ -131,19 +135,19 @@ router.get('/users', adminAuth, function (req,res,next) {
 
 
   if (req.query.firstname) {
-    query.firstname = req.query.firstname;
+    query.firstname = { $regex: new RegExp(req.query.firstname, 'i') };
   }
   if (req.query.surname) {
-    query.surname = req.query.surname;
+    query.surname = { $regex: new RegExp(req.query.surname, 'i') };
   }
   if (req.query.vereniging) {
-    query.vereniging = req.query.vereniging;
+    query.vereniging = { $regex: new RegExp(req.query.vereniging, 'i') };
   }
   if (req.query.ticket) {
-    query.ticket = req.query.ticket;
+    query.ticket = { $regex: new RegExp(req.query.ticket, 'i') };
   }
   if (req.query.aanwezig) {
-    query.aanwezig = req.query.aanwezig;
+    query.aanwezig = { $regex: new RegExp(req.query.aanwezig, 'i') };
   }
 
   User.find(query).sort({'vereniging':1,'firstname':1}).exec( function (err, results) {
@@ -167,7 +171,7 @@ router.post('/users/:id', adminAuth, function (req,res,next) {
     result.aanwezig = req.body.aanwezig;
     result.save(function(err) {
       if (err) {return next(err); }
-      req.flash('success', 'aangepast');
+      req.flash('success', 'Gebruiker aangepast!');
       return res.redirect('/users/'+req.params.id);
     });
   });
@@ -177,7 +181,7 @@ router.post('/aanmelden', adminAuth, function (req,res,next) {
   var ticket = req.body.ticket;
   User.findOne({ticket:ticket}, function (err, result) {
     if (err) {
-      req.flash('error', 'Iets is er misgegaan. Zoek Arian');
+      req.flash('error', 'Iets is er misgegaan. Zoek Dennis');
       return res.redirect('/users');
     }
 
@@ -191,7 +195,7 @@ router.post('/aanmelden', adminAuth, function (req,res,next) {
     }
     result.aanwezig = true;
     result.save(function (err) {
-      if (err) { req.flash('error', 'Iets is er misgegaan. Zoek Arian'); return res.redirect('/users'); }
+      if (err) { req.flash('error', 'Iets is er misgegaan. Zoek Dennis'); return res.redirect('/users'); }
       req.flash('success', 'Ticket aangemeld');
       res.redirect('/users');
     });

@@ -1,0 +1,137 @@
+/*
+	Photon by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/* Basic */
+
+	body, input, select, textarea {
+		font-size: 11pt;
+	}
+
+	h1 {
+		font-size: 1.75em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	h3 {
+		font-size: 1.1em;
+	}
+
+	h4 {
+		font-size: 1em;
+	}
+
+/* List */
+
+	ul.major-icons li {
+		padding: 1.5em;
+	}
+
+		ul.major-icons li .icon {
+			height: 5em;
+			line-height: 5em;
+			width: 5em;
+		}
+
+			ul.major-icons li .icon:before {
+				font-size: 42px;
+			}
+
+/* Icon */
+
+	.icon.major {
+		margin: 0 0 1em 0;
+	}
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		height: 3em;
+		line-height: 3em;
+	}
+
+/* Main */
+
+	.main {
+		padding: 3em 1.5em 1em 1.5em;
+	}
+
+/* Header */
+
+	#header {
+		padding: 4em 3em 4em 3em;
+	}
+
+		#header .actions {
+			margin: 2em 0 0 0;
+		}
+
+		nav a.logo {
+			width: 203px !important;
+			height: 29px !important;
+		}
+
+		nav {
+			padding-bottom: 15px; 
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: auto;
+			z-index: 999;
+		}
+		nav.toggled {
+			background-image: linear-gradient(45deg, #523fda 0%, #2f63c6 30%, #0d90b1);	
+			opacity: 0.93;
+		}
+		nav.alt {padding-bottom: 0px; bottom: 0; }
+
+		nav > ul {
+			margin-top: -10px; 
+			display: none; 
+			width: 100%;
+			overflow: hidden;
+		}
+		nav.toggled ul {
+			display: block;
+		}
+		nav > ul:first-of-type {
+			margin-top: 50px;
+		}
+
+		nav ul li {
+			float: right;
+			clear: both;
+		}
+
+		nav::after {
+			font-family:'FontAwesome';
+			content:"\f0c9";
+			font-size: 35px;
+			font-weight: normal;
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			z-index: 999999;
+		}
+		nav:active::after {
+			opacity: 0.5;
+		}
+
+		nav a.flag {
+			margin: 13px 13px 0 0 ;
+		}
+
+/* Footer */
+
+	#footer {
+		padding: 3em 1.5em 3em 1.5em;
+	}

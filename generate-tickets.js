@@ -12,14 +12,15 @@ function genTicket(cb) {
 }
 var tasks = [];
 
-
-var n = + process.argv[1];
+var n = + process.argv[2];
 
 for (var i = 0; i < n; i++) {
   tasks.push(genTicket);
 }
-async.parallel(tasks,function (err) {
+async.parallel(tasks, function(err) {
   if (err) {
     console.log(err);
   }
+  console.log('Tickets generated!');
+  process.exit();
 });

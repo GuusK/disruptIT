@@ -2,24 +2,30 @@ extends ../layout
 block title
   | Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
 block content
-  h1 Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
-  .row
-    .col-md-8
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/thomas.jpg')
-        .col-sm-8
-          h3 Thomas Markus
-          h4 Topicus
-    .col-md-8
-      :markdown
-        Scherm je nog steeds gegevens af met een wachtwoord? Wat ouderwets (en gevaarlijk)!
+  section.main.style1
+    .container
+      .row(class='0%')
+        h2 Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
+        .row(class='spaced 200%')
+          .12u
+            span.image.right(style='margin-top: 70px')
+              img.avatar(src='/images/thomas.jpg')
+            
+            header
+              h3 Thomas Markus
+              p Topicus
 
-        De meeste cloudoplossingen slaan gegevens als plaintext op en schermen het af met een gebruikersnaam en wachtwoord. We weten al enige tijd dat normale stervelingen regelmatig wachtwoorden hergebruiken of zwakke wachtwoorden kiezen. In reactie hierop introduceren de meeste bedrijven extra oplossingen zoals hardware-tokens (verplicht bij meeste banken) of biometrische verificatie (zie Apple's Touch ID). Dit suggereert dat gegevens beter beschermd zijn, maar de werkwijze lijkt op het sprookje: "De nieuwe kleren van de keizer" van Hans Christian Andersen. Al deze constructies zijn niets meer dan een 'extra wachtwoord' wat de gebruiker niet zelf mag verzinnen, maar moet genereren. Aan de opslag van de achterliggende gegevens verandert niets en dat is op z'n minst vreemd. Het veronderstelt een absoluut en geheel vertrouwen in de organisatie die de data beheert. Gegevens blijven gewoon in plain-text in een database staan met alle gevolgen van dien bij een hack of nieuwsgierig overheid.
+            :markdown
+              Scherm je nog steeds gegevens af met een wachtwoord? Wat ouderwets (en gevaarlijk)!
 
-        Moeten we dit eigenlijk wel accepteren? Zijn er alternatieven en hoe ziet een radicaal alternatief er dan uit? In dit praatje zal ik een overzicht geven van Freenet; een p2p encrypted anonymous data store. Nodes als onderdeel van Freenet slaan lokaal encrypted blobs op waardoor niemand weet welke gegevens op welke locatie zijn opgeslagen. Een slim routeringsalgorithme maakt het bovendien zeer lastig om te achterhalen wie welke gegevens download of upload (in tegenstelling tot Bittorrent). Applicaties binnen Freenet zoals forums, social media, e-mail en chat, zijn spam-proof, robuust en volledig gedistribueerd. Hierdoor is een dienst onmogelijk te herleiden naar een persoon of individueel systeem (in tegenstelling tot TOR/i2p hidden services). Hoe ziet een radicaal anoniem en beveiligd Internet eruit? Neem gerust een kijkje.
+              De meeste cloudoplossingen slaan gegevens als plaintext op en schermen het af met een gebruikersnaam en wachtwoord. We weten al enige tijd dat normale stervelingen regelmatig wachtwoorden hergebruiken of zwakke wachtwoorden kiezen. In reactie hierop introduceren de meeste bedrijven extra oplossingen zoals hardware-tokens (verplicht bij meeste banken) of biometrische verificatie (zie Apple's Touch ID). Dit suggereert dat gegevens beter beschermd zijn, maar de werkwijze lijkt op het sprookje: "De nieuwe kleren van de keizer" van Hans Christian Andersen. Al deze constructies zijn niets meer dan een 'extra wachtwoord' wat de gebruiker niet zelf mag verzinnen, maar moet genereren. Aan de opslag van de achterliggende gegevens verandert niets en dat is op z'n minst vreemd. Het veronderstelt een absoluut en geheel vertrouwen in de organisatie die de data beheert. Gegevens blijven gewoon in plain-text in een database staan met alle gevolgen van dien bij een hack of nieuwsgierig overheid.
 
-        Bezoekers van deze lezing ontvangen gratis een Yubikey - verbeter de wereld, begin bij jezelf.
+              Moeten we dit eigenlijk wel accepteren? Zijn er alternatieven en hoe ziet een radicaal alternatief er dan uit? In dit praatje zal ik een overzicht geven van Freenet; een p2p encrypted anonymous data store. Nodes als onderdeel van Freenet slaan lokaal encrypted blobs op waardoor niemand weet welke gegevens op welke locatie zijn opgeslagen. Een slim routeringsalgorithme maakt het bovendien zeer lastig om te achterhalen wie welke gegevens download of upload (in tegenstelling tot Bittorrent). Applicaties binnen Freenet zoals forums, social media, e-mail en chat, zijn spam-proof, robuust en volledig gedistribueerd. Hierdoor is een dienst onmogelijk te herleiden naar een persoon of individueel systeem (in tegenstelling tot TOR/i2p hidden services). Hoe ziet een radicaal anoniem en beveiligd Internet eruit? Neem gerust een kijkje.
 
-        ## Korte biografie
-        Na een periode van onderzoek aan de UU werkt Thomas nu ruim een jaar bij Topicus Onderwijs als software developer. Kenmerkend aan Thomas is zijn sporadisch gebruik van PGP, haat-liefde verhouding met Java en naast zijn allergie voor bureaucratie, is hij ook een vervelende-vragen-steller. Daarnaast altijd te porren voor een esthetische discussie over functionele, logische of imperatieve programmeertalen of een potje Starcraft!
+              Bezoekers van deze lezing ontvangen gratis een Yubikey - verbeter de wereld, begin bij jezelf.
+
+              ## Korte biografie
+              Na een periode van onderzoek aan de UU werkt Thomas nu ruim een jaar bij Topicus Onderwijs als software developer. Kenmerkend aan Thomas is zijn sporadisch gebruik van PGP, haat-liefde verhouding met Java en naast zijn allergie voor bureaucratie, is hij ook een vervelende-vragen-steller. Daarnaast altijd te porren voor een esthetische discussie over functionele, logische of imperatieve programmeertalen of een potje Starcraft!
+
+
+        a(href='/speakers') &laquo; Terug naar sprekers

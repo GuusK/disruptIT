@@ -1,76 +1,68 @@
 extends layout
 block content
-  h1 Programma
-  table.table
-    thead
-      tr
-        th Tijd
-        th Activiteit
-    tbody
-      tr
-        td 10.30
-        td Aankomst en ontvangst
-      tr
-        td 11.00
-        td Opening
-      tr
-        td 11.30
-        td
-          h4 Douwe Schmidt (Greenhost)
-          a(href='/speakers/douwe') Team Human
-      tr
-        td 12.30
-        td
-          table
+  section.main.style1
+    .container
+      .row(class='0%')
+        h2 Programma
+        table.table
+          thead
             tr
+              th Tijd
+              th Technische track
+              th Maatschappelijke track
+          tbody
+            tr
+              td 10.30
+              td(colspan='2') Aankomst en ontvangst
+            tr
+              td 11.00
+              td(colspan='2') Opening
+            tr
+              td 11.30
+              td(colspan='2')
+                b Douwe Schmidt (Greenhost)
+                a(href='/speakers/douwe') Team Human
+            tr
+              td 12.30
               td
-                h4 Eric Verheul (KeyControls - Op persoonlijke titel)
+                b Eric Verheul (KeyControls - Op persoonlijke titel)
                 a(href='/speakers/eric') Polymorfe Pseudonimisering: een basis voor een derde generatie eID-stelsel? 
-            tr
               td
-                h4 Thomas Markus (Topicus)
+                b Thomas Markus (Topicus)
                 a(href='/speakers/thomas') Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
-      tr
-        td 13.30
-        td Lunch
-      tr
-        td 14.30
-        td
-          table
             tr
+              td 13.30
+              td(colspan='2') Lunch
+            tr
+              td 14.30
               td
-                h4 Michiel Leenaars (NLNet) en Rick van Rein (internetwide.org)
+                b Michiel Leenaars (NLNet) en Rick van Rein (internetwide.org)
                 a(href='/speakers/arpa2') Terug naar de tekentafel: ARPA2.net
-            tr
               td
-                h4 Harm Boertien en Daan Spitz 
+                b Harm Boertien en Daan Spitz 
                 i SBox, tor-enabled wifi router
-      tr
-        td 15.30
-        td
-          table
             tr
+              td 15.30
               td
-                h4 Johan Pouwelse (Tribler)
+                b Johan Pouwelse (Tribler)
                 a(href='/speakers/johan') Online video streaming met anonimiteit
-            tr
               td
-                h4 Roel Steenbergen (Rabobank)
+                b Roel Steenbergen (Rabobank)
                 a(href='/speakers/roel') Rabobank en Cryptocurrencies, met open vizier?
-      tr
-        td 16.30
-        td
-          h4 Guido van 't Noordende (UvA)
-          a(href='/speakers/guido') Talk over het EPD
-      tr
-        td 17.15
-        td Afsluiting
-      tr
-        td 17.30
-        td Borrel
-      tr
-        td 18.30
-        td Diner
-      tr
-        td 20.00
-        td Einde. Verenigingen terug met bussen.
+            tr
+              td 16.30
+              td(colspan='2')
+                b Guido van 't Noordende (UvA)
+                a(href='/speakers/guido') Talk over het EPD
+            tr
+              td 17.15
+              td(colspan='2') Afsluiting
+            tr
+              td 17.30
+              td(colspan='2') Borrel
+            tr
+              td 18.30
+              td(colspan='2') Diner
+            tr
+              td 20.00
+              td(colspan='2') Einde. Verenigingen terug met bussen.

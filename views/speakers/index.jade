@@ -1,159 +1,182 @@
 extends ../layout
 
+mixin sprekerBlock(image, name, company, description, talkName, talkLink)
+  .6u(class='12u$(medium)')
+    span.image.right
+      img.avatar(src=image)
+
+    header
+      h3= name
+      p= company
+    p.small=description
+    a.tile(href=talkLink)
+      span
+      span
+        b= talkName
+
 
 block content
-  h1 Sprekers
+  section.main.style1.talks
+    .container
+      .row(class='0%')
+        h2 Sprekers
 
-  .row
-    .col-md-6.col-xs-offset-1.col-md-offset-0
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/dosch.jpg')
-        .col-sm-8
-          h3#douwe Douwe Schmidt
-          a(href='/speakers/douwe') Openingslezing
-          h4 Greenhost 
-          p.
-             Douwe Schmidt is oprichter van het Privacy Café: een landelijke workshop voor digitale veiligheid  en werknemer bij privacy bewust webhosting bedrijf Greenhost. Hij schrijft voor de Correspondent over de zoektocht naar z’n digitale alter-ego en technische oplossingen voor de surveillance staat. Hij organiseert de succesvolle TA3M avonden waarin workshops, presentaties en discussies worden gehouden over digitale verdedigingstechnieken en is verantwoordelijk voor Noisy Square; bijeenkomsten tijdens hackerfestivals in Nederland, Duitsland en de Verenigde Staten met een nadruk op de politiek en sociale implicaties van techniek. 
-    .col-md-6.col-xs-offset-1.col-md-offset-0
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/thomas.jpg')
-        .col-sm-8
-          h3#thomas Thomas Markus
-          a(href='/speakers/thomas') Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
-          h4 Topicus
-          p.
-            Na een periode van onderzoek aan de UU werkt Thomas nu ruim een jaar bij Topicus Onderwijs als software developer. Kenmerkend aan Thomas is zijn sporadisch gebruik van PGP, haat-liefde verhouding met Java en naast zijn allergie voor bureaucratie, is hij ook een vervelende-vragen-steller. Daarnaast altijd te porren voor een esthetische discussie over functionele, logische of imperatieve programmeertalen of een potje Starcraft! 
+        .row(class='spaced 200%')
+          +sprekerBlock(
+            '/images/dosch.jpg', 
+            'Douwe Schmidt', 
+            'Greenhost',
+            'Douwe Schmidt is oprichter van het Privacy Café: een landelijke workshop \
+            voor digitale veiligheid  en werknemer bij privacy bewust webhosting bedrijf \
+            reenhost. Hij schrijft voor de Correspondent over de zoektocht naar z’n \
+            digitale alter-ego en technische oplossingen voor de surveillance staat. \
+            Hij organiseert de succesvolle TA3M avonden waarin workshops, presentaties \
+            en discussies worden gehouden over digitale verdedigingstechnieken en is \
+            verantwoordelijk voor Noisy Square; bijeenkomsten tijdens hackerfestivals \
+            in Nederland, Duitsland en de Verenigde Staten met een nadruk op de politiek\
+            en sociale implicaties van techniek.',
+            'Openingslezing',
+            '/speakers/douwe')
 
-  .row
-    .col-md-6.col-xs-offset-1.col-md-offset-0
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/leenaars.jpg')
-        .col-sm-8
-          h3 Michiel Leenaars
-          a(href='/speakers/arpa2') Terug naar de tekentafel: ARPA2.net
-          h4 NLNet / ISOC
-          p.
-            Michiel Leenaars is directeur strategie van stichting NLnet en daarnaast
-            directeur van vereniging Internet Society Nederland. Hij is bestuurlijk
-            actief binnen allerlei organisaties, onder meer als lid van het bestuur
-            van OpenDoc Society (vice-voorzitter), Stichting Accessibility en
-            Petities.nl. Daarnaast is hij liaison officer bij het Benelux-kantoor
-            van het World Wide Web Consortium, en betrokken als adviseur bij diverse
-            startups en open source-initiatieven. Hij studeerde Technische
-            Natuurkunde aan de Technische Universiteit Eindhoven en Theorie en
-            Geschiedenis van de Literatuur/Communicatie in woord en beeld aan de
-            Universiteit van Tilburg.
-    .col-md-6.col-xs-offset-1.col-md-offset-0
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/rick.jpg')
-        .col-sm-8
-          h3 Dr. ir. Rick van Rein
-          a(href='/speakers/arpa2') Terug naar de tekentafel: ARPA2.net
-          h4 ARPA2.net
-          p.
-            Dr.ir. Rick van Rein is cryptograaf en hoofdarchitect van ARPA2.net. Hij
-            is oprichter van OpenFortress, een onafhankelijk bureau dat
-            gespecialiseerd is in beveiliging van netwerkprotocollen en
-            privacy-gerelateerde technologie. In internetstandardisatiekringen houdt
-            Rick zich ondermeer bezig met IPv6, DNSSEC, SIP, Kerberos, TLS, OpenPGP
-            en X.509. Hij is in 2002 gepromoveerd aan Universiteit Twente op
-            bewijsvorming van procesmodellen, maar zijn oorspronkelijke
-            LTS-opleiding laat zich ook nog goed voelen in zijn resultaatgerichte
-            aanpak en handigheid met praktische zaken. Hij is actief in een groot
-            aantal open source projecten, waaronder OpenDNSSEC, 0cpm Firmerware en
-            6bed4.
-  .row
+          +sprekerBlock(
+            '/images/thomas.jpg', 
+            'Thomas Markus', 
+            'Topicus',
+            'Na een periode van onderzoek aan de UU werkt Thomas nu ruim een jaar \
+            bij Topicus Onderwijs als software developer. Kenmerkend aan Thomas is \
+            zijn sporadisch gebruik van PGP, haat-liefde verhouding met Java en naast \
+            zijn allergie voor bureaucratie, is hij ook een vervelende-vragen-steller. \
+            Daarnaast altijd te porren voor een esthetische discussie over functionele, \
+            logische of imperatieve programmeertalen of een potje Starcraft!',
+            'Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat',
+            '/speakers/thomas')
 
-  .row
-    .col-md-6.col-xs-offset-1.col-md-offset-0
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/guido.jpg')
-        .col-sm-8
-          h3#guido Guido van 't Noordende
-          a(href='/speakers/guido') Talk over het EPD
-          h4 UvA
-          p.
-            Guido van ’t Noordende is onderzoeker in het gebied van System and Network Engineering. Hij houdt zich onder andere bezig met de veiligheid en privacy binnen gedistribueerde systemen en leidt ook het subprogramma van het Nederlandse project COMMIT binnen dit veld. Hiernaast is hij een expert op het gebied van veiligheid van het Elektronisch Patiënten Dossier (EPD), waar hij zijn talk op deze editie van het SNiC over gaat houden.
-    .col-md-6.col-xs-offset-1.col-md-offset-0
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/eric.jpg')
-        .col-sm-8
-          h3#eric Eric Verheul
-          a(href='/speakers/eric') Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
-          h4 KeyControls 
-          p Eric Verheul is part-time professor in de Digital Security Group van de Radboud Universiteit en werkt daarnaast als zelfstandig consultant. Eric is gepromoveerd in de wiskunde en is sinds 1993 actief binnen de informatiebeveiliging toen hij startte als beveiligingsanalist voor  Binnenlandse zaken Koninkrijksrelaties. Na werkzaam geweest te zijn als universitair docent binnen de cryptografiegroep van de technische universiteit Eindhoven, trad hij in 1999 in dienst bij PwC waar hij actief was in de (technische) informatiebeveiliging en ICT auditing. Sinds 2012 werkt hij vanuit zijn eigen bedrijf.
-  .row
-   .col-md-6.col-xs-offset-1.col-md-offset-0
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/roel.jpg')
-        .col-sm-8
-          h3#roel Roel Steenbergen
-          a(href='/speakers/roel') Rabobank en Cryptocurrencies, met open vizier?
-          h4 Innovation Manager Rabobank Nederland Group IT
-          :markdown
-            I do believe that the current era of fast evolving and industry disrupting technologies provide a lot of 
-            opportunities for businesses, startups or corporates. But you have to see and grasp them. This is the 
-            field I like to work in. Preach and practice! I like to bring the outside world in the company, not just 
-            by giving presentations about relevant trends but also by trying and proving. That’s why we at our 
-            innovation team initiate a lot of proof of concept projects. Some examples of projects I worked, or 
-            am working on, are: 
+        .row(class='spaced 200%')
+          +sprekerBlock(
+            '/images/leenaars.jpg', 
+            'Michiel Leenaars', 
+            'NLNet / ISOC',
+            'Michiel Leenaars is directeur strategie van stichting NLnet en daarnaast\
+            directeur van vereniging Internet Society Nederland. Hij is bestuurlijk\
+            actief binnen allerlei organisaties, onder meer als lid van het bestuur\
+            van OpenDoc Society (vice-voorzitter), Stichting Accessibility en\
+            Petities.nl. Daarnaast is hij liaison officer bij het Benelux-kantoor\
+            van het World Wide Web Consortium, en betrokken als adviseur bij diverse\
+            startups en open source-initiatieven. Hij studeerde Technische\
+            Natuurkunde aan de Technische Universiteit Eindhoven en Theorie en\
+            Geschiedenis van de Literatuur/Communicatie in woord en beeld aan de\
+            Universiteit van Tilburg.',
+            'Blabla talk naam',
+            '#')
 
-            * Biometric authentication, 
-            * Social Business content marketing, 
-            * How to use Crypto currencies for International payments ,
-            * Cognitive computing for complex financial questions
-            * Bartering for local communities
+          +sprekerBlock(
+            '/images/rick.jpg', 
+            'Dr. ir. Rick van Rein', 
+            'ARPA2.net',
+            'Dr.ir. Rick van Rein is cryptograaf en hoofdarchitect van ARPA2.net. Hij\
+              is oprichter van OpenFortress, een onafhankelijk bureau dat\
+              gespecialiseerd is in beveiliging van netwerkprotocollen en\
+              privacy-gerelateerde technologie. In internetstandardisatiekringen houdt\
+              Rick zich ondermeer bezig met IPv6, DNSSEC, SIP, Kerberos, TLS, OpenPGP\
+              en X.509. Hij is in 2002 gepromoveerd aan Universiteit Twente op\
+              bewijsvorming van procesmodellen, maar zijn oorspronkelijke\
+              LTS-opleiding laat zich ook nog goed voelen in zijn resultaatgerichte\
+              aanpak en handigheid met praktische zaken. Hij is actief in een groot\
+              aantal open source projecten, waaronder OpenDNSSEC, 0cpm Firmerware en\
+              6bed4.',
+            'Terug naar de tekentafel: ARPA2.net',
+            '/speakers/arpa2')
 
-            Innovation is not “invented” by a team but can come from anywhere within the organization. By 
-            organizing Innovation courses and trend sessions , providing tools, help and feedback we try to help 
-            bringing ideas further.
-    .col-md-6.col-xs-offset-1.col-md-offset-0
-      .row.spreker
-        .col-sm-4
-          img.avatar(src='/images/johan.jpg')
-        .col-sm-8
-          h3#johan Johan Pouwelse
-          a(href='/speakers/johan') Online video streaming met anonimiteit
-          h4 Tribler
-          :markdown
-            Dr. Johan Pouwelse is werkzaam bij de TU Delft en richt zich volledig
-            op technologie voor privacy bescherming.
-            Sinds 9 jaar is hij bezig met Tribler, een systeem voor online videos
-            kijken met uitzonderlijk goede privacy bescherming.
-            Sinds de Tribler oprichting hebben 1.6 miljoen mensen zijn software
-            geinstalleerd. De droom is dat zelfs Edward Snowden zonder problemen
-            Tribler kan gebruiken.
 
-            Johan is 15 jaar geleden begonnen met het onderzoek naar crowd
-            sourcing, zelf-organiserende systemen en peer-to-peer file sharing.
-            Hij was een visiting scientist bij MIT, heeft enkele zomers bij
-            Harvard onderzoek gedaan en is kroon getuige geweest bij rechtzaken in
-            Amerika tegen de muziek-industrie.
+        .row(class='spaced 200%')
+          +sprekerBlock(
+            '/images/guido.jpg', 
+            'Guido van \'t Noordende', 
+            'UvA',
+            'Guido van ’t Noordende is onderzoeker in het gebied van System and Network \
+            Engineering. Hij houdt zich onder andere bezig met de veiligheid en privacy \
+            binnen gedistribueerde systemen en leidt ook het subprogramma van het \
+            Nederlandse project COMMIT binnen dit veld. Hiernaast is hij een expert \
+            op het gebied van veiligheid van het Elektronisch Patiënten Dossier (EPD), \
+            waar hij zijn talk op deze editie van het SNiC over gaat houden.',
+            'Talk over het EPD',
+            '/speakers/guido')
 
-  h2 Dagvoorzitters
-  .row
-    .dagvoorzitter.col-md-6.col-xs-offset-1.col-md-offset-0
-      .row
-        .col-sm-4
-          img.avatar(src='/images/arnosiebes.jpg')
-        .col-sm-8
-          h3 Arno Siebes
-      .row
-        .col-md-12
-          p Sinds 2000 is Arno Siebes hoofd van de Algorithmic Data Analysis onderzoeksgroep aan de Universiteit Utrecht. Hiervoor was hij 15 jaar werkzaam bij het CWI. Hoewel hij ooit begon met onderzoek naar databases verschoof dat later naar data mining (voornamelijk pattern mining). Veelal was Arno voorzitter van grote conferenties binnen de informatica.
-    .dagvoorzitter.col-md-6.col-xs-offset-1.col-md-offset-0
-      .row
-        .col-sm-4
-          img.avatar(src='/images/xander.png')
-        .col-sm-8
-          h3 Xander Bouwman
-      .row
-        col-md-12
-          p Xander Bouwman is geïnteresseerd in de politisering van technologie en loopt warm voor het behoud van burgerrechten in het informatietijdperk. Als vrijwilliger voor digitale burgerrechtenbeweging Bits of Freedom werkte hij onder meer mee aan de Digitale Vrijheidswijzer en een reeks cryptoparties. Xander studeert Informatiekunde aan de Universiteit Utrecht en Internetrecht aan de Universiteit Leiden.
+          +sprekerBlock(
+            '/images/eric.jpg', 
+            'Eric Verheul', 
+            'KeyControls',
+            'Eric Verheul is part-time professor in de Digital Security Group van \
+            de Radboud Universiteit en werkt daarnaast als zelfstandig consultant. \
+            Eric is gepromoveerd in de wiskunde en is sinds 1993 actief binnen de \
+            informatiebeveiliging toen hij startte als beveiligingsanalist voor \
+            Binnenlandse zaken Koninkrijksrelaties. Na werkzaam geweest te zijn als \
+            universitair docent binnen de cryptografiegroep van de technische \
+            universiteit Eindhoven, trad hij in 1999 in dienst bij PwC waar hij actief \
+            was in de (technische) informatiebeveiliging en ICT auditing. \
+            Sinds 2012 werkt hij vanuit zijn eigen bedrijf.',
+            'Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?',
+            '/speakers/eric')
+
+        .row(class='spaced 200%')
+          +sprekerBlock(
+            '/images/roel.jpg', 
+            'Roel Steenbergen', 
+            'Rabobank',
+            'I do believe that the current era of fast evolving and industry disrupting technologies provide a lot of \
+                opportunities for businesses, startups or corporates. But you have to see and grasp them. This is the \
+                field I like to work in. Preach and practice! I like to bring the outside world in the company, not just \
+                by giving presentations about relevant trends but also by trying and proving. That’s why we at our \
+                innovation team initiate a lot of proof of concept projects. Some examples of projects I worked, or \
+                am working on, are: \
+                \
+                Biometric authentication, \
+                Social Business content marketing, \
+                How to use Crypto currencies for International payments,\
+                Cognitive computing for complex financial questions,\
+                Bartering for local communities. \
+                \
+                Innovation is not “invented” by a team but can come from anywhere within the organization. By \
+                organizing Innovation courses and trend sessions , providing tools, help and feedback we try to help \
+                bringing ideas further.',
+            'Rabobank en Cryptocurrencies, met open vizier?',
+            '/speakers/roel')
+
+          +sprekerBlock(
+            '/images/johan.jpg', 
+            'Johan Pouwelse', 
+            'Tribler',
+            'Dr. Johan Pouwelse is werkzaam bij de TU Delft en richt zich volledig\
+                op technologie voor privacy bescherming.\
+                Sinds 9 jaar is hij bezig met Tribler, een systeem voor online videos\
+                kijken met uitzonderlijk goede privacy bescherming.\
+                Sinds de Tribler oprichting hebben 1.6 miljoen mensen zijn software\
+                geinstalleerd. De droom is dat zelfs Edward Snowden zonder problemen\
+                Tribler kan gebruiken.\
+                \
+                Johan is 15 jaar geleden begonnen met het onderzoek naar crowd\
+                sourcing, zelf-organiserende systemen en peer-to-peer file sharing.\
+                Hij was een visiting scientist bij MIT, heeft enkele zomers bij\
+                Harvard onderzoek gedaan en is kroon getuige geweest bij rechtzaken in\
+                Amerika tegen de muziek-industrie.',
+            'Online video streaming met anonimiteit',
+            '/speakers/johan')
+  
+        h2 Dagvoorzitters
+
+        .row(class='spaced 200%')
+          .6u(class='12u$(medium)')
+            span.image.left
+              img.avatar(src='/images/arnosiebes.jpg')
+
+            header
+              h3 Arno Siebes
+            p.small Sinds 2000 is Arno Siebes hoofd van de Algorithmic Data Analysis onderzoeksgroep aan de Universiteit Utrecht. Hiervoor was hij 15 jaar werkzaam bij het CWI. Hoewel hij ooit begon met onderzoek naar databases verschoof dat later naar data mining (voornamelijk pattern mining). Veelal was Arno voorzitter van grote conferenties binnen de informatica.
+            
+          .6u(class='12u$(medium)')
+            span.image.left
+              img.avatar(src='/images/johan.jpg')
+
+            header
+              h3 Xander Bouwman
+            p.small Xander Bouwman is geïnteresseerd in de politisering van technologie en loopt warm voor het behoud van burgerrechten in het informatietijdperk. Als vrijwilliger voor digitale burgerrechtenbeweging Bits of Freedom werkte hij onder meer mee aan de Digitale Vrijheidswijzer en een reeks cryptoparties. Xander studeert Informatiekunde aan de Universiteit Utrecht en Internetrecht aan de Universiteit Leiden.
