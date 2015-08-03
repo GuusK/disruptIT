@@ -3,11 +3,15 @@ block content
   section.main.style1
     .container
       .row(class='0%')
-        h2 Aanwezigheidslijst
+        - count = 0
+        - for table in tables
+          for row in table.rows
+            - count++
+        h2= 'Aanwezigheidslijst (' + count + ')' 
 
         for table in tables
           table.table
-            caption=verenigingen[table.name].name
+            caption=verenigingen[table.name].name + ' (' + table.rows.length + ')'
             thead
               tr
                 th Voornaam
