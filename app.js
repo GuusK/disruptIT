@@ -39,7 +39,9 @@ app.use(expressValidator());
 app.use(cookieParser());
 app.use(session({
   secret: config.session.secret,
-  store: new MongoStore({url: config.mongodb.url })
+  store: new MongoStore({url: config.mongodb.url }),
+  saveUninitialized: true,
+  resave: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
