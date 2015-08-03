@@ -9,7 +9,7 @@ mixin ticket(ticket)
         |. Dit ticket is tevens je toegangsbewijs.
         br
         | Als je dit ticket kwijtraakt kun je hem via de website opnieuw printen door in te loggen.
-      img(src="/tickets/#{ticket._id}/barcode")
+      img(src="/tickets/#{ticket._id}/barcode", width=250, height=60)
 
 extends layout
 block content

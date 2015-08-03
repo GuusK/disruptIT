@@ -201,7 +201,9 @@ router.post('/aanmelden', adminAuth, function (req,res,next) {
     });
   });
 });
-var barc = new Barc();
+var barc = new Barc({
+  hri: false
+});
 
 /**
  * Output alle tickets die nog niet geownt zijn door gebruikers
@@ -253,7 +255,7 @@ router.get('/tickets/:id', function (req, res, next) {
 
 router.get('/tickets/:id/barcode', function (req, res) {
   res.set('Content-Type', 'image/png');
-  res.send(barc.code128(req.params.id, 250, 80));
+  res.send(barc.code128(req.params.id, 500, 160));
 });
 
  return router;
