@@ -235,10 +235,8 @@ router.get('/aanwezigen', adminAuth, function (req,res,next) {
 });
 
 
-router.get('/users', adminAuth, function (req, res, next) {
-  User.find({}, function (err, users) {
-
-  });
+router.get('/translate', adminAuth, function (req, res, next) {
+  res.render('webtranslate');
 });
 
 router.get('/tickets/:id', function (req, res, next) {

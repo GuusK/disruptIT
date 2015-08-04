@@ -10,6 +10,7 @@ var flash = require('express-flash');
 var mongoose = require('mongoose');
 var fs = require('fs');
 var passport = require('passport');
+var i18n = require("i18next");
 var expressValidator = require('express-validator');
 
 var MongoStore = require('connect-mongo')(session);
@@ -23,13 +24,24 @@ mongoose.connect(config.mongodb.url);
 var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
 
-
 var app = express();
 
+i18n.init({
+    saveMissing: true,
+    ignoreRoutes: ['images/', 'fonts/', 'flags/', 'css/', 'js/'],
+    debug: true,
+    detectLngFromPath: 0,
+    forceDetectLngFromPath: true,
+    fallbackLng: 'nl'
+});
+i18n.addPostProcessor("jade", function(val, key, opts) {
+   return require("jade").compile(val, opts)();
+});
+
 // view engine setup
+app.use(i18n.handle);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 
 app.use(favicon());
 app.use(morgan('default'));
@@ -47,6 +59,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+
+i18n.registerAppHelper(app)
+.serveClientScript(app)
+    .serveDynamicResources(app)
+    .serveMissingKeyRoute(app)
+    .serveChangeKeyRoute(app)
+    .serveRemoveKeyRoute(app);
 /*app.use(sass.middleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -57,17 +76,28 @@ app.use(flash());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+//localization
+app.use(function(req, res, next) {
+  var lang = req.url.substring(1,3);
+
+  if(['nl', 'en'].indexOf(lang) !== -1){
+    i18n.setLng(lang, function(err, t) {
+      req.path = req.url = req.url.slice(3);
+    });
+  }
+  next();
+});
 
 // set up locals that we use in every template
-app.use(function(req,res,next){
+app.use(function(req, res, next) {
   res.locals.path = req.path;
   res.locals.user = req.user;
+  res.locals.verenigingen = config.verenigingen;
   res.locals.ucfirst = function(value){
     return value.charAt(0).toUpperCase() + value.slice(1);
   };
-  res.locals.verenigingen = config.verenigingen;
-  next()
-  ;
+
+  next();
 });
 
 

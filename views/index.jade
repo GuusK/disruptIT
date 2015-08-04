@@ -4,13 +4,13 @@ block above-content
 block header 
   .inner
     img(width='250', src='/images/logo.png')
-    p The computer science symposium about autonomous systems
+    p= t('home.subheader')
     ul.actions
       li
         if new Date(ticketSaleStarts).getTime() < Date.now()
-          a.button.special.scrolly(href='/register') Activeer je ticket nu!
+          a.button.special.scrolly(href='/register')= t('home.activateBtn')
         else 
-          a.button.scrolly(href='#one') Discover
+          a.button.scrolly(href='#one')= t('home.discoverBtn')
 
 
 block content
@@ -20,11 +20,10 @@ block content
       .row(class='150%')
         .6u(class='12u$(medium)')
           header.major
-            h2 The symposium
+            h2= t('home.symposium.header')
             br
-            h3 Actual themes in Nationwide context 
-          p
-            | AutonomIT is the name for the upcoming yearly symposium of the SNiC foundation. On this yearly symposium we will get to the bottom of an actual theme within the field of Computer Science. This year we choose autonomy as theme of the symposium. Nowadays everything needs to be more efficient and if possible even without human interference. Therefore the field of autonomous software and hardware is quickly developing to fulfill the demands of this new market. The first autonomous cars been tested on the Dutch roads, and there are houses relying on robotica. We also predict that robots will be better at soccer than humans by 2050.
+            h3= t('home.symposium.subheader')
+          p= t('home.symposium.text')
         div(class='6u$ 12u$(medium) important(medium)')
           span.image.fit
             img(src='/images/logo2.png', alt='')
@@ -37,44 +36,22 @@ block content
             img(src='/images/sprekers.jpg', alt='')
         div(class='6u$ 12u$(medium)')
           header.major
-            h2 Talks
+            h2= t('home.talks.header')
             br
             h3
               | — 
-              em The direction in which education starts a man will determine his future in life.
-              sub.pull-right (Plato)
-          p
-            | At AutonomIT we aim to provide the visitors with two diffrent tracks with a variety of talks in each of the tracks. We now aim at a technical track and a more societal track. In the technical track the speakers will elaborate about technical aspects of anonomy and in the sociatal aspect there is also a insight in current/future applications of the given subjects.
-          p
-            | We would love to give you some extra information about the talks that will give meaning to this event. Unfotunately we have yet to complete the schedule. We will provide you with an update as soon as we can, so stay interested to be the first to know.
-          p
-            | Since there are still open spaces in the schedule we need to have more interesting speakers. Do you know someone in the field of autonomy who would be able to tell us an exiting story please do not hasitate to contact us. For this matter we can be reached at sprekers@autonom.it
-  
+              != t('home.talks.quote', { postProcess: "jade" })
+          != t('home.talks.text', { postProcess: "jade" }) 
   // Organisation
   section#one.main.style1
     .container
       .row(class='150%')
         .6u(class='12u$(medium)')
           header.major
-            h2 Organization
+            h2= t('home.organisation.header')
             br
-            h3 Joining, Asking, Blaming 
-          p
-            | We hope we got you exited for our symposium. If we did you would be most interested how to get your tickets, when the event takes place and where to be at that time.
-          p
-            strong How.
-            |  The SNiC is a collaboration between the study associations A-Eskwadraat, VIA, Sticky, Thalia, Inter-Actief, Cover and s.v. GEWIS. Since there are even too few spaces for members of these associations tickets can only be bought by members of the foundation. A special exception has been made for STORM and CognAC, who both want to join the foundation. The tickets will be available at all of these associations long before the event. Please ask the board of your association for more information about how to get tickets.
-          p
-            strong When.
-            |  The symposium will take place at the 23 november 2015. We have checked with all the associations who are able to sell tickets and you will probably not be in an exam week at that time which gives you plenty of time to do some extra interesting, extra curricular events and come to Eindhoven at the 23
-            sup rd
-            | .
-          p
-            strong Where.
-            |  For the first time ever the SNiC symposium will be hosted in Eindhoven. Were we normally choose a location near Utrecht we now try to host the symposium at the Evoluon in Eindhoven. Its one of the most awesome ventures in the Netherlands and hope to host a symposium there which is just as awesome.
-          p
-            strong Contact.
-            |  When you still have questions or want to blame us for something we would be most delighted to help you if you email your concern to secretaris@autonom.it
+            h3= t('home.organisation.subheader')
+          != t('home.organisation.text', { postProcess: "jade"})
         div(class='6u$ 12u$(medium) important(medium)')
           span.image.fit
             img(src='/images/evoluon.jpg', alt='')

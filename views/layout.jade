@@ -2,7 +2,7 @@ doctype html
 
 mixin navEl(name, desiredPath)
   li(class=path==desiredPath?'current':undefined)
-    a(href=desiredPath)= name
+    a(href='/' + i18n.lng() + desiredPath)= name
 
 html(lang=locale, prefix='og: http://ogp.me/ns#')
   head
@@ -31,42 +31,46 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
       nav.alt.reveal
         a.logo(href='/')
         ul
-          +navEl('Home', '/')
-          //+navEl('Locatie','/location')
+          +navEl(t('menu.home'), '/')
           
           li(class=path=='/programme'||path=='/speakers'?'current':undefined).opener
-            a.icon.fa-angle-down Informatie
+            a.icon.fa-angle-down= t('menu.information')
             ul.dropdown-menu
-              +navEl('Dagprogramma','/programme')
-              +navEl('Sprekers','/speakers')
-              +navEl('Organisatie','/organisation')
-              +navEl('Bussen','/busses')
+              +navEl(t('menu.programme'),    '/programme')
+              +navEl(t('menu.speakers'),     '/speakers')
+              +navEl(t('menu.organisation'), '/organisation')
+              +navEl(t('menu.busses'),       '/busses')
           li(class=path=='/partners'?'current':undefined).opener
-            a.icon.fa-angle-down Sponsoring
+            a.icon.fa-angle-down= t('menu.sponsorship')
             ul.dropdown-menu
-              +navEl('Topicus','/partners/topicus/')
-              +navEl('Rijksoverheid','/partners/rijksoverheid/')
-              +navEl('Partners','/partners/')
-          //+navEl('Organisatie','/organisation')
-          //+navEl('Contact', '/contact')
+              +navEl('Topicus',              '/partners/topicus')
+              +navEl(t('menu.rijksoverheid'),'/partners/rijksoverheid')
+              +navEl(t('menu.partners'),     '/partners')
+
           if user
             li.opener
               a.icon.fa-angle-down= user.email
               ul.dropdown-menu
                 if user.admin
-                  +navEl('Gebruikers','/users')
-                  +navEl('Aanwezigen','/aanwezigen')
-                  +navEl('Mailinglijst','/mailing')
-                  +navEl('Tickets','/tickets')
+                  +navEl('Gebruikers',       '/users')
+                  +navEl('Aanwezigen',       '/aanwezigen')
+                  +navEl('Mailinglijst',     '/mailing')
+                  +navEl('Tickets',          '/tickets')
+                  +navEl('Vertalingen',      '/../translate')
                   li.separator
-                +navEl('Mijn profiel','/profile')
-                +navEl('Ticket printen','/tickets/'+ user.ticket)
-                +navEl('Uitloggen','/logout')
+
+                +navEl(t('menu.profile'),    '/profile')
+                +navEl(t('menu.ticket'),     '/tickets/'+ user.ticket)
+                +navEl(t('menu.logout'),     '/logout')
           else
-            +navEl('Inloggen','/profile')
+            +navEl(t('menu.login'),      '/profile')
           li
-            a(href='/nl').flag
-              span.flag-icon.flag-icon-squared.flag-icon-nl
+            if (i18n.lng() == 'nl')
+              a(href='/en'+path).flag
+                span.flag-icon.flag-icon-squared.flag-icon-gb
+            else if (i18n.lng() == 'en')
+              a(href='/nl'+path).flag
+                span.flag-icon.flag-icon-squared.flag-icon-nl
 
         br(clear='all')
 

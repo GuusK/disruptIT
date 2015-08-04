@@ -1,0 +1,32 @@
+doctype html
+html(lang='en')
+  head
+    // Application styles
+    link(rel='stylesheet', href='css/i18nextWT.css')
+  body
+    // Optional Header
+    .header
+      .header-inner
+    .main
+      .main-inner
+    // Optional Footer
+    .footer
+      .footer-inner
+    // Application source
+    script(src='js/i18nextWT.js')
+    // Initalization callback for configuration
+    script(language='javascipt', type='text/javascript').
+      i18nextWT_onready = function(wt) {
+      wt.config(
+      {
+      languages: ["en", "nl"],
+      resGetPath: "locales/resources.json?lng=__lng__&ns=__ns__",
+      resChangePath: "locales/change/__lng__/__ns__",
+      resRemovePath: "locales/remove/__lng__/__ns__",
+      fallbackLng: "nl",
+      dynamicLoad: true
+      }
+      )
+      wt.start();
+      };
+

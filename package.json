@@ -17,7 +17,7 @@
     "express-session": "^1.2.1",
     "express-validator": "^2.3.0",
     "forms": "^0.9.1",
-    "i18n": "^0.4.1",
+    "i18next": "^1.10.4",
     "jade": "~1.11.0",
     "less-middleware": "^1.0.3",
     "mailchimp-api": "^2.0.6",
