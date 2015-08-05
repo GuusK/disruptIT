@@ -54,8 +54,8 @@
 			alignment: 'right',
 			hoverDelay: 0
 		});
-		$('html').on('click', 'nav', function(){
-			if($('html').hasClass('small'))
+		$(document).on('click touchstart', 'nav', function(e){
+			if($('html').hasClass('small') && $(e.target).is('nav'))
 				$('nav').toggleClass('toggled');
 		});
 
