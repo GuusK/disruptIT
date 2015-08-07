@@ -4,15 +4,19 @@ block title
 extends layout
 
 block content
-  h1 Wachtwoord resetten
+  section.main.style1
+    .container
+      .row(class='0%')
+        .u6.center(class='12u$(medium)')
+          h2 Wachtwoord resetten
 
-  form(method='POST')
-    legend(hidden) Wachtwoord resetten
-    .form-group
-      label(for='password') nieuw wachtwoord
-      input.form-control(type='password', name='password', value='', placeholder='Nieuw wachtwoord', autofocus=true)
-    .form-group
-      label(for='confirm') Bevestig password
-      input.form-control(type='password', name='confirm', value='', placeholder='Bevestig password')
-    .form-group
-      button.btn.btn-primary(type='submit') Wachtwoord resetten
+          form(method='POST')
+            legend(hidden) Wachtwoord resetten
+            .form-group
+              label(for='password') Nieuw wachtwoord
+              input.form-control(type='password', name='password', value='', placeholder='Nieuw wachtwoord', autofocus=true)
+            .form-group
+              label(for='confirm') Bevestig password
+              input.form-control(type='password', name='confirm', value='', placeholder='Bevestig password')
+
+              button.button.special(type='submit') Wachtwoord resetten

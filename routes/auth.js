@@ -68,8 +68,8 @@ module.exports = function (config) {
     req.checkBody('surname',   'Geen achternaam gegeven.').notEmpty();
     req.checkBody('email',     'Geen e-mailadres gegeven.').notEmpty();
     req.checkBody('email',     'Geen valide e-mailadres gegeven.').isEmail();
-    req.checkBody('password',  'Wachtwoord moet minstens 5 karakters lang zijn').len(5);
-    req.checkBody('password',  'Wachtwoordden verschillen.').equals(req.body.confirm);
+    req.checkBody('password',  'Wachtwoord moet minstens 6 karakters lang zijn').len(6);
+    req.checkBody('password',  'Wachtwoorden verschillen.').equals(req.body.confirm);
     req.checkBody('vereniging','Geen vereniging gegeven.').notEmpty();
     req.checkBody('vereniging','Geen valide vereniging gegeven.').isIn(Object.keys(config.verenigingen));
 
@@ -226,6 +226,20 @@ module.exports = function (config) {
             req.flash('error', 'Wachtwoord reset token is invalid.');
             return res.redirect('back');
           }
+
+          req.checkBody('password',  'Wachtwoord moet minstens 6 karakters lang zijn').len(6);
+          req.checkBody('password',  'Wachtwoordden verschillen.').equals(req.body.confirm);
+          var errors = req.validationErrors();
+
+          if (errors) {
+            var msg = '';
+            errors.forEach(function (err) {
+              req.flash('error', err.msg);
+            });
+            req.session.body = req.body;
+            return res.redirect('back');
+          }
+
           user.setPassword(req.body.password, function(err, user) {
             user.resetPasswordToken = undefined;
             user.resetPasswordExpires = undefined;
@@ -239,7 +253,7 @@ module.exports = function (config) {
             });
           });
         });
-      },
+      }/*,
       function (user, done) {
         var mailOptions = {
           to: user.email,
@@ -251,7 +265,7 @@ module.exports = function (config) {
           req.flash('success', 'Je wachtwoord is veranderd.');
           done(err);
         });
-      }
+      }*/
     ], function (err) {
       if (err) {
         return next(err);
