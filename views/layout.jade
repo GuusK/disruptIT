@@ -31,21 +31,22 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
       nav.alt.reveal
         a.logo(href='/')
         ul
-          +navEl(t('menu.home'), '/')
+          +navEl(t('home.header'), '/')
           
           li(class=path=='/programme'||path=='/speakers'?'current':undefined).opener
             a.icon.fa-angle-down= t('menu.information')
             ul.dropdown-menu
-              +navEl(t('menu.programme'),    '/programme')
-              +navEl(t('menu.speakers'),     '/speakers')
-              +navEl(t('menu.organisation'), '/organisation')
-              +navEl(t('menu.busses'),       '/busses')
+              +navEl(t('programme.header'),    '/programme')
+              +navEl(t('talks.header'),        '/speakers')
+              +navEl(t('organisation.header'), '/organisation')
+              +navEl(t('busses.header'),       '/busses')
           li(class=path=='/partners'?'current':undefined).opener
             a.icon.fa-angle-down= t('menu.sponsorship')
             ul.dropdown-menu
-              +navEl('Topicus',              '/partners/topicus')
-              +navEl(t('menu.rijksoverheid'),'/partners/rijksoverheid')
-              +navEl(t('menu.partners'),     '/partners')
+              if i18n.lng() == 'nl'
+                +navEl('Topicus',              '/partners/topicus')
+                +navEl('Rijksoverheid',        '/partners/rijksoverheid')
+              +navEl(t('partners.header'),     '/partners')
 
           if user
             li.opener
@@ -59,11 +60,11 @@ html(lang=locale, prefix='og: http://ogp.me/ns#')
                   +navEl('Vertalingen',      '/../translate')
                   li.separator
 
-                +navEl(t('menu.profile'),    '/profile')
-                +navEl(t('menu.ticket'),     '/tickets/'+ user.ticket)
-                +navEl(t('menu.logout'),     '/logout')
+                +navEl(t('profile.header'),    '/profile')
+                +navEl(t('menu.ticket'),       '/tickets/'+ user.ticket)
+                +navEl(t('logout.header'),     '/logout')
           else
-            +navEl(t('menu.login'),      '/profile')
+            +navEl(t('menu.logout'),           '/profile')
           li
             if (i18n.lng() == 'nl')
               a(href='/en'+path).flag

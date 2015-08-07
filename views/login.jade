@@ -1,22 +1,22 @@
 extends layout
 block title
-  | Login
+  = t('login.header')
   
 block content
   section.main.style1
     .container
       .row(class='0%')
         .u6.center(class='12u$(medium)')
-          h2 Inloggen
+          h2= t('login.header')
           form#login-form(method='POST')
-            legend(hidden) Inloggen
+            legend(hidden)= t('login.header')
 
-            label(for='email') E-mail
+            label(for='email')= t('fields.email')
             input.form-control(required, type='text', name='email', autofocus)
             
-            label(for='password') Wachtwoord
+            label(for='password')= t('fields.password')
             input.form-control(required, type='password', name='password')
-            button.button.special(type='submit') Inloggen
-            a(href='/forgot') Wachtwoord vergeten?
+            button.button.special(type='submit')= t('login.loginBtn')
+            a(href='/forgot')= t('login.forgotpassword')
             if new Date(ticketSaleStarts).getTime() < Date.now()
-              a(href='/register') Registreren
+              a(href='/register')= t('login.register')

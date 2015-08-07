@@ -5,10 +5,11 @@ block content
     .container
       .row(class='0%')
         .u6.center(class='12u$(medium)')
-          h2 Wachtwoord vergeten
+          h2= t('forgot.header')
           form(method='POST')
-            label(for='email') Email
+            label(for='email')= t('fields.email')
             input.form-control(type='text', name='email', autofocus)
            
-            button.button.special(type='submit') Wachtwoord resetten
-            a(href='/login') &laquo; Terug naar login
+            button.button.special(type='submit')= t('forgot.resetBtn')
+            a(href='/login') 
+              != t('forgot.backtologin')
