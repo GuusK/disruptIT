@@ -3,31 +3,18 @@ block content
   section.main.style1
     .container
       .row(class='0%')
-        h2 Organisatie
-        h3 De Commissie
-        p
-          | Dit jaar hebben 8 actieve leden van
-          a(href='http://gewis.nl', target='_blank')  Studievereniging GEWIS 
-          | in Eindhoven de eer gekregen om het SNiC-congres van najaar 2015 te organiseren.
-
-        p De commissie, bestaande uit zowel informatica- als informatiekundestudenten bestaat uit:
+        h2= t('organisation.header')
+        h3= t('organisation.committee.header')
+        != t('organisation.committee.text', { postProcess: "jade" })
 
         div.image
           img(src='/images/commissie.jpg')
 
           ul.leden
-            li #[b Willem Mouwen] voorzitter
-            li #[b Wout de Ruiter] secretaris
-            li #[b Bor de Kock] penningmeester
-            li #[b Sako Arts] commissaris extern
-            li #[b Daphne Miedema] commissaris sprekers
-            li #[b Tijmen van Dien] commissaris sprekers
-            li #[b Ingmar Westerhof] commissaris logistiek
-            li #[b Dennis Collaris] commissaris promotie
+            != t('organisation.committee.members', { postProcess: "jade" })
 
         br(clear='all')
         br(clear='all')
 
-        h3 De Organisatie
-        p.
-            De #[a(href='http://stichting.snic.nl/index.php', target='_blank') Stichting Nationaal informatica Congres (SNiC)] is in december 2004 opgericht. De stichting heeft ten doel het stimuleren van de belangstelling voor de kennis van de informatie- en communicatietechnologie, alsmede het bedrijfskundige aspect en haar toepassingen. Dit hoopt zij te bereiken met de organisatie van een jaarlijks terugkerend landelijk congres met een informatica gerelateerd onderwerp.
+        h3= t('organisation.foundation.header')
+        != t('organisation.foundation.text', { postProcess: "jade" })

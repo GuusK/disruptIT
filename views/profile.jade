@@ -1,12 +1,13 @@
 extends layout
 block title
-  | Profiel
+  = t('profile.header')
+
 block content
   section.main.style1.profile
     .container
       .row(class='0%')
         header
-          h2 Profiel
+          h2= t('profile.header')
           p= ucfirst(user.firstname) + ' ' + user.surname +' ('+ verenigingen[user.vereniging].name +')'
 
         br(clear='all')
@@ -15,35 +16,35 @@ block content
           .form-group
             .checkbox
               input#vegetarian(type='checkbox',name='vegetarian', checked=user.vegetarian? "checked": undefined)
-              label(for='vegetarian') Ik eet vegetarisch
+              label(for='vegetarian')= t('fields.vegetarian')
           if isbus_quickhack
             .form-group
               .checkbox
                 input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
-                label(for='bus') Ik wil meerijden met de bus
+                label(for='bus')= t('fields.bus')
        
           .form-group
-            label(for='lezing1') Voorkeurlezing eerste parallelle sessie
+            label(for='lezing1')= t('fields.session1')
             div.select-wrapper
               select.form-control(name='lezing1')
-                option(value='', selected=!user.lezing1?'selected':undefined) Geen voorkeur
+                option(value='', selected=!user.lezing1?'selected':undefined)= t('fields.nopreference')
                 option(value='eric', selected=user.lezing1=='eric'?'selected':undefined) Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
                 option(value='thomas', selected=user.lezing1=='thomas'?'selected':undefined) Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
           .form-group
-            label(for='lezing2') Voorkeurlezing tweede parallelle sessie
+            label(for='lezing2')= t('fields.session2')
             div.select-wrapper
               select.form-control(name='lezing2')
-                option(value='', selected) Geen voorkeur
+                option(value='', selected)= t('fields.nopreference')
                 option(value='michiel', selected=user.lezing2=='michiel'?'selected':undefined) Terug naar de tekentafel: ARPA2.net
                 option(value='harm', selected=user.lezing2=='harm'?'selected':undefined) SBox - Tor-enabled WiFi router
           .form-group
-            label(for='lezing3') Voorkeurlezing derde parallelle sessie
+            label(for='lezing3')= t('fields.session3')
             div.select-wrapper
               select.form-control(name='lezing3')
-                option(value='', selected=!user.lezing3?'selected':undefined) Geen voorkeur
+                option(value='', selected=!user.lezing3?'selected':undefined)= t('fields.nopreference')
                 option(value='johan', selected=user.lezing3=='johan'?'selected':undefined) Online video streamen met anonimiteit
                 option(value='roel', selected=user.lezing3=='roel'?'selected':undefined)  Rabobank en Cryptocurrencies, met open vizier?
           .form-group
-            label(for='specialNeeds') Speciale opmerkingen (e.g. allergie)
+            label(for='specialNeeds')= t('fields.allergies')
             input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
-            button.button.special(type='submit') Sla instellingen op
+            button.button.special(type='submit')= t('profile.saveBtn')

@@ -1,20 +1,6 @@
 {
-    "menu": {
-        "programme": "Dagprogramma",
-        "speakers": "Sprekers",
-        "organisation": "Organisatie",
-        "busses": "Bussen",
-        "partners": "Partners",
-        "profile": "Mijn profiel",
-        "ticket": "Print ticket",
-        "login": "Inloggen",
-        "logout": "Uitloggen",
-        "home": "Home",
-        "information": "Informatie",
-        "sponsorship": "Sponsoring",
-        "rijksoverheid": "Rijksoverheid"
-    },
     "home": {
+        "header": "Home",
         "subheader": "Het informatica congres over autonome systemen",
         "discoverBtn": "Ontdek",
         "activateBtn": "Activeer je ticket nu!",
@@ -46,5 +32,125 @@
                 "p #[strong Contact.] Wanneer je nog steeds vragen hebt na al deze informatie kan je ons natuurlijk altijd bereiken. Dit kan bijvoorbeeld door een email te sturen naar secretaris@autonom.it"
             ]
         }
+    },
+    "programme": {
+        "header": "Dagprogramma",
+        "table": {
+            "time": "Tijd",
+            "col1": "Technische track",
+            "col2": "Maatschappelijke track"
+        }
+    },
+    "organisation": {
+        "header": "Organisatie",
+        "committee": {
+            "header": "Commissie",
+            "text": [
+                "p Dit jaar hebben 8 actieve leden van #[a(href='http://gewis.nl', target='_blank') Studievereniging GEWIS] in Eindhoven de eer gekregen om het SNiC-congres van najaar 2015 te organiseren.",
+                "p De commissie, bestaande uit zowel informatica- als informatiekundestudenten bestaat uit:"
+            ],
+            "members": [
+                "li #[b Willem Mouwen] Voorzitter",
+                "li #[b Wout de Ruiter] Secretaris",
+                "li #[b Bor de Kock] Penningmeester",
+                "li #[b Sako Arts] Commissaris Extern",
+                "li #[b Daphne Miedema] Commissaris Sprekers",
+                "li #[b Tijmen van Dien] Commissaris Sprekers",
+                "li #[b Ingmar Westerhof] Commissaris Logistiek",
+                "li #[b Dennis Collaris] Commissaris Promotie"
+            ]
+        },
+        "foundation": {
+            "header": "Stichting",
+            "text": "p De #[a(href='http://stichting.snic.nl/index.php', target='_blank') Stichting Nationaal informatica Congres (SNiC)] is in december 2004 opgericht. De stichting heeft ten doel het stimuleren van de belangstelling voor de kennis van de informatie- en communicatietechnologie, alsmede het bedrijfskundige aspect en haar toepassingen. Dit hoopt zij te bereiken met de organisatie van een jaarlijks terugkerend landelijk congres met een informatica gerelateerd onderwerp."
+        }
+    },
+    "talks": {
+        "header": "Sprekers"
+    },
+    "busses": {
+        "header": "Bussen"
+    },
+    "profile": {
+        "header": "Mijn profiel",
+        "saveBtn": "Sla instellingen op",
+        "announcement": {
+            "saved": "Profiel aangepast",
+            "error": "Er ging iets mis!"
+        }
+    },
+    "partners": {
+        "header": "Partners",
+        "text": "Zonder onze partners is het organiseren van een congres niet mogelijk. De volgende partners hebben zich bij ons congres aangesloten."
+    },
+    "login": {
+        "header": "Inloggen",
+        "loginBtn": "Inloggen",
+        "forgotpassword": "Wachtwoord vergeten?",
+        "register": "Registreren",
+        "announcement": {
+            "shielded": "Je moet inloggen om de pagina __page__ te bezoeken"
+        }
+    },
+    "forgot": {
+        "header": "Wachtwoord vergeten",
+        "resetBtn": "Wachtwoord resetten",
+        "backtologin": "&laquo; Terug naar login"
+    },
+    "reset": {
+        "header": "Wachtwoord resetten",
+        "resetBtn": "Wachtwoord resetten"
+    },
+    "register": {
+        "header": "Registreren",
+        "text": [
+            "p Bij je studievereniging kan je een ticketactivatiecode kopen.",
+            "p Het blaadje waar je ticket activatiecode op staat is overigens ook je toegangsbewijs na activatie. Raak je dit blaadje onverhoopt kwijt, dan kun je deze altijd opnieuw uitprinten door in te loggen, nadat je geregistreerd hebt.",
+            "p Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op je account."
+        ],
+        "mailing": "Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)",
+        "registerBtn": "Registreren",
+        "announcement": {
+            "notopen": "Tickets kunnen hier vanaf __date__ geactiveerd worden!",
+            "error": "Iets is er misgegaan. Zoek Dennis",
+            "notfound": "Ticket niet gevonden. Probeer handmatig te zoeken?",
+            "alreadyregistered": "Ticket al aangemeld!",
+            "saved": "Ticket aangemeld!"
+        }
+    },
+    "ticket": {
+        "header": "Print je ticket"
+    },
+    "logout": {
+        "header": "Uitloggen"
+    },
+    "users": {
+        "announcement": {
+            "saved": "Gebruiker aangepast!"
+        }
+    },
+
+    "fields": {
+        "firstname": "Voornaam",
+        "surname": "Achternaam",
+        "association": "Studievereniging",
+        "select": "Selecteer...",
+        "email": "E-mail",
+        "password": "Wachtwoord",
+        "newpassword": "Nieuw wachtwoord",
+        "confirmpassword": "Bevestig wachtwoord",
+        "vegetarian": "Ik eet vegetarisch",
+        "bus": "Ik wil meerijden met de bus vanaf mijn studievereniging",
+        "session1": "Voorkeur lezing 1ste parallele sessie",
+        "session2": "Voorkeur lezing 2de parallele sessie",
+        "session3": "Voorkeur lezing 3de parallele sessie",
+        "allergies": "Speciale opmerkingen (e.g. allergie)",
+        "nopreference": "Geen voorkeur"
+    },
+    "menu": {
+        "ticket": "Print je ticket",
+        "logout": "Uitloggen",
+        "information": "Informatie",
+        "sponsorship": "Sponsoring"
     }
 }

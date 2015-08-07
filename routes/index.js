@@ -4,6 +4,7 @@ var Ticket = require('../models/Ticket');
 var User   = require('../models/User');
 var _      = require('underscore');
 var async  = require('async');
+var i18n   = require('i18next');
 
 module.exports = function (config) {
 var router = express.Router();
@@ -12,7 +13,7 @@ var router = express.Router();
 function auth(req, res, next) {
   if (!req.user) {
     req.session.lastPage = req.path;
-    req.flash('info', 'Je moet inloggen om de pagina ' + req.path + ' te bezoeken');
+    req.flash('info', req.t('login.announcement.shielded', { page: req.path }));
     return res.redirect('/login');
   }
   next();
@@ -21,7 +22,7 @@ function auth(req, res, next) {
 function adminAuth(req, res, next) {
   if (!req.user || !req.user.admin) {
     req.session.lastPage = req.path;
-    req.flash('info', 'Je moet als admin inloggen om de pagina ' + req.path + ' te bezoeken.');
+    req.flash('info', req.t('login.announcement.shielded', { page: req.path }));
     return res.redirect('/login');
   }
   next();
@@ -79,13 +80,13 @@ router.post('/profile', auth, function (req, res) {
       user.lezing3 = req.body.lezing3;
       console.log(user.specialNeeds);
       user.save();
-      req.flash('success', 'Profiel aangepast');
+      req.flash('success', req.t('profile.announcement.saved'));
       res.redirect('/profile');
     }
     else
     {
       console.log(err);
-      req.flash('error', 'Er ging iets mis!');
+      req.flash('error', req.t('profile.announcement.error'));
       res.redirect('/profile');
     }
   });
@@ -171,7 +172,7 @@ router.post('/users/:id', adminAuth, function (req,res,next) {
     result.aanwezig = req.body.aanwezig;
     result.save(function(err) {
       if (err) {return next(err); }
-      req.flash('success', 'Gebruiker aangepast!');
+      req.flash('success', req.t('users.announcement.saved'));
       return res.redirect('/users/'+req.params.id);
     });
   });
@@ -181,22 +182,22 @@ router.post('/aanmelden', adminAuth, function (req,res,next) {
   var ticket = req.body.ticket;
   User.findOne({ticket:ticket}, function (err, result) {
     if (err) {
-      req.flash('error', 'Iets is er misgegaan. Zoek Dennis');
+      req.flash('error', req.t('register.announcement.error'));
       return res.redirect('/users');
     }
 
     if (!result) {
-      req.flash('error',  'Dit ticket is niet geactiveerd. Probeer handmatig zoeken?');
+      req.flash('error',  req.t('register.announcement.notfound'));
       return res.redirect('/users');
     }
     if (result.aanwezig) {
-      req.flash('error', 'Ticket al aangemeld!');
+      req.flash('error', req.t('register.announcement.alreadyregistered'));
       return res.redirect('/users');
     }
     result.aanwezig = true;
     result.save(function (err) {
-      if (err) { req.flash('error', 'Iets is er misgegaan. Zoek Dennis'); return res.redirect('/users'); }
-      req.flash('success', 'Ticket aangemeld');
+      if (err) { req.flash('error', req.t('register.announcement.error')); return res.redirect('/users'); }
+      req.flash('success', req.t('Ticket aangemeld!'));
       res.redirect('/users');
     });
   });

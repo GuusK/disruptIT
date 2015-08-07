@@ -1,5 +1,5 @@
 block title
-  | Wachtwoord vergeten
+  = t('reset.header')
 
 extends layout
 
@@ -8,15 +8,15 @@ block content
     .container
       .row(class='0%')
         .u6.center(class='12u$(medium)')
-          h2 Wachtwoord resetten
+          h2= t('reset.header')
 
           form(method='POST')
-            legend(hidden) Wachtwoord resetten
+            legend(hidden)= t('reset.header')
             .form-group
-              label(for='password') Nieuw wachtwoord
-              input.form-control(type='password', name='password', value='', placeholder='Nieuw wachtwoord', autofocus=true)
+              label(for='password')= t('fields.newpassword')
+              input.form-control(type='password', name='password', value='', autofocus=true)
             .form-group
-              label(for='confirm') Bevestig password
-              input.form-control(type='password', name='confirm', value='', placeholder='Bevestig password')
+              label(for='confirm')= t('fields.confirmpassword')
+              input.form-control(type='password', name='confirm', value='')
 
-              button.button.special(type='submit') Wachtwoord resetten
+              button.button.special(type='submit')= t('reset.resetBtn')

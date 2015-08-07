@@ -1,87 +1,78 @@
 extends layout
 block title
-  | Registeren
+  = t('register.header')
 block content
   section.main.style1
     .container
       .row(class='0%')
-        h2 Registreren
-        p.
-            Bij je studievereniging kan je een ticketactivatiecode kopen.
-        p.
-            Het blaadje waar je ticket activatiecode op staat is overigens ook je toegangsbewijs na activatie.
-            Raak je dit blaadje onverhoopt kwijt, dan kun je deze altijd opnieuw uitprinten door in te loggen,
-            nadat je geregistreerd hebt.
-
-        p.
-            Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op je account.
+        h2= t('register.header')
+        != t('register.text', { postProcess: 'jade'})
 
         br(clear='all')
 
         .u8.center(class='12u$(medium)')
           if new Date(ticketSaleStarts).getTime() < Date.now()
             form#signup.col-md-6.col-md-offset-3(method='POST')
-              legend(hidden) Registreren
+              legend(hidden)= t('register.header')
               .form-group
                 label(for='code') Ticketactivatiecode (verkrijgbaar bij je studievereniging)
                 input.form-control( type='text', name='code', autofocus, required, value=body.code)
               .form-group
-                label(for='firstname') Voornaam
+                label(for='firstname')= t('fields.firstname')
                 input.form-control( type='text', name='firstname', required, value=body.firstname)
               .form-group
-                label(for='surname') Achternaam
+                label(for='surname')= t('fields.surname')
                 input.form-control( type='text', name='surname', required, value=body.surname)
               .form-group
-                label(for='vereniging') Studievereniging
+                label(for='vereniging')= t('fields.association')
                 .select-wrapper
                   select.form-control(id='vereniging', required, name='vereniging')
-                    option(value='', selected) Selecteer  ...
+                    option(value='', selected)= t('fields.select')
                     each vereniging, shortName in verenigingen
                       option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name
               .form-group(style='display:none')
                   input#bus(type='checkbox', name='bus', checked=body.bus?'checked': undefined)
-                  label(for='bus') Ik wil met de touringbus mee die vanaf mijn studievereniging naar het congres rijdt.
+                  label(for='bus')= t('fields.bus')
               .form-group
                   input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian?'checked':undefined)
-                  label(for='vegetarian') Ik eet vegetarisch
+                  label(for='vegetarian')= t('fields.vegetarian')
               .form-group
-                label(for='lezing1') Voorkeurlezing eerste parallelle sessie
+                label(for='lezing1')= t('fields.session1')
                 .select-wrapper
                   select.form-control(name='lezing1')
-                    option(value='', selected) Geen voorkeur
+                    option(value='', selected)= t('fields.nopreference')
                     option(value='eric') Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
                     option(value='thomas') Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
               .form-group
-                label(for='lezing2') Voorkeurlezing tweede parallelle sessie 
+                label(for='lezing2')= t('fields.session2') 
                 .select-wrapper
                   select.form-control(name='lezing2')
-                    option(value='', selected) Geen voorkeur
+                    option(value='', selected)= t('fields.nopreference')
                     option(value='michiel') Terug naar de tekentafel: ARPA2.net
                     option(value='harm') SBox - Tor-enabled WiFi router
               .form-group
-                label(for='lezing3') Voorkeurlezing derde parallelle sessie
+                label(for='lezing3')= t('fields.session3')
                 .select-wrapper
                   select.form-control(name='lezing3')
-                    option(value='', selected) Geen voorkeur
+                    option(value='', selected)= t('fields.nopreference')
                     option(value='johan') Online video streamen met anonimiteit
                     option(value='roel')  Rabobank en Cryptocurrencies, met open vizier?
               .form-group
-                label(for='specialNeeds') Speciale opmerkingen (e.g. allergie)
+                label(for='specialNeeds')= t('fields.allergies')
                 input.form-control(type='text', name="specialNeeds", value=body.specialNeeds)
               .form-group
-                label(for='email') E-mail
+                label(for='email')= t('fields.email')
                 input.form-control( type='email', name='email', required, value=body.email)
               .form-group
-                label(for='password') Wachtwoord
+                label(for='password')= t('fields.password')
                 input.form-control(required. type='password', required, name='password')
               .form-group
-                label(for='confirm') Bevestig wachtwoord
+                label(for='confirm')= t('fields.confirmpassword')
                 input.form-control( type='password', required, name='confirm')
               .form-group
                   input#subscribe(type='checkbox',name='subscribe', checked='checked')
-                  label(for='subscribe')
-                    | Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)
-              button.button.special(type='submit') Registreren
+                  label(for='subscribe')= t('register.mailing')
+              button.button.special(type='submit')= t('register.registerBtn')
 
 
             script.
@@ -96,6 +87,11 @@ block content
           else
             .alert.alert-info
               .icon.fa.fa-info
-              - months = ['januari', 'februari', 'maart', 'april', 'mei','juni','juli','augustus', 'september','november','december'];
-              div= 'Tickets kunnen hier vanaf '+ new Date(ticketSaleStarts).getDate() + ' ' + months[new Date(ticketSaleStarts).getMonth()] + ' geactiveerd worden!'
+                
+              if i18n.lng() == 'nl'
+                - months = ['januari', 'februari', 'maart', 'april', 'mei','juni','juli','augustus', 'september','november','december'];
+              else
+                - months = ['january', 'february', 'march', 'april', 'may','june','july','august', 'september','november','december'];
+
+              div= t('register.announcement.notopen', {date: new Date(ticketSaleStarts).getDate() + ' ' + months[new Date(ticketSaleStarts).getMonth()] })
 
