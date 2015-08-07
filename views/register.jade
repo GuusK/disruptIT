@@ -37,7 +37,7 @@ block content
                   select.form-control(id='vereniging', required, name='vereniging')
                     option(value='', selected) Selecteer  ...
                     each vereniging, shortName in verenigingen
-                      option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name + (vereniging.bus ? ' - ' + 'Busreis mogelijk' : '')
+                      option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name
               .form-group(style='display:none')
                   input#bus(type='checkbox', name='bus', checked=body.bus?'checked': undefined)
                   label(for='bus') Ik wil met de touringbus mee die vanaf mijn studievereniging naar het congres rijdt.
@@ -86,15 +86,13 @@ block content
 
             script.
               var verenigingen = !{JSON.stringify(verenigingen)}
-              function setIt() {
+              document.getElementById('vereniging').onchange = function() {
                 if (verenigingen[$('#vereniging').val()] && verenigingen[$('#vereniging').val()].bus) {
-                  $('#bus').hide();
+                  $('#bus').parent().show();
                 } else {
-                  $('#bus').show();  
+                  $('#bus').parent().hide();  
                 }
               }
-              setIt();
-              $('#vereniging').change(setIt);
           else
             .alert.alert-info
               .icon.fa.fa-info
