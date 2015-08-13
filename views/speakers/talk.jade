@@ -1,0 +1,22 @@
+extends ../layout
+block title
+  | Team Human 
+block content
+  section.main.style1
+    .container
+      .row(class='0%')
+        h2= speaker.talk
+        .row(class='spaced 200%')
+          .12u
+            span.image.right(style='margin-top: 70px')
+              img.avatar(src= speaker.image)
+            
+            header
+              h3= speaker.name
+              p= speaker.company
+
+            != t('speakers.talks.'+hypenate(speaker.talk), { postProcess: 'jade' })
+
+
+        a(href='/speakers') 
+          !=t('speakers.back')

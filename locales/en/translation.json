@@ -66,7 +66,9 @@
         }
     },
     "talks": {
-        "header": "Talks"
+        "header": "Sprekers",
+        "presenter": "Dagvoorzitters",
+        "nospeakers": "Er zijn nog sprekers bekend gemaakt."
     },
     "busses": {
         "header": "Busses"
@@ -128,6 +130,19 @@
         "announcement": {
             "saved": "Gebruiker aangepast!"
         }
+    },
+    "speakers": {
+        "douwe-schmidt": "Douwe Schmidt is oprichter van het Privacy Café: een landelijke workshop voor digitale veiligheid  en werknemer bij privacy bewust webhosting bedrijf reenhost. Hij schrijft voor de Correspondent over de zoektocht naar z’n digitale alter-ego en technische oplossingen voor de surveillance staat. Hij organiseert de succesvolle TA3M avonden waarin workshops, presentaties en discussies worden gehouden over digitale verdedigingstechnieken en is verantwoordelijk voor Noisy Square; bijeenkomsten tijdens hackerfestivals in Nederland, Duitsland en de Verenigde Staten met een nadruk op de politieken sociale implicaties van techniek.",
+        "douwe-schmidt2": "Douwe Schmidt is oprichter van het Privacy Café: een landelijke workshop voor digitale veiligheid  en werknemer bij privacy bewust webhosting bedrijf reenhost. Hij schrijft voor de Correspondent over de zoektocht naar z’n digitale alter-ego en technische oplossingen voor de surveillance staat. Hij organiseert de succesvolle TA3M avonden waarin workshops, presentaties en discussies worden gehouden over digitale verdedigingstechnieken en is verantwoordelijk voor Noisy Square; bijeenkomsten tijdens hackerfestivals in Nederland, Duitsland en de Verenigde Staten met een nadruk op de politieken sociale implicaties van techniek.",
+        "talks": {
+            "team-human": [
+                "p Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas "
+            ],
+            "team-human2": [
+                "p Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas"
+            ]
+        },
+        "back": "&laquo; Terug naar sprekers"
     },
 
     "fields": {

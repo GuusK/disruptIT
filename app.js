@@ -96,6 +96,9 @@ app.use(function(req, res, next) {
   res.locals.ucfirst = function(value){
     return value.charAt(0).toUpperCase() + value.slice(1);
   };
+  res.locals.hypenate = function(value){
+    return value.replace(/\s/g, '-').toLowerCase();
+  };
 
   next();
 });

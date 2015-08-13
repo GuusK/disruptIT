@@ -102,11 +102,23 @@ router.get('/busses', function (req, res) {
 });
 
 router.get('/speakers', function (req, res) {
-  res.render('speakers', {title: 'Programma'});
+  var s = config.speakers.filter(function(speaker){
+    return !speaker.hidden;
+  });
+  res.render('speakers', {title: 'Programma', speakers: s});
 });
 
-router.get('/speakers/:speaker', function (req, res) {
-  res.render('speakers/'+ req.params.speaker, {path: '/speakers'});
+router.get('/speakers/:talk', function (req, res) {
+  var s = config.speakers.filter(function(speaker){
+    return (speaker.talk.replace(/\s/g, '-').toLowerCase() === req.params.talk);
+  })[0];
+
+  if(!Boolean(s)){
+    res.render('error', {message: 'Not found', error: {status: 404}});
+    return;
+  }
+
+  res.render('speakers/talk', {path: '/speakers', speaker: s});
 });
 
 
