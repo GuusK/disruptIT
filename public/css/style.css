@@ -1663,3 +1663,30 @@ caption {
 					margin-left: 0;
 					padding: 0;
 				}
+
+
+/* Fix for weird background-size: cover issue on iOS */
+/* iPhone 6, 6plus, 5s and 5 */
+@media 
+only screen 
+	and (min-device-width : 375px) 
+	and (max-device-width : 667px),
+only screen 
+	and (min-device-width : 414px) 
+	and (max-device-width : 736px),
+only screen
+	and (min-device-width : 320px) 
+	and (max-device-width : 568px) {
+	#header:after {
+		background-size: auto 650px !important;
+	}
+}
+
+/* iPad */
+@media only screen 
+	and (min-device-width : 768px) 
+	and (max-device-width : 1024px) {
+	#header:after {
+		background-size: auto 900px !important;
+	}	
+}

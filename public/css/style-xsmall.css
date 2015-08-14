@@ -38,15 +38,6 @@
 				padding-top: 0;
 			}
 
-/* Button */
-
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	.button {
-		padding: 0;
-	}
-
 /* Main */
 
 	.main {
