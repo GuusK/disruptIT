@@ -101,6 +101,9 @@ nav > ul > li.current a {
 nav > ul > li.active a {
 	color: #fff;
 }
+nav +#hamburger {
+	display: none;
+}
 
 .dropotron {
 	background: #fff;

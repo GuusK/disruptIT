@@ -112,18 +112,25 @@
 			clear: both;
 		}
 
-		nav::after {
+		nav +#hamburger {
+			display: block;
 			font-family:'FontAwesome';
-			content:"\f0c9";
 			font-size: 35px;
 			font-weight: normal;
-			position: absolute;
+			position: fixed;
 			top: 15px;
 			right: 15px;
 			z-index: 999999;
 		}
-		nav:active::after {
+		nav +#hamburger:active {
 			opacity: 0.5;
+		}
+		nav.alt +#hamburger {
+			position: absolute;
+		}
+
+		#header.small.toggled {
+			min-height: 320px;
 		}
 
 		nav a.flag {
