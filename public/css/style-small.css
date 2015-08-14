@@ -112,6 +112,11 @@
 			clear: both;
 		}
 
+		#header .inner > img {
+			width:200px;
+			margin-top: 25px;
+		}
+
 		nav +#hamburger {
 			display: block;
 			font-family:'FontAwesome';
