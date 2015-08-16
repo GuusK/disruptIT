@@ -105,6 +105,15 @@
 		});
 		$('.searchOptions > div').eq(0).find('select').change();
 
+		//Automatically submit form upon input
+		$('input#ticketCode').on('change input', function(){
+			$this = $(this);
+			if($this.val().length === 9){
+				setTimeout(function(){
+					$this.parents('form').submit();
+				},200);
+			}
+		});
 	});
 
 })(jQuery);

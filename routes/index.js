@@ -266,7 +266,7 @@ router.get('/tickets/:id', function (req, res, next) {
 
 router.get('/tickets/:id/barcode', function (req, res) {
   res.set('Content-Type', 'image/png');
-  res.send(barc.code128(req.params.id, 500, 160));
+  res.send(barc.code128(req.params.id, 440, 50));
 });
 
  return router;

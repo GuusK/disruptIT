@@ -121,7 +121,12 @@
         }
     },
     "ticket": {
-        "header": "Print je ticket"
+        "header": "Ticket AutonomIT",
+        "text": "p Activeer je ticket op #[u= 'http://autonom.it/']. Dit ticket is tevens je toegangsbewijs. #[br/] Als je dit ticket kwijtraakt kun je hem via de website opnieuw printen door in te loggen.",
+        "activationcode": "Activatiecode",
+        "time": "10:30",
+        "date": "23 November 2015",
+        "visitor": "Bezoeker"
     },
     "logout": {
         "header": "Uitloggen"
@@ -166,5 +171,6 @@
         "logout": "Uitloggen",
         "information": "Informatie",
         "sponsorship": "Sponsoring"
-    }
+    },
+    "Ticket aangemeld!": "Ticket aangemeld!"
 }

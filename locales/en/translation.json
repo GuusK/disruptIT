@@ -121,7 +121,12 @@
         }
     },
     "ticket": {
-        "header": "Print je ticket"
+        "header": "Ticket AutonomIT",
+        "text": "p Activate your ticket on #[u= 'http://autonom.it/']. Showing this ticket at the entrance will then give you access to the event.#[br/]When you loose this ticket you can re-print it from the website by logging in.",
+        "activationcode": "Activationcode",
+        "time": "10:30",
+        "date": "November 23, 2015",
+        "visitor": "Visitor"
     },
     "logout": {
         "header": "Uitloggen"

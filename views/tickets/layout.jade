@@ -16,37 +16,164 @@ html
 
       }
       @import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic);
+
       h2 {
-        font-size: 20px;
-      }
-      h1,h2 {
-        margin-top: 0;
-        font-weight: 100;
+        margin: 0;
+        padding: 0;
         font-family: 'jaapokkiregular';
+        font-weight: normal;
+        font-size: 1.75em;
+        color: #2f63c6;
+        text-transform: uppercase;
+      }
+      html { 
+          font-size: 100%; 
+          -webkit-text-size-adjust: 100%; 
+          -ms-text-size-adjust: 100%; 
+          height: 100%;
+          -webkit-text-size-adjust: 100%;
+          -ms-text-size-adjust: 100%;
+          -webkit-font-smoothing: antialiased;
+          text-rendering: optimizeLegibility;
       }
       body {
         font-family: "Open Sans";
-        font-size: 15px;
-        margin-left: 30px;
+        font-size: 12px;
+        margin: 20px;
+        color: #555;
+      }
+
+      u, strong {
+        color: #2f63c6;
+      }
+
+      .ticket {
+        width: 550px;
+        margin: 1px 0 0;
+        padding: 0;
+        outline: 1px dashed rgba(185,185,185,1);
+        position: relative;
+      }
+
+      .ticket img {
+        display: block;
+        float: right;
+        opacity: 0.7;
+      }
+
+      div.footer {
+      position: absolute;
+      bottom: 18px;
+
+      }
+      span.time {
+        background: #2f63c6;
+        color: white;
+        padding: 3px 5px;
+        font-size: 1.1em;
+        margin-right: 10px;
+        font-family: 'jaapokkiregular';
+        -webkit-print-color-adjust: exact;
+      }
+      span.time +span {
+        font-weight: 600;
+        color: #2f63c6;
+      }
+
+      .ticket .content {
+        float: left;
+        padding: 15px;
+        width: 430px;
+      }
+
+      .ticket .aside {
+        float: right;
+        height: 222px;
+        margin: 0 -1px -1px 0;
+        width: 85px;
+        background-image: linear-gradient(45deg, #523fda 10%, #2f63c6 35%, #0d90b1 90%) !important; 
+        -webkit-print-color-adjust: exact;
+        position: relative;
+        z-index: 2;
+      }
+      .ticket:first-of-type .aside { 
+        margin-top: -1px;
+      }
+
+      .ticket .aside > div {
+        background: url(/images/logo.png);
+        background-size: 80px 72px;
+        width: 68px;
+        height: 60px;
+        position: absolute;
+        top: 13px; 
+        right:14px;
+        -webkit-print-color-adjust: exact;
+      }
+
+      /*.ticket .aside::before, .ticket .aside::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -10px;
+        margin-left: -10px;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        background: white;
+        border: 1px dashed rgba(185,185,185,1);
+      }
+      .ticket .aside::after {
+        bottom: -10px;
+        top: auto;
+      }*/
+
+      p {
+      padding: 0;
+      margin: 5px 0 15px 0;
+      }
+
+      div.block {
+        float: right;
+        width: 50%;
+        margin-bottom: 30px;
+      }
+
+      label {
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.75em;
+      }
+
+      label + strong {
+        font-size: 1.25em;
       }
 
       @media print {
         footer {
           page-break-after: always;
         }
-      }
 
-      .ticket {
-        width: 610px;
-        margin: 30px 0;
-        padding: 15px;
-        outline: 1px solid black;
-        position: relative;
-      }
-
-      .ticket img {
-        display: block;
-        margin: 0 auto;
+        .ticket {
+          outline: none;
+        }
+        .ticket::before, .ticket::after {
+          content: '';
+          display: block;
+          width: 15px;
+          height: 15px;
+          border-bottom: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+          position: absolute;
+          top: -17px;
+          left: -17px;
+        }
+        .ticket::before {
+          border-top: 1px solid #ccc;
+          border-bottom: none;
+          bottom: -15px;
+          top: auto;
+        }
       }
 
   body

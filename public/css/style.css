@@ -443,6 +443,14 @@ caption {
 		line-height: 1.35em;
 	}
 
+	h2 small, caption small {
+		display: block;
+		color: #999;
+		font-size: 14px;
+		font-weight: normal;
+		margin: -10px 0 10px 0.4em;
+	}
+
 	h3 {
 		font-size: 1.35em;
 		line-height: 1.5em;
