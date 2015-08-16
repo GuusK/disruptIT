@@ -56,12 +56,14 @@ html(lang=locale)
                   +navEl('Gebruikers',       '/users')
                   +navEl('Aanwezigen',       '/aanwezigen')
                   +navEl('Mailinglijst',     '/mailing')
-                  +navEl('Tickets',          '/tickets')
+                  li
+                    a(href='/' + i18n.lng() + '/tickets/', target='_blank') Tickets
                   +navEl('Vertalingen',      '/../translate')
                   li.separator
 
                 +navEl(t('profile.header'),    '/profile')
-                +navEl(t('menu.ticket'),       '/tickets/'+ user.ticket)
+                li
+                  a(href='/' + i18n.lng() + '/tickets/'+ user.ticket, target='_blank')= t('menu.ticket')
                 +navEl(t('menu.logout'),       '/logout')
           else
             +navEl(t('login.header'),          '/profile')
