@@ -53,17 +53,17 @@ html(lang=locale)
               a.icon.fa-angle-down= user.email
               ul.dropdown-menu
                 if user.admin
-                  +navEl('Gebruikers',       '/users')
-                  +navEl('Aanwezigen',       '/aanwezigen')
-                  +navEl('Mailinglijst',     '/mailing')
+                  +navEl('Gebruikers',        '/users')
+                  +navEl('Aanwezigen',        '/aanwezigen')
+                  +navEl('Mailinglijst',      '/mailing')
                   li
                     a(href='/' + i18n.lng() + '/tickets/', target='_blank') Tickets
-                  +navEl('Vertalingen',      '/../translate')
+                  +navEl('Vertalingen',       '/../translate')
                   li.separator
 
                 +navEl(t('profile.header'),    '/profile')
                 li
-                  a(href='/' + i18n.lng() + '/tickets/'+ user.ticket, target='_blank')= t('menu.ticket')
+                  a(href='/' + i18n.lng() +    '/tickets/' + user.ticket, target='_blank')= t('menu.ticket')
                 +navEl(t('menu.logout'),       '/logout')
           else
             +navEl(t('login.header'),          '/profile')

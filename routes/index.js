@@ -184,6 +184,7 @@ router.post('/users/:id', adminAuth, function (req,res,next) {
     result.aanwezig = req.body.aanwezig;
     result.save(function(err) {
       if (err) {return next(err); }
+
       req.flash('success', req.t('users.announcement.saved'));
       return res.redirect('/users/'+req.params.id);
     });
@@ -209,7 +210,7 @@ router.post('/aanmelden', adminAuth, function (req,res,next) {
     result.aanwezig = true;
     result.save(function (err) {
       if (err) { req.flash('error', req.t('register.announcement.error')); return res.redirect('/users'); }
-      req.flash('success', req.t('Ticket aangemeld!'));
+      req.flash('success', req.t('register.announcement.saved', {name: res.locals.ucfirst(result.firstname) + ' ' + result.surname +' ('+ res.locals.verenigingen[result.vereniging].name +')'}));
       res.redirect('/users');
     });
   });

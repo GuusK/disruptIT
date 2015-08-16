@@ -117,7 +117,7 @@
             "error": "Iets is er misgegaan. Zoek Dennis",
             "notfound": "Ticket niet gevonden. Probeer handmatig te zoeken?",
             "alreadyregistered": "Ticket al aangemeld!",
-            "saved": "Ticket aangemeld!"
+            "saved": "Ticket van __name__ aangemeld!"
         }
     },
     "ticket": {
