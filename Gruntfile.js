@@ -38,13 +38,30 @@ module.exports = function (grunt) {
           node_env: 'production'
         }
       }
+    },
+    cssmin: {
+      target: {
+        files: {
+          'public/css/style.min.css': ['public/css/style.css']
+        }
+      }
+    },
+    uglify: {
+      target: {
+        files: {
+          'public/js/init.min.js': ['public/js/init.js']
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.registerTask('default', ['jshint']);
-  grunt.registerTask('server', [ 'express:dev', 'watch' ]);
+  grunt.registerTask('server', [ 'cssmin', 'uglify', 'express:dev', 'watch' ]);
 
 };

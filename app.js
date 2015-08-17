@@ -1,4 +1,5 @@
 // extreme comment
+var compress = require('compression');
 var express = require('express');
 var path = require('path');
 var favicon = require('static-favicon');
@@ -42,6 +43,13 @@ i18n.addPostProcessor("jade", function(val, key, opts) {
 app.use(i18n.handle);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
+app.use(compress({
+  filter: function(req, res){
+    if (req.headers['x-no-compression']) return false;
+    return /json|text|javascript|dart|image\/svg\+xml|application\/x-font-ttf|application\/vnd\.ms-opentype|application\/vnd\.ms-fontobject/.test(res.getHeader('Content-Type'));
+  }
+}));  
 
 app.use(favicon());
 app.use(morgan('default'));
