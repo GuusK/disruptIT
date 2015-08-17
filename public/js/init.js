@@ -9,7 +9,6 @@
 	skel.init({
 		reset: 'full',
 		breakpoints: {
-			global: { href: '/css/style.css', containers: '60em', grid: { gutters: ['2em', 0] } },
 			xlarge: { media: '(max-width: 1680px)', href: '/css/style-xlarge.css' },
 			large: { media: '(max-width: 1140px)', href: '/css/style-large.css', containers: '90%', grid: { gutters: ['1.5em', 0] } },
 			medium: { media: '(max-width: 980px)', href: '/css/style-medium.css', containers: '100%!' },

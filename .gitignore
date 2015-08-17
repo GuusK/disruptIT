@@ -4,3 +4,5 @@ config.json
 *.sublime-workspace
 *.swp
 .psci_modules
+public/css/*.min.css
+public/js/*.min.js
