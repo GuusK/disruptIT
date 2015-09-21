@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var shortId = require('shortid');
 
+//User different characters to prevent confusion I and l
+shortId.characters("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyzO0+#-_");
+
 var Ticket = new mongoose.Schema({
   _id: {
     type: String,

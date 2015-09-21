@@ -223,7 +223,7 @@ var barc = new Barc({
  * Output alle tickets die nog niet geownt zijn door gebruikers
  */
 router.get('/tickets', adminAuth, function (req, res, next) {
-  Ticket.find({rev:2, ownedBy:undefined}, function (err, tickets) {
+  Ticket.find({rev:1, ownedBy:undefined}, function (err, tickets) {
     if (err) { return next(err); }
     res.render('tickets', {tickets: tickets});
   });

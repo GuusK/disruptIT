@@ -128,6 +128,10 @@
         "date": "23 November 2015",
         "visitor": "Bezoeker"
     },
+    "activationcode": {
+        "header": "Activatiecode",
+        "text": "p Gebruik deze code om je ticket te printen op #[u= 'http://autonom.it/']."
+    },
     "logout": {
         "header": "Uitloggen"
     },
