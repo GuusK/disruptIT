@@ -37,13 +37,14 @@ html(lang=locale)
                 +navEl(t('programme.header'),    '/programme')
                 +navEl(t('talks.header'),        '/speakers')
                 +navEl(t('organisation.header'), '/organisation')
-                +navEl(t('busses.header'),       '/busses')
-            li(class=path=='/partners'?'current':undefined).opener
+                //- +navEl(t('busses.header'),       '/busses')
+            +navEl(t('partners.header'),     '/partners')
+            //-li(class=path=='/partners'?'current':undefined).opener
               a.icon.fa-angle-down= t('menu.sponsorship')
               ul.dropdown-menu
                 if i18n.lng() == 'nl'
                   +navEl('Topicus',              '/partners/topicus')
-                +navEl(t('partners.header'),     '/partners')
+                  +navEl(t('partners.header'),     '/partners')
 
           if user
             li.opener
