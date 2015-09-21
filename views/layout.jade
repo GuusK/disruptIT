@@ -30,6 +30,7 @@ html(lang=locale)
         ul
           +navEl(t('home.header'), '/')
           
+          if !hideMenu
             li(class=path=='/programme'||path=='/speakers'?'current':undefined).opener
               a.icon.fa-angle-down= t('menu.information')
               ul.dropdown-menu

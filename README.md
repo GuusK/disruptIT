@@ -27,7 +27,17 @@ Configuration files are not included in this repository. You will need to add a 
           "bus": false
         }
       ],
-      "ticketSaleStarts": "2015-08-01T00:00:00.001Z"
+      "ticketSaleStarts": "2015-08-01T00:00:00.001Z",
+      "hideMenu": false,
+      "speakers": [
+        {
+          "name": "Douwe Schmidt",
+          "company": "Greenhost",
+          "image": "/images/dosch.jpg",
+          "talk": "Team Human",
+          "hidden": false
+        }
+      ]
     }
 
 mongodb is the url to the mongodb server
