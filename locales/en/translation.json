@@ -37,8 +37,8 @@
         "header": "Programme",
         "table": {
             "time": "Time",
-            "col1": "Technical track",
-            "col2": "Societal track"
+            "col1": "Track 1",
+            "col2": "Track 2"
         }
     },
     "organisation": {

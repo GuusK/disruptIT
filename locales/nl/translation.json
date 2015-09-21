@@ -37,8 +37,8 @@
         "header": "Dagprogramma",
         "table": {
             "time": "Tijd",
-            "col1": "Technische track",
-            "col2": "Maatschappelijke track"
+            "col1": "Track 1",
+            "col2": "Track 2"
         }
     },
     "organisation": {
