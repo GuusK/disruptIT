@@ -106,8 +106,7 @@
     "register": {
         "header": "Registreren",
         "text": [
-            "p Bij je studievereniging kan je een ticketactivatiecode kopen.",
-            "p Het blaadje waar je ticket activatiecode op staat is overigens ook je toegangsbewijs na activatie. Raak je dit blaadje onverhoopt kwijt, dan kun je deze altijd opnieuw uitprinten door in te loggen, nadat je geregistreerd hebt.",
+            "p Bij je studievereniging kan je een ticketactivatiecode kopen. Nadat je geregistreerd hebt kun je via de website je ticket printen.",
             "p Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op je account."
         ],
         "mailing": "Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)",
