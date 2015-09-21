@@ -74,16 +74,20 @@ block content
                   label(for='subscribe')= t('register.mailing')
               button.button.special(type='submit')= t('register.registerBtn')
 
-
+            script(src='/js/jquery.min.js')
             script.
-              var verenigingen = !{JSON.stringify(verenigingen)}
-              document.getElementById('vereniging').onchange = function() {
-                if (verenigingen[$('#vereniging').val()] && verenigingen[$('#vereniging').val()].bus) {
-                  $('#bus').parent().show();
-                } else {
-                  $('#bus').parent().hide();  
-                }
-              }
+              $(document).ready(function(){
+                var verenigingen = !{JSON.stringify(verenigingen)};
+                
+                $('#vereniging').on('change', function(){
+                  if (verenigingen[$('#vereniging').val()] && verenigingen[$('#vereniging').val()].bus) {
+                    $('#bus').parent().show();
+                  } else {
+                    $('#bus').parent().hide();  
+                  }
+                });
+                $('#vereniging').change();
+              });
           else
             .alert.alert-info
               .icon.fa.fa-info
