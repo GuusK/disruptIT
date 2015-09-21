@@ -46,7 +46,9 @@ app.set('view engine', 'jade');
 
 app.use(compress({
   filter: function(req, res){
-    if (req.headers['x-no-compression']) return false;
+    if (req.headers['x-no-compression']) {
+      return false;
+    }
     return /json|text|javascript|dart|image\/svg\+xml|application\/x-font-ttf|application\/vnd\.ms-opentype|application\/vnd\.ms-fontobject/.test(res.getHeader('Content-Type'));
   }
 }));  
