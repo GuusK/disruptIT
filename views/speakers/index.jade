@@ -29,19 +29,17 @@ block content
 
       h2= t('talks.presenter')
 
-      .row(class='spaced 200%')
-        .6u(class='12u$(medium)')
-          span.image.left
-            img.avatar(src='/images/arnosiebes.jpg')
+      if presenters.length === 0
+          p= t('talks.nopresenters')  
+        else
+        - for (var i = 0, x = 2; i < presenters.length; i += x)
+          .row(class='spaced 200%')
+           - for (var j = 0; j < x; j++)
+            if presenter = presenters[i+j]
+              .6u(class='12u$(medium)')
+                span.image.left
+                  img.avatar(src=presenter.image)
 
-          header
-            h3 Arno Siebes
-          p.small Sinds 2000 is Arno Siebes hoofd van de Algorithmic Data Analysis onderzoeksgroep aan de Universiteit Utrecht. Hiervoor was hij 15 jaar werkzaam bij het CWI. Hoewel hij ooit begon met onderzoek naar databases verschoof dat later naar data mining (voornamelijk pattern mining). Veelal was Arno voorzitter van grote conferenties binnen de informatica.
-          
-        .6u(class='12u$(medium)')
-          span.image.left
-            img.avatar(src='/images/johan.jpg')
-
-          header
-            h3 Xander Bouwman
-          p.small Xander Bouwman is geïnteresseerd in de politisering van technologie en loopt warm voor het behoud van burgerrechten in het informatietijdperk. Als vrijwilliger voor digitale burgerrechtenbeweging Bits of Freedom werkte hij onder meer mee aan de Digitale Vrijheidswijzer en een reeks cryptoparties. Xander studeert Informatiekunde aan de Universiteit Utrecht en Internetrecht aan de Universiteit Leiden.
+                header
+                  h3= presenter.name
+                p.small= t('presenters.' + hypenate(presenter.name))

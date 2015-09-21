@@ -68,7 +68,8 @@
     "talks": {
         "header": "Spekers",
         "presenter": "Dagvoorzitters",
-        "nospeakers": "Er zijn nog sprekers bekend gemaakt."
+        "nospeakers": "Er zijn nog sprekers bekend gemaakt.",
+        "nopresenters": "Er zijn nog dagvoorzitters bekend gemaakt."
     },
     "busses": {
         "header": "Bussen"
@@ -151,6 +152,9 @@
             ]
         },
         "back": "&laquo; Terug naar sprekers"
+    },
+    "presenters": {
+        "kees-huizing": "presenters.kees-huizing"
     },
     "fields": {
         "firstname": "Voornaam",

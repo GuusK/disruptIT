@@ -105,7 +105,10 @@ router.get('/speakers', function (req, res) {
   var s = config.speakers.filter(function(speaker){
     return !speaker.hidden;
   });
-  res.render('speakers', {title: 'Programma', speakers: s});
+  var p = config.presenters.filter(function(presenter){
+    return !presenter.hidden;
+  });
+  res.render('speakers', {title: 'Programma', speakers: s, presenters: p});
 });
 
 router.get('/speakers/:talk', function (req, res) {

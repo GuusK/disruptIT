@@ -31,10 +31,18 @@ Configuration files are not included in this repository. You will need to add a 
       "hideMenu": false,
       "speakers": [
         {
-          "name": "Douwe Schmidt",
-          "company": "Greenhost",
-          "image": "/images/dosch.jpg",
-          "talk": "Team Human",
+          "name": "Naam",
+          "company": "bedrijf",
+          "image": "/images/naam.jpg",
+          "talk": "talknaam",
+          "hidden": false
+        }
+      ],
+      "presenters": [
+        {
+          "name": "Naam",
+          "company": "bedrijf",
+          "image": "/images/naam.jpg",
           "hidden": false
         }
       ]
