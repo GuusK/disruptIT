@@ -44,84 +44,84 @@
     "organisation": {
         "header": "Organisation",
         "committee": {
-            "header": "Commissie",
+            "header": "Committee",
             "text": [
-                "p Dit jaar hebben 8 actieve leden van #[a(href='http://gewis.nl', target='_blank') Studievereniging GEWIS] in Eindhoven de eer gekregen om het SNiC-congres van najaar 2015 te organiseren.",
-                "p De commissie, bestaande uit zowel informatica- als wiskundestudenten bestaat uit:"
+                "p This year, eight members of #[a(href='http://gewis.nl', target='_blank') Study Association GEWIS] from Eindhoven were given the opportunity to organise the symposium in the fall of 2015.",
+                "p The committee consists of the following Computer Science and Mathematics students:"
             ],
             "members": [
-                "li #[b Willem Mouwen] Voorzitter",
-                "li #[b Wout de Ruiter] Secretaris",
-                "li #[b Bor de Kock] Penningmeester",
+                "li #[b Willem Mouwen] Chairman",
+                "li #[b Wout de Ruiter] Secretary",
+                "li #[b Bor de Kock] Treasurer",
                 "li #[b Sako Arts] Commissaris Extern",
-                "li #[b Daphne Miedema] Commissaris Sprekers",
-                "li #[b Tijmen van Dien] Commissaris Sprekers",
-                "li #[b Ingmar Westerhof] Commissaris Logistiek",
-                "li #[b Dennis Collaris] Commissaris Promotie"
+                "li #[b Daphne Miedema] Talks",
+                "li #[b Tijmen van Dien] Talks",
+                "li #[b Ingmar Westerhof] Logistics",
+                "li #[b Dennis Collaris] Promotion"
             ]
         },
         "foundation": {
-            "header": "Stichting",
-            "text": "p De #[a(href='http://stichting.snic.nl/index.php', target='_blank') Stichting Nationaal informatica Congres (SNiC)] is in december 2004 opgericht. De stichting heeft ten doel het stimuleren van de belangstelling voor de kennis van de informatie- en communicatietechnologie, alsmede het bedrijfskundige aspect en haar toepassingen. Dit hoopt zij te bereiken met de organisatie van een jaarlijks terugkerend landelijk congres met een informatica gerelateerd onderwerp."
+            "header": "Foundation",
+            "text": "p The Foundation National Computer Science Symposium (in Dutch #[a(href='http://stichting.snic.nl/index.php', target='_blank') Stichting Nationaal informatica Congres (SNiC)]) was founded in December of 2004. The goal of the foundation is to foster the interest in Information and Communication Technology, including the Industrial Engineering side and applications of this topic. The foundation hopes to accomplish this goal by organising a yearly Dutch symposium on a Computer Science topic."
         }
     },
     "talks": {
-        "header": "Sprekers",
-        "presenter": "Dagvoorzitters",
-        "nospeakers": "Er zijn nog sprekers bekend gemaakt.",
-        "nopresenters": "Er zijn nog dagvoorzitters bekend gemaakt."
+        "header": "Talks",
+        "presenter": "Presenters",
+        "nospeakers": "No talks have been announced yet.",
+        "nopresenters": "No presenters have been announced yet."
     },
     "busses": {
         "header": "Busses"
     },
     "profile": {
         "header": "My profile",
-        "saveBtn": "Sla instellingen op",
+        "saveBtn": "Save settings",
         "announcement": {
-            "saved": "Profiel aangepast",
-            "error": "Er ging iets mis!"
+            "saved": "Profile edited",
+            "error": "Something went wrong!"
         }
     },
     "partners": {
         "header": "Partners",
-        "text": "Zonder onze partners is het organiseren van een congres niet mogelijk. De volgende partners hebben zich bij ons congres aangesloten."
+        "text": "Without our partners the organisation of this symposium would not have been possible. These are our partners:"
     },
     "login": {
         "header": "Log in",
-        "loginBtn": "Inloggen",
-        "forgotpassword": "Wachtwoord vergeten?",
-        "register": "Registreren",
+        "loginBtn": "Log in",
+        "forgotpassword": "Forgot your password?",
+        "register": "Register",
         "announcement": {
-            "shielded": "Je moet inloggen om de pagina __page__ te bezoeken"
+            "shielded": "You have to log in to visit page __page__"
         }
     },
     "forgot": {
         "header": "Forgot password",
-        "resetBtn": "Wachtwoord resetten",
-        "backtologin": "&laquo; Terug naar login"
+        "resetBtn": "Reset password",
+        "backtologin": "&laquo; Back to login"
     },
     "reset": {
         "header": "Reset password",
-        "resetBtn": "Wachtwoord resetten"
+        "resetBtn": "Reset your password"
     },
     "register": {
         "header": "Register",
         "text": [
-            "p Bij je studievereniging kan je een ticketactivatiecode kopen. Nadat je geregistreerd hebt kun je via de website je ticket printen.",
-            "p Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op je account."
+            "p You can buy an activation code at your study association. After you register this code, you can print your ticket from the website.",
+            "p Whether you want to use the bus service to travel to the symposium can be changed on your account."
         ],
-        "mailing": "Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)",
-        "registerBtn": "Registreren",
+        "mailing": "Subscribe for the mailinglist. (You can deregister at any moment)",
+        "registerBtn": "Register now",
         "announcement": {
-            "notopen": "Tickets kunnen hier vanaf __date__ geactiveerd worden!",
-            "error": "Iets is er misgegaan. Zoek Dennis",
-            "notfound": "Ticket niet gevonden. Probeer handmatig te zoeken?",
-            "alreadyregistered": "Ticket al aangemeld!",
-            "saved": "Ticket van __name__ aangemeld!"
+            "notopen": "You can activate your ticket here from __date__ onwards!",
+            "error": "Something went wrong. Find Dennis.",
+            "notfound": "Ticket not found. Try finding it manually",
+            "alreadyregistered": "Ticket was already registered!",
+            "saved": "__name__ has registered his ticket!"
         }
     },
     "ticket": {
-        "header": "Ticket AutonomIT",
+        "header": "AutonomIT Ticket",
         "text": "p Activate your ticket on #[u= 'http://autonom.it/']. Showing this ticket at the entrance will then give you access to the event.#[br/]When you loose this ticket you can re-print it from the website by logging in.",
         "activationcode": "Activationcode",
         "time": "10:30",
@@ -133,11 +133,11 @@
         "text": "p Use this code to print your ticket at #[u= 'http://autonom.it/']."
     },
     "logout": {
-        "header": "Uitloggen"
+        "header": "Log out"
     },
     "users": {
         "announcement": {
-            "saved": "Gebruiker aangepast!"
+            "saved": "User edited!"
         }
     },
     "speakers": {
@@ -151,27 +151,27 @@
                 "p Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas"
             ]
         },
-        "back": "&laquo; Terug naar sprekers"
+        "back": "&laquo; Back to Talks"
     },
     "presenters": {
         "kees-huizing": "presenters.kees-huizing"
     },
     "fields": {
-        "firstname": "Voornaam",
-        "surname": "Achternaam",
-        "association": "Studievereniging",
-        "select": "Selecteer...",
-        "email": "E-mail",
-        "password": "Wachtwoord",
-        "newpassword": "Nieuw wachtwoord",
-        "confirmpassword": "Bevestig wachtwoord",
-        "vegetarian": "Ik eet vegetarisch",
-        "bus": "Ik wil meerijden met de bus vanaf mijn studievereniging",
-        "session1": "Voorkeur lezing 1ste parallele sessie",
-        "session2": "Voorkeur lezing 2de parallele sessie",
-        "session3": "Voorkeur lezing 3de parallele sessie",
-        "allergies": "Speciale opmerkingen (e.g. allergie)",
-        "nopreference": "Geen voorkeur"
+        "firstname": "First name",
+        "surname": "Surname",
+        "association": "Study Association",
+        "select": "Select...",
+        "email": "Email",
+        "password": "Password",
+        "newpassword": "New password",
+        "confirmpassword": "Confirm password",
+        "vegetarian": "I am a vegetarian",
+        "bus": "I would like to use the arranged bus at my study association",
+        "session1": "Preference talk in first parallel session",
+        "session2": "Preference talk in second parallel session",
+        "session3": "Preference talk in third parallel session",
+        "allergies": "Other remarks (e.g. allergies)",
+        "nopreference": "No preference"
     },
     "menu": {
         "ticket": "Print your ticket",
