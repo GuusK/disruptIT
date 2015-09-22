@@ -96,9 +96,6 @@ html
         position: relative;
         z-index: 2;
       }
-      .ticket:first-of-type .aside { 
-        margin-top: -1px;
-      }
 
       .ticket .aside > div {
         background: url(/images/logo.png);
@@ -110,6 +107,28 @@ html
         right:14px;
         -webkit-print-color-adjust: exact;
       }
+      .ticket.ophaal {
+        width: 315px;
+        float: left;
+      }
+      .ticket.ophaal:nth-of-type(2n-1){
+        clear: both;
+      }
+      .ticket.ophaal .content {
+        width: 200px;
+      }
+      .ticket.ophaal .aside {
+        height: 167px;
+      }
+      .ticket.ophaal .footer {
+        text-align: center;
+      }
+      .ticket.ophaal .footer .time {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
 
       /*.ticket .aside::before, .ticket .aside::after {
         content: '';
@@ -165,13 +184,13 @@ html
           border-bottom: 1px solid #ccc;
           border-right: 1px solid #ccc;
           position: absolute;
-          top: -17px;
-          left: -17px;
+          top: -15px;
+          left: -15px;
         }
         .ticket::before {
           border-top: 1px solid #ccc;
           border-bottom: none;
-          bottom: -15px;
+          bottom: -17px;
           top: auto;
         }
       }

@@ -26,7 +26,7 @@
             "subheader": "Vragen, meedoen en meer informatie",
             "text": [
                 "p We hopen dat we met het bovenstaande hebben bereikt dat je enthousiast bent geworden voor het symposium. Als dit is gelukt is zijn er nu vast vragen over, waar kaarten te krijgen, wanneer het is en waar het is.",
-                "p #[strong Hoe.] Het SNiC is een samenwerking tussen de studieverenigignen A-Eskwadraat, via, Sticky, Thalia, Inter-Actief, Cover en GEWIS. Aangezien deze studieverenigingen samen al voldoende interesse hebben voor de kaarten worden er alleen kaarten verkocht aan leden van deze verenigingen. Een speciale uitzondering wordt gemaakt voor de studieverenigingen STORM en CognAC. De kaarten zullen voor deze leden te koop zijn bij hun vereniging tijdig voor het evenement. Voor meer informatie hierover verwijzen we je door naar het bestuur van je vereniging.",
+                "p #[strong Hoe.] Het SNiC is een samenwerking tussen de studieverenigignen DLF, A-Eskwadraat, via, Sticky, Thalia, Inter-Actief, Cover en GEWIS. Aangezien deze studieverenigingen samen al voldoende interesse hebben voor de kaarten worden er alleen kaarten verkocht aan leden van deze verenigingen. Een speciale uitzondering wordt gemaakt voor de studieverenigingen STORM en CognAC. De kaarten zullen voor deze leden te koop zijn bij hun vereniging tijdig voor het evenement. Voor meer informatie hierover verwijzen we je door naar het bestuur van je vereniging.",
                 "p #[strong Wanneer.] Het Symposium zal plaatsvinden op 23 november 2015. We hebben dit overlegd met alle verenigingen waarmee wij samenwerken en het is zeer waarschijnlijk dat dit een week is waar in het niet heel druk is. Daarom is er geen enkele reden om geen extra curriculaire evenementen te komen doen de 23ste.",
                 "p #[strong Waar.] Dit jaar zal het SNiC symposium voor het eerst in Eindhoven plaatsvinden. Waar we normaal naar een locatie zoeken in de buurt van Utrecht hebben we nu gekozen voor het Evoluon in Eindhoven. Dit is een van de mooiste zalen uit heel Nederland en we hopen dat het symposium net zo mooi zal worden.",
                 "p #[strong Contact.] Wanneer je nog steeds vragen hebt na al deze informatie kan je ons natuurlijk altijd bereiken. Dit kan bijvoorbeeld door een email te sturen naar secretaris@autonom.it"
@@ -37,8 +37,8 @@
         "header": "Dagprogramma",
         "table": {
             "time": "Tijd",
-            "col1": "Technische track",
-            "col2": "Maatschappelijke track"
+            "col1": "Track 1",
+            "col2": "Track 2"
         }
     },
     "organisation": {
@@ -47,7 +47,7 @@
             "header": "Commissie",
             "text": [
                 "p Dit jaar hebben 8 actieve leden van #[a(href='http://gewis.nl', target='_blank') Studievereniging GEWIS] in Eindhoven de eer gekregen om het SNiC-congres van najaar 2015 te organiseren.",
-                "p De commissie, bestaande uit zowel informatica- als informatiekundestudenten bestaat uit:"
+                "p De commissie, bestaande uit zowel informatica- als wiskundestudenten bestaat uit:"
             ],
             "members": [
                 "li #[b Willem Mouwen] Voorzitter",
@@ -68,7 +68,8 @@
     "talks": {
         "header": "Spekers",
         "presenter": "Dagvoorzitters",
-        "nospeakers": "Er zijn nog sprekers bekend gemaakt."
+        "nospeakers": "Er zijn nog sprekers bekend gemaakt.",
+        "nopresenters": "Er zijn nog dagvoorzitters bekend gemaakt."
     },
     "busses": {
         "header": "Bussen"
@@ -106,8 +107,7 @@
     "register": {
         "header": "Registreren",
         "text": [
-            "p Bij je studievereniging kan je een ticketactivatiecode kopen.",
-            "p Het blaadje waar je ticket activatiecode op staat is overigens ook je toegangsbewijs na activatie. Raak je dit blaadje onverhoopt kwijt, dan kun je deze altijd opnieuw uitprinten door in te loggen, nadat je geregistreerd hebt.",
+            "p Bij je studievereniging kan je een ticketactivatiecode kopen. Nadat je geregistreerd hebt kun je via de website je ticket printen.",
             "p Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op je account."
         ],
         "mailing": "Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)",
@@ -127,6 +127,10 @@
         "time": "10:30",
         "date": "23 November 2015",
         "visitor": "Bezoeker"
+    },
+    "activationcode": {
+        "header": "Activatiecode",
+        "text": "p Gebruik deze code om je ticket te printen op #[u= 'http://autonom.it/']."
     },
     "logout": {
         "header": "Uitloggen"
@@ -148,6 +152,9 @@
             ]
         },
         "back": "&laquo; Terug naar sprekers"
+    },
+    "presenters": {
+        "kees-huizing": "presenters.kees-huizing"
     },
     "fields": {
         "firstname": "Voornaam",

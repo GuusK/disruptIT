@@ -105,7 +105,10 @@ router.get('/speakers', function (req, res) {
   var s = config.speakers.filter(function(speaker){
     return !speaker.hidden;
   });
-  res.render('speakers', {title: 'Programma', speakers: s});
+  var p = config.presenters.filter(function(presenter){
+    return !presenter.hidden;
+  });
+  res.render('speakers', {title: 'Programma', speakers: s, presenters: p});
 });
 
 router.get('/speakers/:talk', function (req, res) {
@@ -223,7 +226,7 @@ var barc = new Barc({
  * Output alle tickets die nog niet geownt zijn door gebruikers
  */
 router.get('/tickets', adminAuth, function (req, res, next) {
-  Ticket.find({rev:2, ownedBy:undefined}, function (err, tickets) {
+  Ticket.find({rev:1, ownedBy:undefined}, function (err, tickets) {
     if (err) { return next(err); }
     res.render('tickets', {tickets: tickets});
   });
