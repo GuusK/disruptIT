@@ -109,10 +109,11 @@ html
       }
       .ticket.ophaal {
         width: 315px;
-        float: left;
       }
-      .ticket.ophaal:nth-of-type(2n-1){
-        clear: both;
+      .ticket.ophaal:nth-of-type(2n){
+        position: absolute;
+        left: 330px;
+        margin-top: -166px;
       }
       .ticket.ophaal .content {
         width: 200px;
@@ -170,7 +171,7 @@ html
 
       @media print {
         footer {
-          page-break-after: always;
+          page-break-after: always !important;
         }
 
         .ticket {
