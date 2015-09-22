@@ -26,24 +26,27 @@ block content
           .form-group
             label(for='lezing1')= t('fields.session1')
             div.select-wrapper
-              select.form-control(name='lezing1')
-                option(value='', selected=!user.lezing1?'selected':undefined)= t('fields.nopreference')
-                option(value='eric', selected=user.lezing1=='eric'?'selected':undefined) Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
-                option(value='thomas', selected=user.lezing1=='thomas'?'selected':undefined) Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
+              select.form-control(name='lezing1', disabled='disabled')
+                option Coming soon
+                //-option(value='', selected=!user.lezing1?'selected':undefined)= t('fields.nopreference')
+                //-option(value='eric', selected=user.lezing1=='eric'?'selected':undefined) Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
+                //-option(value='thomas', selected=user.lezing1=='thomas'?'selected':undefined) Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
           .form-group
             label(for='lezing2')= t('fields.session2')
             div.select-wrapper
-              select.form-control(name='lezing2')
-                option(value='', selected)= t('fields.nopreference')
-                option(value='michiel', selected=user.lezing2=='michiel'?'selected':undefined) Terug naar de tekentafel: ARPA2.net
-                option(value='harm', selected=user.lezing2=='harm'?'selected':undefined) SBox - Tor-enabled WiFi router
+              select.form-control(name='lezing2', disabled='disabled')
+                option Coming soon
+                //-option(value='', selected)= t('fields.nopreference')
+                //-option(value='michiel', selected=user.lezing2=='michiel'?'selected':undefined) Terug naar de tekentafel: ARPA2.net
+                //-option(value='harm', selected=user.lezing2=='harm'?'selected':undefined) SBox - Tor-enabled WiFi router
           .form-group
             label(for='lezing3')= t('fields.session3')
             div.select-wrapper
-              select.form-control(name='lezing3')
-                option(value='', selected=!user.lezing3?'selected':undefined)= t('fields.nopreference')
-                option(value='johan', selected=user.lezing3=='johan'?'selected':undefined) Online video streamen met anonimiteit
-                option(value='roel', selected=user.lezing3=='roel'?'selected':undefined)  Rabobank en Cryptocurrencies, met open vizier?
+              select.form-control(name='lezing3', disabled='disabled')
+                option Coming soon
+                //-option(value='', selected=!user.lezing3?'selected':undefined)= t('fields.nopreference')
+                //-option(value='johan', selected=user.lezing3=='johan'?'selected':undefined) Online video streamen met anonimiteit
+                //-option(value='roel', selected=user.lezing3=='roel'?'selected':undefined)  Rabobank en Cryptocurrencies, met open vizier?
           .form-group
             label(for='specialNeeds')= t('fields.allergies')
             input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
