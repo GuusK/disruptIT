@@ -36,21 +36,21 @@ block content
               .form-group
                   input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian?'checked':undefined)
                   label(for='vegetarian')= t('fields.vegetarian')
-              .form-group
+              //-.form-group
                 label(for='lezing1')= t('fields.session1')
                 .select-wrapper
                   select.form-control(name='lezing1')
                     option(value='', selected)= t('fields.nopreference')
                     option(value='eric') Polymorfe Pseudonimisering: een basis voor een derde generatie eID stelsel?
                     option(value='thomas') Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
-              .form-group
+              //-.form-group
                 label(for='lezing2')= t('fields.session2') 
                 .select-wrapper
                   select.form-control(name='lezing2')
                     option(value='', selected)= t('fields.nopreference')
                     option(value='michiel') Terug naar de tekentafel: ARPA2.net
                     option(value='harm') SBox - Tor-enabled WiFi router
-              .form-group
+              //-.form-group
                 label(for='lezing3')= t('fields.session3')
                 .select-wrapper
                   select.form-control(name='lezing3')
