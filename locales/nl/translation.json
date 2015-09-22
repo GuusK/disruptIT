@@ -29,7 +29,7 @@
                 "p #[strong Hoe.] Het SNiC is een samenwerking tussen de studieverenigignen DLF, A-Eskwadraat, via, Sticky, Thalia, Inter-Actief, Cover en GEWIS. Aangezien deze studieverenigingen samen al voldoende interesse hebben voor de kaarten worden er alleen kaarten verkocht aan leden van deze verenigingen. Een speciale uitzondering wordt gemaakt voor de studieverenigingen STORM en CognAC. De kaarten zullen voor deze leden te koop zijn bij hun vereniging tijdig voor het evenement. Voor meer informatie hierover verwijzen we je door naar het bestuur van je vereniging.",
                 "p #[strong Wanneer.] Het Symposium zal plaatsvinden op 23 november 2015. We hebben dit overlegd met alle verenigingen waarmee wij samenwerken en het is zeer waarschijnlijk dat dit een week is waar in het niet heel druk is. Daarom is er geen enkele reden om geen extra curriculaire evenementen te komen doen de 23ste.",
                 "p #[strong Waar.] Dit jaar zal het SNiC symposium voor het eerst in Eindhoven plaatsvinden. Waar we normaal naar een locatie zoeken in de buurt van Utrecht hebben we nu gekozen voor het Evoluon in Eindhoven. Dit is een van de mooiste zalen uit heel Nederland en we hopen dat het symposium net zo mooi zal worden.",
-                "p #[strong Contact.] Wanneer je nog steeds vragen hebt na al deze informatie kan je ons natuurlijk altijd bereiken. Dit kan bijvoorbeeld door een email te sturen naar secretaris@autonom.it"
+                "p #[strong Contact.] Wanneer je nog steeds vragen hebt na al deze informatie kun je ons natuurlijk altijd bereiken. Dit kan bijvoorbeeld door een email te sturen naar secretaris@autonom.it"
             ]
         }
     },
@@ -107,10 +107,10 @@
     "register": {
         "header": "Registreren",
         "text": [
-            "p Bij je studievereniging kan je een ticketactivatiecode kopen. Nadat je geregistreerd hebt kun je via de website je ticket printen.",
+            "p Bij je studievereniging kun je een ticketactivatiecode kopen. Nadat je geregistreerd hebt kun je via de website je ticket printen.",
             "p Ook of je wel of niet meewilt met de bus van jou studievereniging kun je later nog veranderen op je account."
         ],
-        "mailing": "Meld je aan voor de mailinglist. (je kan je op elk moment hier weer voor afmelden)",
+        "mailing": "Meld je aan voor de mailinglist. (je kunt je op elk moment hier weer voor afmelden)",
         "registerBtn": "Registreren",
         "announcement": {
             "notopen": "Tickets kunnen hier vanaf __date__ geactiveerd worden!",
