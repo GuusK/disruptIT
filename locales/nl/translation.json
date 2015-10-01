@@ -65,7 +65,7 @@
         }
     },
     "talks": {
-        "header": "Spekers",
+        "header": "Sprekers",
         "presenter": "Dagvoorzitters",
         "nospeakers": "Er zijn nog sprekers bekend gemaakt.",
         "nopresenters": "Er zijn nog dagvoorzitters bekend gemaakt."
@@ -140,17 +140,26 @@
         }
     },
     "speakers": {
-        "douwe-schmidt": "Douwe Schmidt is oprichter van het Privacy Café: een landelijke workshop voor digitale veiligheid  en werknemer bij privacy bewust webhosting bedrijf reenhost. Hij schrijft voor de Correspondent over de zoektocht naar z’n digitale alter-ego en technische oplossingen voor de surveillance staat. Hij organiseert de succesvolle TA3M avonden waarin workshops, presentaties en discussies worden gehouden over digitale verdedigingstechnieken en is verantwoordelijk voor Noisy Square; bijeenkomsten tijdens hackerfestivals in Nederland, Duitsland en de Verenigde Staten met een nadruk op de politieken sociale implicaties van techniek.",
-        "douwe-schmidt2": "Douwe Schmidt is oprichter van het Privacy Café: een landelijke workshop voor digitale veiligheid  en werknemer bij privacy bewust webhosting bedrijf reenhost. Hij schrijft voor de Correspondent over de zoektocht naar z’n digitale alter-ego en technische oplossingen voor de surveillance staat. Hij organiseert de succesvolle TA3M avonden waarin workshops, presentaties en discussies worden gehouden over digitale verdedigingstechnieken en is verantwoordelijk voor Noisy Square; bijeenkomsten tijdens hackerfestivals in Nederland, Duitsland en de Verenigde Staten met een nadruk op de politieken sociale implicaties van techniek.",
         "talks": {
-            "team-human": [
-                "p Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas "
+            "autonomous-systems-in-ethics-and-law": [
+                "p Er is nog geen beschrijving beschikbaar voor deze talk."
             ],
-            "team-human2": [
-                "p Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas"
+            "the-social-consequences-of-increasing-automation": [
+                "p Deze lezing zal gegeven worden in het Engels. Er is nog geen beschrijving beschikbaar."
             ]
         },
-        "back": "&laquo; Terug naar sprekers"
+        "back": "&laquo; Terug naar sprekers",
+        "tom-scott": "Tom Scott makes things with lines of code, video editing tools, and a few meters of network cable. The projects he’s built have been seen and enjoyed by tens of millions of people, and he’s featured in media around the world, including BBC1, Time Magazine, Newsweek, Forbes, CNN.com, Al Jazeera, and dozens of others. Tom talks about the accelerating pace of change, the internet, and occasionally about tea. He once got in trouble for making fun of the British government, and he was a part-time pirate for most of his adult life. Find him online at tomscott.com or on Twitter at @tomscott.",
+        "prof": {
+            "mr": {
+                "dr": {
+                    "-jan-smits": "Prof. dr mr J.M. Smits (1953) startte in 1972, na het behalen van het HBS-diploma, de studie rechten aan de KUB. Na het behalen van zijn meesterstitel maakte hij in Utrecht zes jaar deel uit van een onderzoeksgroep binnen de Juridische Informatica die met behulp van technieken uit de kunstmatige intelligentie een methodologie ontwikkelde voor het bouwen van juridische kennissystemen. Tegelijkertijd bekwaamde hij zich verder op het terrein van zowel het nationale als internationale telecommunicatierecht. Op 1 september 1992 werd hij (deeltijd)hoogleraar Recht & Techniek aan de Technische Universiteit Eindhoven. Vanaf September 2003 is hij lid van de Wetenschappelijk Technische Raad van de Stichting Surf. Tevens is hij zelfstandig gevestigd telecommunicatieconsultant en (mede)-oprichter van 2knowit BV."
+                }
+            }
+        },
+        "martijn-dashorst": "We hebben nog geen biografie van deze spreker ontvangen.",
+        "mark-bakker": "We hebben nog geen biografie van deze spreker ontvangen.",
+        "laurenz-eveleens": "We hebben nog geen biografie van deze spreker ontvangen."
     },
     "presenters": {
         "kees-huizing": "presenters.kees-huizing"

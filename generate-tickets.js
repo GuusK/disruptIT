@@ -8,7 +8,7 @@ var config = JSON.parse(fs.readFileSync('config.json'));
 mongoose.connect(config.mongodb.url);
 
 function genTicket(cb) {
- return new Ticket({rev:1}).save(cb);
+ return new Ticket({rev:2}).save(cb);
 }
 var tasks = [];
 

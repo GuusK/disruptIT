@@ -139,17 +139,26 @@
         }
     },
     "speakers": {
-        "douwe-schmidt": "Douwe Schmidt is oprichter van het Privacy Café: een landelijke workshop voor digitale veiligheid  en werknemer bij privacy bewust webhosting bedrijf reenhost. Hij schrijft voor de Correspondent over de zoektocht naar z’n digitale alter-ego en technische oplossingen voor de surveillance staat. Hij organiseert de succesvolle TA3M avonden waarin workshops, presentaties en discussies worden gehouden over digitale verdedigingstechnieken en is verantwoordelijk voor Noisy Square; bijeenkomsten tijdens hackerfestivals in Nederland, Duitsland en de Verenigde Staten met een nadruk op de politieken sociale implicaties van techniek.",
-        "douwe-schmidt2": "Douwe Schmidt is oprichter van het Privacy Café: een landelijke workshop voor digitale veiligheid  en werknemer bij privacy bewust webhosting bedrijf reenhost. Hij schrijft voor de Correspondent over de zoektocht naar z’n digitale alter-ego en technische oplossingen voor de surveillance staat. Hij organiseert de succesvolle TA3M avonden waarin workshops, presentaties en discussies worden gehouden over digitale verdedigingstechnieken en is verantwoordelijk voor Noisy Square; bijeenkomsten tijdens hackerfestivals in Nederland, Duitsland en de Verenigde Staten met een nadruk op de politieken sociale implicaties van techniek.",
         "talks": {
-            "team-human": [
-                "p Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas "
+            "autonomous-systems-in-ethics-and-law": [
+                "p There is no description of this talk yet."
             ],
-            "team-human2": [
-                "p Hele riedel aan teskt hier bladibla kdfnajsldfnjasfnasfjsaklnjfas"
+            "the-social-consequences-of-increasing-automation": [
+                "p There is no description of this talk yet."
             ]
         },
-        "back": "&laquo; Back to Talks"
+        "back": "&laquo; Terug naar sprekers",
+        "tom-scott": "Tom Scott makes things with lines of code, video editing tools, and a few meters of network cable. The projects he’s built have been seen and enjoyed by tens of millions of people, and he’s featured in media around the world, including BBC1, Time Magazine, Newsweek, Forbes, CNN.com, Al Jazeera, and dozens of others. Tom talks about the accelerating pace of change, the internet, and occasionally about tea. He once got in trouble for making fun of the British government, and he was a part-time pirate for most of his adult life. Find him online at tomscott.com or on Twitter at @tomscott.",
+        "prof": {
+            "mr": {
+                "dr": {
+                    "-jan-smits": "Prof. dr. mr. Jan Smits (1953) started his to study Law in 1972 at KUB and started working as an associate professor at Utrecht University in 1985. He worked there in the field of Computer Science and Law and also immersed in the field of national and international rights regarding telecommunications. In september of 1992, he started working as a professor in Law and Technology at Eindhoven University of Technology. Besides that, Jan is telecommunicationsconsultant and (co-)founder of 2knowit BV."
+                }
+            }
+        },
+        "martijn-dashorst": "speakers.martijn-dashorst",
+        "mark-bakker": "speakers.mark-bakker",
+        "laurenz-eveleens": "speakers.laurenz-eveleens"
     },
     "presenters": {
         "kees-huizing": "presenters.kees-huizing"
