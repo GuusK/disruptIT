@@ -145,7 +145,16 @@
                 "p Er is nog geen beschrijving beschikbaar voor deze talk."
             ],
             "the-social-consequences-of-increasing-automation": [
-                "p Deze lezing zal gegeven worden in het Engels. Er is nog geen beschrijving beschikbaar."
+                "p Deze lezing zal gegeven worden in het Engels.",
+                "p The UK's Information Commissioner, which handles data protection, recently put out advice on people's rights to question \"automated decisions\" made about them. These automated decisions are taken using personal data processed solely by automatic means and can have a significant effect on the individual concerned. An example would be applying for a personal loan online. This talk will discuss the social consequences increased automation, including automated decision making."
+            ],
+            "automated-guided-vehicles": [
+                "p Automated Guided Vehicles (AGVs) are driverless robotic vehicles, typically used for materials handling in production- and storage environments. In this talk, we talk about a project done for Frog AGV systems, an Utrecht based company that provides logistics solutions using AGVs for customers worldwide. Specifically, we consider the setting where AGVs are used for internal transportation at a hospital, transporting food, bed linen, medication, waste, etc.",
+                "p One of the main difficulties here is that the hospital has elevators for transporting AGVs vertically between different floors. This talk will be about how we have developed a module for the scheduling of the elevators and the queues in front of the elevators. When an AGV approaches an elevator, our module decides in which queue it has to wait. Also, our module decides for each elevator when this elevator picks-up or delivers which AGV at which floor. This is done such that the capacity of the elevator system is maximised, while making sure that AGVs will not be late (e.g., food will not be cold on arrival). In this talk, we will touch the underlying model, the algorithms that we used, and the evaluation of the performance of the module using simulation."
+            ],
+            "optimize-your-world": [
+                "p Niet voor niets is onze pay off “Optimize your world”. ORTEC bestaat uit experts op het gebied van complexe optimalisatievraagstukken in diverse sectoren. Wij zorgen ervoor dat medicijnen op tijd in de apotheek liggen; dat grote supermarktketens miljoenen besparen op hun logistieke netwerken; dat de melk die jij koopt vers is; dat vliegtuigen op tijd vertrekken; dat het beste staal ter wereld nog altijd uit Nederland komt; dat e-commerce bedrijven de optimale prijs kunnen vragen voor hun producten.",
+                "p Een recent voorbeeld van wat ORTEC maakt, is de ontwikkeling van een camera tracking systeem voor voetbal; een combinatie van complexe IT, Econometrie en AI. Dit tracking systeem is bedoeld om (semi-) live de locaties van alle spelers op het veld te achterhalen. Deze data wil ORTEC inzetten voor een verdere optimalisatie van team- en spelers speelstijlen."
             ]
         },
         "back": "&laquo; Terug naar sprekers",
@@ -159,9 +168,16 @@
         },
         "martijn-dashorst": "We hebben nog geen biografie van deze spreker ontvangen.",
         "mark-bakker": "We hebben nog geen biografie van deze spreker ontvangen.",
-        "laurenz-eveleens": "We hebben nog geen biografie van deze spreker ontvangen."
+        "laurenz-eveleens": "Niet voor niets is onze pay off “Optimize your world”. ORTEC bestaat uit experts op het gebied van complexe optimalisatievraagstukken in diverse sectoren. Wij zorgen ervoor dat medicijnen op tijd in de apotheek liggen; dat grote supermarktketens miljoenen besparen op hun logistieke netwerken; dat de melk die jij koopt vers is; dat vliegtuigen op tijd vertrekken; dat het beste staal ter wereld nog altijd uit Nederland komt; dat e-commerce bedrijven de optimale prijs kunnen vragen voor hun producten.",
+        "emile-nijssen": "We hebben nog geen biografie van deze spreker ontvangen.",
+        "dr": {
+            "-johan-van-rooij": "Johan van Rooij is a consultant at CQM (Consultants in Quantitative Methods), a small consulting company specialised in problems with a mathematical/quantitative component. He specifies, designs and implements IT solutions that often involve (complex) mathematics. This is his first job after obtaining his PhD degree in the theory of algorithms at Utrecht University, where he studied both Computer Science and Mathematics before. As of last year, Johan also part-time teaches at Utrecht University where his interests lie in algorithms and complexity and in bridging the gap between theory and actually making these solutions work in practice."
+        }
     },
     "presenters": {
+        "dr": {
+            "-kees-huizing": "We hebben nog geen biografie van deze dagvoorzitter ontvangen."
+        },
         "kees-huizing": "presenters.kees-huizing"
     },
     "fields": {

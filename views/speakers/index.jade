@@ -21,7 +21,7 @@ block content
                 h3= speaker.name
                 p= speaker.company
               p.small= t('speakers.' + hypenate(speaker.name))
-              a.tile(href='/speakers/' + hypenate(speaker.talk))
+              a.tile(href='./speakers/' + hypenate(speaker.talk))
                 span
                 span
                   b= speaker.talk

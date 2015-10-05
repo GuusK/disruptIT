@@ -144,10 +144,18 @@
                 "p There is no description of this talk yet."
             ],
             "the-social-consequences-of-increasing-automation": [
-                "p There is no description of this talk yet."
+                "p The UK's Information Commissioner, which handles data protection, recently put out advice on people's rights to question \"automated decisions\" made about them. These automated decisions are taken using personal data processed solely by automatic means and can have a significant effect on the individual concerned. An example would be applying for a personal loan online. This talk will discuss the social consequences increased automation, including automated decision making."
+            ],
+            "automated-guided-vehicles": [
+                "p Automated Guided Vehicles (AGVs) are driverless robotic vehicles, typically used for materials handling in production- and storage environments. In this talk, we talk about a project done for Frog AGV systems, an Utrecht based company that provides logistics solutions using AGVs for customers worldwide. Specifically, we consider the setting where AGVs are used for internal transportation at a hospital, transporting food, bed linen, medication, waste, etc.",
+                "p One of the main difficulties here is that the hospital has elevators for transporting AGVs vertically between different floors. This talk will be about how we have developed a module for the scheduling of the elevators and the queues in front of the elevators. When an AGV approaches an elevator, our module decides in which queue it has to wait. Also, our module decides for each elevator when this elevator picks-up or delivers which AGV at which floor. This is done such that the capacity of the elevator system is maximised, while making sure that AGVs will not be late (e.g., food will not be cold on arrival). In this talk, we will touch the underlying model, the algorithms that we used, and the evaluation of the performance of the module using simulation."
+            ],
+            "optimize-your-world": [
+                "p Our motto is “Optimize your world”. ORTEC employs experts in the field of complex optimalisation tasks for different areas. We take care of delivering medicine to the pharmacy in time; help supermarkets save millions of euros in logistics. We make sure the milk you buy is fresh; you plane departs on time; the best steel still comes from the Netherlands; e-commerce companies get the best price for their products.",
+                "p A recent project by ORTEC is the development of a tracking system for football; a combination of complex IT, econometrics and Artificial Intelligence. This system is meant to locate the players on the field in a (semi-)live fashion. ORTEC wants to use this data for optimisation of playing styles of both teams and individuals."
             ]
         },
-        "back": "&laquo; Terug naar sprekers",
+        "back": "&laquo; Back to sprekers",
         "tom-scott": "Tom Scott makes things with lines of code, video editing tools, and a few meters of network cable. The projects he’s built have been seen and enjoyed by tens of millions of people, and he’s featured in media around the world, including BBC1, Time Magazine, Newsweek, Forbes, CNN.com, Al Jazeera, and dozens of others. Tom talks about the accelerating pace of change, the internet, and occasionally about tea. He once got in trouble for making fun of the British government, and he was a part-time pirate for most of his adult life. Find him online at tomscott.com or on Twitter at @tomscott.",
         "prof": {
             "mr": {
@@ -156,12 +164,18 @@
                 }
             }
         },
-        "martijn-dashorst": "speakers.martijn-dashorst",
-        "mark-bakker": "speakers.mark-bakker",
-        "laurenz-eveleens": "speakers.laurenz-eveleens"
+        "martijn-dashorst": "We did not receive a bio text for this speaker yet.",
+        "mark-bakker": "We did not receive a bio text for this speaker yet.",
+        "laurenz-eveleens": "Our motto is “Optimize your world”. ORTEC employs experts in the field of complex optimalisation tasks for different areas. We take care of delivering medicine to the pharmacy in time; help supermarkets save millions of euros in logistics. We make sure the milk you buy is fresh; you plane departs on time; the best steel still comes from the Netherlands; e-commerce companies get the best price for their products.",
+        "emile-nijssen": "We hebben nog geen biografie van deze spreker ontvangen.",
+        "dr": {
+            "-johan-van-rooij": "Johan van Rooij is a consultant at CQM (Consultants in Quantitative Methods), a small consulting company specialised in problems with a mathematical/quantitative component. He specifies, designs and implements IT solutions that often involve (complex) mathematics. This is his first job after obtaining his PhD degree in the theory of algorithms at Utrecht University, where he studied both Computer Science and Mathematics before. As of last year, Johan also part-time teaches at Utrecht University where his interests lie in algorithms and complexity and in bridging the gap between theory and actually making these solutions work in practice."
+        }
     },
     "presenters": {
-        "kees-huizing": "presenters.kees-huizing"
+        "dr": {
+            "-kees-huizing": "There is no description of this presenter yet."
+        }
     },
     "fields": {
         "firstname": "First name",
