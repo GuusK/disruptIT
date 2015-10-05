@@ -13,56 +13,56 @@ block content
           tbody
             tr
               td 10.30
-              td(colspan='2') Aankomst en ontvangst
+              td(colspan='2')= t('programme.welcome')
             tr
               td 11.30
-              td(colspan='2') Opening
+              td(colspan='2')= t('programme.opening')
             tr
               td 11.45
               td(colspan='2')
-                b Eerste lezing
+                != t('programme.talk.first', {postProcess: 'jade'})
                 //-a(href='/speakers/douwe') Team Human
             tr
               td 12.45
               td
-                b Tweede lezing
+                != t('programme.talk.second1', {postProcess: 'jade'})
                 //-a(href='/speakers/eric') Polymorfe Pseudonimisering: een basis voor een derde generatie eID-stelsel? 
               td
-                b Tweede lezing
+                != t('programme.talk.second2', {postProcess: 'jade'})
                 //-a(href='/speakers/thomas') Beveiliging persoonsgegevens bij het PEBKAC-beveiligingsgat
             tr
               td 13.30
-              td(colspan='2') Lunch
+              td(colspan='2')= t('programme.lunch')
             tr
               td 14.30
               td
-                b Derde lezing
+                != t('programme.talk.third1', {postProcess: 'jade'})
                 //-a(href='/speakers/arpa2') Terug naar de tekentafel: ARPA2.net
               td
-                b Derde lezing
+                != t('programme.talk.third2', {postProcess: 'jade'})
                 //-i SBox, tor-enabled wifi router
             tr
               td 15.30
               td
-                b Vierde lezing
+                != t('programme.talk.fourth1', {postProcess: 'jade'})
                 //-a(href='/speakers/johan') Online video streaming met anonimiteit
               td
-                b Vierde lezing
+                != t('programme.talk.fourth2', {postProcess: 'jade'})
                 //-a(href='/speakers/roel') Rabobank en Cryptocurrencies, met open vizier?
             tr
               td 16:30
               td(colspan='2')
-                b Slotlezing
+                != t('programme.talk.end', {postProcess: 'jade'})
                 //-a(href='/speakers/guido') Talk over het EPD
             tr
               td 17.15
-              td(colspan='2') Afsluiting
+              td(colspan='2')= t('programme.closing')
             tr
               td 17.30
-              td(colspan='2') Borrel
+              td(colspan='2')= t('programme.drinks')
             tr
               td 18.30
-              td(colspan='2') Diner
+              td(colspan='2')= t('programme.dinner')
             tr
               td 20.00
-              td(colspan='2') Einde. Verenigingen terug met bussen.
+              td(colspan='2')= t('programme.end')

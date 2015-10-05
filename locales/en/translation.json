@@ -37,7 +37,24 @@
             "time": "Time",
             "col1": "Track 1",
             "col2": "Track 2"
-        }
+        },
+        "welcome": "Arrival",
+        "opening": "Opening",
+        "talk": {
+            "first": "b First collective talk",
+            "second1": "b Second talk",
+            "second2": "b Second talk",
+            "third1": "b Third talk",
+            "third2": "b Third talk",
+            "fourth1": "b Fourth talk",
+            "fourth2": "b Fourth talk",
+            "end": "b Final collective talk"
+        },
+        "lunch": "Lunch",
+        "closing": "Closing",
+        "drinks": "Drinks",
+        "dinner": "Dinner",
+        "end": "End. All associations except GEWIS leave by bus."
     },
     "organisation": {
         "header": "Organisation",

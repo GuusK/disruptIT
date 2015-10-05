@@ -37,7 +37,24 @@
             "time": "Tijd",
             "col1": "Track 1",
             "col2": "Track 2"
-        }
+        },
+        "welcome": "Aankomst en ontvangst",
+        "opening": "Opening",
+        "talk": {
+            "first": "b Gezamenlijke lezing",
+            "second1": "b Tweede lezing",
+            "second2": "b Tweede lezing",
+            "third1": "b Derde lezing",
+            "third2": "b Derde lezing",
+            "fourth1": "b Vierde lezing",
+            "fourth2": "b Vierde lezing",
+            "end": "b Afsluitende gezamenlijke lezing"
+        },
+        "lunch": "Lunch",
+        "closing": "Afsluiting",
+        "drinks": "Borrel",
+        "dinner": "Diner",
+        "end": "Einde. Bussen vertrekken terug naar alle studieverenigingen (behalve GEWIS)."
     },
     "organisation": {
         "header": "Organisatie",
