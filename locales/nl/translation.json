@@ -176,9 +176,8 @@
     },
     "presenters": {
         "dr": {
-            "-kees-huizing": "We hebben nog geen biografie van deze dagvoorzitter ontvangen."
-        },
-        "kees-huizing": "presenters.kees-huizing"
+            "-kees-huizing": "Er is nog geen biografie van deze dagvoorzitter beschikbaar."
+        }
     },
     "fields": {
         "firstname": "Voornaam",
