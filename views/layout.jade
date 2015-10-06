@@ -38,12 +38,12 @@ html(lang=locale)
                 +navEl(t('talks.header'),        '/speakers')
                 +navEl(t('organisation.header'), '/organisation')
                 //- +navEl(t('busses.header'),       '/busses')
-            +navEl(t('partners.header'),     '/partners')
-            //-li(class=path=='/partners'?'current':undefined).opener
+            li(class=path=='/partners'?'current':undefined).opener
               a.icon.fa-angle-down= t('menu.sponsorship')
               ul.dropdown-menu
                 if i18n.lng() == 'nl'
                   +navEl('Topicus',              '/partners/topicus')
+                  +navEl('Ortec',              '/partners/ortec')
                   +navEl(t('partners.header'),     '/partners')
 
           if user
