@@ -38,13 +38,17 @@ html(lang=locale)
                 +navEl(t('talks.header'),        '/speakers')
                 +navEl(t('organisation.header'), '/organisation')
                 //- +navEl(t('busses.header'),       '/busses')
-            li(class=path=='/partners'?'current':undefined).opener
-              a.icon.fa-angle-down= t('menu.sponsorship')
-              ul.dropdown-menu
-                if i18n.lng() == 'nl'
-                  +navEl('Topicus',              '/partners/topicus')
-                  +navEl('Ortec',              '/partners/ortec')
+
+            if i18n.lng() == 'nl'
+              li(class=path=='/partners'?'current':undefined).opener
+                a.icon.fa-angle-down= t('menu.sponsorship')
+                ul.dropdown-menu
+                  +navEl('Topicus',                '/partners/topicus')
+                  +navEl('Ortec',                  '/partners/ortec')
                   +navEl(t('partners.header'),     '/partners')
+            else
+              li(class=path=='partners'?'current':undefined)
+                a(href='/' + i18n.lng() + '/partners')= t('partners.header')
 
           if user
             li.opener
