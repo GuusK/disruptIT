@@ -161,7 +161,7 @@
                 "p There is no description of this talk yet."
             ],
             "the-social-consequences-of-increasing-automation": [
-                "p The UK's Information Commissioner, which handles data protection, recently put out advice on people's rights to question \"automated decisions\" made about them. These automated decisions are taken using personal data processed solely by automatic means and can have a significant effect on the individual concerned. An example would be applying for a personal loan online. This talk will discuss the social consequences increased automation, including automated decision making."
+                "p This talk will discuss the social consequences of increased automation, including automated decision making. It'll ask what we might see in a future where we outsource more and more of our important decisions to algorithms. In a world of public credit scores; of predicting political views by social graph; of increasingly reliable face recognition: what might be around the corner? What should we welcome? What should we prepare for? And how can we help write a less dystopian future?"
             ],
             "automated-guided-vehicles": [
                 "p Automated Guided Vehicles (AGVs) are driverless robotic vehicles, typically used for materials handling in production- and storage environments. In this talk, we talk about a project done for Frog AGV systems, an Utrecht based company that provides logistics solutions using AGVs for customers worldwide. Specifically, we consider the setting where AGVs are used for internal transportation at a hospital, transporting food, bed linen, medication, waste, etc.",
@@ -171,7 +171,7 @@
                 "p Our motto is “Optimize your world”. ORTEC employs experts in the field of complex optimalisation tasks for different areas. We take care of delivering medicine to the pharmacy in time; help supermarkets save millions of euros in logistics. We make sure the milk you buy is fresh; you plane departs on time; the best steel still comes from the Netherlands; e-commerce companies get the best price for their products.",
                 "p A recent project by ORTEC is the development of a tracking system for football; a combination of complex IT, econometrics and Artificial Intelligence. This system is meant to locate the players on the field in a (semi-)live fashion. ORTEC wants to use this data for optimisation of playing styles of both teams and individuals."
             ],
-            "quis-automatiet-ipsos-automates" : [
+            "quis-automatiet-ipsos-automates": [
                 "p For many people, job security is a permanent issue. Old and new industries are heading for disaster: transport, healthcare, education, finance, law, and even the culinary arts are being comprehensively automated. Where drivers are fearing if their trip to the future still offers employment for them, we as automation experts should start to worry… when is it our turn? Quis automatiet ipsos automates?",
                 "p In this presentation, Martijn Dashorst shows his vision of the future: Is there still a job for the programmer, after the last doctor, lawyer, 3-star chef, and drivers are made redundant?"
             ],
