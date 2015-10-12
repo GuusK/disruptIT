@@ -175,6 +175,9 @@
             "quis-automatiet-ipsos-automates": [
                 "p Voor veel mensen staat hun baan op de tocht. Oude en nieuwe industrieën zijn rijp voor disruptie: vervoer, zorg, onderwijs, finance, rechten en zelfs de culinaire industrie worden verregaand geautomatiseerd. Daar waar chauffeurs vrezen of de rit naar de toekomst nog plek biedt aan hen, moeten wij als 'automatiseerders' ons misschien afvragen... wanneer zijn wij aan de beurt? Wie automatiseert de automatiseerders?",
                 "p In deze presentatie biedt Martijn Dashorst een blik in jouw toekomst: de toekomst van de toekomstige automatiseerder. Is er wel plek voor een programmeur nadat de laatste dokter, advocaat, 3-sterren chef en chauffeur weggeautomatiseerd zijn?"
+            ],
+            "sensored-data-is-law-stopping-innovation": [
+                "p Sensored data is everywhere. Our house, our car, our body will soon be fully equipped with sensors. Some of these sensors will gather very personal (almost medical) data, like how much did you drink and pee between 07.00 and 13.00 hrs on any given Monday? And how much of the peeing was done on your own toilet? Is it ethical to gather so much or this type of data? What has the law to say about this? Should the adagium: 'I have nothing to hide!' really be the paradigm for designers/developers of data collecting systems? The Google adagium: do no evil, does that suffice as a guideline? A young Austrian internet lawyer challenged Facebooks privacy clauses because he thought they were insufficient. My talk will try to organize what the law has to say about sensored data and ad provide you with some handles that will help in making decisions when working in this field."
             ]
         },
         "back": "&laquo; Terug naar sprekers",

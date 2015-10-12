@@ -170,6 +170,13 @@
             "optimize-your-world": [
                 "p Our motto is “Optimize your world”. ORTEC employs experts in the field of complex optimalisation tasks for different areas. We take care of delivering medicine to the pharmacy in time; help supermarkets save millions of euros in logistics. We make sure the milk you buy is fresh; you plane departs on time; the best steel still comes from the Netherlands; e-commerce companies get the best price for their products.",
                 "p A recent project by ORTEC is the development of a tracking system for football; a combination of complex IT, econometrics and Artificial Intelligence. This system is meant to locate the players on the field in a (semi-)live fashion. ORTEC wants to use this data for optimisation of playing styles of both teams and individuals."
+            ],
+            "quis-automatiet-ipsos-automates" : [
+                "p For many people, job security is a permanent issue. Old and new industries are heading for disaster: transport, healthcare, education, finance, law, and even the culinary arts are being comprehensively automated. Where drivers are fearing if their trip to the future still offers employment for them, we as automation experts should start to worry… when is it our turn? Quis automatiet ipsos automates?",
+                "p In this presentation, Martijn Dashorst shows his vision of the future: Is there still a job for the programmer, after the last doctor, lawyer, 3-star chef, and drivers are made redundant?"
+            ],
+            "sensored-data-is-law-stopping-innovation": [
+                "p Sensored data is everywhere. Our house, our car, our body will soon be fully equipped with sensors. Some of these sensors will gather very personal (almost medical) data, like how much did you drink and pee between 07.00 and 13.00 hrs on any given Monday? And how much of the peeing was done on your own toilet? Is it ethical to gather so much or this type of data? What has the law to say about this? Should the adagium: 'I have nothing to hide!' really be the paradigm for designers/developers of data collecting systems? The Google adagium: do no evil, does that suffice as a guideline? A young Austrian internet lawyer challenged Facebooks privacy clauses because he thought they were insufficient. My talk will try to organize what the law has to say about sensored data and ad provide you with some handles that will help in making decisions when working in this field."
             ]
         },
         "back": "&laquo; Back to speakers",
@@ -177,11 +184,11 @@
         "prof": {
             "mr": {
                 "dr": {
-                    "-jan-smits": "Prof. dr. mr. Jan Smits (1953) started his to study Law in 1972 at KUB and started working as an associate professor at Utrecht University in 1985. He worked there in the field of Computer Science and Law and also immersed in the field of national and international rights regarding telecommunications. In september of 1992, he started working as a professor in Law and Technology at Eindhoven University of Technology. Besides that, Jan is telecommunicationsconsultant and (co-)founder of 2knowit BV."
+                    "-jan-smits": "Prof. mr. dr. Jan Smits (1953) started his to study Law in 1972 at KUB and started working as an associate professor at Utrecht University in 1985. He worked there in the field of Computer Science and Law and also immersed in the field of national and international rights regarding telecommunications. In september of 1992, he started working as a professor in Law and Technology at Eindhoven University of Technology. Besides that, Jan is telecommunicationsconsultant and (co-)founder of 2knowit BV."
                 }
             }
         },
-        "martijn-dashorst": "We did not receive a bio text for this speaker yet.",
+        "martijn-dashorst": "Martijn has been working for Topicus for over ten years and has more than eighteen years of experience in his pocket. His bucket list is slowly shrinking thanks to publishing a book about Apache Wicket, teaching at vocational schools, and organizing a true conference. Besides converting coffee to software, Martijn spends his time by raising his very own six-year-old mini-me with his wife and cat, working on open source projects, and playing Civilization and SimCity.",
         "mark-bakker": "We did not receive a bio text for this speaker yet.",
         "laurenz-eveleens": "Our motto is “Optimize your world”. ORTEC employs experts in the field of complex optimalisation tasks for different areas. We take care of delivering medicine to the pharmacy in time; help supermarkets save millions of euros in logistics. We make sure the milk you buy is fresh; you plane departs on time; the best steel still comes from the Netherlands; e-commerce companies get the best price for their products.",
         "emile-nijssen": "We hebben nog geen biografie van deze spreker ontvangen.",
