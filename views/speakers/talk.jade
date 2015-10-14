@@ -18,5 +18,6 @@ block content
             != t('speakers.talks.'+hypenate(speaker.talk), { postProcess: 'jade' })
 
         br(clear='all')
-        a(href='../speakers') 
-          !=t('speakers.back')
+        p
+          a.button(href='../speakers') 
+            !=t('speakers.back')
