@@ -21,10 +21,10 @@ block content
                 h3= speaker.name
                 p= speaker.company
               p.small= t('speakers.' + hypenate(speaker.name))
-              a.tile(href='./speakers/' + hypenate(speaker.talk))
+              a.button.small.special(style='float: right;margin: -20px 0 70px 0;', href='./speakers/' + hypenate(speaker.talk))= t('speakers.talk') + speaker.talk + '  »'
                 span
                 span
-                  b= speaker.talk
+                  b
   
 
       h2= t('talks.presenter')

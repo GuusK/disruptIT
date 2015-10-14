@@ -156,6 +156,7 @@
         }
     },
     "speakers": {
+        "talk": "Lezing: ",
         "talks": {
             "autonomous-systems-in-ethics-and-law": [
                 "p Er is nog geen beschrijving beschikbaar voor deze talk."
@@ -178,6 +179,14 @@
             ],
             "sensored-data-is-law-stopping-innovation": [
                 "p Sensored data is everywhere. Our house, our car, our body will soon be fully equipped with sensors. Some of these sensors will gather very personal (almost medical) data, like how much did you drink and pee between 07.00 and 13.00 hrs on any given Monday? And how much of the peeing was done on your own toilet? Is it ethical to gather so much or this type of data? What has the law to say about this? Should the adagium: 'I have nothing to hide!' really be the paradigm for designers/developers of data collecting systems? The Google adagium: do no evil, does that suffice as a guideline? A young Austrian internet lawyer challenged Facebooks privacy clauses because he thought they were insufficient. My talk will try to organize what the law has to say about sensored data and ad provide you with some handles that will help in making decisions when working in this field."
+            ],
+            "machine-learning": [
+                "p Machine Learning is hip. Niet alleen academische onderzoekers en technologische bedrijven maken gebruik van machine learning, ook de huis-tuin-en-keuken analist bij traditionele industrieën zet steeds vaker machine learning technieken in om bedrijfsproblemen op te lossen en om automatische applicaties aan te bieden aan klanten.",
+                "p Machine learning maakt gebruik van wiskundige (niet per se statistische) modellen om te leren van en over data. In deze context betekent leren van en over data ‘curve-fitting’ of ‘hyper-plane fitting’, zonder de traditionele statistische zorgen over onderliggende datadistributies of mogelijke verschillen tussen de genomen datasample en andere samples.",
+                "p Verrassend genoeg zijn dergelijke machine learning modellen heel bedreven in het maken van accurate voorspellingen over nieuwe samples van data, zelfs wanneer het fenomeen dat voorspeld wordt zeer zeldzaam voorkomt of als het niet-lineair gedrag vertoont. Omdat machine learning dus werkt waar traditionele statistiek ophoudt, is het voor veel bedrijven heel interessant. Industrieën zoals de financiele wereld en retail omarmen machine learning technieken. Echter, wanneer is machine learning eigenlijk interessant in het bedrijfsleven? Wat zijn goede toepassingen van machine learning en hoe zou machine learning eigenlijk ingezet moeten worden in het bedrijfsleven?"
+            ],
+            "from-idea-to-autonomous-product": [
+                "p Van idee naar consumentenproduct: het klinkt fantastisch, maar wat komt er allemaal bij kijken? Een hobbyproject voor jezelf is zo gebouwd, maar om werkelijk de belofte waar te maken dat ál je apparatuur thuis met elkaar samenwerkt, én je moeder het kan gebruiken, is misschien toch iets lastiger dan je zou denken. In de presentatie wordt ingegaan op de moeilijkheden die komen kijken bij het maken van een product dat moet concurreren met Apple en Google..."
             ]
         },
         "back": "&laquo; Terug naar sprekers",
@@ -190,9 +199,9 @@
             }
         },
         "martijn-dashorst": "Martijn is al meer dan 10 jaar werkzaam bij Topicus en heeft ruim 18 jaar werkervaring afgevinkt. Zijn bucketlist is langzaamaan korter aan het worden dankzij het publiceren van een boek over Apache Wicket, het geven van les aan een hogeschool en het organiseren van een heuse conferentie. Buiten het converteren van koffie in software houdt Martijn zich bezig met het opvoeden van een 6 jarige mini-me samen met zijn vrouw en poes, werken aan open source projecten, en het spelen van Civilization en SimCity.",
-        "mark-bakker": "We hebben nog geen biografie van deze spreker ontvangen.",
+        "mark-bakker": "Mark Bakker (Winterswijk, 10 december, 1986) is een ervaren data scientist, business analist, zelfbenoemde nerd en inspirator op het gebied van (Big) Data Visualization & Discovery. Mark studeerde Informatiekunde aan de Universiteit van Amsterdam, waar hij voor zijn scriptie door middel van machine learning geprobeerd heeft de uitslag van de Oscars te voorspellen aan de hand van Twitter berichten. Hij wordt door verschillende klanten van SAS Institute beschouwd en geraadpleegd als deskundige in zijn vakgebied.",
         "laurenz-eveleens": "Niet voor niets is onze pay off “Optimize your world”. ORTEC bestaat uit experts op het gebied van complexe optimalisatievraagstukken in diverse sectoren. Wij zorgen ervoor dat medicijnen op tijd in de apotheek liggen; dat grote supermarktketens miljoenen besparen op hun logistieke netwerken; dat de melk die jij koopt vers is; dat vliegtuigen op tijd vertrekken; dat het beste staal ter wereld nog altijd uit Nederland komt; dat e-commerce bedrijven de optimale prijs kunnen vragen voor hun producten.",
-        "emile-nijssen": "We hebben nog geen biografie van deze spreker ontvangen.",
+        "emile-nijssen": "Emile Nijssen, één van de twee oprichters van Athom, is sinds eind 2014 full-time werkzaam om Homey, een superafstandsbediening op spraak, op de markt te brengen. Waar Homey ooit is ontstaan uit luiheid op zijn studentenkamer, ligt Homey dit jaar nog in de winkel. Homey is via Kickstarter gefinancierd, en ondertussen is het bedrijf uitgegroeid tot 15 man met een passie voor gebruikersvriendelijke producten maken",
         "dr": {
             "-johan-van-rooij": "Johan van Rooij is a consultant at CQM (Consultants in Quantitative Methods), a small consulting company specialised in problems with a mathematical/quantitative component. He specifies, designs and implements IT solutions that often involve (complex) mathematics. This is his first job after obtaining his PhD degree in the theory of algorithms at Utrecht University, where he studied both Computer Science and Mathematics before. As of last year, Johan also part-time teaches at Utrecht University where his interests lie in algorithms and complexity and in bridging the gap between theory and actually making these solutions work in practice."
         }

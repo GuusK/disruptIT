@@ -156,6 +156,7 @@
         }
     },
     "speakers": {
+        "talk": "Talk: ",
         "talks": {
             "autonomous-systems-in-ethics-and-law": [
                 "p There is no description of this talk yet."
@@ -177,6 +178,14 @@
             ],
             "sensored-data-is-law-stopping-innovation": [
                 "p Sensored data is everywhere. Our house, our car, our body will soon be fully equipped with sensors. Some of these sensors will gather very personal (almost medical) data, like how much did you drink and pee between 07.00 and 13.00 hrs on any given Monday? And how much of the peeing was done on your own toilet? Is it ethical to gather so much or this type of data? What has the law to say about this? Should the adagium: 'I have nothing to hide!' really be the paradigm for designers/developers of data collecting systems? The Google adagium: do no evil, does that suffice as a guideline? A young Austrian internet lawyer challenged Facebooks privacy clauses because he thought they were insufficient. My talk will try to organize what the law has to say about sensored data and ad provide you with some handles that will help in making decisions when working in this field."
+            ],
+            "machine-learning": [
+                "p Machine learning is in. Not only academic researchers and technological companies use machine learning, but also the do-it-yourself analyst at traditional industries are employing these techniques more and more to solve company critical problems and to offer autonomous applications for their customers.",
+                "p Machine learning uses mathematical (not strictly statistical) models to learn about data. In this context, learning means ‘curve-fitting’ and ‘hyper-plane fitting’ on data, without the traditional statistical worries about the underlying distributions of the dataset and other samples.",
+                "p Surprisingly, such machine learning models are extremely suitable at making accurate predictions  about new samples of data, even when the phenomenon that is being predicted is extremely rare and non-linear. Because machine learning works where traditional statistics stop, it can be very interesting for a lot of companies. The finance and retail industries for example, welcome machine learning techniques with open arms. But when is machine learning interesting for industry? Wat are good applications of machine learning and how should machine learning actually be employed?"
+            ],
+            "from-idea-to-autonomous-product": [
+                "p From idea to consumer product: it sounds amazing, but what does it take? A small hobby project for yourself is built in no time at all, but to truly deliver on a promise that all home electronics can be controlled, and even your mother can use it, is more tricky than you might think. In this presentation, Emile will talk about the difficulties of competing with companies like Apple and Google..."
             ]
         },
         "back": "&laquo; Back to speakers",
@@ -189,9 +198,9 @@
             }
         },
         "martijn-dashorst": "Martijn has been working for Topicus for over ten years and has more than eighteen years of experience in his pocket. His bucket list is slowly shrinking thanks to publishing a book about Apache Wicket, teaching at vocational schools, and organizing a true conference. Besides converting coffee to software, Martijn spends his time by raising his very own six-year-old mini-me with his wife and cat, working on open source projects, and playing Civilization and SimCity.",
-        "mark-bakker": "We did not receive a bio text for this speaker yet.",
+        "mark-bakker": "Mark Bakker (Winterswijk, 10 december, 1986) is an experienced data scientist, business analist, self-proclaimed nerd, and an inspiration in the field of (Big) Data Visualization & Discovery. Mark studied Information Sciences at the University of Amsterdam, where he tried to predict the outcome of the Oscars by analyzing Twitter messages using machine learning as his thesis. Several SAS Institute customers regard and consult him as an expert in his field.",
         "laurenz-eveleens": "Our motto is “Optimize your world”. ORTEC employs experts in the field of complex optimalisation tasks for different areas. We take care of delivering medicine to the pharmacy in time; help supermarkets save millions of euros in logistics. We make sure the milk you buy is fresh; you plane departs on time; the best steel still comes from the Netherlands; e-commerce companies get the best price for their products.",
-        "emile-nijssen": "We hebben nog geen biografie van deze spreker ontvangen.",
+        "emile-nijssen": "Emile Nijssen, one of the two founders of Athom, has been working on Homey full-time since the end of 2014. His goal is to get his voice-controlled super remote control to the market. While Homey was once conceived out of laziness in his student apartment, Homey will be in stores before the end of the year! Home is fully financed using Kickstarter, and by now has grown to a company with 15 employees full of passion for making user friendly products.",
         "dr": {
             "-johan-van-rooij": "Johan van Rooij is a consultant at CQM (Consultants in Quantitative Methods), a small consulting company specialised in problems with a mathematical/quantitative component. He specifies, designs and implements IT solutions that often involve (complex) mathematics. This is his first job after obtaining his PhD degree in the theory of algorithms at Utrecht University, where he studied both Computer Science and Mathematics before. As of last year, Johan also part-time teaches at Utrecht University where his interests lie in algorithms and complexity and in bridging the gap between theory and actually making these solutions work in practice."
         }
