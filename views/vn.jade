@@ -9,7 +9,7 @@ block content
           - for row in table.rows
             - count++
             if row.aanwezig
-              countAanwezig++
+              - countAanwezig++
         h2= 'Aanwezigheidslijst'
           small= '(' + count + ' ingeschreven, ' + countAanwezig + ' aanwezig)' 
 
@@ -19,7 +19,7 @@ block content
           - for row in table.rows
             - count++
             if row.aanwezig
-              countAanwezig++
+              - countAanwezig++
           table.table
             caption= verenigingen[table.name].name
               small= '(' + count + ' ingeschreven, ' + countAanwezig + ' aanwezig)'

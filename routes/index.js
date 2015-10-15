@@ -241,7 +241,7 @@ router.get('/aanwezigen', adminAuth, function (req,res,next) {
   var namen = _.keys(config.verenigingen);
 
   var findTickets = function (naam,cb) {
-    User.find({vereniging:naam},{firstname:1,surname:1,email:1,bus:1},function(err, results) {
+    User.find({vereniging:naam},{firstname:1,surname:1,email:1,bus:1,aanwezig:1},function(err, results) {
       if (err) { return cb(err); }
 
       cb(null, {name:naam, rows:results});
