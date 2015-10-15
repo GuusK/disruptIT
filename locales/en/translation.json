@@ -82,9 +82,9 @@
     },
     "talks": {
         "header": "Talks",
-        "presenter": "Presenters",
+        "presenter": "Moderators",
         "nospeakers": "No talks have been announced yet.",
-        "nopresenters": "No presenters have been announced yet."
+        "nopresenters": "No moderators have been announced yet."
     },
     "busses": {
         "header": "Busses"
@@ -207,7 +207,7 @@
     },
     "presenters": {
         "dr": {
-            "-kees-huizing": "There is no description of this presenter yet."
+            "-kees-huizing": "There is no description of this moderator yet."
         }
     },
     "fields": {
