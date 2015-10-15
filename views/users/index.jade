@@ -31,6 +31,7 @@ block content
                 input(type='text',name='surname', placeholder='Achternaam', style='display:none;')
                 .select-wrapper(style='display:none;', placeholder='Vereniging')
                   select(name='vereniging')
+                    option(value='') Kies...
                     each vereniging, shortName in verenigingen
                       option(value=shortName)=vereniging.name
                 input(type='text',name='ticket', placeholder='Ticket', style='display:none;')

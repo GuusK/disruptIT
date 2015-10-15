@@ -149,7 +149,9 @@ router.get('/programme', function (req,res) {
 router.get('/users', adminAuth, function (req,res,next) {
   var query = {};
 
-
+  if (req.query.email) {
+    query.email = { $regex: new RegExp(req.query.email, 'i') };
+  }
   if (req.query.firstname) {
     query.firstname = { $regex: new RegExp(req.query.firstname, 'i') };
   }
