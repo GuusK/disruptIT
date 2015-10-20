@@ -7,13 +7,13 @@ block content
         h3= t('organisation.committee.header')
         != t('organisation.committee.text', { postProcess: "jade" })
 
-        //-div.image
-          img(src='/images/commissie.jpg')
-
         br(clear='all')
-        ul(style='margin-left: 25px')
-          != t('organisation.committee.members', { postProcess: "jade" })
-        
+          
+        div.image
+          ul(style='margin-left: 25px')
+            != t('organisation.committee.members', { postProcess: "jade" })
+
+          img(src='/images/commissie.jpg')
 
         //-br(clear='all')
         br(clear='all')
