@@ -8,14 +8,14 @@ block content
         != t('organisation.committee.text', { postProcess: "jade" })
 
         br(clear='all')
-          
+
         div.image
-          ul(style='margin-left: 25px')
+          ul
             != t('organisation.committee.members', { postProcess: "jade" })
 
           img(src='/images/commissie.jpg')
 
-        //-br(clear='all')
+        br(clear='all')
         br(clear='all')
 
         h3= t('organisation.foundation.header')
