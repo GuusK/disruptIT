@@ -9,11 +9,13 @@ block content
 
         br(clear='all')
 
-        div.image
+        div.image.fit
           ul
             != t('organisation.committee.members', { postProcess: "jade" })
 
           img(src='/images/commissie.jpg')
+          
+        p.pull-right(style='font-size: 14px; margin: -30px 0 0 0;') Vlnr: Dennis, Ingmar, Bor, Willem, Wout, Sako, Tijmen, Daphne
 
         br(clear='all')
         br(clear='all')

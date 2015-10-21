@@ -10,6 +10,17 @@
 	width: 100%;
 }
 
+div.image ul {
+	position: relative;
+	color: inherit;
+	background: none;
+	border: none;
+}
+div.image ul li b {
+	font-weight: 700;
+	color: inherit;
+}
+
 #header.small +.container +.main {
 		padding-top: 1.5em;
 	}
