@@ -61,8 +61,12 @@ div.image ul li b {
 
 /* One */
 
-	#one {
+	#one, #three {
 		text-align: center;
+	}
+
+	#one .image.fit {
+		display: none;
 	}
 
 /* Two */
