@@ -53,7 +53,7 @@
 			alignment: 'right',
 			hoverDelay: 0
 		});
-		$(document).on('click touchstart', 'nav +#hamburger', function(e){
+		$(document).on('tap', 'nav +#hamburger', function(e){
 			if($('html').hasClass('small'))
 				$('nav').toggleClass('toggled');
 				$('#header').toggleClass('toggled');
