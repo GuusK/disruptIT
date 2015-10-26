@@ -253,7 +253,24 @@ router.get('/aanwezigen', adminAuth, function (req,res,next) {
   });
 });
 
+/**
+ * Lezingkeuze
+ */
+router.get('/choices', adminAuth, function (req,res,next) {
+  var opts = {reduce: function(a,b){ b.total++;}, initial: {total: 0}};
 
+  User.aggregate([{ $group: { _id: '$lezing1', count: {$sum: 1} }}], function (err, lezing1) {
+    User.aggregate([{ $group: { _id: '$lezing2', count: {$sum: 1} }}], function (err, lezing2) {
+      User.aggregate([{ $group: { _id: '$lezing3', count: {$sum: 1} }}], function (err, lezing3) {
+        res.render('choices', { lezing1 : lezing1, lezing2 : lezing2, lezing3 : lezing3  });
+      });
+    });
+  });
+});
+
+/**
+ * Standaard vertalings interface van translation engine
+ */
 router.get('/translate', adminAuth, function (req, res, next) {
   res.render('webtranslate');
 });

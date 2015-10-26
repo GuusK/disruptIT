@@ -1,0 +1,36 @@
+mixin speakerCount(lezing, title)
+  script(type='text/javascript')
+    | google.load("visualization", "1", {packages: ["corechart"]});
+    | google.setOnLoadCallback(drawChart);
+    | function drawChart() {
+    |   var data = google.visualization.arrayToDataTable([
+    |     ['Talk', 'Choice'],
+    if lezing[0]
+      !=   "['" + lezing[0]._id + "', " + lezing[0].count + "],"
+    if lezing[1]
+      !=   "['" + lezing[1]._id + "', " + lezing[1].count + "],"
+    |   ]);
+    |   var options = {
+    !=   "title: '" + title + "',"
+    |     is3D: true,
+    |     chartArea: {height: '90%'},
+    |     legend: {alignment: 'center'},
+    |   };
+    !=  "var chart = new google.visualization.PieChart(document.getElementById('" + title + "'));"
+    |   chart.draw(data, options);
+    | }
+  div(id!=title, style='width: 100%; height: 300px;')
+
+extends layout
+
+block content
+  script(type='text/javascript', src='https://www.google.com/jsapi')
+
+  section.main.style1
+    .container
+      .row(class='0%')
+        h2 Lezing keuzes
+
+        +speakerCount(lezing1, "lezing1")
+        +speakerCount(lezing2, "lezing2")
+        +speakerCount(lezing3, "lezing3")
