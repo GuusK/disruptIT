@@ -41,14 +41,14 @@
         "welcome": "Arrival",
         "opening": "Opening",
         "talk": {
-            "first": "b First collective talk",
-            "second1": "b Second talk",
-            "second2": "b Second talk",
-            "third1": "b Third talk",
-            "third2": "b Third talk",
-            "fourth1": "b Fourth talk",
-            "fourth2": "b Fourth talk",
-            "end": "b Final collective talk"
+            "first": "#[b Johan van Rooij] Automated guided vehicles",
+            "second1": "#[b Jan Smits] Sensored data: is law stopping innovation?",
+            "second2": "#[b Laurenz Eveleens] Optimize your world",
+            "third1": "#[b Mark Bakker] Machine learning",
+            "third2": "#[b Emile Nijssen] From idea to autonomous product",
+            "fourth1": "#[b AME] ",
+            "fourth2": "#[b Martijn Dashorst] Quis automatiet ipsos automates?",
+            "end": "#[b Tom Scott] The social consequences of increasing automation"
         },
         "lunch": "Lunch",
         "closing": "Closing",

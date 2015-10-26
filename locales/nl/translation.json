@@ -41,14 +41,14 @@
         "welcome": "Aankomst en ontvangst",
         "opening": "Opening",
         "talk": {
-            "first": "b Gezamenlijke lezing",
-            "second1": "b Tweede lezing",
-            "second2": "b Tweede lezing",
-            "third1": "b Derde lezing",
-            "third2": "b Derde lezing",
-            "fourth1": "b Vierde lezing",
-            "fourth2": "b Vierde lezing",
-            "end": "b Afsluitende gezamenlijke lezing"
+            "first": "#[b Johan van Rooij] Automated guided vehicles",
+            "second1": "#[b Jan Smits] Sensored data: is law stopping innovation?",
+            "second2": "#[b Laurenz Eveleens] Optimize your world",
+            "third1": "#[b Mark Bakker] Machine learning",
+            "third2": "#[b Emile Nijssen] From idea to autonomous product",
+            "fourth1": "#[b AME] ",
+            "fourth2": "#[b Martijn Dashorst] Quis automatiet ipsos automates?",
+            "end": "#[b Tom Scott] The social consequences of increasing automation"
         },
         "lunch": "Lunch",
         "closing": "Afsluiting",
