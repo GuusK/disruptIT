@@ -190,7 +190,7 @@ module.exports = function (config) {
           from: config.email.auth.user,
           subject: 'Wachtwoord resetten',
           text: 'Je hebt deze e-mail ontvangen omdat jij (of iemand anders) een wachtwoordreset hebt aangevraagd. \n\n' +
-                        'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: '+req.protocol+'://'+req.get('host')+'/reset/'+token+'\n\n'+
+                        'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: https://autonom.it/reset/'+token+'\n\n'+
                         'Als jij deze wachtwoordreset niet hebt aangevraagd, negeer dan deze e-mail en je wachtwoord zal onveranderd blijven.\n\n'
         };
 
@@ -213,9 +213,11 @@ module.exports = function (config) {
       if (!user) {
         req.flash('error', 'Wachtwoord reset token is invalid.');
         return res.redirect('/forgot');
+      } else {
+        res.render('reset', { user: req.user });
       }
     });
-    res.render('reset', { user: req.user });
+
   });
 
   router.post('/reset/:token', function (req, res, next) {
