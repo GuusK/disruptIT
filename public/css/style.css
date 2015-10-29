@@ -32,6 +32,25 @@ nav {
 	opacity: 0.9;
 }
 
+b.dateBlock {
+	display: block !important;
+	background: rgba(255,255,255,0.7);
+	padding: 0px 10px !important;
+	font-size: 0.8em  !important;
+	color: #44758f !important;
+	-ms-transform: rotate(3deg); /* IE 9 */
+	-webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
+	transform: rotate(3deg);
+	position: absolute !important;
+	margin: 0 auto !important;
+	width: 120px;
+	left: 0 !important;
+	right: 0 !important;
+}
+b.dateBlock + p {
+	margin-top: 45px !important;
+}
+
 nav a.logo, #header nav a.logo:hover {
 	display: block;
 	float: left;
