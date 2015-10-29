@@ -210,12 +210,12 @@ module.exports = function (config) {
 
   router.get('/reset/:token', function (req, res) {
     User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: {$gt : Date.now() } }, function (err, user) {
-      if (!user) {
-        req.flash('error', 'Wachtwoord reset token is invalid.');
-        return res.redirect('/forgot');
-      } else {
-        res.render('reset', { user: req.user });
-      }
+        if (!user) {
+          req.flash('error', 'Wachtwoord reset token is invalid.');
+          return res.redirect('/forgot');
+        } else {
+          res.render('reset', { user: req.user });
+        }
     });
 
   });

@@ -1,11 +1,18 @@
 extends ../layout
-block title
-  | Team Human 
+
 block content
   section.main.style1
     .container
       .row(class='0%')
-        h2= speaker.talk
+        if speaker.language == 'en'
+          h2
+            = speaker.talk
+            span.flag-icon.flag-icon-gb(style='margin-left:10px; top: -5px; font-size: 14px;')
+
+        if speaker.language == 'nl'
+          h2
+            = speaker.talk
+            span.flag-icon.flag-icon-nl(style='margin-left:10px; top: -5px; font-size: 14px;')
         .row(class='spaced 200%')
           .12u
             span.image.right(style='margin-top: 70px')

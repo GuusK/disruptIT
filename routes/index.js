@@ -113,7 +113,7 @@ router.get('/speakers', function (req, res) {
 
 router.get('/speakers/:talk', function (req, res) {
   var s = config.speakers.filter(function(speaker){
-    return (speaker.talk.replace(/\s/g, '-').replace('?', '').replace(':', '').toLowerCase() === req.params.talk);
+    return (speaker.talk.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase() === req.params.talk);
   })[0];
 
   if(!Boolean(s)){

@@ -18,7 +18,15 @@ block content
                 img.avatar(src=speaker.image)
 
               header
-                h3= speaker.name
+                if speaker.language == 'en'
+                  h3
+                    = speaker.name
+                    span.flag-icon.flag-icon-gb(style='margin-left:10px; font-size: 14px;')
+
+                if speaker.language == 'nl'
+                  h3
+                    = speaker.name
+                    span.flag-icon.flag-icon-nl(style='margin-left:10px; font-size: 14px;')
                 p= speaker.company
               p.small= t('speakers.' + hypenate(speaker.name))
               a.button.small.special(style='float: right;margin: -20px 0 70px 0;', href='./speakers/' + hypenate(speaker.talk))= t('speakers.talk') + speaker.talk + '  »'

@@ -35,20 +35,20 @@
         "header": "Dagprogramma",
         "table": {
             "time": "Tijd",
-            "col1": "Track 1",
-            "col2": "Track 2"
+            "col1": "Engelse track",
+            "col2": "Nederlandse track"
         },
         "welcome": "Aankomst en ontvangst",
         "opening": "Opening",
         "talk": {
-            "first": "#[b Johan van Rooij] Automated guided vehicles",
-            "second1": "#[b Jan Smits] Sensored data: is law stopping innovation?",
-            "second2": "#[b Laurenz Eveleens] Optimize your world",
-            "third1": "#[b Mark Bakker] Machine learning",
-            "third2": "#[b Emile Nijssen] From idea to autonomous product",
-            "fourth1": "#[b AME] ",
-            "fourth2": "#[b Martijn Dashorst] Quis automatiet ipsos automates?",
-            "end": "#[b Tom Scott] The social consequences of increasing automation"
+            "first": "#[b The autonomous hospital] dr. Johan van Rooij",
+            "second1": "#[b Sensored data: is law stopping innovation?] Prof.mr.dr. Jan Smits",
+            "second2": "#[b Optimize your world] Laurenz Eveleens (Ortec)",
+            "third1": "#[b Machine learning] Mark Bakker",
+            "third2": "#[b From idea to autonomous product] Emile Nijssen",
+            "fourth1": "#[b Where am I? Make a decision!] Gert-Jan van Rootselaar (AME)",
+            "fourth2": "#[b Quis automatiet ipsos automates?] Martijn Dashorst (Topicus)",
+            "end": "#[b The social consequences of increasing automation] Tom Scott"
         },
         "lunch": "Lunch",
         "closing": "Afsluiting",
@@ -165,7 +165,7 @@
                 "p Deze lezing zal gegeven worden in het Engels.",
                 "p This talk will discuss the social consequences of increased automation, including automated decision making. It'll ask what we might see in a future where we outsource more and more of our important decisions to algorithms. In a world of public credit scores; of predicting political views by social graph; of increasingly reliable face recognition: what might be around the corner? What should we welcome? What should we prepare for? And how can we help write a less dystopian future?"
             ],
-            "automated-guided-vehicles": [
+            "the-autonomous-hospital": [
                 "p Automated Guided Vehicles (AGVs) are driverless robotic vehicles, typically used for materials handling in production- and storage environments. In this talk, we talk about a project done for Frog AGV systems, an Utrecht based company that provides logistics solutions using AGVs for customers worldwide. Specifically, we consider the setting where AGVs are used for internal transportation at a hospital, transporting food, bed linen, medication, waste, etc.",
                 "p One of the main difficulties here is that the hospital has elevators for transporting AGVs vertically between different floors. This talk will be about how we have developed a module for the scheduling of the elevators and the queues in front of the elevators. When an AGV approaches an elevator, our module decides in which queue it has to wait. Also, our module decides for each elevator when this elevator picks-up or delivers which AGV at which floor. This is done such that the capacity of the elevator system is maximised, while making sure that AGVs will not be late (e.g., food will not be cold on arrival). In this talk, we will touch the underlying model, the algorithms that we used, and the evaluation of the performance of the module using simulation."
             ],
@@ -187,6 +187,12 @@
             ],
             "from-idea-to-autonomous-product": [
                 "p Van idee naar consumentenproduct: het klinkt fantastisch, maar wat komt er allemaal bij kijken? Een hobbyproject voor jezelf is zo gebouwd, maar om werkelijk de belofte waar te maken dat ál je apparatuur thuis met elkaar samenwerkt, én je moeder het kan gebruiken, is misschien toch iets lastiger dan je zou denken. In de presentatie wordt ingegaan op de moeilijkheden die komen kijken bij het maken van een product dat moet concurreren met Apple en Google..."
+            ],
+            "where-am-i-make-a-decision": [
+                "p Veel autonome systemen hebben locatiegegevens nodig om de juiste beslissingen te nemen. Voorbeelden van deze systemen bij AME zijn onder andere: personal trackers, moderne thermostaten en Automated Guided Vehicles.",
+                "p Alleen GPS is niet voldoende om dit doel te bereiken: het werkt niet goed binnenshuis omdat het een goede link met satellieten nodig heeft, bovendien kan het lang duren voordat je locatie bepaald is.",
+                "p Gert-Jan zal het hebben over alternatieve methoden voor positiebepaling, zoals het combineren van verschillende typen GPS, GPRS, 868 beacons, WiFi, Zigbee, gyroscopen, versnellingsmeters en camera’s.",
+                "p Deze technische lezing combineert theoretische modellen met use cases uit de praktijk. We zullen bediscussiëren hoe de eerder genoemde technieken gebruikt worden in producten die recent zijn ontwikkeld door AME en in producten die nog in ontwikkeling zijn."
             ]
         },
         "back": "&laquo; Terug naar sprekers",
@@ -204,7 +210,8 @@
         "emile-nijssen": "Emile Nijssen, één van de twee oprichters van Athom, is sinds eind 2014 full-time werkzaam om Homey, een superafstandsbediening op spraak, op de markt te brengen. Waar Homey ooit is ontstaan uit luiheid op zijn studentenkamer, ligt Homey dit jaar nog in de winkel. Homey is via Kickstarter gefinancierd, en ondertussen is het bedrijf uitgegroeid tot 15 man met een passie voor gebruikersvriendelijke producten maken",
         "dr": {
             "-johan-van-rooij": "Johan van Rooij is a consultant at CQM (Consultants in Quantitative Methods), a small consulting company specialised in problems with a mathematical/quantitative component. He specifies, designs and implements IT solutions that often involve (complex) mathematics. This is his first job after obtaining his PhD degree in the theory of algorithms at Utrecht University, where he studied both Computer Science and Mathematics before. As of last year, Johan also part-time teaches at Utrecht University where his interests lie in algorithms and complexity and in bridging the gap between theory and actually making these solutions work in practice."
-        }
+        },
+        "gert-jan-van-rootselaar": "Gert-Jan has a passion for developing high tech products. At AME he has been involved as Electrical Engineer, Project Manager and Software Architect in products ranging from Mobile Apps to Smart lighting systems, Thermostats, Elevators and Electrical Vehicles. In his spare time he enjoys designing video games and doing analytics on the collected data. Prior to joining AME he has worked in Banking, Insurance, Consulting and at Philips Research."
     },
     "presenters": {
         "dr": {
