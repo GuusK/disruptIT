@@ -36,12 +36,25 @@ mixin speakerData(lezing)
 extends layout
 
 block content
-  script(type='text/javascript', src='https://www.google.com/jsapi')
 
   section.main.style1
     .container
       .row(class='0%')
-        h2 Lezing keuzes
+        script(type='text/javascript', src='https://www.google.com/jsapi')
+        -count = 0
+        if lezing1[0] && lezing1[0]._id !== null
+          -count += lezing1[0].count
+        if lezing1[1] && lezing1[1]._id !== null
+          -count += lezing1[1].count
+        if lezing1[2] && lezing1[2]._id !== null
+          -count += lezing1[2].count
+        if lezing1[3] && lezing1[3]._id !== null
+          -count += lezing1[3].count
+
+        h2
+          = 'Lezingkeuzes'
+          small
+            = '(' + count + ' ingevuld)'
 
         +speakerCount(lezing1, "lezing1")
         +speakerCount(lezing2, "lezing2")
