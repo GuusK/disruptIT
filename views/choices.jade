@@ -6,9 +6,13 @@ mixin speakerCount(lezing, title)
     |   var data = google.visualization.arrayToDataTable([
     |     ['Talk', 'Choice'],
     if lezing[0]
-      !=   "['" + lezing[0]._id + "', " + lezing[0].count + "],"
+      +speakerData(lezing[0])
     if lezing[1]
-      !=   "['" + lezing[1]._id + "', " + lezing[1].count + "],"
+      +speakerData(lezing[1])
+    if lezing[2]
+      +speakerData(lezing[2])
+    if lezing[3]
+      +speakerData(lezing[3])
     |   ]);
     |   var options = {
     !=   "title: '" + title + "',"
@@ -20,6 +24,14 @@ mixin speakerCount(lezing, title)
     |   chart.draw(data, options);
     | }
   div(id!=title, style='width: 100%; height: 300px;')
+
+mixin speakerData(lezing)
+  if lezing._id == ''
+    -lezing._id = 'Geen voorkeur'
+
+  if lezing._id !== null
+    != "['" + lezing._id + "', " + lezing.count + "],"
+
 
 extends layout
 
