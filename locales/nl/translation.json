@@ -41,14 +41,14 @@
         "welcome": "Aankomst en ontvangst",
         "opening": "Opening",
         "talk": {
-            "first": "#[b The autonomous hospital] dr. Johan van Rooij",
-            "second1": "#[b Sensored data: is law stopping innovation?] Prof.mr.dr. Jan Smits",
-            "second2": "#[b Optimize your world] Laurenz Eveleens (Ortec)",
-            "third1": "#[b Machine learning] Mark Bakker",
-            "third2": "#[b From idea to autonomous product] Emile Nijssen",
-            "fourth1": "#[b Where am I? Make a decision!] Gert-Jan van Rootselaar (AME)",
-            "fourth2": "#[b Quis automatiet ipsos automates?] Martijn Dashorst (Topicus)",
-            "end": "#[b The social consequences of increasing automation] Tom Scott"
+            "first": "#[b #[a(href='/nl/speakers/the-autonomous-hospital') The autonomous hospital]] dr. Johan van Rooij (CQM)",
+            "second1": "#[b #[a(href='/nl/speakers/sensored-data-is-law-stopping-innovation') Sensored data: is law stopping innovation?]] Prof.mr.dr. Jan Smits (TU/e)",
+            "second2": "#[b #[a(href='/nl/speakers/optimize-your-world') Optimize your world]] Laurenz Eveleens (Ortec)",
+            "third1": "#[b #[a(href='/nl/speakers/applications-of-machine-learning') Applications of machine learning]] Mark Bakker (SAS)",
+            "third2": "#[b #[a(href='/nl/speakers/from-idea-to-autonomous-product') From idea to autonomous product]] Emile Nijssen (Homey)",
+            "fourth1": "#[b #[a(href='/nl/speakers/where-am-i-make-a-decision') Where am I? Make a decision!]] Gert-Jan van Rootselaar (AME)",
+            "fourth2": "#[b #[a(href='/nl/speakers/quis-automatiet-ipsos-automates') Quis automatiet ipsos automates?]] Martijn Dashorst (Topicus)",
+            "end": "#[b #[a(href='/nl/speakers/the-social-consequences-of-increasing-automation') The social consequences of increasing automation]] Tom Scott"
         },
         "lunch": "Lunch",
         "closing": "Afsluiting",
@@ -180,7 +180,7 @@
             "sensored-data-is-law-stopping-innovation": [
                 "p Sensored data is everywhere. Our house, our car, our body will soon be fully equipped with sensors. Some of these sensors will gather very personal (almost medical) data, like how much did you drink and pee between 07.00 and 13.00 hrs on any given Monday? And how much of the peeing was done on your own toilet? Is it ethical to gather so much or this type of data? What has the law to say about this? Should the adagium: 'I have nothing to hide!' really be the paradigm for designers/developers of data collecting systems? The Google adagium: do no evil, does that suffice as a guideline? A young Austrian internet lawyer challenged Facebooks privacy clauses because he thought they were insufficient. My talk will try to organize what the law has to say about sensored data and ad provide you with some handles that will help in making decisions when working in this field."
             ],
-            "machine-learning": [
+            "applications-of-machine-learning": [
                 "p Machine Learning is hip. Niet alleen academische onderzoekers en technologische bedrijven maken gebruik van machine learning, ook de huis-tuin-en-keuken analist bij traditionele industrieën zet steeds vaker machine learning technieken in om bedrijfsproblemen op te lossen en om automatische applicaties aan te bieden aan klanten.",
                 "p Machine learning maakt gebruik van wiskundige (niet per se statistische) modellen om te leren van en over data. In deze context betekent leren van en over data ‘curve-fitting’ of ‘hyper-plane fitting’, zonder de traditionele statistische zorgen over onderliggende datadistributies of mogelijke verschillen tussen de genomen datasample en andere samples.",
                 "p Verrassend genoeg zijn dergelijke machine learning modellen heel bedreven in het maken van accurate voorspellingen over nieuwe samples van data, zelfs wanneer het fenomeen dat voorspeld wordt zeer zeldzaam voorkomt of als het niet-lineair gedrag vertoont. Omdat machine learning dus werkt waar traditionele statistiek ophoudt, is het voor veel bedrijven heel interessant. Industrieën zoals de financiele wereld en retail omarmen machine learning technieken. Echter, wanneer is machine learning eigenlijk interessant in het bedrijfsleven? Wat zijn goede toepassingen van machine learning en hoe zou machine learning eigenlijk ingezet moeten worden in het bedrijfsleven?"
