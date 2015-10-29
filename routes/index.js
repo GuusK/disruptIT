@@ -68,7 +68,20 @@ router.get('/opensource',function (req,res) {
 router.post('/profile', auth, function (req, res) {
   req.sanitize('vegetarian').toBoolean();
   req.sanitize('bus').toBoolean();
-  console.log(req.session);
+
+  if(req.body.lezing1 !== "" && req.body.lezing1 !== null &&req.body.lezing1 !== 'laurenz-eveleens' && req.body.lezing1 !== 'jan-smits'){
+    req.flash('error', req.t('profile.announcement.error'));
+    return res.redirect('/profile');
+  }
+  if(req.body.lezing2 !== "" && req.body.lezing2 !== null &&req.body.lezing2 !== 'mark-bakker' && req.body.lezing2 !== 'emile-nijssen'){
+    req.flash('error', req.t('profile.announcement.error'));
+    return res.redirect('/profile');
+  }
+  if(req.body.lezing3 !== "" && req.body.lezing3 !== null && req.body.lezing3 !== 'gert-jan-van-rootselaar' && req.body.lezing3 !== 'martijn-dashorst'){
+    req.flash('error', req.t('profile.announcement.error'));
+    return res.redirect('/profile');
+  }
+
   User.findOne({email:req.session.passport.user}, function (err, user) {
     if (!err)
     {
