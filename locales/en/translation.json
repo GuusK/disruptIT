@@ -215,9 +215,8 @@
     },
     "presenters": {
         "dr": {
-            "-kees-huizing": [
-                "Kees Huizing is an assistant professor in the Software Engineering-group at Eindhoven University of Technology, and also teaches Computer Science Didactics at the Eindhoven School of Education. Kees got his PhD in Eindhoven, on the topic of the sematics of reactive systems. His research is typically about software development and automatic proofs. Besides his professional interest in Computer Science and Didactics, Kees is typically enjoying the Dutch language and is a Twitter fanatic (@mackees). At the Dutch study-associations for Mathematics and Computer Science he is  well-remembered for his inspiring guest lecture at the 93th WISO."
-            ]
+            "-kees-huizing": "Kees Huizing is an assistant professor in the Software Engineering-group at Eindhoven University of Technology, and also teaches Computer Science Didactics at the Eindhoven School of Education. Kees got his PhD in Eindhoven, on the topic of the sematics of reactive systems. His research is typically about software development and automatic proofs. Besides his professional interest in Computer Science and Didactics, Kees is typically enjoying the Dutch language and is a Twitter fanatic (@mackees). At the Dutch study-associations for Mathematics and Computer Science he is  well-remembered for his inspiring guest lecture at the 93th WISO.",
+            "-lucas-asselbergs": "The bio text of this presenter is not yet available."
         }
     },
     "fields": {
