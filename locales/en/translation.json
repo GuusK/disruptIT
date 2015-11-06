@@ -216,7 +216,10 @@
     "presenters": {
         "dr": {
             "-kees-huizing": "Kees Huizing is an assistant professor in the Software Engineering-group at Eindhoven University of Technology, and also teaches Computer Science Didactics at the Eindhoven School of Education. Kees got his PhD in Eindhoven, on the topic of the sematics of reactive systems. His research is typically about software development and automatic proofs. Besides his professional interest in Computer Science and Didactics, Kees is typically enjoying the Dutch language and is a Twitter fanatic (@mackees). At the Dutch study-associations for Mathematics and Computer Science he is  well-remembered for his inspiring guest lecture at the 93th WISO.",
-            "-lucas-asselbergs": "The bio text of this presenter is not yet available."
+            "-lucas-asselbergs": [
+                "Lucas Asselbergs (56) is the leader of Studium Generale at Eindhoven University of Technology. Before that he worked in the public relations office at the department of Industrial Design, as student advisor and as a program director for Studium Generale. ",
+                "He was a moderator at TU/e's Mystery Tour (with the executive board and student's associations), the ESC symposium on technical singularities, at a debate about Student Life in Eindhoven and at several Studium Generale activities. Asselbergs studied psychology at the university of Amsterdam and got his PhD at the University of Utrecht (1989)."
+            ]
         }
     },
     "fields": {
