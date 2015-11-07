@@ -248,6 +248,16 @@ router.get('/tickets', adminAuth, function (req, res, next) {
 });
 
 /**
+ * Output alle tickets die nog niet geownt zijn door gebruikers
+ */
+router.get('/nametags', adminAuth, function (req, res, next) {
+  User.find({}, function (err, users) {
+    if (err) { return next(err); }
+    res.render('nametags', {users: users});
+  });
+});
+
+/**
  * Aanwezigheidslijst per vereniging
  */
 router.get('/aanwezigen', adminAuth, function (req,res,next) {
@@ -280,6 +290,7 @@ router.get('/choices', adminAuth, function (req,res,next) {
     });
   });
 });
+
 
 /**
  * Standaard vertalings interface van translation engine
