@@ -188,6 +188,16 @@ router.get('/users', adminAuth, function (req,res,next) {
   });
 });
 
+/**
+ * Output alle dieetwensen
+ */
+router.get('/diet', adminAuth, function (req, res, next) {
+  User.find({$or: [{'specialNeeds': {$ne: ""}}, {'vegetarian': true}]}).sort({'vereniging':1,'firstname':1}).exec( function (err, results) {
+    if (err) { return next(err); }
+    res.render('diet',{users:results, verenigingen:config.verenigingen});
+  });
+});
+
 
 router.get('/users/:id', adminAuth, function (req,res,next) {
   User.findOne({_id:req.params.id}, function (err, result) {
