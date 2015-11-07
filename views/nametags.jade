@@ -2,9 +2,12 @@ mixin nametag(user)
   if user
     .ticket.ophaal
       div.content
-        h2= ucfirst(user.firstname) + ' ' + user.surname
-        p=  verenigingen[user.vereniging].name
-
+        if user.surname == 'Tiel Groenestege'
+          h2(style='font-size: 20px')= ucfirst(user.firstname) + ' ' + user.surname
+          p=  verenigingen[user.vereniging].name
+        else
+          h2= ucfirst(user.firstname) + ' ' + user.surname
+          p=  verenigingen[user.vereniging].name
       div.aside
         div
       br(clear='all')
