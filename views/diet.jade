@@ -16,7 +16,7 @@ block  content
             tbody
               for row in users
                 tr
-                  td(style="white-space:nowrap;")=row.firstname + " " + row.surname+ " (" + row.email +  ")"
+                  td(style="white-space:nowrap;")=row.firstname + " " + row.surname
                   td(style="white-space:nowrap;")=verenigingen[row.vereniging].name
                   td
                     if row.vegetarian
