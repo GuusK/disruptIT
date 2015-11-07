@@ -4,10 +4,18 @@ mixin nametag(user)
       div.content
         if user.surname == 'Tiel Groenestege'
           h2(style='font-size: 20px')= ucfirst(user.firstname) + ' ' + user.surname
-          p=  verenigingen[user.vereniging].name
         else
           h2= ucfirst(user.firstname) + ' ' + user.surname
+
+        if verenigingen[user.vereniging].name == 'via'
+          p
+            b via
+        else if p = verenigingen[user.vereniging].name == 'Inter-Actief'
+          p Inter-
+            i Actief
+        else
           p=  verenigingen[user.vereniging].name
+
       div.aside
         div
       br(clear='all')
@@ -49,7 +57,6 @@ html
 
       h2 + p {
         margin-top: 0px;
-        font-style: italic;
         font-size: 17px;
         color: #999 !important;
         -webkit-print-color-adjust: exact;

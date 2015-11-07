@@ -251,7 +251,7 @@ router.get('/tickets', adminAuth, function (req, res, next) {
  * Output alle tickets die nog niet geownt zijn door gebruikers
  */
 router.get('/nametags', adminAuth, function (req, res, next) {
-  User.find({}, function (err, users) {
+  User.find().sort({'vereniging':1,'firstname':1}).exec(function (err, users) {
     if (err) { return next(err); }
     res.render('nametags', {users: users});
   });
