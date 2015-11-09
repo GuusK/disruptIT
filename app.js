@@ -51,7 +51,14 @@ app.use(compress({
     }
     return /json|text|javascript|dart|image\/svg\+xml|application\/x-font-ttf|application\/vnd\.ms-opentype|application\/vnd\.ms-fontobject/.test(res.getHeader('Content-Type'));
   }
-}));  
+}));
+
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://autonom.it:1337');
+
+  next();
+};
 
 app.use(favicon());
 app.use(morgan('default'));
@@ -59,6 +66,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(expressValidator());
 app.use(cookieParser());
+app.use(allowCrossDomain);
 app.use(session({
   secret: config.session.secret,
   store: new MongoStore({url: config.mongodb.url }),
