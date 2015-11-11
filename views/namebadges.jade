@@ -1,20 +1,38 @@
-mixin nametag(user)
+mixin nametag(type, user)
   if user
     .ticket.ophaal
       div.content
         if user.surname == 'Tiel Groenestege'
           h2(style='font-size: 20px')= ucfirst(user.firstname) + ' ' + user.surname
+
+        else if user.name
+          if user.name == 'Gert-Jan van Rootselaar'
+            h2(style='font-size: 20px')= user.name
+          else
+            h2= user.name
+
         else
           h2= ucfirst(user.firstname) + ' ' + user.surname
 
-        if verenigingen[user.vereniging].name == 'via'
+        if user.company
           p
-            b via
+            b= type + ' | '
+            = user.company.replace(/(\(.*\))/g, '')
+
+        else if verenigingen[user.vereniging].name == 'via'
+          p
+            b= type + ' | via'
         else if p = verenigingen[user.vereniging].name == 'Inter-Actief'
-          p Inter-
+
+          p
+            b= type + ' | '
+            != 'Inter-'
             i Actief
+
         else
-          p=  verenigingen[user.vereniging].name
+          p
+            b= type + ' | '
+            = verenigingen[user.vereniging].name
 
       div.aside
         div
@@ -219,9 +237,23 @@ html
         }
       }
   body
-
+    //Students
     - for (var i = 0, x = 10; i < users.length; i += x)
       div
         - for (var j = 0; j < x; j++)
-          +nametag(users[i + j])
+          +nametag("Student", users[i + j])
+      footer
+
+    //Speakers
+    - for (var i = 0, x = 10; i < speakers.length; i += x)
+      div
+        - for (var j = 0; j < x; j++)
+          +nametag("Speaker", speakers[i + j])
+      footer
+
+    //Moderators
+    - for (var i = 0, x = 10; i < moderators.length; i += x)
+      div
+        - for (var j = 0; j < x; j++)
+          +nametag("Moderator", moderators[i + j])
       footer

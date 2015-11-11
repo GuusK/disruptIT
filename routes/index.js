@@ -260,10 +260,18 @@ router.get('/tickets', adminAuth, function (req, res, next) {
 /**
  * Output alle tickets die nog niet geownt zijn door gebruikers
  */
-router.get('/nametags', adminAuth, function (req, res, next) {
+router.get('/namebadges', adminAuth, function (req, res, next) {
+  var speakers = config.speakers.filter(function(speaker){
+    return !speaker.hidden;
+  });
+  var moderators = config.presenters.filter(function(moderator){
+    return !moderator.hidden;
+  });
+
   User.find().sort({'vereniging':1,'firstname':1}).exec(function (err, users) {
     if (err) { return next(err); }
-    res.render('nametags', {users: users});
+
+    res.render('namebadges', {users: users, speakers: speakers, moderators: moderators});
   });
 });
 
