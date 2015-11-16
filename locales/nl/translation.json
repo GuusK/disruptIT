@@ -248,7 +248,7 @@
     "location": {
         "header": "Locatie & bussen",
         "text": "p Het Evoluon is een evenementrijke locatie waar voorheen het wetenschapsmuseum van Philips was gehuisvest. De discusvormige constructie is een symbool voor de stad Eindhoven geworden.#[br]#[br]#[b Adres]#[br]Noord Brabantlaan 1a#[br]5652 LA Eindhoven",
-        "busses": {
+        "buses": {
             "header": "Bussen",
             "text": [
                 "p Voor studenten komende uit Amsterdam, Enschede, Groningen, Leiden, Nijmegen en Utrecht is er busvervoer geregeld voor zowel de heenweg als de terugweg. Na het invoeren van je activatiecode kun je aangeven of je gebruik wil maken van het busvervoer.",
