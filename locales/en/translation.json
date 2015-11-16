@@ -86,8 +86,8 @@
         "nospeakers": "No talks have been announced yet.",
         "nopresenters": "No moderators have been announced yet."
     },
-    "busses": {
-        "header": "Busses"
+    "buses": {
+        "header": "buses"
     },
     "profile": {
         "header": "My profile",
@@ -245,5 +245,48 @@
         "information": "Information",
         "sponsorship": "Sponsorship"
     },
-    "=": ""
+    "location": {
+        "header": "Location & buses",
+        "text": "p The Evoluon was built as the science museum of Philips, but now functions as event location. Its unique discus shape has become a symbol for the city of Eindhoven.#[br]#[br]#[b Address]#[br]Noord Brabantlaan 1a#[br]5652 LA Eindhoven",
+        "buses": {
+            "header": "buses",
+            "text": [
+                "p Students coming from Amsterdam, Enschede, Groningen, Leiden, Nijmegen and Utrecht can make use of arranged bus transport. After entering your activation code, you can opt-in for one of the buses.",
+
+                "h4 Amsterdam-Oost (<b>via</b>)",
+                "p Location: Science Park 904 #[br] Department: 07:30u",
+
+                "h4 Amsterdam-Zuid (STORM)",
+                "p Location: Arent Janszoon Ernststraat, nabij de flat met huisnummers 901 t/m 1011 #[br] Department: 08:15u",
+
+                "h4 Enschede (Inter-<i>Actief</i>)",
+                "p Location: Drienerlolaan 5, bij parkeerplaats P2 #[br] Department: 07:30u",
+
+                "h4 Groningen (Cover)",
+                "p Location: Nijenborgh 7 #[br] Department: 07:00u",
+
+                "h4 Leiden (De Leidsche Flesch)",
+                "p Location: Niels Bohrweg 1 #[br] Department: 08:15u",
+
+                "h4 Nijmegen (CognAC, Thalia)",
+                "p Location: Toernooiveld 1 #[br] Department: 09:00u",
+
+                "h4 Utrecht (A-Eskwadraat, Sticky)",
+                "p Location: Buys Ballotgebouw, Princetonplein 1 #[br] Department: 08:45u"
+            ]
+        },
+        "publictransport": {
+            "header": "Public transport",
+            "text": [
+                "p The Evoluon can be reached from Eindhoven Station with 4 different bus lines passing bus stop 'Evoluon'. A bus departs every 4 minutes and the journey takes about 10 minutes.",
+                "ul",
+                "  li Line 16: Eindhoven Station - Veldhoven Cobbeek",
+                "  li Line 18: Eindhoven Station - Oerle",
+                "  li Line 401: Eindhoven Station - Airport via Meerhoven",
+                "  li Line 402: Eindhoven Station - Veldhoven Sondervick",
+
+                "p In the evening 6 buses an hour travel back towards the station. Trains towards Breda/The Hague depart every 30 minutes, trains towards Utrecht/Amsterdam every 15 minutes until 20:00h, every 30 minutes afterwards. The last option to travel back towards Groningen and Enschede from the Evoluon is the bus departing at 22:16h, for all other cities the bus of 23:16h is the last option."
+            ]
+        }
+    }
 }

@@ -244,5 +244,49 @@
         "logout": "Uitloggen",
         "information": "Informatie",
         "sponsorship": "Onze partners"
+    },
+    "location": {
+        "header": "Locatie & bussen",
+        "text": "p Het Evoluon is een evenementrijke locatie waar voorheen het wetenschapsmuseum van Philips was gehuisvest. De discusvormige constructie is een symbool voor de stad Eindhoven geworden.#[br]#[br]#[b Adres]#[br]Noord Brabantlaan 1a#[br]5652 LA Eindhoven",
+        "busses": {
+            "header": "Bussen",
+            "text": [
+                "p Voor studenten komende uit Amsterdam, Enschede, Groningen, Leiden, Nijmegen en Utrecht is er busvervoer geregeld voor zowel de heenweg als de terugweg. Na het invoeren van je activatiecode kun je aangeven of je gebruik wil maken van het busvervoer.",
+
+                "h4 Amsterdam-Oost (<b>via</b>)",
+                "p Locatie: Science Park 904 #[br] Vertrek: 07:30u",
+
+                "h4 Amsterdam-Zuid (STORM)",
+                "p Locatie: Arent Janszoon Ernststraat, nabij de flat met huisnummers 901 t/m 1011 #[br] Vertrek: 08:15u",
+
+                "h4 Enschede (Inter-<i>Actief</i>)",
+                "p Locatie: Drienerlolaan 5, bij parkeerplaats P2 #[br] Vertrek: 07:30u",
+
+                "h4 Groningen (Cover)",
+                "p Locatie: Nijenborgh 7 #[br] Vertrek: 07:00u",
+
+                "h4 Leiden (De Leidsche Flesch)",
+                "p Locatie: Niels Bohrweg 1 #[br] Vertrek: 08:15u",
+
+                "h4 Nijmegen (CognAC, Thalia)",
+                "p Locatie: Toernooiveld 1 #[br] Vertrek: 09:00u",
+
+                "h4 Utrecht (A-Eskwadraat, Sticky)",
+                "p Locatie: Buys Ballotgebouw, Princetonplein 1 #[br] Vertrek: 08:45u"
+            ]
+        },
+        "publictransport": {
+            "header": "Openbaar vervoer",
+            "text": [
+                "p Vanaf Station Eindhoven is het Evoluon te bereiken met 4 verschillende buslijnen richting de halte 'Evoluon'. Vanaf het station vertrekt elke 4 minuten een bus van een van de lijnen. De reistijd in de bus bedraagt ongeveer 10 minuten.",
+                "ul",
+                "  li Lijn 16: Eindhoven Station - Veldhoven Cobbeek",
+                "  li Lijn 18: Eindhoven Station - Oerle",
+                "  li Lijn 401: Eindhoven Station - Airport via Meerhoven",
+                "  li Lijn 402: Eindhoven Station - Veldhoven Sondervick",
+
+                "p 's Avonds rijden er 6 bussen per uur vanaf het Evoluon naar het station. Treinen richting Breda/Den Haag vertrekken elk half uur, treinen richting Utrecht/Amsterdam tot 20:00u elk kwartier, daarna elk half uur. De laatste terugreismogelijkheid voor Groningen en Enschede is om 22:16u vanaf het Evoluon, voor de andere steden is dit 23:16u."
+            ]
+        }
     }
 }
