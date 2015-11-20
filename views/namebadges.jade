@@ -244,6 +244,12 @@ html
           +nametag("Student", users[i + j])
       footer
 
+    - for (var i = 0, x = 10; i < additional.length; i += x)
+      div
+        - for (var j = 0; j < x; j++)
+          +nametag("Student", additional[i + j])
+      footer
+
     //Speakers
     - for (var i = 0, x = 10; i < speakers.length; i += x)
       div
@@ -257,3 +263,5 @@ html
         - for (var j = 0; j < x; j++)
           +nametag("Moderator", moderators[i + j])
       footer
+
+

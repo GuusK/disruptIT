@@ -267,11 +267,115 @@ router.get('/namebadges', adminAuth, function (req, res, next) {
   var moderators = config.presenters.filter(function(moderator){
     return !moderator.hidden;
   });
+  //9 gewis
+  //8 CognAC
+  //7 STORM
+  //6 cover
+  //5 interactief
+  //4 thalia
+  //3 sticky
+  //2 via
+  //1 aes^2
+  //
+  var additional = [
+    {
+      name: "Daan Streng",
+      vereniging: 9
+    },
+    {
+      name: "Sanne Bouwmeester",
+      vereniging: 6
+    },
+    {
+      name: "Liese Schmidt",
+      vereniging: 6
+    },
+    {
+      name: "Robin Entjes",
+      vereniging: 6
+    },
+    {
+      name: "Stef Struijk",
+      vereniging: 6
+    },
+    {
+      name: "Merel Wiersma",
+      vereniging: 6
+    },
+    {
+      name: "Wijnand Karsens",
+      vereniging: 6
+    },
+    {
+      name: "David Stritzl",
+      vereniging: 5
+    },
+    {
+      name: "Hans van der Laan",
+      vereniging: 5
+    },
+    {
+      name: "Isabel Pfab",
+      vereniging: 5
+    },
+    {
+      name: "Jelle van den Wijngaard",
+      vereniging: 5
+    },
+    {
+      name: "Joël van der Kaaij",
+      vereniging: 5
+    },
+    {
+      name: "Julian Stellaard",
+      vereniging: 5
+    },
+    {
+      name: "Pim van Leeuwen",
+      vereniging: 5
+    },
+    {
+      name: "Sven Konings",
+      vereniging: 5
+    },
+    {
+      name: "Ties Bolding",
+      vereniging: 5
+    },
+    {
+      name: "Lore Veugen",
+      vereniging: 4
+    },
+    {
+      name: "Evi Sijben",
+      vereniging: 4
+    },
+    {
+      name: "Jan Aarts",
+      vereniging: 4
+    },
+    {
+      name: "Abe Heemskerk",
+      vereniging: 4
+    },
+    {
+      name: "Robin Immel",
+      vereniging: 4
+    },
+    {
+      name: "Nils Bokdam",
+      vereniging: 4
+    },
+    {
+      name: "Myrthe Scheepers",
+      vereniging: 4
+    }
+  ];
 
   User.find().sort({'vereniging':1,'firstname':1}).exec(function (err, users) {
     if (err) { return next(err); }
 
-    res.render('namebadges', {users: users, speakers: speakers, moderators: moderators});
+    res.render('namebadges', {users: users, speakers: speakers, moderators: moderators, additional: additional});
   });
 });
 
