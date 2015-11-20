@@ -336,10 +336,190 @@ router.get('/namebadges', adminAuth, function (req, res, next) {
     }
   ];
 
+  var partners = [
+    {
+      name: "Renee Dorland",
+      company: "DSW"
+    },
+    {
+      name: "Erik Kant",
+      company: "DSW"
+    },
+    {
+      name: "Ernst de Pee",
+      company: "DSW"
+    },
+    {
+      name: "Nick van Vuuren",
+      company: "Ordina"
+    },
+    {
+      name: "Annoushka Presentacion",
+      company: "Ordina"
+    },
+    {
+      name: "Lotte van den Berg",
+      company: "Ordina"
+    },
+    {
+      name: "Eline Linskens",
+      company: "Topicus"
+    },
+    {
+      name: "Jasper van Duijnhoven",
+      company: "Topicus"
+    },
+    {
+      name: "Sabine Oude Booijink",
+      company: "Topicus"
+    },
+    {
+      name: "Vincent Ormel",
+      company: "Procam"
+    },
+    {
+      name: "Jos Molema",
+      company: "Procam"
+    },
+    {
+      name: "Lizanne Holtslag",
+      company: "Procam"
+    },
+    {
+      name: "Bas den Heijer",
+      company: "ORTEC"
+    },
+    {
+      name: "Mick de Lange ",
+      company: "ORTEC"
+    },
+    {
+      name: "Stephan Leemhuis",
+      company: "ORTEC"
+    },
+    {
+      name: "Karin Beaujean",
+      company: "ORTEC"
+    },
+    {
+      name: "Martijn van Zetten",
+      company: "Keylane"
+    },
+    {
+      name: "Gerard de Ruig",
+      company: "Keylane"
+    },
+    {
+      name: "Fleur Aalbersberg",
+      company: "Keylane"
+    },
+    {
+      name: "Tessa Hartog",
+      company: "Rabobank"
+    },
+    {
+      name: "Erik Jongsma",
+      company: "Rabobank"
+    },
+    {
+      name: "Eelke Dijkstra",
+      company: "Rabobank"
+    },
+    {
+      name: "Jorn Jansen",
+      company: "Bol.com"
+    },
+    {
+      name: "Jonathan Lukkien",
+      company: "Bol.com"
+    },
+    {
+      name: "Tom Vrancken",
+      company: "TU/e"
+    },
+    {
+      name: "Jos Magnus",
+      company: "TU/e"
+    }
+  ];
+
+  var crew = [
+    {
+      name: "Tim Meeles",
+      company: "GEWIS"
+    },
+    {
+      name: "Rik Rutjens",
+      company: "GEWIS"
+    },
+    {
+      name: "Marloes Boswerger",
+      company: "GEWIS"
+    },
+    {
+      name: "Wesley Brants",
+      company: "GEWIS"
+    }
+  ];
+
+  var committee = [
+    {
+      name: "Willem Mouwen",
+      company: "Chairman"
+    },
+    {
+      name: "Wout de Ruiter",
+      company: "Secretary"
+    },
+    {
+      name: "Bor de Kock",
+      company: "Treasurer"
+    },
+    {
+      name: "Sako Arts",
+      company: "External affairs"
+    },
+    {
+      name: "Daphne Miedema",
+      company: "Talks"
+    },
+    {
+      name: "Tijmen van Dien",
+      company: "Talks"
+    },
+    {
+      name: "Ingmar Westerhof",
+      company: "Logistics"
+    },
+    {
+      name: "Dennis Collaris",
+      company: "Promotion"
+    }
+  ];
+
+  speakers = speakers.sort(function(a,b){
+    return a.name > b.name;
+  });
+  moderators = moderators.sort(function(a,b){
+    return a.name > b.name;
+  });
+  additional = additional.sort(function(a,b){
+    return a.name > b.name;
+  });
+  partners = partners.sort(function(a,b){
+    return a.name > b.name;
+  });
+  crew = crew.sort(function(a,b){
+    return a.name > b.name;
+  });
+  committee = committee.sort(function(a,b){
+    return a.name > b.name;
+  });
+
   User.find().sort({'vereniging':1,'firstname':1}).exec(function (err, users) {
     if (err) { return next(err); }
 
-    res.render('namebadges', {users: users, speakers: speakers, moderators: moderators, additional: additional});
+    res.render('namebadges', {users: users, speakers: speakers, moderators: moderators, additional: additional, partners: partners, crew: crew, committee: committee});
   });
 });
 
