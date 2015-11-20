@@ -287,23 +287,7 @@ router.get('/namebadges', adminAuth, function (req, res, next) {
       vereniging: 6
     },
     {
-      name: "Liese Schmidt",
-      vereniging: 6
-    },
-    {
       name: "Robin Entjes",
-      vereniging: 6
-    },
-    {
-      name: "Stef Struijk",
-      vereniging: 6
-    },
-    {
-      name: "Merel Wiersma",
-      vereniging: 6
-    },
-    {
-      name: "Wijnand Karsens",
       vereniging: 6
     },
     {
@@ -311,15 +295,7 @@ router.get('/namebadges', adminAuth, function (req, res, next) {
       vereniging: 5
     },
     {
-      name: "Hans van der Laan",
-      vereniging: 5
-    },
-    {
       name: "Isabel Pfab",
-      vereniging: 5
-    },
-    {
-      name: "Jelle van den Wijngaard",
       vereniging: 5
     },
     {
@@ -332,14 +308,6 @@ router.get('/namebadges', adminAuth, function (req, res, next) {
     },
     {
       name: "Pim van Leeuwen",
-      vereniging: 5
-    },
-    {
-      name: "Sven Konings",
-      vereniging: 5
-    },
-    {
-      name: "Ties Bolding",
       vereniging: 5
     },
     {
@@ -360,10 +328,6 @@ router.get('/namebadges', adminAuth, function (req, res, next) {
     },
     {
       name: "Robin Immel",
-      vereniging: 4
-    },
-    {
-      name: "Nils Bokdam",
       vereniging: 4
     },
     {
