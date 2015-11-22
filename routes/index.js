@@ -158,6 +158,18 @@ router.get('/programme', function (req,res) {
   res.render('programme', {title:'Programma'});
 });
 
+router.get('/program', function (req,res) {
+  res.render('programme', {title:'Programma'});
+});
+router.get('/schedule', function (req,res) {
+  res.render('programme', {title:'Programma'});
+});
+router.get('/dagprogramma', function (req,res) {
+  res.render('programme', {title:'Programma'});
+});
+router.get('/programma', function (req,res) {
+  res.render('programme', {title:'Programma'});
+});
 
 router.get('/users', adminAuth, function (req,res,next) {
   var query = {};
