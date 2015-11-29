@@ -8,10 +8,12 @@ block header
     p= t('home.subheader')
     ul.actions
       li
-        if new Date(ticketSaleStarts).getTime() < Date.now()
-          a.button.special.scrolly(href='/register')= t('home.activateBtn')
-        else 
-          a.button.scrolly(href='#one')= t('home.discoverBtn')
+        //-
+          if new Date(ticketSaleStarts).getTime() < Date.now()
+            a.button.special.scrolly(href='/register')= t('home.activateBtn')
+          else
+            a.button.scrolly(href='#one')= t('home.discoverBtn')
+        a.button(href='https://www.flickr.com/gp/138105550@N02/7JNyqZ', target='_blank')= t('home.activateBtn')
 
 
 block content

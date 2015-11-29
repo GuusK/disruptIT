@@ -38,6 +38,10 @@ html(lang=locale)
                 +navEl(t('talks.header'),        '/speakers')
                 +navEl(t('organisation.header'), '/organisation')
                 +navEl(t('location.header'),       '/busses')
+                li
+                  a(href='https://www.flickr.com/gp/138105550@N02/7JNyqZ', target='_blank')
+                    != 'Photos'
+                    sup(style='color: #ff0000') new
 
             if i18n.lng() == 'nl'
               li(class=path=='/partners'?'current':undefined).opener
