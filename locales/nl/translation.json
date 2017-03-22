@@ -194,7 +194,8 @@
                 "p Alleen GPS is niet voldoende om dit doel te bereiken: het werkt niet goed binnenshuis omdat het een goede link met satellieten nodig heeft, bovendien kan het lang duren voordat je locatie bepaald is.",
                 "p Gert-Jan zal het hebben over alternatieve methoden voor positiebepaling, zoals het combineren van verschillende typen GPS, GPRS, 868 beacons, WiFi, Zigbee, gyroscopen, versnellingsmeters en camera’s.",
                 "p Deze technische lezing combineert theoretische modellen met use cases uit de praktijk. We zullen bediscussiëren hoe de eerder genoemde technieken gebruikt worden in producten die recent zijn ontwikkeld door AME en in producten die nog in ontwikkeling zijn."
-            ]
+            ],
+            "talknaam": "speakers.talks.talknaam"
         },
         "back": "&laquo; Terug naar sprekers",
         "tom-scott": "Tom Scott makes things with lines of code, video editing tools, and a few meters of network cable. The projects he’s built have been seen and enjoyed by tens of millions of people, and he’s featured in media around the world, including BBC1, Time Magazine, Newsweek, Forbes, CNN.com, Al Jazeera, and dozens of others. Tom talks about the accelerating pace of change, the internet, and occasionally about tea. He once got in trouble for making fun of the British government, and he was a part-time pirate for most of his adult life. Find him online at tomscott.com or on Twitter at @tomscott.",
@@ -212,7 +213,8 @@
         "dr": {
             "-johan-van-rooij": "Johan van Rooij is een consultant bij CQM (Consultants in Quantitative Methods), een klein consultancy bedrijf dat zich specialiseert in problemen met een wiskundige of kwantitatieve kant. Hij specificeert, ontwerpt en implementeert IT oplossingen die vaak te maken hebben met wiskunde. Dit is zijn eerste baan na het behalen van zijn PhD op het gebied van algorithmiek aan de Universiteit Utrecht, waar hij eerder Wiskunde en Informatica studeerde. Sinds vorig jaar is Johan ook part-time onderwijzer aan de UU, waar hij werkt aan het verkleinen van het gat tussen theorie en het gebruik van algoritmes en complexiteit in de praktijk."
         },
-        "gert-jan-van-rootselaar": "Gert-Jan has a passion for developing high tech products. At AME he has been involved as Electrical Engineer, Project Manager and Software Architect in products ranging from Mobile Apps to Smart lighting systems, Thermostats, Elevators and Electrical Vehicles. In his spare time he enjoys designing video games and doing analytics on the collected data. Prior to joining AME he has worked in Banking, Insurance, Consulting and at Philips Research."
+        "gert-jan-van-rootselaar": "Gert-Jan has a passion for developing high tech products. At AME he has been involved as Electrical Engineer, Project Manager and Software Architect in products ranging from Mobile Apps to Smart lighting systems, Thermostats, Elevators and Electrical Vehicles. In his spare time he enjoys designing video games and doing analytics on the collected data. Prior to joining AME he has worked in Banking, Insurance, Consulting and at Philips Research.",
+        "henk-henksen": "speakers.henk-henksen"
     },
     "presenters": {
         "dr": {
@@ -220,7 +222,8 @@
             "-lucas-asselbergs": [
                 "Lucas Asselbergs (56) is als hoofd Studium Generale werkzaam bij de Technische Universiteit Eindhoven, daarvoor was hij beleidsmedewerker bij Industrial Design, Studentenadviseur bij STU en hij begon bij de TU/e als programmamaker bij Studium Generale. Als moderator was hij onder meer actief bij de Mystery Tour (CvB en studie- en studentverenigingen), het ESC-symposium Technische Singulariteit, een debat over studentenstad Eindhoven, diverse Studium Generale-programma’s en discussies op verschillende faculteiten. Hij studeerde psychologie aan de UvA en promoveerde bij de Universiteit Utrecht (1989)."
             ]
-        }
+        },
+        "naam": "presenters.naam"
     },
     "fields": {
         "firstname": "Voornaam",
