@@ -5,3 +5,4 @@ config.json
 .psci_modules
 public/css/*.min.css
 public/js/*.min.js
+*.log
