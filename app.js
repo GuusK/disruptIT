@@ -26,6 +26,7 @@ var config = JSON.parse(fs.readFileSync('config.json'));
 
 /// configure database
 mongoose.connect(config.mongodb.url);
+mongoose.Promise = require('q').Promise;
 
 var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
