@@ -2,7 +2,12 @@
 var compress = require('compression');
 var express = require('express');
 var path = require('path');
-var favicon = require('static-favicon');
+var favicon = require('serve-favicon');
+
+// serve fast
+var app = express();
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -24,8 +29,6 @@ mongoose.connect(config.mongodb.url);
 
 var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
-
-var app = express();
 
 i18n.init({
     saveMissing: true,
@@ -60,7 +63,7 @@ var allowCrossDomain = function(req, res, next) {
   next();
 };
 
-app.use(favicon());
+// app.use(favicon());
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
