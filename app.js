@@ -61,7 +61,7 @@ var allowCrossDomain = function(req, res, next) {
 };
 
 app.use(favicon());
-app.use(morgan('default'));
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(expressValidator());
