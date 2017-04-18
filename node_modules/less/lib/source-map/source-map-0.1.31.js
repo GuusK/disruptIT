@@ -1338,7 +1338,7 @@ define('source-map/source-map-consumer', ['require', 'exports', 'module' ,  'sou
   /**
    * Returns the original source content. The only argument is the url of the
    * original source file. Returns null if no original source content is
-   * availible.
+   * available.
    */
   SourceMapConsumer.prototype.sourceContentFor =
     function SourceMapConsumer_sourceContentFor(aSource) {
@@ -1872,7 +1872,7 @@ define('source-map/source-node', ['require', 'exports', 'module' ,  'source-map/
       if (original.source !== null
           && original.line !== null
           && original.column !== null) {
-        if(lastOriginalSource !== original.source
+        if (lastOriginalSource !== original.source
            || lastOriginalLine !== original.line
            || lastOriginalColumn !== original.column
            || lastOriginalName !== original.name) {
