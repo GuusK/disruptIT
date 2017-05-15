@@ -36,8 +36,7 @@
     "shortid": "^2.0.1",
     "serve-favicon": "^2.4.2",
     "underscore": "^1.8.0",
-    "uuid": "^1.4.1",
-    "validator": "^3.16.1"
+    "uuid": "^1.4.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
