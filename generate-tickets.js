@@ -1,5 +1,6 @@
 var fs       = require('fs');
 var mongoose = require('mongoose');
+mongoose.Promise = require('q').Promise;
 var Ticket   = require('./models/Ticket');
 var async    = require('async');
 var _        = require('underscore');
