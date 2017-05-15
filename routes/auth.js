@@ -4,6 +4,7 @@ module.exports = function (config) {
   var crypto = require('crypto');
   var async = require('async');
   var nodemailer = require('nodemailer');
+  var mg = require('nodemailer-mailgun-transport');
   var mcapi = require('mailchimp-api');
 
   var mc = new mcapi.Mailchimp(config.mailchimp.key);
@@ -164,11 +165,10 @@ module.exports = function (config) {
       }
     });
   });
+console.log(config.mailgun);
+  var transport = nodemailer.createTransport(
+  mg({auth : config.mailgun}));
 
- var transport = nodemailer.createTransport('SMTP', {
-   service: 'Mailgun',
-   auth: config.email.auth
-   }); 
   router.get('/forgot', function(req, res) {
     res.render('forgot', {
       user: req.user
@@ -202,7 +202,7 @@ module.exports = function (config) {
           from: config.email.auth.user,
           subject: 'Wachtwoord resetten',
           text: 'Je hebt deze e-mail ontvangen omdat jij (of iemand anders) een wachtwoordreset hebt aangevraagd. \n\n' +
-                        'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: https://autonom.it/reset/'+token+'\n\n'+
+                        'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: https://www.disrupt-it.nl/reset/'+token+'\n\n'+
                         'Als jij deze wachtwoordreset niet hebt aangevraagd, negeer dan deze e-mail en je wachtwoord zal onveranderd blijven.\n\n'
         };
 
