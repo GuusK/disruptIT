@@ -280,5 +280,8 @@
                 "p In the evening 6 buses an hour travel back towards the station. Trains towards Breda/The Hague depart every 30 minutes, trains towards Utrecht/Amsterdam every 15 minutes until 20:00h, every 30 minutes afterwards. The last option to travel back towards Groningen and Enschede from the Evoluon is the bus departing at 22:16h, for all other cities the bus of 23:16h is the last option."
             ]
         }
+    },
+    "busses": {
+        "header": "Busses"
     }
 }
