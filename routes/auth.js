@@ -165,7 +165,7 @@ module.exports = function (config) {
       }
     });
   });
-console.log(config.mailgun);
+
   var transport = nodemailer.createTransport(
   mg({auth : config.mailgun}));
 

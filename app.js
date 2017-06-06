@@ -67,7 +67,7 @@ var allowCrossDomain = function(req, res, next) {
 // app.use(favicon());
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true })); // Because default for lower versions
 app.use(expressValidator());
 app.use(cookieParser());
 app.use(allowCrossDomain);
