@@ -6,7 +6,7 @@ var favicon = require('serve-favicon');
 
 // serve fast
 var app = express();
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');

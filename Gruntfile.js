@@ -4,7 +4,8 @@ module.exports = function (grunt) {
   grunt.initConfig({
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+        reporterOutput: ""
       },
       gruntfile: {
         src: 'Gruntfile.js'
