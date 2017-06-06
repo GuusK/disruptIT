@@ -4,7 +4,7 @@ Configuration files are not included in this repository. You will need to add a 
 
     {
       "mongodb": {
-        "url": "mongodb://localhost/anonymit"
+        "url": "mongodb://localhost/disruptit"
       },
 
       "mailchimp": {
