@@ -32,15 +32,15 @@ var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
 
 i18n.init({
-    saveMissing: true,
-    ignoreRoutes: ['images/', 'fonts/', 'flags/', 'css/', 'js/'],
-    debug: true,
-    detectLngFromPath: 0,
-    forceDetectLngFromPath: true,
-    fallbackLng: 'nl'
+  saveMissing: true,
+  ignoreRoutes: ['images/', 'fonts/', 'flags/', 'css/', 'js/'],
+  debug: true,
+  detectLngFromPath: 0,
+  forceDetectLngFromPath: true,
+  fallbackLng: 'nl'
 });
 i18n.addPostProcessor("jade", function(val, key, opts) {
-   return require("jade").compile(val, opts)();
+  return require("jade").compile(val, opts)();
 });
 
 // view engine setup
@@ -49,7 +49,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(compress({
-  filter: function(req, res){
+  filter: function(req, res) {
     if (req.headers['x-no-compression']) {
       return false;
     }
@@ -67,13 +67,17 @@ var allowCrossDomain = function(req, res, next) {
 // app.use(favicon());
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })); // Because default for lower versions
+app.use(bodyParser.urlencoded({
+  extended: true
+})); // Because default for lower versions
 app.use(expressValidator());
 app.use(cookieParser());
 app.use(allowCrossDomain);
 app.use(session({
   secret: config.session.secret,
-  store: new MongoStore({url: config.mongodb.url }),
+  store: new MongoStore({
+    url: config.mongodb.url
+  }),
   saveUninitialized: true,
   resave: true
 }));
@@ -83,11 +87,11 @@ app.use(flash());
 
 
 i18n.registerAppHelper(app)
-.serveClientScript(app)
-    .serveDynamicResources(app)
-    .serveMissingKeyRoute(app)
-    .serveChangeKeyRoute(app)
-    .serveRemoveKeyRoute(app);
+  .serveClientScript(app)
+  .serveDynamicResources(app)
+  .serveMissingKeyRoute(app)
+  .serveChangeKeyRoute(app)
+  .serveRemoveKeyRoute(app);
 /*app.use(sass.middleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -100,9 +104,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //localization
 app.use(function(req, res, next) {
-  var lang = req.url.substring(1,3);
+  var lang = req.url.substring(1, 3);
 
-  if(['nl', 'en'].indexOf(lang) !== -1){
+  if (['nl', 'en'].indexOf(lang) !== -1) {
     i18n.setLng(lang, function(err, t) {
       req.path = req.url = req.url.slice(3);
     });
@@ -116,10 +120,10 @@ app.use(function(req, res, next) {
   res.locals.user = req.user;
   res.locals.verenigingen = config.verenigingen;
   res.locals.hideMenu = config.hideMenu;
-  res.locals.ucfirst = function(value){
+  res.locals.ucfirst = function(value) {
     return value.charAt(0).toUpperCase() + value.slice(1);
   };
-  res.locals.hypenate = function(value){
+  res.locals.hypenate = function(value) {
     return value.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase();
   };
 
@@ -165,10 +169,10 @@ app.use(function(err, req, res, next) {
 
 
 process.on('message', function(message) {
- if (message === 'shutdown') {
-   mongoose.disconnect();
-   process.exit(0);
- }
+  if (message === 'shutdown') {
+    mongoose.disconnect();
+    process.exit(0);
+  }
 });
 
 module.exports = app;
