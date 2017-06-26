@@ -132,9 +132,9 @@ router.get('/speakers', function (req, res) {
 // });
 
 
-// router.get('/partners/:partner', function (req, res) {
-//   res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
-// });
+router.get('/partners/:partner', function (req, res) {
+  res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
+});
 
 router.get('/organisation', function (req, res) {
   res.render('organisation', {title: 'Organisation |'});
