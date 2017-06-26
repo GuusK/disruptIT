@@ -1,0 +1,74 @@
+doctype html
+
+html(lang=locale)
+  head
+    title #{title} DisruptIT 2017
+    meta(name='charset' content='utf-8')
+    meta(name='description' content='')
+    meta(name='author' content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet' href='css/normalize.css')
+    link(rel='stylesheet' href='css/skeleton.css')
+    link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='css/style.css')
+
+  body
+    nav(class='navbar')
+      // left-side logo
+      .logonav
+        a(href='/')
+          img(src='images/logo_textonly.svg' alt='DisruptIT home')
+
+      button(class='toggle navicon-button' data-target='#navbar-main-collapse')
+        span(class='navicon navicon-times')
+
+      // right side menu
+      ul(class='pages collapse' id='navbar-main-collapse')
+        li()
+          a(href='speakers') Speakers
+          a(href='partners') Partners
+          a(href='location') Location
+          a(href='organisation') Organisation
+          a(href='login') Log In
+
+    // header
+    block header
+
+    // Error messages and stuff
+    block above-content
+
+    .container
+      if messages.error
+        each msg in messages.error
+          .alert.alert-danger.alert-dismissible
+            button(type='button', class='close', data-dismiss='alert') &times;
+            div= msg
+      if messages.info
+        each msg in messages.info
+          .alert.alert-info.alert-dismissible
+            button(type='button', class='close', data-dismiss='alert') &times;
+            div= msg
+      if messages.success
+        each msg in messages.success
+          .alert.alert-success.alert-dismissible
+            button(type='button', class='close', data-dismiss='alert') &times;
+            div= msg
+
+    // content of the page
+    block content
+
+  // Footer
+  footer()
+    .banner
+    .foot
+      a(href='https://www.facebook.com/StichtingNationaalinformaticaCongres/' target='_blank')
+        i(class='fa fa-facebook-official fa-fw fa-3x')
+
+      a(href='https://www.snapchat.com/add/snic-nl' target='_blank')
+        i(class='fa fa-snapchat fa-fw fa-3x')
+
+      a(href='mailto:info@disrupt-it.nl')
+        i(class='fa fa-envelope fa-fw fa-3x')
+  // Scripts
+  script(src='//code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+  script(src='js/disrupt-it.js')

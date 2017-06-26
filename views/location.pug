@@ -1,0 +1,18 @@
+extends layout
+
+block header
+  header.hero.location
+    h2 Location
+    .separator(role='separator')
+
+block content
+  section.intro.slanted
+    .content
+      h2 The Venue
+      .separator(role='separator')
+      p
+        | Without a building to host the conference, we would be hopeless. We are grateful for the Spiegel that we can use their venue for the conference. The location will help us build an energetic and inspiring atmosphere. Information about the busses will be placed here, when we have more information.
+  section
+    #map
+
+  script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCUQMPGMNDA7HJo3k2r0rquYu0C3awz2r8')

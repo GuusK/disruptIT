@@ -39,14 +39,14 @@ i18n.init({
   forceDetectLngFromPath: true,
   fallbackLng: 'nl'
 });
-i18n.addPostProcessor("jade", function(val, key, opts) {
-  return require("jade").compile(val, opts)();
+i18n.addPostProcessor("pug", function(val, key, opts) {
+  return require("pug").compile(val, opts)();
 });
 
 // view engine setup
 app.use(i18n.handle);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(compress({
   filter: function(req, res) {

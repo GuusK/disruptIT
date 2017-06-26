@@ -30,22 +30,16 @@ function adminAuth(req, res, next) {
 
 /* GET home page. */
 router.get('/', function (req, res) {
-  res.render('index', { title: 'DisruptIT', ticketSaleStarts:config.ticketSaleStarts });
+  res.render('index', { title: '', ticketSaleStarts:config.ticketSaleStarts });
 });
-
-
-/*router.get('/about', function (req,res) {
-  res.render('about', {title: 'About'});
-});*/
-
 
 router.get('/partners', function (req,res) {
-  res.render('partners',{title:'Partners'});
+  res.render('partners/index',{title:'Partners |'});
 });
 
-router.get('/partners/:partner', function (req, res) {
-  res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
-});
+// router.get('/partners/:partner', function (req, res) {
+//   res.render('partners'+ req.params.partner, {title: 'Partners -  |' + req.params.partner, path: '/partners'});
+// });
 
 router.get('/profile', auth, function (req, res) {
   User.findOne({email:req.session.passport.user}, function (err,user) {
@@ -62,7 +56,7 @@ router.get('/profile', auth, function (req, res) {
 });
 
 router.get('/opensource',function (req,res) {
-  res.render('opensource', {title:'Help het internet helpen'});
+  res.render('opensource', {title:'Help het internet helpen |'});
 });
 
 router.post('/profile', auth, function (req, res) {
@@ -106,13 +100,13 @@ router.post('/profile', auth, function (req, res) {
 
 });
 
-/*router.get('/location', function (req, res) {
-  res.render('location', {title: 'Locatie'});
-});*/
-
-router.get('/busses', function (req, res) {
-  res.render('busses', {title: 'Bussen'});
+router.get('/location', function (req, res) {
+  res.render('location', {title: 'Location |'});
 });
+
+// router.get('/busses', function (req, res) {
+//   res.render('busses', {title: 'Bussen'});
+// });
 
 router.get('/speakers', function (req, res) {
   var s = config.speakers.filter(function(speaker){
@@ -121,33 +115,33 @@ router.get('/speakers', function (req, res) {
   var p = config.presenters.filter(function(presenter){
     return !presenter.hidden;
   });
-  res.render('speakers', {title: 'Programma', speakers: s, presenters: p});
+  res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p});
 });
 
-router.get('/speakers/:talk', function (req, res) {
-  var s = config.speakers.filter(function(speaker){
-    return (speaker.talk.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase() === req.params.talk);
-  })[0];
+// router.get('/speakers/:talk', function (req, res) {
+//   var s = config.speakers.filter(function(speaker){
+//     return (speaker.talk.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase() === req.params.talk);
+//   })[0];
 
-  if(!Boolean(s)){
-    res.render('error', {message: 'Not found', error: {status: 404}});
-    return;
-  }
+//   if(!Boolean(s)){
+//     res.render('error', {message: 'Not found', error: {status: 404}});
+//     return;
+//   }
 
-  res.render('speakers/talk', {path: '/speakers', speaker: s});
-});
+//   res.render('speakers/talk', {path: '/speakers', speaker: s});
+// });
 
 
-router.get('/partners/:partner', function (req, res) {
-  res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
-});
+// router.get('/partners/:partner', function (req, res) {
+//   res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
+// });
 
 router.get('/organisation', function (req, res) {
-  res.render('organisation', {title: 'Organisatie'});
+  res.render('organisation', {title: 'Organisation |'});
 });
 
 router.get('/contact', function (req, res) {
-  res.render('contact', {title: 'Contact'});
+  res.render('contact', {title: 'Contact |'});
 });
 
 router.get('/mailing', function (req,res) {
@@ -155,20 +149,20 @@ router.get('/mailing', function (req,res) {
 });
 
 router.get('/programme', function (req,res) {
-  res.render('programme', {title:'Programma'});
+  res.render('programme', {title:'Programme |'});
 });
 
 router.get('/program', function (req,res) {
-  res.render('programme', {title:'Programma'});
+  res.render('programme', {title:'Programme |'});
 });
 router.get('/schedule', function (req,res) {
-  res.render('programme', {title:'Programma'});
+  res.render('programme', {title:'Programme |'});
 });
 router.get('/dagprogramma', function (req,res) {
-  res.render('programme', {title:'Programma'});
+  res.render('programme', {title:'Programme |'});
 });
 router.get('/programma', function (req,res) {
-  res.render('programme', {title:'Programma'});
+  res.render('programme', {title:'Programme |'});
 });
 
 router.get('/users', adminAuth, function (req,res,next) {
