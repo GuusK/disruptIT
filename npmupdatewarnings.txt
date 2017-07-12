@@ -1,9 +1,0 @@
-npm WARN deprecated jade@1.11.0: Jade has been renamed to pug, please install the latest version of pug instead of jade
-npm WARN deprecated minimatch@0.2.14: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-npm WARN deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-npm WARN deprecated graceful-fs@1.2.3: graceful-fs v3.0.0 and before will fail on node releases >= v7.0. Please update to graceful-fs@^4.0.0 as soon as possible. Use 'npm ls graceful-fs' to find it in the tree.
-npm WARN deprecated minimatch@1.0.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
-npm WARN deprecated i18next-client@1.10.3: you can use npm install i18next from version 2.0.0
-npm WARN deprecated transformers@2.1.0: Deprecated, use jstransformer
-npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
-npm WARN prefer global jshint@2.5.11 should be installed with -g

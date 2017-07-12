@@ -112,6 +112,15 @@ a:focus{
   text-decoration: none;
 }
 
+.text-center {
+  text-align: center;
+}
+
+
+.margin-vert {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 
 /**************************************************************************
  *
@@ -501,7 +510,6 @@ section.quote .person{
   }
 }
 
-
 /* Larger than desktop */
 @media (min-width: 1000px) {
   section.quote .content{
@@ -853,12 +861,46 @@ header.hero.location{
  ****************************/
 
 header.hero.login{
+  min-height: 0;
   background-image: url('/images/23369577356_2d8183a751_o.jpg');
+  background-position: center 90%;
 }
 
-.block {
-  display: block;
+.form-signin {
+  max-width: 40em;
+  margin: 0 auto;
 }
+
+.form-control {
+  width: 75%;
+}
+
+.login-separator{
+        text-align:center;
+        margin-bottom: 1rem;
+}
+
+.login-separator:before,
+.login-separator:after {
+        width: 15%;
+        height: 1px;
+        background: #adadad;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px;
+        content: '';
+}
+
+/****************************
+ * Register
+ ****************************/
+header.hero.register{
+  min-height: 0;
+  background-image: url('/images/23369577356_2d8183a751_o.jpg');
+  background-position: center 90%;
+}
+
+
 
 /****************************
  * Nedap Bedrijfsprofiel
