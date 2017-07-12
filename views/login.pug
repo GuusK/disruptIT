@@ -1,0 +1,26 @@
+extends layout
+block above-content
+
+block header 
+  header.hero.login
+    h2 Log in
+    .separator(role='separator')
+
+block content
+  .section.intro.slanted
+    .content
+      form.form-signin(method='post')
+        h2.form-signin-heading Please sign in
+        .row
+          .eight.columns
+            label.u-full-width(for='input_username') Username
+            input#input_username.form-control.u-full-width(name='username', placeholder='Username', type='text', required='', autofocus='')
+        .row 
+          .eigth.columns
+            label.u-full-width(for='input_password') Password
+            input#input_password.form-control.u-full-width(name='password', placeholder='Password', type='password', required='')
+        .row
+          .eight.columns
+            button.button-primary.block.four.columns.offset-by-one(type='submit') Sign in
+        p or
+        a.button.button-primary(href='/register') Activate your ticket

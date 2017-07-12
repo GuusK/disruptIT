@@ -522,7 +522,35 @@ section.quote .person{
   }
 }
 
+/****************************
+ * Button
+ ****************************/
+ .button.button-primary,
+button.button-primary,
+input[type="submit"].button-primary,
+input[type="reset"].button-primary,
+input[type="button"].button-primary 
+{
+  color: #00bab3;
+  background-color: #FFF;
+  border-color: #00bab3;
+}
 
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus
+{
+  color: #FFF;
+  background-color: #00bab3;
+  border-color: #00bab3; 
+}
 
 /****************************
  * Footer
@@ -826,6 +854,10 @@ header.hero.location{
 
 header.hero.login{
   background-image: url('/images/23369577356_2d8183a751_o.jpg');
+}
+
+.block {
+  display: block;
 }
 
 /****************************
