@@ -9,6 +9,7 @@ html(lang=locale)
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet' href='/css/normalize.css')
     link(rel='stylesheet' href='/css/skeleton.css')
+    link(rel='stylesheet' href='/css/skeleton-alerts.css')
     link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet' href='/css/style.css')
 
@@ -40,19 +41,20 @@ html(lang=locale)
     .container
       if messages.error
         each msg in messages.error
-          .alert.alert-danger.alert-dismissible
-            button(type='button', class='close', data-dismiss='alert') &times;
-            div= msg
+          .alert.alert-error
+            .alert-text= msg
+            button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
+
       if messages.info
         each msg in messages.info
-          .alert.alert-info.alert-dismissible
-            button(type='button', class='close', data-dismiss='alert') &times;
-            div= msg
+          .alert.info
+            .alert-text= msg
+            button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
       if messages.success
         each msg in messages.success
-          .alert.alert-success.alert-dismissible
-            button(type='button', class='close', data-dismiss='alert') &times;
-            div= msg
+          .alert.success
+            .alert-text= msg
+            button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
 
     // content of the page
     block content
