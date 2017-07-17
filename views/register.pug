@@ -4,98 +4,98 @@ block above-content
 
 block header 
   header.hero.register
-    h2 Log in
+    h2 Register
 
 block content
   .section.intro.slanted
     .content
-      h2.text-center Register
-      p You can buy a ticket with an activation code at your study association. You can print out your ticket after you've registered. Preferences for lectures, diets and other remarks can be changed after the registration has been completed. 
+      .register
+        p You can buy a ticket with an activation code at your study association. You can print out your ticket after you've registered. Preferences for lectures, diets and other remarks can be changed after the registration has been completed. 
 
-       if new Date(ticketSaleStarts).getTime() < Date.now()
-         form(method='POST')
-           legend(hidden) Registration
-           .form-group
-             label(for='code') Ticketcode
-             input.form-control( type='text', name='code', autofocus, required, value=body.code)
-           .form-group
-             label(for='firstname') First name
-             input.form-control( type='text', name='firstname', required, value=body.firstname)
-           .form-group
-             label(for='surname') Surname
-             input.form-control( type='text', name='surname', required, value=body.surname)
-           .form-group
-             label(for='vereniging') Association
-             .select-wrapper
-               select.form-control(id='vereniging', required, name='vereniging')
-                 option(value='', selected)= t('fields.select')
-                 each vereniging, shortName in verenigingen
-                   option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name
-           .form-group(style='display:none')
-               input#bus(type='checkbox', name='bus', checked=body.bus?'checked': undefined)
-               label(for='bus')= t('fields.bus')
-           .form-group
-               input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian?'checked':undefined)
-               label(for='vegetarian')= t('fields.vegetarian')
-           .form-group
-             label(for='lezing1')= t('fields.session1')
-             .select-wrapper
-               select.form-control(name='lezing1')
-                 option(value='', selected)= t('fields.nopreference')
-                 option(value='jan-smits') Jan Smits (TU/e) - Sensored data: is law stopping innovation?
-                 option(value='laurenz-eveleens') Laurenz Eveleens (Ortec) - Optimize your world
-           .form-group
-             label(for='lezing2')= t('fields.session2') 
-             .select-wrapper
-               select.form-control(name='lezing2')
-                 option(value='', selected)= t('fields.nopreference')
-                 option(value='mark-bakker') Mark Bakker (SAS) - Applications of machine learning
-                 option(value='emile-nijssen') Emile Nijssen (Homey) - From idea to autonomous product
-           .form-group
-             label(for='lezing3')= t('fields.session3')
-             .select-wrapper
-               select.form-control(name='lezing3')
-                 option(value='', selected)= t('fields.nopreference')
-                 option(value='gert-jan-van-rootselaar') Gert-Jan van Rootselaar (AME) - Where am I? Make a decision!
-                 option(value='martijn-dashorst')  Martijn Dashorst (Topicus) - Quis automatiet ipsos automates?
-           .form-group
-             label(for='specialNeeds')= t('fields.allergies')
-             input.form-control(type='text', name="specialNeeds", value=body.specialNeeds)
-           .form-group
-             label(for='email')= t('fields.email')
-             input.form-control( type='email', name='email', required, value=body.email)
-           .form-group
-             label(for='password')= t('fields.password')
-             input.form-control(required. type='password', required, name='password')
-           .form-group
-             label(for='confirm')= t('fields.confirmpassword')
-             input.form-control( type='password', required, name='confirm')
-           .form-group
-               input#subscribe(type='checkbox',name='subscribe', checked='checked')
-               label(for='subscribe')= t('register.mailing')
-           button.button.special(type='submit')= t('register.registerBtn')
+      if new Date(ticketSaleStarts).getTime() < Date.now()
+        form.form-register(method='POST')
+          legend(hidden) Registration
+          .form-group.center
+            label(for='code') Ticketcode
+            input.form-control( type='text', name='code', autofocus, required, value=body.code)
+          .form-group
+            label(for='firstname') First name
+            input.form-control( type='text', name='firstname', required, value=body.firstname)
+          .form-group
+            label(for='surname') Surname
+            input.form-control( type='text', name='surname', required, value=body.surname)
+          .form-group
+            label(for='vereniging') Association
+            .select-wrapper
+              select.form-control(id='vereniging', required, name='vereniging')
+                option(value='', selected)= t('fields.select')
+                each vereniging, shortName in verenigingen
+                  option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name
+          .form-group(style='display:none')
+              input#bus(type='checkbox', name='bus', checked=body.bus?'checked': undefined)
+              label(for='bus')= t('fields.bus')
+          .form-group
+              input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian?'checked':undefined)
+              label(for='vegetarian')= t('fields.vegetarian')
+          .form-group
+            label(for='lezing1')= t('fields.session1')
+            .select-wrapper
+              select.form-control(name='lezing1')
+                option(value='', selected)= t('fields.nopreference')
+                option(value='jan-smits') Jan Smits (TU/e) - Sensored data: is law stopping innovation?
+                option(value='laurenz-eveleens') Laurenz Eveleens (Ortec) - Optimize your world
+          .form-group
+            label(for='lezing2')= t('fields.session2') 
+            .select-wrapper
+              select.form-control(name='lezing2')
+                option(value='', selected)= t('fields.nopreference')
+                option(value='mark-bakker') Mark Bakker (SAS) - Applications of machine learning
+                option(value='emile-nijssen') Emile Nijssen (Homey) - From idea to autonomous product
+          .form-group
+            label(for='lezing3')= t('fields.session3')
+            .select-wrapper
+              select.form-control(name='lezing3')
+                option(value='', selected)= t('fields.nopreference')
+                option(value='gert-jan-van-rootselaar') Gert-Jan van Rootselaar (AME) - Where am I? Make a decision!
+                option(value='martijn-dashorst')  Martijn Dashorst (Topicus) - Quis automatiet ipsos automates?
+          .form-group
+            label(for='specialNeeds')= t('fields.allergies')
+            input.form-control(type='text', name="specialNeeds", value=body.specialNeeds)
+          .form-group
+            label(for='email')= t('fields.email')
+            input.form-control( type='email', name='email', required, value=body.email)
+          .form-group
+            label(for='password')= t('fields.password')
+            input.form-control(required. type='password', required, name='password')
+          .form-group
+            label(for='confirm')= t('fields.confirmpassword')
+            input.form-control( type='password', required, name='confirm')
+          .form-group
+              input#subscribe(type='checkbox',name='subscribe', checked='checked')
+              label(for='subscribe')= t('register.mailing')
+          button.button.special(type='submit')= t('register.registerBtn')
 
-         script(src='/js/jquery.min.js')
-         script.
-           $(document).ready(function(){
-             var verenigingen = !{JSON.stringify(verenigingen)};
+        script(src='/js/jquery.min.js')
+        script.
+          $(document).ready(function(){
+            var verenigingen = !{JSON.stringify(verenigingen)};
 
-             $('#vereniging').on('change', function(){
-               if (verenigingen[$('#vereniging').val()] && verenigingen[$('#vereniging').val()].bus) {
-                 $('#bus').parent().show();
-               } else {
-                 $('#bus').parent().hide();  
-               }
-             });
-             $('#vereniging').change();
-           });
-       else
-         .alert.alert-info
-           .icon.fa.fa-info
+            $('#vereniging').on('change', function(){
+              if (verenigingen[$('#vereniging').val()] && verenigingen[$('#vereniging').val()].bus) {
+                $('#bus').parent().show();
+              } else {
+                $('#bus').parent().hide();  
+              }
+            });
+            $('#vereniging').change();
+          });
+      else
+        .alert.alert-info
+          .icon.fa.fa-info
 
-           if i18n.lng() == 'nl'
-             - months = ['januari', 'februari', 'maart', 'april', 'mei','juni','juli','augustus', 'september','november','december'];
-           else
-             - months = ['january', 'february', 'march', 'april', 'may','june','july','august', 'september','november','december'];
+          if i18n.lng() == 'nl'
+            - months = ['januari', 'februari', 'maart', 'april', 'mei','juni','juli','augustus', 'september','november','december'];
+          else
+            - months = ['january', 'february', 'march', 'april', 'may','june','july','august', 'september','november','december'];
 
-           div= t('register.announcement.notopen', {date: new Date(ticketSaleStarts).getDate() + ' ' + months[new Date(ticketSaleStarts).getMonth()] })
+          div= t('register.announcement.notopen', {date: new Date(ticketSaleStarts).getDate() + ' ' + months[new Date(ticketSaleStarts).getMonth()] })

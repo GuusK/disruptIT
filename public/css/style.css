@@ -116,6 +116,10 @@ a:focus{
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
 
 .margin-vert {
   margin-top: 1em;
@@ -603,11 +607,13 @@ footer a:focus{
 }
 
 @media (min-width: 750px) {
+
   .banner{
-    width: 80vw;
-    height: 30vh;
+    /*width: 80vw;*/
+    height: 20vh;
   }
 }
+
 
 
 /**************************************************************************
@@ -866,6 +872,11 @@ header.hero.login{
   background-position: center 90%;
 }
 
+.form {
+  text-align: left; 
+  display: inline-block;
+}
+
 .form-signin {
   max-width: 40em;
   margin: 0 auto;
@@ -900,7 +911,18 @@ header.hero.register{
   background-position: center 90%;
 }
 
+.form-register {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 10px;
+}
 
+.register p {
+  margin: 10px auto;
+  padding: 10px;
+  text-align: left;
+  /*max-width: 60vw;*/
+}
 
 /****************************
  * Nedap Bedrijfsprofiel

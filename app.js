@@ -16,7 +16,7 @@ var flash = require('express-flash');
 var mongoose = require('mongoose');
 var fs = require('fs');
 var passport = require('passport');
-var i18n = require("i18next");
+// var i18n = require("i18next");
 var expressValidator = require('express-validator');
 
 var MongoStore = require('connect-mongo')(session);
@@ -31,20 +31,20 @@ mongoose.Promise = require('q').Promise;
 var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
 
-i18n.init({
-  saveMissing: true,
-  ignoreRoutes: ['images/', 'fonts/', 'flags/', 'css/', 'js/'],
-  debug: true,
-  detectLngFromPath: 0,
-  forceDetectLngFromPath: true,
-  fallbackLng: 'nl'
-});
-i18n.addPostProcessor("pug", function(val, key, opts) {
-  return require("pug").compile(val, opts)();
-});
+// i18n.init({
+//   saveMissing: true,
+//   ignoreRoutes: ['images/', 'fonts/', 'flags/', 'css/', 'js/'],
+//   debug: true,
+//   detectLngFromPath: 0,
+//   forceDetectLngFromPath: true,
+//   fallbackLng: 'nl'
+// });
+// i18n.addPostProcessor("pug", function(val, key, opts) {
+//   return require("pug").compile(val, opts)();
+// });
 
 // view engine setup
-app.use(i18n.handle);
+// app.use(i18n.handle);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -86,12 +86,12 @@ app.use(passport.session());
 app.use(flash());
 
 
-i18n.registerAppHelper(app)
-  .serveClientScript(app)
-  .serveDynamicResources(app)
-  .serveMissingKeyRoute(app)
-  .serveChangeKeyRoute(app)
-  .serveRemoveKeyRoute(app);
+// i18n.registerAppHelper(app)
+//   .serveClientScript(app)
+//   .serveDynamicResources(app)
+//   .serveMissingKeyRoute(app)
+//   .serveChangeKeyRoute(app)
+//   .serveRemoveKeyRoute(app);
 /*app.use(sass.middleware({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -103,32 +103,32 @@ i18n.registerAppHelper(app)
 app.use(express.static(path.join(__dirname, 'public')));
 
 //localization
-app.use(function(req, res, next) {
-  var lang = req.url.substring(1, 3);
+// app.use(function(req, res, next) {
+//   var lang = req.url.substring(1, 3);
 
-  if (['nl', 'en'].indexOf(lang) !== -1) {
-    i18n.setLng(lang, function(err, t) {
-      req.path = req.url = req.url.slice(3);
-    });
-  }
-  next();
-});
+//   if (['nl', 'en'].indexOf(lang) !== -1) {
+//     i18n.setLng(lang, function(err, t) {
+//       req.path = req.url = req.url.slice(3);
+//     });
+//   }
+//   next();
+// });
 
 // set up locals that we use in every template
-app.use(function(req, res, next) {
-  res.locals.path = req.path;
-  res.locals.user = req.user;
-  res.locals.verenigingen = config.verenigingen;
-  res.locals.hideMenu = config.hideMenu;
-  res.locals.ucfirst = function(value) {
-    return value.charAt(0).toUpperCase() + value.slice(1);
-  };
-  res.locals.hypenate = function(value) {
-    return value.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase();
-  };
+// app.use(function(req, res, next) {
+//   res.locals.path = req.path;
+//   res.locals.user = req.user;
+//   res.locals.verenigingen = config.verenigingen;
+//   res.locals.hideMenu = config.hideMenu;
+//   res.locals.ucfirst = function(value) {
+//     return value.charAt(0).toUpperCase() + value.slice(1);
+//   };
+//   res.locals.hypenate = function(value) {
+//     return value.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase();
+//   };
 
-  next();
-});
+//   next();
+// });
 
 
 app.use('/', routes);
