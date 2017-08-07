@@ -1,50 +1,52 @@
 extends layout
-block title
-  = t('profile.header')
+
+block above-content
+
+block header
 
 block content
-  section.main.style1.profile
-    .container
-      .row(class='0%')
+  section.intro.slanted.margin-vert
+    .content
         header
-          h2= t('profile.header')
+          h2 My profile
           p= ucfirst(user.firstname) + ' ' + user.surname +' ('+ verenigingen[user.vereniging].name +')'
 
         br(clear='all')
 
-        form#settings(method='post')
+        form.form.form-profile#settings(method='post')
           .form-group
             .checkbox
-              input#vegetarian(type='checkbox',name='vegetarian', checked=user.vegetarian? "checked": undefined)
-              label(for='vegetarian')= t('fields.vegetarian')
+              label(for='vegetarian')
+                input#vegetarian(type='checkbox',name='vegetarian', checked=user.vegetarian? "checked": undefined)
+                | I am a vegetarian
           if isbus_quickhack
             .form-group
               .checkbox
                 input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
-                label(for='bus')= t('fields.bus')
+                label(for='bus') I would like to use the arranged bus at my study association
        
           .form-group
-            label(for='lezing1')= t('fields.session1')
+            label(for='lezing1') Preference talk in first parallel session
             div.select-wrapper
               select.form-control(name='lezing1')
-                option(value='', selected=!user.lezing1?'selected':undefined)= t('fields.nopreference')
+                option(value='', selected=!user.lezing1?'selected':undefined) No preference
                 option(value='jan-smits', selected=user.lezing1=='jan-smits'?'selected':undefined) Jan Smits (TU/e) - Sensored data: is law stopping innovation?
                 option(value='laurenz-eveleens', selected=user.lezing1=='laurenz-eveleens'?'selected':undefined) Laurenz Eveleens (Ortec) - Optimize your world
           .form-group
-            label(for='lezing2')= t('fields.session2')
+            label(for='lezing2') Preference talk in second parallel session
             div.select-wrapper
               select.form-control(name='lezing2')
-                option(value='', selected)= t('fields.nopreference')
+                option(value='', selected) No preference
                 option(value='mark-bakker', selected=user.lezing2=='mark-bakker'?'selected':undefined) Mark Bakker (SAS) - Applications of machine learning
                 option(value='emile-nijssen', selected=user.lezing2=='emile-nijssen'?'selected':undefined) Emile Nijssen (Homey) - From idea to autonomous product
           .form-group
-            label(for='lezing3')= t('fields.session3')
+            label(for='lezing3') 
             div.select-wrapper
-              select.form-control(name='lezing3')
-                option(value='', selected=!user.lezing3?'selected':undefined)= t('fields.nopreference')
+              select.form-control(name='lezing3') Preference talk in third parallel session
+                option(value='', selected=!user.lezing3?'selected':undefined) No preference
                 option(value='gert-jan-van-rootselaar', selected=user.lezing3=='gert-jan-van-rootselaar'?'selected':undefined) Gert-Jan van Rootselaar (AME) - Where am I? Make a decision!
                 option(value='martijn-dashorst', selected=user.lezing3=='martijn-dashorst'?'selected':undefined)  Martijn Dashorst (Topicus) - Quis automatiet ipsos automates?
           .form-group
-            label(for='specialNeeds')= t('fields.allergies')
+            label(for='specialNeeds') Other remarks (e.g. allergies)
             input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
-            button.button.special(type='submit')= t('profile.saveBtn')
+            button.button.special(type='submit') Save settings

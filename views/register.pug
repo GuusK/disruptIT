@@ -28,66 +28,67 @@ block content
             label(for='vereniging') Association
             .select-wrapper
               select.form-control(id='vereniging', required, name='vereniging')
-                option(value='', selected)= t('fields.select')
+                option(value='', selected) Select...
                 each vereniging, shortName in verenigingen
                   option(value=shortName, selected = body.vereniging==shortName ? 'selected' : undefined)=vereniging.name
           .form-group(style='display:none')
               input#bus(type='checkbox', name='bus', checked=body.bus?'checked': undefined)
-              label(for='bus')= t('fields.bus')
+              label(for='bus') I would like to use the arranged bus at my study association'
           .form-group
               input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian?'checked':undefined)
-              label(for='vegetarian')= t('fields.vegetarian')
+              label(for='vegetarian') I am a vegetarian
           .form-group
-            label(for='lezing1')= t('fields.session1')
+            label(for='lezing1') Preference talk in first parallel session
             .select-wrapper
               select.form-control(name='lezing1')
-                option(value='', selected)= t('fields.nopreference')
+                option(value='', selected) No preference
                 option(value='jan-smits') Jan Smits (TU/e) - Sensored data: is law stopping innovation?
                 option(value='laurenz-eveleens') Laurenz Eveleens (Ortec) - Optimize your world
           .form-group
-            label(for='lezing2')= t('fields.session2') 
+            label(for='lezing2') Preference talk in second parallel session
             .select-wrapper
               select.form-control(name='lezing2')
-                option(value='', selected)= t('fields.nopreference')
+                option(value='', selected) No preference
                 option(value='mark-bakker') Mark Bakker (SAS) - Applications of machine learning
                 option(value='emile-nijssen') Emile Nijssen (Homey) - From idea to autonomous product
           .form-group
-            label(for='lezing3')= t('fields.session3')
+            label(for='lezing3') Preference talk in third parallel session
             .select-wrapper
               select.form-control(name='lezing3')
-                option(value='', selected)= t('fields.nopreference')
+                option(value='', selected) No preference
                 option(value='gert-jan-van-rootselaar') Gert-Jan van Rootselaar (AME) - Where am I? Make a decision!
                 option(value='martijn-dashorst')  Martijn Dashorst (Topicus) - Quis automatiet ipsos automates?
           .form-group
-            label(for='specialNeeds')= t('fields.allergies')
+            label(for='specialNeeds') Other remarks (e.g. allergies)
             input.form-control(type='text', name="specialNeeds", value=body.specialNeeds)
           .form-group
-            label(for='email')= t('fields.email')
+            label(for='email') Email
             input.form-control( type='email', name='email', required, value=body.email)
           .form-group
-            label(for='password')= t('fields.password')
+            label(for='password') Password
             input.form-control(required. type='password', required, name='password')
           .form-group
-            label(for='confirm')= t('fields.confirmpassword')
+            label(for='confirm') Confirm password
             input.form-control( type='password', required, name='confirm')
           .form-group
               input#subscribe(type='checkbox',name='subscribe', checked='checked')
-              label(for='subscribe')= t('register.mailing')
-          button.button.special(type='submit')= t('register.registerBtn')
+              label(for='subscribe') Subscribe for the mailinglist. (You can deregister at any moment)
+          button.button.special(type='submit') Register now
 
-        script(src='/js/jquery.min.js')
         script.
-          $(document).ready(function(){
+          document.addEventListener("DOMContentLoaded", function(event) { 
             var verenigingen = !{JSON.stringify(verenigingen)};
 
-            $('#vereniging').on('change', function(){
-              if (verenigingen[$('#vereniging').val()] && verenigingen[$('#vereniging').val()].bus) {
-                $('#bus').parent().show();
-              } else {
-                $('#bus').parent().hide();  
-              }
+            document.getElementById("#vereniging").addEventListener('change', function(){
+                var vereniging = document.getElementById("#vereniging").value;
+                if (verenigingen[vereniging] && verenigingen[vereniging].bus) {
+                  document.getElementById("#bus").parentNode.show();
+                } else {
+                  document.getElementById("#bus").parentNode.hide();
+                }
+              });
+              document.getElementById("#vereniging").change();
             });
-            $('#vereniging').change();
           });
       else
         .alert.alert-info
@@ -98,4 +99,4 @@ block content
           else
             - months = ['january', 'february', 'march', 'april', 'may','june','july','august', 'september','november','december'];
 
-          div= t('register.announcement.notopen', {date: new Date(ticketSaleStarts).getDate() + ' ' + months[new Date(ticketSaleStarts).getMonth()] })
+          div= 'You can activate your ticket here from ' +  {date: new Date(ticketSaleStarts).getDate() + ' ' + months[new Date(ticketSaleStarts).getMonth()] } + ' onwards!'

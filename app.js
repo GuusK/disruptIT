@@ -11,6 +11,7 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+app.use( bodyParser.urlencoded({ extended: true }) );
 var session = require('express-session');
 var flash = require('express-flash');
 var mongoose = require('mongoose');
@@ -84,35 +85,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-
-
-// i18n.registerAppHelper(app)
-//   .serveClientScript(app)
-//   .serveDynamicResources(app)
-//   .serveMissingKeyRoute(app)
-//   .serveChangeKeyRoute(app)
-//   .serveRemoveKeyRoute(app);
-/*app.use(sass.middleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  debug: true,
-  outputStyle: 'compressed',
-  prefix:  '/'
-}));*/
-
 app.use(express.static(path.join(__dirname, 'public')));
-
-//localization
-// app.use(function(req, res, next) {
-//   var lang = req.url.substring(1, 3);
-
-//   if (['nl', 'en'].indexOf(lang) !== -1) {
-//     i18n.setLng(lang, function(err, t) {
-//       req.path = req.url = req.url.slice(3);
-//     });
-//   }
-//   next();
-// });
 
 // set up locals that we use in every template
 app.use(function(req, res, next) {
@@ -130,11 +103,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-
 app.use('/', routes);
 app.use('/', auth);
-
-
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
