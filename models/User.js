@@ -7,6 +7,9 @@ var User = new mongoose.Schema({
   resetPasswordExpires: Date,
   firstname:            { type: String,  required: true   },
   surname:              { type: String,  required: true   },
+  shareEmail:           Boolean,
+  linkedin:             String,
+  phonenumber:          String,
   vereniging:           { type: String,  required: true   },
   bus:                  { type: Boolean, required: true   },
   vegetarian:           { type: Boolean, required: true   },
@@ -16,8 +19,7 @@ var User = new mongoose.Schema({
   admin:                { type: Boolean, 'default': false },
   sprekers:             { type: [String], required: false },
   lezing1:              { type: String,   required: false },
-  lezing2:              { type: String,   required: false },
-  lezing3:              { type: String,   required: false }
+  lezing2:              { type: String,   required: false }
 });
 
 User.plugin(plm, {

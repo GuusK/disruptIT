@@ -931,6 +931,14 @@ header.hero.register{
   /*max-width: 60vw;*/
 }
 
+
+/****************************
+ * Connect better
+ ****************************/
+.connectbetter p {
+  padding: 10px;
+}
+
 /****************************
  * Nedap Bedrijfsprofiel
  ****************************/
@@ -945,4 +953,14 @@ header.hero.nedap{
 
 header.hero.achmea{
   background-image: url('/images/Hero_Achmea.jpg');
+}
+
+/****************************
+ * One-off elements
+ ****************************/
+
+.privacy {
+  font-size: 1.5em;
+  text-align: center;
+  padding: 10px;
 }

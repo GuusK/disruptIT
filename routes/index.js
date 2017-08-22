@@ -1,3 +1,4 @@
+var debug = require('debug')('disruptit');
 var express = require('express');
 var Barc = require('barcode-generator');
 var Ticket = require('../models/Ticket');
@@ -45,6 +46,8 @@ router.get('/profile', auth, function (req, res) {
   User.findOne({email:req.session.passport.user}, function (err,user) {
     if (!err && user)
     {
+      // Don't try to unescape here, it's not stored in user.
+      // Do it in the template
       res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus});
     }
     else
@@ -55,23 +58,18 @@ router.get('/profile', auth, function (req, res) {
   });
 });
 
-router.get('/opensource',function (req,res) {
-  res.render('opensource', {title:'Help het internet helpen |'});
-});
-
 router.post('/profile', auth, function (req, res) {
   req.sanitize('vegetarian').toBoolean();
   req.sanitize('bus').toBoolean();
+  req.sanitize('shareEmail').toBoolean();
+  req.body.linkedin = encodeURIComponent(req.body.linkedin);
+  req.body.phonenumber = encodeURIComponent(req.body.phonenumber);
 
   if(req.body.lezing1 !== "" && req.body.lezing1 !== null &&req.body.lezing1 !== 'laurenz-eveleens' && req.body.lezing1 !== 'jan-smits'){
     req.flash('error', "Something went wrong!");
     return res.redirect('/profile');
   }
   if(req.body.lezing2 !== "" && req.body.lezing2 !== null &&req.body.lezing2 !== 'mark-bakker' && req.body.lezing2 !== 'emile-nijssen'){
-    req.flash('error', "Something went wrong!");
-    return res.redirect('/profile');
-  }
-  if(req.body.lezing3 !== "" && req.body.lezing3 !== null && req.body.lezing3 !== 'gert-jan-van-rootselaar' && req.body.lezing3 !== 'martijn-dashorst'){
     req.flash('error', "Something went wrong!");
     return res.redirect('/profile');
   }
@@ -85,13 +83,16 @@ router.post('/profile', auth, function (req, res) {
       user.lezing1 = req.body.lezing1;
       user.lezing2 = req.body.lezing2;
       user.lezing3 = req.body.lezing3;
-      console.log(user.specialNeeds);
+      user.phonenumber = req.body.phonenumber;
+      user.linkedin = req.body.linkedin;
+      user.shareEmail = req.body.shareEmail; 
       user.save();
       req.flash('success', 'Profile edited');
       res.redirect('/profile');
     }
     else
     {
+      debug(err);
       console.log(err);
       req.flash('error', 'Something went wrong!');
       res.redirect('/profile');
@@ -138,6 +139,10 @@ router.get('/partners/:partner', function (req, res) {
 
 router.get('/organisation', function (req, res) {
   res.render('organisation', {title: 'Organisation |'});
+});
+
+router.get('/connectbetter', function(req, res) {
+  res.render('connectbetter', {title: 'Connect better |'})
 });
 
 router.get('/contact', function (req, res) {

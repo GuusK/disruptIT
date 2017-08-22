@@ -243,7 +243,7 @@ module.exports = function (config) {
 
           req.checkBody('password',  'Wachtwoord moet minstens 6 karakters lang zijn').len(6);
           req.checkBody('password',  'Wachtwoordden verschillen.').equals(req.body.confirm);
-          var errors = req.validationErrors();
+          var errors = req.getValidationResult();
 
           if (errors) {
             var msg = '';
