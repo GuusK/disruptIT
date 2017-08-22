@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var shortId = require('shortid');
 
 //User different characters to prevent confusion I and l
-shortId.characters("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz");
+shortId.characters("123456789ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz!@#$%^");
 
 var Ticket = new mongoose.Schema({
   _id: {

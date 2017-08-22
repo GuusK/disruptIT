@@ -64,15 +64,15 @@ router.post('/profile', auth, function (req, res) {
   req.sanitize('bus').toBoolean();
 
   if(req.body.lezing1 !== "" && req.body.lezing1 !== null &&req.body.lezing1 !== 'laurenz-eveleens' && req.body.lezing1 !== 'jan-smits'){
-    req.flash('error', req.t('profile.announcement.error'));
+    req.flash('error', "Something went wrong!");
     return res.redirect('/profile');
   }
   if(req.body.lezing2 !== "" && req.body.lezing2 !== null &&req.body.lezing2 !== 'mark-bakker' && req.body.lezing2 !== 'emile-nijssen'){
-    req.flash('error', req.t('profile.announcement.error'));
+    req.flash('error', "Something went wrong!");
     return res.redirect('/profile');
   }
   if(req.body.lezing3 !== "" && req.body.lezing3 !== null && req.body.lezing3 !== 'gert-jan-van-rootselaar' && req.body.lezing3 !== 'martijn-dashorst'){
-    req.flash('error', req.t('profile.announcement.error'));
+    req.flash('error', "Something went wrong!");
     return res.redirect('/profile');
   }
 
@@ -87,13 +87,13 @@ router.post('/profile', auth, function (req, res) {
       user.lezing3 = req.body.lezing3;
       console.log(user.specialNeeds);
       user.save();
-      req.flash('success', req.t('profile.announcement.saved'));
+      req.flash('success', 'Profile edited');
       res.redirect('/profile');
     }
     else
     {
       console.log(err);
-      req.flash('error', req.t('profile.announcement.error'));
+      req.flash('error', 'Something went wrong!');
       res.redirect('/profile');
     }
   });
@@ -219,7 +219,7 @@ router.post('/users/:id', adminAuth, function (req,res,next) {
     result.save(function(err) {
       if (err) {return next(err); }
 
-      req.flash('success', req.t('users.announcement.saved'));
+      req.flash('success', "User edited!");
       return res.redirect('/users/'+req.params.id);
     });
   });
@@ -229,22 +229,22 @@ router.post('/aanmelden', adminAuth, function (req,res,next) {
   var ticket = req.body.ticket;
   User.findOne({ticket:ticket}, function (err, result) {
     if (err) {
-      req.flash('error', req.t('register.announcement.error'));
+      req.flash('error', "Something went wrong. Please contact the committee.");
       return res.redirect('/users');
     }
 
     if (!result) {
-      req.flash('error',  req.t('register.announcement.notfound'));
+      req.flash('error', "Ticket not found. Try finding it manually" );
       return res.redirect('/users');
     }
     if (result.aanwezig) {
-      req.flash('error', req.t('register.announcement.alreadyregistered'));
+      req.flash('error', "That ticket was already used");
       return res.redirect('/users');
     }
     result.aanwezig = true;
     result.save(function (err) {
-      if (err) { req.flash('error', req.t('register.announcement.error')); return res.redirect('/users'); }
-      req.flash('success', req.t('register.announcement.saved', {name: res.locals.ucfirst(result.firstname) + ' ' + result.surname +' ('+ res.locals.verenigingen[result.vereniging].name +')'}));
+      if (err) { req.flash('error', "Something went wrong. Please contact the committee."); return res.redirect('/users'); }
+      req.flash('success', res.locals.ucfirst(result.firstname) + ' ' + result.surname +' ('+ res.locals.verenigingen[result.vereniging].name +') has registered his ticket');
       res.redirect('/users');
     });
   });

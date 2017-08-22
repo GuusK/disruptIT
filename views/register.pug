@@ -35,8 +35,10 @@ block content
               input#bus(type='checkbox', name='bus', checked=body.bus?'checked': undefined)
               label(for='bus') I would like to use the arranged bus at my study association'
           .form-group
-              input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian?'checked':undefined)
-              label(for='vegetarian') I am a vegetarian
+            .checkbox
+              label(for='vegetarian')
+                input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian? "checked": undefined)
+                | I am a vegetarian
           .form-group
             label(for='lezing1') Preference talk in first parallel session
             .select-wrapper
@@ -71,8 +73,10 @@ block content
             label(for='confirm') Confirm password
             input.form-control( type='password', required, name='confirm')
           .form-group
-              input#subscribe(type='checkbox',name='subscribe', checked='checked')
-              label(for='subscribe') Subscribe for the mailinglist. (You can deregister at any moment)
+            .checkbox
+              label(for='subscribe')
+                input#subscribe(type='checkbox',name='subscribe', checked='checked')
+                | Subscribe for the mailinglist. (You can deregister at any moment)
           button.button.special(type='submit') Register now
 
         script.
