@@ -2,7 +2,7 @@ doctype html
 
 html(lang=locale)
   head
-    title #{title} DisruptIT 2017
+    title #{title} Disrupt-IT 2017
     meta(name='charset' content='utf-8')
     meta(name='description' content='')
     meta(name='author' content='')
@@ -23,14 +23,25 @@ html(lang=locale)
       button(class='toggle navicon-button' data-target='#navbar-main-collapse')
         span(class='navicon navicon-times')
 
-      // right side menu
-      ul(class='pages collapse' id='navbar-main-collapse')
-        li()
-          a(href='/speakers') Speakers
-          a(href='/partners') Partners
-          a(href='/location') Location
-          a(href='/organisation') Organisation
-          a(href='/login') Log In
+      if user
+        // right side menu
+        ul(class='pages collapse' id='navbar-main-collapse')
+          li()
+            a(href='/speakers') Speakers
+            a(href='/partners') Partners
+            a(href='/location') Location
+            a(href='/organisation') Organisation
+            a(href='/profile') Profile
+            a(href='/logout') Logout
+      else
+        ul(class='pages collapse' id='navbar-main-collapse')
+          li()
+            a(href='/speakers') Speakers
+            a(href='/partners') Partners
+            a(href='/location') Location
+            a(href='/organisation') Organisation
+            a(href='/register') Register
+            a(href='/login') Log In
 
     // header
     block header

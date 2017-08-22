@@ -38,6 +38,7 @@
 
 .alert-success button,
 .alert-info button,
+.alert button,
 .alert-warning button,
 .alert-error button {
     float: right;

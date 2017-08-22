@@ -89,21 +89,21 @@ app.use(passport.session());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// set up locals that we use in every template
-app.use(function(req, res, next) {
-  res.locals.path = req.path;
-  res.locals.user = req.user;
-  res.locals.verenigingen = config.verenigingen;
-  res.locals.hideMenu = config.hideMenu;
-  res.locals.ucfirst = function(value) {
-    return value.charAt(0).toUpperCase() + value.slice(1);
-  };
-  res.locals.hypenate = function(value) {
-    return value.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase();
-  };
+// // set up locals that we use in every template
+// app.use(function(req, res, next) {
+//   res.locals.path = req.path;
+//   res.locals.user = req.user;
+//   res.locals.verenigingen = config.verenigingen;
+//   res.locals.hideMenu = config.hideMenu;
+//   res.locals.ucfirst = function(value) {
+//     return value.charAt(0).toUpperCase() + value.slice(1);
+//   };
+//   res.locals.hypenate = function(value) {
+//     return value.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase();
+//   };
 
-  next();
-});
+//   next();
+// });
 
 app.use('/', routes);
 app.use('/', auth);

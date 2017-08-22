@@ -25,8 +25,6 @@ module.exports = function (config) {
   });
 
   router.post('/login',  function (req, res) {
-    debug("email: " + req.body.email);
-    debug("password: " + req.body.password);
     return passport.authenticate('local', {
       successRedirect: req.session.lastPage,
       failureRedirect: '/login',
