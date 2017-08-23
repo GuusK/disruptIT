@@ -1,9 +1,9 @@
 /* Source: https://github.com/nathancahill/skeleton-alerts */
 .alert {
     display: block;
-    padding: 20px;
+    padding: 10px 10px 20px 10px;
     border-left: 5px solid;
-/*    min-height: 5vh;*/
+    min-height: 5vh;
 }
 
 .alert-success {
@@ -32,8 +32,8 @@
 }
 
 .alert-text {
+    padding-top: 5px;
     float: left;
-    margin: 10px 0;
 }
 
 .alert-success button,
