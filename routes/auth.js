@@ -1,4 +1,5 @@
 module.exports = function (config) {
+  var debug = require('debug')
   var express = require('express');
   var passport = require('passport');
   var crypto = require('crypto');
@@ -28,7 +29,7 @@ module.exports = function (config) {
     return passport.authenticate('local', {
       successRedirect: req.session.lastPage,
       failureRedirect: '/login',
-      failureFlash: 'Incorrect e-mail of wachtwoord'
+      failureFlash: 'Incorrect e-mail or password'
     })(req,res);
   });
 
@@ -64,15 +65,15 @@ module.exports = function (config) {
 
     // if (req.body.firstname === undefined || )
 
-    req.checkBody('code',      'Geen activatiecode gegeven.').notEmpty();
-    req.checkBody('firstname', 'Geen voornaam gegeven.').notEmpty();
-    req.checkBody('surname',   'Geen achternaam gegeven.').notEmpty();
-    req.checkBody('email',     'Geen e-mailadres gegeven.').notEmpty();
-    req.checkBody('email',     'Geen valide e-mailadres gegeven.').isEmail();
-    req.checkBody('password',  'Wachtwoord moet minstens 6 karakters lang zijn').len(6);
-    req.checkBody('password',  'Wachtwoorden verschillen.').equals(req.body.confirm);
-    req.checkBody('vereniging','Geen vereniging gegeven.').notEmpty();
-    req.checkBody('vereniging','Geen valide vereniging gegeven.').isIn(Object.keys(config.verenigingen));
+    req.checkBody('code',      'Activation code is not provided.').notEmpty();
+    req.checkBody('firstname', 'First name is not provided.').notEmpty();
+    req.checkBody('surname',   'Surname is not provided.').notEmpty();
+    req.checkBody('email',     'Emailaddress is not provided.').notEmpty();
+    req.checkBody('email',     'Emailaddress is not valid.').isEmail();
+    req.checkBody('password',  'Password needs to be atleast 6 characters long.').len(6);
+    req.checkBody('password',  'Passwords are not equal.').equals(req.body.confirm);
+    req.checkBody('vereniging','No association provided.').notEmpty();
+    req.checkBody('vereniging','No valid association provided.').isIn(Object.keys(config.verenigingen));
 
     req.body.bus = req.body.bus || false;
     req.body.vegetarian = req.body.vegetarian || false;
@@ -81,10 +82,12 @@ module.exports = function (config) {
     req.sanitize('vegetarian').toBoolean();
     req.sanitize('subscribe').toBoolean();
 
+    req.body.lezing1 = req.body.lezing2 = "";
+    debug(req.body.lezing2);
+    
     var errors = req.validationErrors();
 
     if (errors) {
-
       var msg = '';
       errors.forEach(function (err) {
         req.flash('error', err.msg);
@@ -101,10 +104,6 @@ module.exports = function (config) {
       req.flash('error', 'Something went wrong!');
       return res.redirect('/register');
     }
-    if(req.body.lezing3 !== "" && req.body.lezing3 !== null && req.body.lezing3 !== 'gert-jan-van-rootselaar' && req.body.lezing3 !== 'martijn-dashorst'){
-      req.flash('error', 'Something went wrong!');
-      return res.redirect('/register');
-    }
 
     var user = new User({
       firstname: req.body.firstname,
@@ -115,8 +114,7 @@ module.exports = function (config) {
       vegetarian: req.body.vegetarian,
       specialNeeds: req.body.specialNeeds,
       lezing1: req.body.lezing1,
-      lezing2: req.body.lezing2,
-      lezing3: req.body.lezing3
+      lezing2: req.body.lezing2
     });
 
     async.waterfall([
@@ -126,7 +124,7 @@ module.exports = function (config) {
       function (ticket, next) {
         if (ticket) {
           if(ticket.ownedBy) {
-            next(new Error('Dit ticket is al geactiveerd!'));
+            next(new Error('Ticket has already been activated!'));
           } else {
             user.ticket = ticket;
             User.register(user, req.body.password, function (err, user) {
@@ -134,7 +132,7 @@ module.exports = function (config) {
             });
           }
         } else {
-          next(new Error('Geen geldige activatiecode gegeven!'));
+          next(new Error('No valid activation code provided!'));
         }
       },
       function (ticket,user, next) {
@@ -160,7 +158,7 @@ module.exports = function (config) {
         req.session.body = req.body;
         return res.redirect('/register');
       } else {
-        req.flash('success', 'Je bent succesvol geregistreerd!');
+        req.flash('success', "You've succesfully registered");
         return res.redirect('/profile');
       }
     });
@@ -186,7 +184,7 @@ module.exports = function (config) {
       function (token, done) {
         User.findOne({ email: req.body.email}, function (err, user) {
           if (!user) {
-            req.flash('error', 'Er lijkt geen gebruiker met dit e-mail adres in ons systeem te zijn.');
+            req.flash('error', 'There does not appear to be a ticket used with this emailaddress.');
             return res.redirect('/forgot');
           }
           user.resetPasswordToken = token;
@@ -200,14 +198,14 @@ module.exports = function (config) {
         var mailOptions = {
           to: user.email,
           from: config.email.auth.user,
-          subject: 'Wachtwoord resetten',
-          text: 'Je hebt deze e-mail ontvangen omdat jij (of iemand anders) een wachtwoordreset hebt aangevraagd. \n\n' +
-                        'Klik op de volgende link of plak hem in de adresbalk van je browser om het proces te voltooien: https://www.disrupt-it.nl/reset/'+token+'\n\n'+
-                        'Als jij deze wachtwoordreset niet hebt aangevraagd, negeer dan deze e-mail en je wachtwoord zal onveranderd blijven.\n\n'
+          subject: 'Reset password',
+          text: "You have received this email because you (or someone else) asked to reset your password for Disrupt-IT \n\n" +
+                "Click on the following link, or copy it into your browser, to complete the reset: https://www.disrupt-it.nl/reset/"+token+"\n\n"+
+                "If you did not request to reset your password, you can ignore this email and your password will remain the same"
         };
 
         transport.sendMail(mailOptions, function (err) {
-          req.flash('info', 'Een e-mail is gestuurd naar '+user.email + ' met verdere instructies om je wachtwoord te resetten');
+          req.flash('info', 'An email has been sent to ' + user.email + ' with instructions on how to change your password');
           done(err, 'done');
         });
       }
@@ -223,7 +221,7 @@ module.exports = function (config) {
   router.get('/reset/:token', function (req, res) {
     User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: {$gt : Date.now() } }, function (err, user) {
         if (!user) {
-          req.flash('error', 'Wachtwoord reset token is invalid.');
+          req.flash('error', 'Password reset token is invalid.');
           return res.redirect('/forgot');
         } else {
           res.render('reset', { user: req.user });
@@ -237,12 +235,12 @@ module.exports = function (config) {
       function (done) {
         User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
           if (!user) {
-            req.flash('error', 'Wachtwoord reset token is invalid.');
+            req.flash('error', 'Password reset token is invalid.');
             return res.redirect('back');
           }
 
-          req.checkBody('password',  'Wachtwoord moet minstens 6 karakters lang zijn').len(6);
-          req.checkBody('password',  'Wachtwoordden verschillen.').equals(req.body.confirm);
+          req.checkBody('password',  'Passwords needs to be atleast 6 characters long').len(6);
+          req.checkBody('password',  'Passwords are not equal.').equals(req.body.confirm);
           var errors = req.getValidationResult();
 
           if (errors) {

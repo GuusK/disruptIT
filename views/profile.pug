@@ -3,70 +3,69 @@ extends layout
 block above-content
 
 block header
-  header.hero.login
+  header.text
     h2 Profile
 
 block content
-  section.intro.slanted.margin-vert
-    .content
-        header
-          h2 My profile
-          p= ucfirst(user.firstname) + ' ' + user.surname +' ('+ verenigingen[user.vereniging].name +')'
+  section
+    h2= ucfirst(user.firstname) + ' ' + user.surname +' ('+ verenigingen[user.vereniging].name +')'
 
-        br(clear='all')
+    br(clear='all')
 
-        form.form.form-profile#settings(method='post')
-          if isbus_quickhack
-            .form-group
-              .checkbox
-                input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
-                label(for='bus') I would like to use the arranged bus at my study association
-       
-          .form-group
-            label(for='lezing1') Preference talk in first parallel session
-            div.select-wrapper
-              select.form-control(name='lezing1')
-                option(value='', selected=!user.lezing1?'selected':undefined) No preference
-                option(value='jan-smits', selected=user.lezing1=='jan-smits'?'selected':undefined) Jan Smits (TU/e) - Sensored data: is law stopping innovation?
-                option(value='laurenz-eveleens', selected=user.lezing1=='laurenz-eveleens'?'selected':undefined) Laurenz Eveleens (Ortec) - Optimize your world
+    form.form.form-profile#settings(method='post')
+      h3 Congress
+      if isbus_quickhack
+        .checkbox
+          label(for='bus')
+            input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
+            | I would like to use the arranged bus at my study association
+   
+      .form-group
+        label(for='lezing1') Preference talk in first parallel session
+        div.select-wrapper
+          select.form-control(name='lezing1')
+            option(value='', selected=!user.lezing1?'selected':undefined) No preference
+            option(value='jan-smits', selected=user.lezing1=='jan-smits'?'selected':undefined) Jan Smits (TU/e) - Sensored data: is law stopping innovation?
+            option(value='laurenz-eveleens', selected=user.lezing1=='laurenz-eveleens'?'selected':undefined) Laurenz Eveleens (Ortec) - Optimize your world
 
-          .form-group
-            label(for='lezing2') Preference talk in second parallel session
-            div.select-wrapper
-              select.form-control(name='lezing2')
-                option(value='', selected) No preference
-                option(value='mark-bakker', selected=user.lezing2=='mark-bakker'?'selected':undefined) Mark Bakker (SAS) - Applications of machine learning
-                option(value='emile-nijssen', selected=user.lezing2=='emile-nijssen'?'selected':undefined) Emile Nijssen (Homey) - From idea to autonomous product
+      .form-group
+        label(for='lezing2') Preference talk in second parallel session
+        div.select-wrapper
+          select.form-control(name='lezing2')
+            option(value='', selected) No preference
+            option(value='mark-bakker', selected=user.lezing2=='mark-bakker'?'selected':undefined) Mark Bakker (SAS) - Applications of machine learning
+            option(value='emile-nijssen', selected=user.lezing2=='emile-nijssen'?'selected':undefined) Emile Nijssen (Homey) - From idea to autonomous product
 
-          .form-group
-            .checkbox
-              label(for='vegetarian')
-                input#vegetarian(type='checkbox',name='vegetarian', checked=user.vegetarian? "checked": undefined)
-                | I am a vegetarian
+      h3 Diets
+      .form-group
+        .checkbox
+          label(for='vegetarian')
+            input#vegetarian(type='checkbox',name='vegetarian', checked=user.vegetarian? "checked": undefined)
+            | I am a vegetarian
 
-          .form-group
-            label(for='specialNeeds') Other remarks (e.g. allergies)
-            input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
-          p 
-          | This year we want are introducing some new features to the SNiC so you can connect to companies and fellow students in a better and more interesting way for you. Read more about this 
-          a(href='/connectbetter') here
-          
-          .privacy We only share information that <b>you</b> want to share. 
+      .form-group
+        label(for='specialNeeds') Other remarks (e.g. allergies)
+        input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
+      
+      h3 Connect better
+      | This year we want are introducing some new features to the SNiC so you can connect to companies and fellow students in a better and more interesting way for you. Read more about this 
+      a(href='/connectbetter') here
+      
+      .privacy We only share information that <b>you</b> want to share. 
 
-          p 
-          | By leaving the following boxes empty, we will not share that information
+      | By leaving the following boxes empty, we will not share that information
 
-          .form-group
-            label(for='linkedIn') LinkedIn profile URL
-            input.form-control(type='text', name="linkedin", value=decodeURIComponent(user.linkedin))
-          .form-group
-            label(for='linkedIn') Phonenumber
-            input.form-control(type='text', name="phonenumber", value=decodeURIComponent(user.phonenumber))
-          .form-group
-            .checkbox
-              label(for='shareEmail')
-                input#shareEmail(type='checkbox',name='shareEmail', checked=user.shareEmail? "checked": undefined)
-                | I want to share my email-address
-            button.button.special(type='submit') Save settings
-          
+      .form-group
+        label(for='linkedIn') LinkedIn profile URL
+        input.form-control(type='text', name="linkedin", value=decodeURIComponent(user.linkedin))
+      .form-group
+        label(for='linkedIn') Phonenumber
+        input.form-control(type='text', name="phonenumber", value=decodeURIComponent(user.phonenumber))
+      .form-group
+        .checkbox
+          label(for='shareEmail')
+            input#shareEmail(type='checkbox',name='shareEmail', checked=user.shareEmail? "checked": undefined)
+            | I want to share my email-address
+        button.button.special(type='submit') Save settings
+      
 

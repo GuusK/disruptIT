@@ -1,0 +1,18 @@
+extends layout
+block above-content
+
+block header 
+    header.text
+        h2 Forgot password
+
+block content
+  section
+    .container
+      .row
+        .offset-by-three.six.columns
+          form(method='POST')
+            label(for='email') Email-address:
+                input.form-control(type='text', name='email', autofocus)
+                button.button.special(type='submit') Reset password
+        
+            a(href='/login') Back to login

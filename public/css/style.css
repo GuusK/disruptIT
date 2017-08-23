@@ -346,11 +346,11 @@ a:focus{
 /********************
  * Header
  ********************/
-header.h2 {
+header.text h2 {
   position: relative;
   min-height: 5vh;
   
-  padding: 6em 2em 2em 2em;
+  padding: 4em 2em 2em 2em;
 
   display: flex;
   flex-direction: column;
