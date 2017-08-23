@@ -1,12 +1,19 @@
 extends ../layout
+
+block above-content
+
+block header 
+  header.h2
+    h2 Check in
+
 block content
-  section.main.style1
-    .container
-      .row(class='0%')
-        .12u
+  .section.users.intro.slanted
+    .content.offset-by-two.eight.columns
+      .row
+        .twelve.columns
           form(method='POST')
 
-            table
+            table.users.table
               thead
                   th Voornaam
                   th Achternaam

@@ -50,22 +50,24 @@ html(lang=locale)
     block above-content
 
     .container
-      if messages.error
-        each msg in messages.error
-          .alert.alert-error
-            .alert-text= msg
-            button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
+      .row
+        .offset-by-two.eight.columns
+          if messages.error
+            each msg in messages.error
+              .alert.alert-error
+                .alert-text= msg
+                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
 
-      if messages.info
-        each msg in messages.info
-          .alert.info
-            .alert-text= msg
-            button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
-      if messages.success
-        each msg in messages.success
-          .alert.success
-            .alert-text= msg
-            button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
+          if messages.info
+            each msg in messages.info
+              .alert.info
+                .alert-text= msg
+                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
+          if messages.success
+            each msg in messages.success
+              .alert.success
+                .alert-text= msg
+                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
 
     // content of the page
     block content

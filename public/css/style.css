@@ -346,6 +346,25 @@ a:focus{
 /********************
  * Header
  ********************/
+header.h2 {
+  position: relative;
+  min-height: 5vh;
+  
+  padding: 6em 2em 2em 2em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background: rgba(0, 186, 179, 0.7);
+  color: white;
+  opacity: .9;
+
+  margin-bottom: 1em;
+
+}
+
 header.hero{
   position: relative;
   min-height: 80vh;
@@ -434,6 +453,7 @@ section.slanted{
 section.slanted .content{
   transform: skewY(-3deg);
   padding: 5rem 15px;
+  overflow: auto;
 }
 
 section.slanted.twocolumn{
@@ -931,6 +951,24 @@ header.hero.register{
   /*max-width: 60vw;*/
 }
 
+
+/****************************
+ * Users
+ ****************************/
+
+.section.users {
+  overflow:auto;
+}
+
+.button-users {
+  padding: 0px;
+  width: 100%;
+}
+
+.users.table {
+  margin: 0 0 2em 0;
+  width: 100%;
+}
 
 /****************************
  * Connect better
