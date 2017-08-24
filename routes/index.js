@@ -6,6 +6,8 @@ var User   = require('../models/User');
 var _      = require('underscore');
 var async  = require('async');
 var i18n   = require('i18next');
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
 
 module.exports = function (config) {
 var router = express.Router();
@@ -48,7 +50,7 @@ router.get('/profile', auth, function (req, res) {
     {
       // Don't try to unescape here, it's not stored in user.
       // Do it in the template
-      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus});
+      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus, speakerids: config.speakerids, speakers: config.speakers});
     }
     else
     {
@@ -58,47 +60,108 @@ router.get('/profile', auth, function (req, res) {
   });
 });
 
-router.post('/profile', auth, function (req, res) {
+
+async function canEnrollForLezing(lezingslot, lezingid, useremail){
+  console.log(lezingslot + " " + lezingid + " " +  useremail);
+  if(lezingid == "" || lezingid == null){
+    return true;
+  };
+
+  lezing = config.speakers.filter(function(speaker){
+    return speaker.id == lezingid;
+  })
+
+  // Lezing not found
+  if (lezing.length != 1) {
+    console.log('lezing.length != 1 for lezingid: ' + lezingid);
+    console.log(lezing);
+    return false;
+  }
+
+  lezing = lezing[0];
+
+  // Check if there is a limit and if so, if it has been reached
+  if (lezing.limit) {
+    var query = {};
+    query[lezingslot] = lezingid;
+    var result;
+    console.log(query);
+    await User
+      .find(query)
+      .where('email')
+      .ne(useremail)
+      .count()
+      .then(function(res){
+        result = res;
+        console.log('res within then of count: ' + res + " " + result);
+      });
+      return result < lezing.limit;
+  }
+
+  return true;
+}
+
+router.post('/profile', auth, async function (req, res) {
   req.sanitize('vegetarian').toBoolean();
   req.sanitize('bus').toBoolean();
   req.sanitize('shareEmail').toBoolean();
   req.body.linkedin = encodeURIComponent(req.body.linkedin);
   req.body.phonenumber = encodeURIComponent(req.body.phonenumber);
 
-  if(req.body.lezing1 !== "" && req.body.lezing1 !== null &&req.body.lezing1 !== 'laurenz-eveleens' && req.body.lezing1 !== 'jan-smits'){
-    req.flash('error', "Something went wrong!");
+  if(req.body.lezing1 !== "" && req.body.lezing1 !== null && !config.speakerids.session1.includes(req.body.lezing1)){
+    req.flash('error', "Lezing1 went wrong!");
     return res.redirect('/profile');
   }
-  if(req.body.lezing2 !== "" && req.body.lezing2 !== null &&req.body.lezing2 !== 'mark-bakker' && req.body.lezing2 !== 'emile-nijssen'){
+  if(req.body.lezing2 !== "" && req.body.lezing2 !== null && !config.speakerids.session2.includes(req.body.lezing2)){
     req.flash('error', "Something went wrong!");
     return res.redirect('/profile');
   }
 
-  User.findOne({email:req.session.passport.user}, function (err, user) {
-    if (!err)
-    {
-      user.vegetarian = req.body.vegetarian ? true : false;
-      user.bus        = req.body.bus ? true : false;
-      user.specialNeeds = req.body.specialNeeds;
-      user.lezing1 = req.body.lezing1;
-      user.lezing2 = req.body.lezing2;
-      user.lezing3 = req.body.lezing3;
-      user.phonenumber = req.body.phonenumber;
-      user.linkedin = req.body.linkedin;
-      user.shareEmail = req.body.shareEmail; 
-      user.save();
-      req.flash('success', 'Profile edited');
-      res.redirect('/profile');
-    }
-    else
-    {
+  User.findOne({email:req.session.passport.user}).exec( async( function (err, user) {
+    if (!err){
+      err = false;
+      // var allow = await (
+      canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user)
+      .then(function(allow){
+        console.log("allow lezing1: " + allow);
+        if( allow ){
+          user.lezing1 = req.body.lezing1;
+        } else {
+          req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
+          err = true;
+        }
+      }).then(
+        allow = canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user)
+        .then(function(allow){
+          if( allow ){
+            user.lezing2 = req.body.lezing2;
+          } else {
+          req.flash('error', "It is not possible to signup the talk you choice for the second session. It's possible it's full.");
+            err = true;
+          }
+        }
+      )).then(function(){
+        user.vegetarian = req.body.vegetarian ? true : false;
+        user.bus        = req.body.bus ? true : false;
+        user.specialNeeds = req.body.specialNeeds;
+        user.lezing3 = req.body.lezing3;
+        user.phonenumber = req.body.phonenumber;
+        user.linkedin = req.body.linkedin;
+        user.shareEmail = req.body.shareEmail; 
+        user.save();
+
+        if(!err){
+          req.flash('success', 'Profile edited');
+        }
+        res.redirect('/profile');
+      });
+    } else {
       debug(err);
       console.log(err);
       req.flash('error', 'Something went wrong!');
       res.redirect('/profile');
     }
-  });
-
+  }))
 });
 
 router.get('/location', function (req, res) {
