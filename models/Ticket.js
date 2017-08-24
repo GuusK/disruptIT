@@ -2,13 +2,23 @@ var mongoose = require('mongoose');
 var shortId = require('shortid');
 
 //User different characters to prevent confusion I and l
-shortId.characters("123456789ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz!@#$%^");
+// shortId.characters("123456789ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz");
+
+chars = "123456789ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz";
+
+function generateID(){
+  str = [];
+  for(var i = 0; i < 10; ++i){
+      str[i] = chars[Math.floor(Math.random() * chars.length)];
+  }
+  return str.join("");
+}
 
 var Ticket = new mongoose.Schema({
   _id: {
     type: String,
     unique: true,
-    'default': shortId.generate
+    'default': generateID
   },
   rev : { type: Number, required: false},
   ownedBy: {
