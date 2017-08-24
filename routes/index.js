@@ -6,8 +6,8 @@ var User   = require('../models/User');
 var _      = require('underscore');
 var async  = require('async');
 var i18n   = require('i18next');
-var async = require('asyncawait/async');
-var await = require('asyncawait/await');
+// var async = require('asyncawait/async');
+// var await = require('asyncawait/await');
 
 module.exports = function (config) {
 var router = express.Router();
@@ -63,7 +63,7 @@ router.get('/profile', auth, function (req, res) {
 
 async function canEnrollForLezing(lezingslot, lezingid, useremail){
   console.log(lezingslot + " " + lezingid + " " +  useremail);
-  if(lezingid == "" || lezingid == null){
+  if(typeof lezingid == "undefined" || lezingid == "" || lezingid == null){
     return true;
   };
 
@@ -86,6 +86,7 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
     query[lezingslot] = lezingid;
     var result;
     console.log(query);
+    console.log(lezing.limit);
     await User
       .find(query)
       .where('email')
@@ -95,13 +96,15 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
         result = res;
         console.log('res within then of count: ' + res + " " + result);
       });
+      console.log('result: ' + result + " lezing.limit:" + lezing.limit);
+      console.log(result < lezing.limit);
       return result < lezing.limit;
   }
 
   return true;
 }
 
-router.post('/profile', auth, async function (req, res) {
+router.post('/profile', auth, function (req, res) {
   req.sanitize('vegetarian').toBoolean();
   req.sanitize('bus').toBoolean();
   req.sanitize('shareEmail').toBoolean();
@@ -117,30 +120,27 @@ router.post('/profile', auth, async function (req, res) {
     return res.redirect('/profile');
   }
 
-  User.findOne({email:req.session.passport.user}).exec( async( function (err, user) {
+  User.findOne({email:req.session.passport.user}).exec( function (err, user) {
     if (!err){
-      err = false;
-      // var allow = await (
-      canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user)
-      .then(function(allow){
-        console.log("allow lezing1: " + allow);
-        if( allow ){
+      async function storeToDatabase(){
+        canEnrollSession1 = await canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user);
+        canEnrollSession2 = await canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user);
+        console.log("ses1: " + canEnrollSession1 + "ses2: " + canEnrollSession2);
+        
+        if( canEnrollSession1 ){
           user.lezing1 = req.body.lezing1;
         } else {
           req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
           err = true;
         }
-      }).then(
-        allow = canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user)
-        .then(function(allow){
-          if( allow ){
-            user.lezing2 = req.body.lezing2;
-          } else {
-          req.flash('error', "It is not possible to signup the talk you choice for the second session. It's possible it's full.");
-            err = true;
-          }
+
+        if( canEnrollSession2 ){
+          user.lezing2 = req.body.lezing2;
+        } else {
+          req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
+          err = true;
         }
-      )).then(function(){
+
         user.vegetarian = req.body.vegetarian ? true : false;
         user.bus        = req.body.bus ? true : false;
         user.specialNeeds = req.body.specialNeeds;
@@ -154,14 +154,52 @@ router.post('/profile', auth, async function (req, res) {
           req.flash('success', 'Profile edited');
         }
         res.redirect('/profile');
-      });
+      }
+
+      storeToDatabase();
+
+      // err = false;
+      // var allow = await (
+      // canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user)
+      // .then(function(allow){
+      //   console.log("allow lezing1: " + allow);
+      //   if( allow ){
+      //     user.lezing1 = req.body.lezing1;
+      //   } else {
+      //     req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
+      //     err = true;
+      //   }
+      // })
+      // .then(canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user))
+      // .then(function(allow){
+      //   if( allow ){
+      //     user.lezing2 = req.body.lezing2;
+      //   } else {
+      //   req.flash('error', "It is not possible to signup the talk you choice for the second session. It's possible it's full.");
+      //     err = true;
+      //   }
+      // }).then(function(){
+      //   user.vegetarian = req.body.vegetarian ? true : false;
+      //   user.bus        = req.body.bus ? true : false;
+      //   user.specialNeeds = req.body.specialNeeds;
+      //   user.lezing3 = req.body.lezing3;
+      //   user.phonenumber = req.body.phonenumber;
+      //   user.linkedin = req.body.linkedin;
+      //   user.shareEmail = req.body.shareEmail; 
+      //   user.save();
+
+      //   if(!err){
+      //     req.flash('success', 'Profile edited');
+      //   }
+      //   res.redirect('/profile');
+      // });
     } else {
       debug(err);
       console.log(err);
       req.flash('error', 'Something went wrong!');
       res.redirect('/profile');
     }
-  }))
+  })
 });
 
 router.get('/location', function (req, res) {
