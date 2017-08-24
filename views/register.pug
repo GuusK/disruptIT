@@ -39,27 +39,6 @@ block content
               label(for='vegetarian')
                 input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian? "checked": undefined)
                 | I am a vegetarian
-          //.form-group
-            label(for='lezing1') Preference talk in first parallel session
-            .select-wrapper
-              select.form-control(name='lezing1')
-                option(value='', selected) No preference
-                option(value='jan-smits') Jan Smits (TU/e) - Sensored data: is law stopping innovation?
-                option(value='laurenz-eveleens') Laurenz Eveleens (Ortec) - Optimize your world
-          //.form-group
-            label(for='lezing2') Preference talk in second parallel session
-            .select-wrapper
-              select.form-control(name='lezing2')
-                option(value='', selected) No preference
-                option(value='mark-bakker') Mark Bakker (SAS) - Applications of machine learning
-                option(value='emile-nijssen') Emile Nijssen (Homey) - From idea to autonomous product
-          //.form-group
-            label(for='lezing3') Preference talk in third parallel session
-            .select-wrapper
-              select.form-control(name='lezing3')
-                option(value='', selected) No preference
-                option(value='gert-jan-van-rootselaar') Gert-Jan van Rootselaar (AME) - Where am I? Make a decision!
-                option(value='martijn-dashorst')  Martijn Dashorst (Topicus) - Quis automatiet ipsos automates?
           .form-group
             label(for='specialNeeds') Other remarks (e.g. allergies)
             input.form-control(type='text', name="specialNeeds", value=body.specialNeeds)

@@ -26,17 +26,17 @@ block content
           select.form-control(name='lezing1')
             option(value='', selected=!user.lezing1?'selected':undefined) No preference
             each val in speakerids.session1
-              option(value=val, selected=user.lezing1==val?'selected':undefined)= speakers.filter(function(doc){return doc.id == val})[0].name 
-              //option(value='jan-smits', selected=user.lezing1=='jan-smits'?'selected':undefined) Jan Smits (TU/e) - Sensored data: is law stopping innovation?
-              //option(value='laurenz-eveleens', selected=user.lezing1=='laurenz-eveleens'?'selected':undefined) Laurenz Eveleens (Ortec) - Optimize your world
-
+              - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+              option(value=val, selected=user.lezing1==val?'selected':undefined)= speaker.name + ' (' + speaker.company + ') - ' + speaker.talk 
+              
       .form-group
         label(for='lezing2') Preference talk in second parallel session
         div.select-wrapper
           select.form-control(name='lezing2')
             option(value='', selected) No preference
-            option(value='mark-bakker', selected=user.lezing2=='mark-bakker'?'selected':undefined) Mark Bakker (SAS) - Applications of machine learning
-            option(value='emile-nijssen', selected=user.lezing2=='emile-nijssen'?'selected':undefined) Emile Nijssen (Homey) - From idea to autonomous product
+            each val in speakerids.session2
+              - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+              option(value=val, selected=user.lezing2==val?'selected':undefined)= speaker.name + ' (' + speaker.company + ') - ' + speaker.talk 
 
       h3 Diets
       .form-group

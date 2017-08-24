@@ -120,79 +120,45 @@ router.post('/profile', auth, function (req, res) {
     return res.redirect('/profile');
   }
 
-  User.findOne({email:req.session.passport.user}).exec( function (err, user) {
+  User.findOne({email:req.session.passport.user}).exec( async function (err, user) {
     if (!err){
-      async function storeToDatabase(){
-        canEnrollSession1 = await canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user);
-        canEnrollSession2 = await canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user);
-        console.log("ses1: " + canEnrollSession1 + "ses2: " + canEnrollSession2);
-        
-        if( canEnrollSession1 ){
-          user.lezing1 = req.body.lezing1;
-        } else {
-          req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
-          err = true;
-        }
-
-        if( canEnrollSession2 ){
-          user.lezing2 = req.body.lezing2;
-        } else {
-          req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
-          err = true;
-        }
-
-        user.vegetarian = req.body.vegetarian ? true : false;
-        user.bus        = req.body.bus ? true : false;
-        user.specialNeeds = req.body.specialNeeds;
-        user.lezing3 = req.body.lezing3;
-        user.phonenumber = req.body.phonenumber;
-        user.linkedin = req.body.linkedin;
-        user.shareEmail = req.body.shareEmail; 
-        user.save();
-
-        if(!err){
-          req.flash('success', 'Profile edited');
-        }
-        res.redirect('/profile');
+      canEnrollSession1 = await canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user);
+      canEnrollSession2 = await canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user);
+      console.log("ses1: " + canEnrollSession1 + "ses2: " + canEnrollSession2);
+      
+      if( canEnrollSession1 ){
+        user.lezing1 = req.body.lezing1;
+      } else {
+        req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
+        err = true;
       }
 
-      storeToDatabase();
+      if( canEnrollSession2 ){
+        user.lezing2 = req.body.lezing2;
+      } else {
+        req.flash('error', "It is not possible to signup the talk you choice for the second session. It's possible it's full.");
+        err = true;
+      }
 
-      // err = false;
-      // var allow = await (
-      // canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user)
-      // .then(function(allow){
-      //   console.log("allow lezing1: " + allow);
-      //   if( allow ){
-      //     user.lezing1 = req.body.lezing1;
-      //   } else {
-      //     req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
-      //     err = true;
-      //   }
-      // })
-      // .then(canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user))
-      // .then(function(allow){
-      //   if( allow ){
-      //     user.lezing2 = req.body.lezing2;
-      //   } else {
-      //   req.flash('error', "It is not possible to signup the talk you choice for the second session. It's possible it's full.");
-      //     err = true;
-      //   }
-      // }).then(function(){
-      //   user.vegetarian = req.body.vegetarian ? true : false;
-      //   user.bus        = req.body.bus ? true : false;
-      //   user.specialNeeds = req.body.specialNeeds;
+      // if (canEnrollSession3){
       //   user.lezing3 = req.body.lezing3;
-      //   user.phonenumber = req.body.phonenumber;
-      //   user.linkedin = req.body.linkedin;
-      //   user.shareEmail = req.body.shareEmail; 
-      //   user.save();
+      // } else {
+      //   req.flash('error', "It is not possible to signup the talk you choice for the third session. It's possible it's full.");
+      //   err = true;
+      // }
 
-      //   if(!err){
-      //     req.flash('success', 'Profile edited');
-      //   }
-      //   res.redirect('/profile');
-      // });
+      user.vegetarian = req.body.vegetarian ? true : false;
+      user.bus        = req.body.bus ? true : false;
+      user.specialNeeds = req.body.specialNeeds;
+      user.phonenumber = req.body.phonenumber;
+      user.linkedin = req.body.linkedin;
+      user.shareEmail = req.body.shareEmail; 
+      user.save();
+
+      if(!err){
+        req.flash('success', 'Profile edited');
+      }
+      res.redirect('/profile');
     } else {
       debug(err);
       console.log(err);
