@@ -54,7 +54,7 @@ router.get('/profile', auth, function (req, res) {
     }
     else
     {
-      req.flash('error', 'lolwtf');
+      req.flash('error', 'Something went wrong, very horribly. Contact the committee asap.');
       res.redirect('/profile');
     }
   });
@@ -124,8 +124,10 @@ router.post('/profile', auth, function (req, res) {
     if (!err){
       canEnrollSession1 = await canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user);
       canEnrollSession2 = await canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user);
-      console.log("ses1: " + canEnrollSession1 + "ses2: " + canEnrollSession2);
+      canEnrollSession3 = await canEnrollForLezing("lezing3", req.body.lezing3, req.session.passport.user);
+      console.log("ses1: " + canEnrollSession1 + " ses2: " + canEnrollSession2 + "ses3: " + canEnrollSession3);
       
+      // naar functie zetten en samenvoegen
       if( canEnrollSession1 ){
         user.lezing1 = req.body.lezing1;
       } else {
@@ -140,19 +142,19 @@ router.post('/profile', auth, function (req, res) {
         err = true;
       }
 
-      // if (canEnrollSession3){
-      //   user.lezing3 = req.body.lezing3;
-      // } else {
-      //   req.flash('error', "It is not possible to signup the talk you choice for the third session. It's possible it's full.");
-      //   err = true;
-      // }
+      if (canEnrollSession3){
+        user.lezing3 = req.body.lezing3;
+      } else {
+        req.flash('error', "It is not possible to signup the talk you choice for the third session. It's possible it's full.");
+        err = true;
+      }
 
-      user.vegetarian = req.body.vegetarian ? true : false;
-      user.bus        = req.body.bus ? true : false;
+      user.vegetarian   = req.body.vegetarian ? true : false;
+      user.bus          = req.body.bus ? true : false;
       user.specialNeeds = req.body.specialNeeds;
-      user.phonenumber = req.body.phonenumber;
-      user.linkedin = req.body.linkedin;
-      user.shareEmail = req.body.shareEmail; 
+      user.phonenumber  = req.body.phonenumber;
+      user.linkedin     = req.body.linkedin;
+      user.shareEmail   = req.body.shareEmail; 
       user.save();
 
       if(!err){
@@ -352,6 +354,24 @@ router.get('/aanwezigen', adminAuth, function (req,res,next) {
     if (err) { return next(err); }
     res.render('vn', { tables : result });
   });
+});
+
+router.get('/connect/:id', auth, function(req, res, next){
+  User.findOne({ticket: req.params.id}, function(err, user){
+    if (err || !user) { 
+      debug(err);
+      res.render('connect', {connected: false, error: 'Ticket id is not valid'});
+    } else {
+      User.findOneAndUpdate({email:req.session.passport.user}, {$addToSet: {connectlist: req.params.id}},function(err, doc){
+        if(err){
+          res.render('connect', {connected: false, error: 'Could not update your connections'});
+          console.log(req.params.id + "could not be added to the connectlist!");
+        } else {
+          res.render('connect', {connected: true, connectee: user});
+        }
+      });
+    }
+  })
 });
 
 /**

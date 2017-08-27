@@ -19,7 +19,8 @@ var User = new mongoose.Schema({
   admin:                { type: Boolean, 'default': false },
   sprekers:             { type: [String], required: false },
   lezing1:              { type: String,   required: false },
-  lezing2:              { type: String,   required: false }
+  lezing2:              { type: String,   required: false },
+  connectlist:          [String]
 });
 
 User.plugin(plm, {

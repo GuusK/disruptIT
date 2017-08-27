@@ -38,6 +38,15 @@ block content
               - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
               option(value=val, selected=user.lezing2==val?'selected':undefined)= speaker.name + ' (' + speaker.company + ') - ' + speaker.talk 
 
+      .form-group
+        label(for='lezing3') Preference talk in second parallel session
+        div.select-wrapper
+          select.form-control(name='lezing3')
+            option(value='', selected) No preference
+            each val in speakerids.session3
+              - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+              option(value=val, selected=user.lezing3==val?'selected':undefined)= speaker.name + ' (' + speaker.company + ') - ' + speaker.talk 
+
       h3 Diets
       .form-group
         .checkbox
