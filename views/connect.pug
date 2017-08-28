@@ -7,9 +7,10 @@ block header
 
 block content
 	section
-		if connected
-			p You've succesfully connected with #{connectee.firstname + ' ' + connectee.surname}
-			p You can close the current page
-		else
-			p 'We could not connect you. This error should help you:'
-			p error
+		.connectbetter
+			if connected
+				p You've succesfully connected with #{connectee.firstname + ' ' + connectee.surname}
+				p You can close the current page
+			else
+				p We could not connect you. This error should help you:
+				p= error
