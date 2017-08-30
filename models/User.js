@@ -17,9 +17,10 @@ var User = new mongoose.Schema({
   ticket:               { type: String,  ref: 'Ticket'    },
   aanwezig:             { type: Boolean, 'default': false },
   admin:                { type: Boolean, 'default': false },
-  sprekers:             { type: [String], required: false },
-  lezing1:              { type: String,   required: false },
-  lezing2:              { type: String,   required: false },
+  sprekers:             { type: [String],required: false },
+  lezing1:              { type: String,  required: false },
+  lezing2:              { type: String,  required: false },
+  lezing3:              { type: String,  required: false},
   connectlist:          [String]
 });
 
