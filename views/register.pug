@@ -77,9 +77,6 @@ block content
         .alert.alert-info
           .icon.fa.fa-info
 
-          if i18n.lng() == 'nl'
-            - months = ['januari', 'februari', 'maart', 'april', 'mei','juni','juli','augustus', 'september','november','december'];
-          else
-            - months = ['january', 'february', 'march', 'april', 'may','june','july','august', 'september','november','december'];
+          - months = ['january', 'february', 'march', 'april', 'may','june','july','august', 'september','november','december'];
 
           div= 'You can activate your ticket here from ' +  {date: new Date(ticketSaleStarts).getDate() + ' ' + months[new Date(ticketSaleStarts).getMonth()] } + ' onwards!'

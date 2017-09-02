@@ -21,7 +21,8 @@ var User = new mongoose.Schema({
   lezing1:              { type: String,  required: false },
   lezing2:              { type: String,  required: false },
   lezing3:              { type: String,  required: false},
-  connectlist:          [String]
+  connectlist:          [String],
+  matchingterms:        [String]
 });
 
 User.plugin(plm, {

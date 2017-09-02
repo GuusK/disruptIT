@@ -50,7 +50,7 @@ router.get('/profile', auth, function (req, res) {
     {
       // Don't try to unescape here, it's not stored in user.
       // Do it in the template
-      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus, speakerids: config.speakerids, speakers: config.speakers});
+      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus, speakerids: config.speakerids, speakers: config.speakers, matchingterms:config.matchingterms});
     }
     else
     {
@@ -62,7 +62,6 @@ router.get('/profile', auth, function (req, res) {
 
 
 async function canEnrollForLezing(lezingslot, lezingid, useremail){
-  console.log(lezingslot + " " + lezingid + " " +  useremail);
   if(typeof lezingid == "undefined" || lezingid == "" || lezingid == null){
     return true;
   };
@@ -73,8 +72,6 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
 
   // Lezing not found
   if (lezing.length != 1) {
-    console.log('lezing.length != 1 for lezingid: ' + lezingid);
-    console.log(lezing);
     return false;
   }
 
@@ -85,8 +82,7 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
     var query = {};
     query[lezingslot] = lezingid;
     var result;
-    console.log(query);
-    console.log(lezing.limit);
+
     await User
       .find(query)
       .where('email')
@@ -94,9 +90,7 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
       .count()
       .then(function(res){
         result = res;
-        console.log('res within then of count: ' + res + " " + result);
       });
-      console.log('result: ' + result + " lezing.limit:" + lezing.limit);
       console.log(result < lezing.limit);
       return result < lezing.limit;
   }
@@ -125,7 +119,6 @@ router.post('/profile', auth, function (req, res) {
       canEnrollSession1 = await canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user);
       canEnrollSession2 = await canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user);
       canEnrollSession3 = await canEnrollForLezing("lezing3", req.body.lezing3, req.session.passport.user);
-      console.log("ses1: " + canEnrollSession1 + " ses2: " + canEnrollSession2 + "ses3: " + canEnrollSession3);
       
       // naar functie zetten en samenvoegen
       if( canEnrollSession1 ){
@@ -155,6 +148,13 @@ router.post('/profile', auth, function (req, res) {
       user.phonenumber  = req.body.phonenumber;
       user.linkedin     = req.body.linkedin;
       user.shareEmail   = req.body.shareEmail; 
+      var matching = [];
+      for (var i = 0; i < config.matchingterms.length; i++) {
+        if (req.body[config.matchingterms[i]]){
+          matching.push(config.matchingterms[i]);
+        }
+      }
+      user.matchingterms = matching;
       user.save();
 
       if(!err){

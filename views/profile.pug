@@ -77,6 +77,15 @@ block content
           label(for='shareEmail')
             input#shareEmail(type='checkbox',name='shareEmail', checked=user.shareEmail? "checked": undefined)
             | I want to share my email-address
+      p Get matched with companies by filling in your interests!
+      .form-group
+        each val in matchingterms
+          - var checked = user.matchingterms.indexOf(val) >= 0;
+          .checkbox
+            label(for=val)
+              input(id=val type='checkbox',name=val, checked=checked? "checked": undefined) 
+              = val
+
         button.button.special(type='submit') Save settings
       
 
