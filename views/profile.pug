@@ -7,7 +7,7 @@ block header
     h2 Profile
 
 block content
-  section
+  section.profile
     h2= ucfirst(user.firstname) + ' ' + user.surname +' ('+ verenigingen[user.vereniging].name +')'
 
     br(clear='all')
@@ -79,13 +79,15 @@ block content
             | I want to share my email-address
       p Get matched with companies by filling in your interests!
       .form-group
-        each val in matchingterms
-          - var checked = user.matchingterms.indexOf(val) >= 0;
-          .checkbox
-            label(for=val)
-              input(id=val type='checkbox',name=val, checked=checked? "checked": undefined) 
-              = val
+        .interests
+          each val in matchingterms
+            - var checked = user.matchingterms.indexOf(val) >= 0;
+            .interest
+              .checkbox
+                label(for=val)
+                  input(id=val type='checkbox',name=val, checked=checked? "checked": undefined) 
+                  = val
 
-        button.button.special(type='submit') Save settings
+      button.button.special(type='submit') Save settings
       
 

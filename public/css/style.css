@@ -1031,7 +1031,35 @@ header.hero.register{
   margin: 10px auto;
   padding: 10px;
   text-align: left;
-  /*max-width: 60vw;*/
+}
+
+/****************************
+ * Profile
+ ****************************/
+
+section.profile {
+  margin:10px;
+}
+
+.interests {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+.interests .interest {
+  flex: 1 0 200px;
+  box-sizing: border-box;
+  color: #171e42;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+@media (min-width: 410px) {
+  .interests .interest {
+    max-width: calc(50% - 10px);
+  }
 }
 
 
