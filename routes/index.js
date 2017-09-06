@@ -389,14 +389,6 @@ router.get('/choices', adminAuth, function (req,res,next) {
   });
 });
 
-
-/**
- * Standaard vertalings interface van translation engine
- */
-router.get('/translate', adminAuth, function (req, res, next) {
-  res.render('webtranslate');
-});
-
 router.get('/tickets/:id', function (req, res, next) {
   Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
     if (err) { err.code = 403; return next(err); }
