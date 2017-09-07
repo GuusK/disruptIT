@@ -156,13 +156,18 @@ a:focus{
   line-height: 50px;
 
   z-index: 100000000;
-  overflow: hidden; 
+  /*overflow: hidden; */
 }
 
+.navbar .dropdown,
 .navbar a,
 .navbar a:visited{
   display: inline-block;
   opacity: 1;
+}
+.navbar .dropdown .dropdown-toggle {
+  padding: 0px 10px;
+  border: none;
 }
 
 .navbar a:hover,
@@ -202,53 +207,6 @@ a:focus{
   color: white;
 } 
 
-/* Dropdown stuff  */
-/*.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    cursor: pointer;
-    font-size: 16px;    
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-}
-
-.container a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-.show {
-    display: block;
-}*/
-/* End dropdrown stuf */
-
 .navbar .pages.collapse.open{
   display: block;
 }
@@ -258,12 +216,18 @@ a:focus{
 }
 
 /* Links inside the navbar */
+
 .navbar .pages a,
 .navbar .pages a:visited {
   padding: 0 10px;
   text-align: center;
   color: white;
   text-decoration: none;
+}
+
+.navbar .pages.collapse .dropdown a {
+  color:black;
+  display:block;
 }
 
 @media (min-width: 750px) {
@@ -289,6 +253,23 @@ a:focus{
 
   .navbar .pages a {
     padding: 0 5px;
+  }
+
+  .navbar .pages.collapse .dropdown a {
+    color:black;
+  }
+
+  .navbar .pages li .dropdown li{
+    display: block;
+    text-align: left
+  }
+
+  .navbar .pages li .dropdown li a{
+    text-align: right;
+  }
+
+  .dropdown-menu {
+    min-width: 100px !important;
   }
 }
 

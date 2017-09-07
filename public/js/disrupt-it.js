@@ -228,3 +228,5 @@ jQuery(function($) {
         $(this).toggleClass('open');
     });
 });
+
+$('.dropdown-toggle').dropdown();
