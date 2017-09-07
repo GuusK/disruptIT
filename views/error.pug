@@ -1,10 +1,16 @@
 extends layout
+block above-content
+
+block header
+    header.text
+        h2 Error
 
 block content
-  section.main.style1
-    .container
-      .row(class='0%')
-        header
-          h2= message
-          p= error.status
-        pre #{error.stack}
+    section
+      h2= message
+      p= error.status
+    pre #{error.stack}
+
+    p.text-center Click 
+        a(href='/') here 
+        |to return to the homepage
