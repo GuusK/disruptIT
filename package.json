@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production node ./bin/www"
+    "start": "NODE_ENV=development node ./bin/www"
   },
   "dependencies": {
     "async": "^2.4.0",
