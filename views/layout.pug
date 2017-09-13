@@ -35,11 +35,11 @@ html(lang=locale)
             a(href='/organisation') Organisation
             .dropdown
               button.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
-                | Dropdown
+                | Profile
                 span.caret
               ul.dropdown-menu(aria-labelledby='dropdownMenu1')
                 li
-                  a(href='/profile') Change profile
+                  a(href='/profile') Edit profile
                 li.divider(role='separator')
                 li
                   a(href='.logout') Logout
@@ -66,18 +66,18 @@ html(lang=locale)
             each msg in messages.error
               .alert.alert-error
                 .alert-text= msg
-                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
+                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') &times;
 
           if messages.info
             each msg in messages.info
               .alert.info
                 .alert-text= msg
-                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
+                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') &times;
           if messages.success
             each msg in messages.success
               .alert.success
                 .alert-text= msg
-                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') x
+                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') &times;
 
     // content of the page
     block content
