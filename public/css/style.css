@@ -627,10 +627,11 @@ input[type="button"].button-primary:focus
 footer {
   width: 100%;
   background-color: #373636;
-  padding: 10vh 10%;
+  padding: 5vh 10%;
 }
 
 footer .sponsors {
+  color: white;
   width: 90%;
   display: flex;
   justify-content: space-evenly;
@@ -660,7 +661,7 @@ footer .sponsors {
 .sponsors a.nedap {
   flex-grow: 2;
   flex-basis: 100%;
-  margin: 10px;
+  margin: 15px;
   max-width: 100%;
 }
 
@@ -1109,4 +1110,8 @@ header.hero.achmea{
   font-size: 1.5em;
   text-align: center;
   padding: 10px;
+}
+
+.alert-dismissable .close, .alert-dismissible .close {
+  float:right;
 }

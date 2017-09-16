@@ -1,11 +1,11 @@
 /* Source: https://github.com/nathancahill/skeleton-alerts */
-.alert {
+/*.alert {
     display: block;
     padding: 10px 10px 20px 10px;
     border-left: 5px solid;
     min-height: 5vh;
 }
-
+.alert.success,
 .alert-success {
     background-color: #D5F5E3;
     border-left-color: #2ECC71;
@@ -42,4 +42,5 @@
 .alert-warning button,
 .alert-error button {
     float: right;
-}
+    /*border: none;*/
+/*}*/

@@ -61,36 +61,40 @@ html(lang=locale)
 
     .container
       .row
-        .offset-by-two.eight.columns
+        .offset-by-three.six.columns
           if messages.error
             each msg in messages.error
-              .alert.alert-error
-                .alert-text= msg
-                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') &times;
+              .alert.alert-error.alert-dismissable
+                = msg
+                a.close(href='#', data-dismiss='alert', aria-label='close') &times;
 
           if messages.info
             each msg in messages.info
-              .alert.info
-                .alert-text= msg
-                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') &times;
+              .alert.alert-info.alert-dismissable
+                = msg
+                a.close(href='#', data-dismiss='alert', aria-label='close') &times;
           if messages.success
             each msg in messages.success
-              .alert.success
-                .alert-text= msg
-                button(onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;') &times;
-
+              .alert.alert-success.alert-dismissable
+                = msg
+                a.close(href='#', data-dismiss='alert', aria-label='close') &times;
+                
     // content of the page
     block content
 
     // Footer
     footer
       .sponsors
+        p Main partner
         a.nedap(href="https://lifeatnedap.com/")
           img.nedap(src='/images/bedrijven/nedap.jpg')
-        a(href="https://www.werkenbijachmea.nl/Paginas/default.aspx")
-          img(src='/images/bedrijven/achmea.svg')
-        a(href="https://www.werkenbijtopicus.nl/")
-          img(src='/images/bedrijven/topicus.jpg')
+
+        if Math.random() > 0.5
+          a.nedap(href="https://www.werkenbijachmea.nl/Paginas/default.aspx")
+            img.nedap(src='/images/bedrijven/achmea.svg')
+        else
+          a.nedap(href="https://www.werkenbijtopicus.nl/")
+            img.nedap(src='/images/bedrijven/topicus.jpg')
       .foot
         a(href='https://www.facebook.com/StichtingNationaalinformaticaCongres/' target='_blank')
           i(class='fa fa-facebook-official fa-fw fa-3x')
