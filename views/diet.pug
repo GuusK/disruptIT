@@ -1,0 +1,29 @@
+extends layout
+block above-content
+
+block header 
+  header.text
+    h2 Diets
+
+block content
+  section.diets
+    p.text-center= users.length + ' bezoekers hadden speciale dieetwensen'
+    
+    #diet-table.offset-by-three.six.columns
+      table.diet.table
+        thead
+          th Persoon
+          th Vereniging
+          th.checkbox Vegetarier
+          th Dieetwensen
+        tbody
+          for row in users
+            tr
+              td=row.firstname + " " + row.surname
+              td=verenigingen[row.vereniging].name
+              td.text-center
+                if row.vegetarian
+                  span.fa.fa-check(style='color:#79bf46;')
+                else
+                  span.fa.fa-close(style='color:#bf464c;')
+              td(width="100%")=row.specialNeeds

@@ -49,7 +49,7 @@
 }
 
 body {
-  font-family: 'Glacial Indifference', "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Glacial Indifference', "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -162,12 +162,15 @@ a:focus{
 .navbar .dropdown,
 .navbar a,
 .navbar a:visited{
+  width: 100%;
   display: inline-block;
   opacity: 1;
 }
 .navbar .dropdown .dropdown-toggle {
+  width: 100%;
   padding: 0px 10px;
   border: none;
+  text-align: left;
 }
 
 .navbar a:hover,
@@ -220,7 +223,7 @@ a:focus{
 .navbar .pages a,
 .navbar .pages a:visited {
   padding: 10px 10px;
-  text-align: center;
+  width: 100%;
   color: white;
   text-decoration: none;
 }
@@ -230,7 +233,15 @@ a:focus{
   display:block;
 }
 
-@media (min-width: 750px) {
+.dropdown-menu {
+  width:100%;
+}
+
+@media (min-width: 800px) {
+  .navbar .dropdown .dropdown-toggle {
+    width: auto;
+  }
+
   .navbar .collapse{
     display: inline-block
   }
@@ -252,11 +263,13 @@ a:focus{
   }
 
   .navbar .pages a {
-    padding: 0 5px;
+    width: auto;
+    padding: 0 10px;
   }
 
   .navbar .pages.collapse .dropdown a {
     color:black;
+    padding: 5px;
   }
 
   .navbar .pages li .dropdown li{
@@ -985,12 +998,20 @@ header.hero.login{
   margin: 0 auto;
 }
 
+.form-group {
+  padding-bottom: 10px;
+}
+
 .form-control {
   width: 100%;
 }
 
 .form.form-signin {
   max-width: 25em;
+}
+
+.form.form-signin .row {
+  margin: 10px;
 }
 
 .login-separator{
@@ -1076,6 +1097,30 @@ section.profile {
 .users.table {
   margin: 0 0 2em 0;
   width: 100%;
+}
+
+/****************************
+ * Diet
+ ****************************/
+
+#diet-table {
+  float: none;
+}
+
+.diet.table {
+  margin: 0 0 2em 0;
+  width: 100%;
+}
+
+.diet.table thead th {
+  padding: 10px 0px 10px 0px;
+  width:20%;
+}
+
+.diet.table thead th .checkbox {
+  padding: 10px 0px 10px 0px;
+  width: 10%;
+  text-align: center;
 }
 
 /****************************

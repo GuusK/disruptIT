@@ -12,8 +12,10 @@ html(lang=locale)
     link(rel='stylesheet' href='/css/skeleton-alerts.css')
     link(rel='stylesheet' href='/css/style.css')
     link(rel='stylesheet' href='/css/bootstrap-dropdown.css')
+    // Want offline
     //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
-    link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    //link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet' href='/css/font-awesome.css')
 
   body
     nav(class='navbar')
@@ -27,30 +29,65 @@ html(lang=locale)
 
       if user
         // right side menu
-        ul(class='pages collapse' id='navbar-main-collapse')
-          li()
-            a(href='/speakers') Speakers
-            a(href='/partners') Partners
-            a(href='/location') Location
-            a(href='/organisation') Organisation
-            .dropdown
-              button.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
-                | Profile
-                span.caret
-              ul.dropdown-menu(aria-labelledby='dropdownMenu1')
-                li
-                  a(href='/profile') Edit profile
-                li.divider(role='separator')
-                li
-                  a(href='.logout') Logout
+        if user.admin
+          ul(class='pages collapse' id='navbar-main-collapse')
+            li()
+              a(href='/speakers') Speakers
+            li
+              a(href='/partners') Partners
+            li
+              a(href='/location') Location
+            li
+              a(href='/organisation') Organisation
+            li
+              .dropdown
+                button.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+                  | Profile
+                  span.caret
+                ul.dropdown-menu(aria-labelledby='dropdownMenu1')
+                  li
+                    a(href='/profile') Edit profile
+                  li.divider(role='separator')
+                  li
+                    a(href='/choices') Choices
+                  li
+                    a(href='/aanmelden') 
+                  li
+                    a(href='logout') Logout
+        else
+          ul(class='pages collapse' id='navbar-main-collapse')
+            li()
+              a(href='/speakers') Speakers
+            li
+              a(href='/partners') Partners
+            li
+              a(href='/location') Location
+            li
+              a(href='/organisation') Organisation
+            li
+              .dropdown
+                button.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+                  | Profile
+                  span.caret
+                ul.dropdown-menu(aria-labelledby='dropdownMenu1')
+                  li
+                    a(href='/profile') Edit profile
+                  li.divider(role='separator')
+                  li
+                    a(href='logout') Logout
       else
         ul(class='pages collapse' id='navbar-main-collapse')
-          li()
+          li
             a(href='/speakers') Speakers
+          li
             a(href='/partners') Partners
+          li
             a(href='/location') Location
+          li
             a(href='/organisation') Organisation
+          li
             a(href='/register') Register
+          li
             a(href='/login') Log In
 
     // header
@@ -106,8 +143,9 @@ html(lang=locale)
           i(class='fa fa-envelope fa-fw fa-3x')
 
     // Scripts
-    script(src='//code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+    //script(src='//code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
+    script(src='/js/jquery-3.2.1.js')
     script(src='/js/bootstrap.js')    
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+    //script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
 
     script(src='/js/disrupt-it.js')
