@@ -214,10 +214,6 @@ router.get('/connectbetter', function(req, res) {
   res.render('connectbetter', {title: 'Connect better |'})
 });
 
-router.get('/contact', function (req, res) {
-  res.render('contact', {title: 'Contact |'});
-});
-
 router.get('/mailing', function (req,res) {
   res.render('mailing');
 });
