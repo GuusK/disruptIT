@@ -1,0 +1,16 @@
+extends layout
+block above-content
+
+block header 
+  header.text
+    h2 Mailing
+
+block content
+  section.mailing
+    p Sign up here for the mailinglist to receive information about the conference every now and then.
+    br
+    form.form.form-profile(method='POST')
+      .form-group
+        label(for='email') E-mail address
+        input.form-control(type='email', name='email', id='email', placeholder='Your email address', required)
+      button.button.special(type='submit' class='btn btn-default') Subscribe to mailinglist

@@ -103,7 +103,7 @@ html(lang=locale)
         .offset-by-three.six.columns
           if messages.error
             each msg in messages.error
-              .alert.alert-error.alert-dismissable
+              .alert.alert-danger.alert-dismissable
                 = msg
                 a.close(href='#', data-dismiss='alert', aria-label='close') &times;
 
