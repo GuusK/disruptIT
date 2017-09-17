@@ -1124,6 +1124,18 @@ section.profile {
 }
 
 /****************************
+ * Aanwezig
+ ****************************/
+
+#aanwezig-table {
+  float: none;
+}
+
+table.aanwezig {
+  width:100%;
+
+}
+/****************************
  * Connect better
  ****************************/
 .connectbetter p {

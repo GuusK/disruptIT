@@ -340,7 +340,7 @@ router.get('/tickets', adminAuth, function (req, res, next) {
 /**
  * Aanwezigheidslijst per vereniging
  */
-router.get('/aanwezigen', adminAuth, function (req,res,next) {
+router.get('/aanwezig', adminAuth, function (req,res,next) {
   var namen = _.keys(config.verenigingen);
 
   var findTickets = function (naam,cb) {
@@ -352,7 +352,7 @@ router.get('/aanwezigen', adminAuth, function (req,res,next) {
   };
   async.map(namen, findTickets, function (err, result) {
     if (err) { return next(err); }
-    res.render('vn', { tables : result });
+    res.render('aanwezig', { tables : result });
   });
 });
 
@@ -389,22 +389,23 @@ router.get('/choices', adminAuth, function (req,res,next) {
   });
 });
 
-router.get('/tickets/:id', function (req, res, next) {
-  Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
-    if (err) { err.code = 403; return next(err); }
-    if (!ticket || !ticket.ownedBy || ticket.ownedBy.email !== req.session.passport.user) {
-      var error = new Error("Forbidden");
-      error.code = 403;
-      return next(error);
-    }
-    res.render('tickets/ticket', {ticket: ticket});
-  });
-});
+// Old system of displaying tickets. Not used nowadays
+// router.get('/tickets/:id', function (req, res, next) {
+//   Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
+//     if (err) { err.code = 403; return next(err); }
+//     if (!ticket || !ticket.ownedBy || ticket.ownedBy.email !== req.session.passport.user) {
+//       var error = new Error("Forbidden");
+//       error.code = 403;
+//       return next(error);
+//     }
+//     res.render('tickets/ticket', {ticket: ticket});
+//   });
+// });
 
-router.get('/tickets/:id/barcode', function (req, res) {
-  res.set('Content-Type', 'image/png');
-  res.send(barc.code128(req.params.id, 440, 50));
-});
+// router.get('/tickets/:id/barcode', function (req, res) {
+//   res.set('Content-Type', 'image/png');
+//   res.send(barc.code128(req.params.id, 440, 50));
+// });
 
  return router;
 };

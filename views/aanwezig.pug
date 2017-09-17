@@ -1,0 +1,61 @@
+extends layout
+block above-content
+
+block header 
+    header.text
+        h2 Aanwezigen
+
+block content
+  section.aanwezigen
+    - count = 0
+    - countAanwezig = 0
+    - countBus = 0
+    for table in tables
+      for row in table.rows
+        - count++
+        if row.aanwezig
+          - countAanwezig++
+        if row.bus
+          - countBus++
+    h2= 'Aanwezigheidslijst'
+      small= '(' + count + ' ingeschreven, ' + countAanwezig + ' aanwezig)' 
+
+    #aanwezig-table.offset-by-three.six.columns
+      for table in tables
+        - count = 0
+        - countAanwezig = 0
+        - countBus = 0
+        for row in table.rows
+          - count++
+          if row.aanwezig
+            - countAanwezig++
+          if row.bus
+            - countBus++
+        table.aanwezig
+          h3= verenigingen[table.name].name
+            p.text-center= '(' + count + ' ingeschreven, ' + countAanwezig + ' aanwezig, ' + countBus + ' busplekken)' 
+          thead
+            tr
+              th Voornaam
+              th Achternaam
+              th Email
+              th Bus
+              th Aanwezig
+          tbody
+            for row in table.rows
+              tr
+                td=row.firstname
+                td=row.surname
+                td=row.email 
+                td
+                  if row.bus
+                    span.fa.fa-check(style='color:#79bf46;')
+                  else
+                    span.fa.fa-close(style='color:#bf464c;')
+                td
+                  if row.aanwezig
+                    span.fa.fa-check(style='color:#79bf46;')
+                  else
+                    span.fa.fa-close(style='color:#bf464c;')
+
+        
