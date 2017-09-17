@@ -4,7 +4,7 @@ var shortId = require('shortid');
 //User different characters to prevent confusion I and l
 // shortId.characters("123456789ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz");
 
-chars = "123456789ABCDEFGHIJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz";
+chars = "123456789ABCDEFGHJKMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz";
 
 function generateID(){
   str = [];
@@ -15,17 +15,10 @@ function generateID(){
 }
 
 var Ticket = new mongoose.Schema({
-  _id: {
-    type: String,
-    unique: true,
-    'default': generateID
-  },
-  rev : { type: Number, required: false},
-  ownedBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: false
-  }
+  _id: {type: String, unique: true, 'default': generateID},
+  type :   { type: String, required: true, enum: ['student', 'partner'], 'default': 'student'},
+  rev :    { type: Number, required: false },
+  ownedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: false }
 });
 
 

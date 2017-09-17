@@ -126,7 +126,9 @@ module.exports = function (config) {
           if(ticket.ownedBy) {
             next(new Error('Ticket has already been activated!'));
           } else {
+            console.log(ticket);
             user.ticket = ticket;
+            user.type = ticket.type;
             User.register(user, req.body.password, function (err, user) {
               next(err, ticket, user);
             });

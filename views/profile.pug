@@ -13,39 +13,42 @@ block content
     br(clear='all')
 
     form.form.form-profile#settings(method='post')
-      h3 Congress
-      if isbus_quickhack
-        .checkbox
-          label(for='bus')
-            input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
-            | I would like to use the arranged bus at my study association
-   
-      .form-group
-        label(for='lezing1') Preference talk in first parallel session
-        div.select-wrapper
-          select.form-control(name='lezing1')
-            option(value='', selected=!user.lezing1?'selected':undefined) No preference
-            each val in speakerids.session1
-              - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
-              option(value=val, selected=user.lezing1==val?'selected':undefined)= speaker.name + ' (' + speaker.company + ') - ' + speaker.talk 
-              
-      .form-group
-        label(for='lezing2') Preference talk in second parallel session
-        div.select-wrapper
-          select.form-control(name='lezing2')
-            option(value='', selected) No preference
-            each val in speakerids.session2
-              - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
-              option(value=val, selected=user.lezing2==val?'selected':undefined)= speaker.name + ' (' + speaker.company + ') - ' + speaker.talk 
+      if user.type == 'student'
+        h3 Congress
+        if isbus_quickhack
+          .checkbox
+            label(for='bus')
+              input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
+              | I would like to use the arranged bus at my study association
+        .form-group
+          label(for='lezing1') Preference talk in first parallel session
+          div.select-wrapper
+            select.form-control(name='lezing1')
+              option(value='', selected=!user.lezing1?'selected':undefined) No preference
+              each val in speakerids.session1
+                - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+                - var description = speaker.company === '' ? '' : ' (' + speaker.company + ') '
+                option(value=val, selected=user.lezing1==val?'selected':undefined)= speaker.name + description + ' - ' + speaker.talk 
+                
+        .form-group
+          label(for='lezing2') Preference talk in second parallel session
+          div.select-wrapper
+            select.form-control(name='lezing2')
+              option(value='', selected) No preference
+              each val in speakerids.session2
+                - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+                - var description = speaker.company === '' ? '' : ' (' + speaker.company + ') '
+                option(value=val, selected=user.lezing2==val?'selected':undefined)= speaker.name + description + ' - ' + speaker.talk 
 
-      .form-group
-        label(for='lezing3') Preference talk in second parallel session
-        div.select-wrapper
-          select.form-control(name='lezing3')
-            option(value='', selected) No preference
-            each val in speakerids.session3
-              - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
-              option(value=val, selected=user.lezing3==val?'selected':undefined)= speaker.name + ' (' + speaker.company + ') - ' + speaker.talk 
+        .form-group
+          label(for='lezing3') Preference talk in second parallel session
+          div.select-wrapper
+            select.form-control(name='lezing3')
+              option(value='', selected) No preference
+              each val in speakerids.session3
+                - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+                - var description = speaker.company === '' ? '' : ' (' + speaker.company + ') '
+                option(value=val, selected=user.lezing3==val?'selected':undefined)= speaker.name + description + ' - ' + speaker.talk 
 
       h3 Diets
       .form-group
@@ -77,16 +80,17 @@ block content
           label(for='shareEmail')
             input#shareEmail(type='checkbox',name='shareEmail', checked=user.shareEmail? "checked": undefined)
             | I want to share my email-address
-      p Get matched with companies by filling in your interests!
-      .form-group
-        .interests
-          each val in matchingterms
-            - var checked = user.matchingterms.indexOf(val) >= 0;
-            .interest
-              .checkbox
-                label(for=val)
-                  input(id=val type='checkbox',name=val, checked=checked? "checked": undefined) 
-                  = val
+      if user.type == 'student'
+        p Get matched with companies by filling in your interests!
+        .form-group
+          .interests
+            each val in matchingterms
+              - var checked = user.matchingterms.indexOf(val) >= 0;
+              .interest
+                .checkbox
+                  label(for=val)
+                    input(id=val type='checkbox',name=val, checked=checked? "checked": undefined) 
+                    = val
 
       button.button.special(type='submit') Save settings
       
