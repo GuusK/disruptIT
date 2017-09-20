@@ -1135,6 +1135,22 @@ table.aanwezig {
   width:100%;
 
 }
+
+/****************************
+ * Participate
+ ****************************/
+
+ul.associations {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+section.intro p.participate {
+  text-align: center
+}
+
 /****************************
  * Connect better
  ****************************/

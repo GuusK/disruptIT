@@ -218,6 +218,10 @@ router.get('/mailing', function (req,res) {
   res.render('mailing');
 });
 
+router.get('/participate', function (req, res) {
+  res.render('participate');
+});
+
 router.get('/programme', function (req,res) {
   res.render('programme', {title:'Programme |'});
 });

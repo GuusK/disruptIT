@@ -25,11 +25,12 @@ module.exports = function (config) {
     res.render('login', {ticketSaleStarts:config.ticketSaleStarts});
   });
 
-  router.post('/login', passport.authenticate('local', {
-        successRedirect: '/profile',
+  router.post('/login', function (req, res) {
+      return passport.authenticate('local', {
+        successRedirect: req.session.lastPage || '/profile',
         failureRedirect: '/login',
-        failureFlash: 'Incorrect e-mail or password' }
-    )
+        failureFlash: 'Incorrect e-mail or password' })(req,res);
+    }
   );
 
 
