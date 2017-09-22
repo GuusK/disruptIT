@@ -328,16 +328,6 @@ var barc = new Barc({
 });
 
 /**
- * Output alle tickets die nog niet geownt zijn door gebruikers
- */
-router.get('/tickets', adminAuth, function (req, res, next) {
-  Ticket.find({rev:1, ownedBy:undefined}, function (err, tickets) {
-    if (err) { return next(err); }
-    res.render('tickets', {tickets: tickets});
-  });
-});
-
-/**
  * Aanwezigheidslijst per vereniging
  */
 router.get('/aanwezig', adminAuth, function (req,res,next) {
@@ -389,23 +379,29 @@ router.get('/choices', adminAuth, function (req,res,next) {
   });
 });
 
-// Old system of displaying tickets. Not used nowadays
-// router.get('/tickets/:id', function (req, res, next) {
-//   Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
-//     if (err) { err.code = 403; return next(err); }
-//     if (!ticket || !ticket.ownedBy || ticket.ownedBy.email !== req.session.passport.user) {
-//       var error = new Error("Forbidden");
-//       error.code = 403;
-//       return next(error);
-//     }
-//     res.render('tickets/ticket', {ticket: ticket});
-//   });
-// });
+router.get('/ticket', auth, function(req, res, next){
+  User.findOne({email: req.session.passport.user}, function(err, doc) {
+    res.redirect('/tickets/' + doc.ticket);
+  });
+});
 
-// router.get('/tickets/:id/barcode', function (req, res) {
-//   res.set('Content-Type', 'image/png');
-//   res.send(barc.code128(req.params.id, 440, 50));
-// });
+// Old system of displaying tickets. Not used nowadays
+router.get('/tickets/:id', function (req, res, next) {
+  Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
+    if (err) { err.code = 403; return next(err); }
+    if (!ticket || !ticket.ownedBy || ticket.ownedBy.email !== req.session.passport.user) {
+      var error = new Error("Forbidden");
+      error.code = 403;
+      return next(error);
+    }
+    res.render('tickets/ticket', {ticket: ticket});
+  });
+});
+
+router.get('/tickets/:id/barcode', function (req, res) {
+  res.set('Content-Type', 'image/png');
+  res.send(barc.code128(req.params.id, 440, 50));
+});
 
  return router;
 };

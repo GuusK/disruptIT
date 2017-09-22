@@ -6,7 +6,7 @@ var favicon = require('serve-favicon');
 
 // serve fast
 var app = express();
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 
 const debug = require('debug')('disruptit') 
 
@@ -19,7 +19,6 @@ var flash = require('express-flash');
 var mongoose = require('mongoose');
 var fs = require('fs');
 var passport = require('passport');
-// var i18n = require("i18next");
 var expressValidator = require('express-validator');
 
 var MongoStore = require('connect-mongo')(session);
@@ -34,20 +33,6 @@ mongoose.Promise = require('q').Promise;
 var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
 
-// i18n.init({
-//   saveMissing: true,
-//   ignoreRoutes: ['images/', 'fonts/', 'flags/', 'css/', 'js/'],
-//   debug: true,
-//   detectLngFromPath: 0,
-//   forceDetectLngFromPath: true,
-//   fallbackLng: 'nl'
-// });
-// i18n.addPostProcessor("pug", function(val, key, opts) {
-//   return require("pug").compile(val, opts)();
-// });
-
-// view engine setup
-// app.use(i18n.handle);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 

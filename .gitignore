@@ -6,3 +6,5 @@ config.json
 public/css/*.min.css
 public/js/*.min.js
 *.log
+node_modules/localhost.daplie.me-certificates/*
+node_modules/.bin
