@@ -8,3 +8,4 @@ public/js/*.min.js
 *.log
 node_modules/localhost.daplie.me-certificates/*
 node_modules/.bin
+*.pem

@@ -7,7 +7,7 @@ FROM haproxy:1.7
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
 
 # Copy our ssl certificate into the docker container
-COPY /etc/letsencrypt/live /private
+COPY testomg.disrupt-it.nl.pem /private/testomg.disrupt-it.nl.pem
 
 # HAProxy requires a user & group named haproxy in order to run
 RUN groupadd haproxy && useradd -g haproxy haproxy
