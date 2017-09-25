@@ -199,7 +199,7 @@ module.exports = function (config) {
       function (token, done) {
         User.findOne({ email: req.body.email}, function (err, user) {
           if (!user) {
-            req.flash('error', 'There does not appear to be a ticket used with this emailaddress.');
+            req.flash('error', 'There does not appear to be a ticket used with this email address.');
             return res.redirect('/forgot');
           }
           user.resetPasswordToken = token;
@@ -215,7 +215,7 @@ module.exports = function (config) {
           from: config.email.auth.user,
           subject: 'Reset password',
           text: "You have received this email because you (or someone else) asked to reset your password for Disrupt-IT \n\n" +
-                "Click on the following link, or copy it into your browser, to complete the reset: https://www.disrupt-it.nl/reset/"+token+"\n\n"+
+                "Click on the following link, or copy it into your browser, to complete the reset: https://disrupt-it.nl/reset/"+token+"\n\n"+
                 "If you did not request to reset your password, you can ignore this email and your password will remain the same"
         };
 

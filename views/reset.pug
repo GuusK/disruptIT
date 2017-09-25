@@ -1,0 +1,17 @@
+extends layout
+block above-content
+
+block header 
+  header.text
+    h2 Reset password
+block content
+  .section.intro.slanted.margin-vert
+    .content.text-center
+      form.form.form-signin(method='POST')
+        .form-group
+          label(for='password') New password
+          input.form-control(type='password', name='password', value='', autofocus=true)
+        .form-group
+          label(for='confirm') Confirm password
+          input.form-control(type='password', name='confirm', value='')
+        button.button.special(type='submit') Reset your password
