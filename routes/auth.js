@@ -6,9 +6,12 @@ module.exports = function (config) {
   var async = require('async');
   var nodemailer = require('nodemailer');
   var mg = require('nodemailer-mailgun-transport');
-  var mcapi = require('mailchimp-api');
-
-  var mc = new mcapi.Mailchimp(config.mailchimp.key);
+  
+  var Mailchimp = require('mailchimp-api-v3')
+  var mc = new Mailchimp(config.mailchimp.key, true);
+  // don't ever use this seriously. The only reason it's used is because mailchimp wants it
+  // when you PUT an email_address 
+  var md5 = require('md5'); 
 
   var User = require('../models/User');
   var Ticket = require('../models/Ticket');
@@ -42,9 +45,19 @@ module.exports = function (config) {
   router.get('/register', function (req, res) {
     res.render('register', {verenigingen: config.verenigingen, ticketSaleStarts:config.ticketSaleStarts, body:req.session.body || {}});
   });
-
-  function subscribe(conf, cb) {
-    mc.lists.subscribe(conf, function () { return cb(null); }, function (err) { return cb(err); });
+// subscribe({id:config.mailchimp.id, email:{email:req.body.email}, merge_vars : {FNAME:req.body.firstname, LNAME:req.body.surname}, double_optin: false, send_welcome: false}, next);
+  function subscribe(email, cb) {
+    // mc.lists.subscribe(conf, function () { return cb(null); }, function (err) { return cb(err); });
+    mc.put('/lists/' + config.mailchimp.id + '/members/' + md5(email.toLowerCase()), {
+      email_address : email,
+      status : 'subscribed'
+    }).then(function (res) {
+      cb();
+    }).catch(function (err) {
+      console.log("SOME ERROR HAS OCCURED. NOTICE ME SENPAI!");
+      console.log(err);
+      cb(err);
+    });
   }
 
   router.post('/register', function (req, res, next) {
@@ -148,7 +161,7 @@ module.exports = function (config) {
       },
       function (next) {
         if (req.body.subscribe) {
-          subscribe({id:config.mailchimp.id, email:{email:req.body.email}, merge_vars : {FNAME:req.body.firstname, LNAME:req.body.surname}, double_optin: false, send_welcome: false}, next);
+          subscribe(req.body.email, next);
         } else {
           next(null);
         }
@@ -289,7 +302,7 @@ module.exports = function (config) {
   });
 
   router.post('/mailing', function (req,res) {
-    subscribe({id:config.mailchimp.id, email:{email:req.body.email}}, function (err) {
+    subscribe(req.body.email, function (err) {
       if (err) {
         req.flash('error', 'Registration failed.');
       } else {

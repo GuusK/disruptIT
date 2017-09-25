@@ -6,13 +6,12 @@ block header
         h2 Forgot password
 
 block content
-  section
-    .container
-      .row
-        .offset-by-three.six.columns
-          form(method='POST')
-            label(for='email') Email-address:
-                input.form-control(type='text', name='email', autofocus)
-                button.button.special(type='submit') Reset password
-        
-            a(href='/login') Back to login
+  .section.intro.slanted.margin-vert
+    .content.text-center
+      form.form.form-signin(method='post')
+        label(for='email') Email-address:
+        .row
+          input.form-control(type='text', name='email', autofocus)
+        button.button.special(type='submit') Reset password
+        br        
+        a(href='/login') Back to login
