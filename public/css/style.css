@@ -422,6 +422,7 @@ header.hero{
   
   color: white;
   opacity: .9;
+  margin-bottom: 1em;
 }
 
 header.hero::before {

@@ -246,58 +246,42 @@ module.exports = function (config) {
   });
 
   router.post('/reset/:token', function (req, res, next) {
-    async.waterfall([
-      function (done) {
-        User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-          if (!user) {
-            req.flash('error', 'Password reset token is invalid.');
-            return res.redirect('back');
-          }
+    User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }).exec()
+    .then(function(user) {
+      if (!user) {
+        req.flash('error', 'Password reset token is invalid.');
+        throw 'error';
+      }
 
-          req.checkBody('password',  'Passwords needs to be atleast 6 characters long').len(6);
-          req.checkBody('password',  'Passwords are not equal.').equals(req.body.confirm);
-          var errors = req.getValidationResult();
+      req.checkBody('password',  'Passwords needs to be atleast 6 characters long').len(6);
+      req.checkBody('password',  'Passwords are not equal.').equals(req.body.confirm);
+      return req.getValidationResult().then(function (errors){
+        if ( !errors.isEmpty()) {
+          errors.array().forEach(function (err) {
+            req.flash('error', err.msg);
+          });
+          throw errors;
+        }
+        user.setPassword(req.body.password, function(err, user) {
+          // user.resetPasswordToken = undefined;
+          // user.resetPasswordExpires = undefined;
 
-          if (errors) {
-            var msg = '';
-            errors.forEach(function (err) {
-              req.flash('error', err.msg);
-            });
-            req.session.body = req.body;
-            return res.redirect('back');
-          }
-
-          user.setPassword(req.body.password, function(err, user) {
-            user.resetPasswordToken = undefined;
-            user.resetPasswordExpires = undefined;
-
-            user.save(function (err) {
-              if (err) { return done(err); }
-              req.login(user, function (err) {
-                console.log(err);
-                done(err, user);
-              });
-            });
+          user.save(function (err) {
+            if (err) { 
+              console.log('reset, within save: ' + err); 
+              throw err;
+            }
+            req.flash('success', 'Password changed. Please log in with your new password');
+            return res.redirect('/login');
           });
         });
-      }/*,
-      function (user, done) {
-        var mailOptions = {
-          to: user.email,
-          from: config.email.auth.user,
-          subject: 'Je wachtwoord is veranderd!',
-          text: 'Hallo,\n\n Dit is een bevestiging dat het wachtwoord voor '+ user.email + ' is veranderd.\n'
-        };
-        transport.sendMail(mailOptions, function (err) {
-          req.flash('success', 'Je wachtwoord is veranderd.');
-          done(err);
-        });
-      }*/
-    ], function (err) {
-      if (err) {
-        return next(err);
-      }
-      res.redirect('/login');   
+      }).catch(function (error){
+        console.log("error of validationresults: " + error);
+        return res.redirect('back');
+      });
+    }).catch(function (error){
+      console.log("error of get user: " + error);
+      return res.redirect('back');
     });
   });
 
