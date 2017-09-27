@@ -14,7 +14,6 @@ html(lang=locale)
     link(rel='stylesheet' href='/css/bootstrap-dropdown.css')
     //link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
     link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-    link(rel='stylesheet' href='/css/font-awesome.css')
 
   body
     nav(class='navbar')
@@ -127,11 +126,13 @@ html(lang=locale)
         a.nedap(href="https://lifeatnedap.com/")
           img.nedap(src='/images/bedrijven/nedap.jpg')
 
+        .separator(role='separator')
+
         if Math.random() > 0.5
           a.nedap(href="https://www.werkenbijachmea.nl/Paginas/default.aspx")
-            img.nedap(src='/images/bedrijven/achmea.svg')
+            img.nedap(src='/images/bedrijven/Banner_Achmea.png')
         else
-          a.nedap(href="https://www.werkenbijtopicus.nl/")
+          a.gold(href="https://www.werkenbijtopicus.nl/")
             img.nedap(src='/images/bedrijven/topicus.jpg')
       .foot
         a(href='https://www.facebook.com/StichtingNationaalinformaticaCongres/' target='_blank')
