@@ -13,13 +13,6 @@ block content
     br(clear='all')
 
     form.form.form-profile#settings(method='post')
-      if user.type == 'student' 
-        h3 Congress
-        if isbus_quickhack
-          .checkbox
-            label(for='bus')
-              input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
-              | I would like to use the arranged bus at my study association
       if providePreferences
         .form-group
           label(for='lezing1') Preference talk in first parallel session
@@ -50,6 +43,16 @@ block content
                 - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
                 - var description = speaker.company === '' ? '' : ' (' + speaker.company + ') '
                 option(value=val, selected=user.lezing3==val?'selected':undefined)= speaker.name + description + ' - ' + speaker.talk 
+      else 
+        p.text-center You can enroll for sessions on a later date.
+      br
+      if user.type == 'student' 
+        h3 Congress
+        if isbus_quickhack
+          .checkbox
+            label(for='bus')
+              input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
+              | I would like to use the arranged bus at my study association
 
       h3 Diets
       .form-group

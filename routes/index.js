@@ -50,7 +50,7 @@ router.get('/profile', auth, function (req, res) {
     {
       // Don't try to unescape here, it's not stored in user.
       // Do it in the template
-      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus, speakerids: config.speakerids, speakers: config.speakers, matchingterms:config.matchingterms});
+      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus, providePreferences: config.providePreferences, speakerids: config.speakerids, speakers: config.speakers, matchingterms:config.matchingterms});
     }
     else
     {
@@ -105,12 +105,30 @@ router.post('/profile', auth, function (req, res) {
   req.body.linkedin = encodeURIComponent(req.body.linkedin);
   req.body.phonenumber = encodeURIComponent(req.body.phonenumber);
 
+  if(typeof req.body.lezing1 === 'undefined'){
+    req.body.lezing1 = '';
+  }
+
+  if(typeof req.body.lezing2 === 'undefined'){
+    req.body.lezing2 = '';
+  }
+
+  if(typeof req.body.lezing3 == 'undefined'){
+    req.body.lezing3 = '';
+  }
+
+  console.log(req.body.lezing2);
+
   if(req.body.lezing1 !== "" && req.body.lezing1 !== null && !config.speakerids.session1.includes(req.body.lezing1)){
     req.flash('error', "Lezing1 went wrong!");
     return res.redirect('/profile');
   }
   if(req.body.lezing2 !== "" && req.body.lezing2 !== null && !config.speakerids.session2.includes(req.body.lezing2)){
-    req.flash('error', "Something went wrong!");
+    req.flash('error', "Lezing2 went wrong!");
+    return res.redirect('/profile');
+  }
+  if(req.body.lezing3 !== "" && req.body.lezing3 !== null && !config.speakerids.session3.includes(req.body.lezing3)){
+    req.flash('error', "Lezing3 went wrong!");
     return res.redirect('/profile');
   }
 
