@@ -2,11 +2,7 @@
 var compress = require('compression');
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
-
-// serve fast
 var app = express();
-app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 
 const debug = require('debug')('disruptit') 
 
@@ -52,7 +48,6 @@ var allowCrossDomain = function(req, res, next) {
   next();
 };
 
-// app.use(favicon());
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

@@ -13,13 +13,14 @@ block content
     br(clear='all')
 
     form.form.form-profile#settings(method='post')
-      if user.type == 'student'
+      if user.type == 'student' 
         h3 Congress
         if isbus_quickhack
           .checkbox
             label(for='bus')
               input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
               | I would like to use the arranged bus at my study association
+      if providePreferences
         .form-group
           label(for='lezing1') Preference talk in first parallel session
           div.select-wrapper
