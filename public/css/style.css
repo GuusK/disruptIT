@@ -672,6 +672,7 @@ footer .sponsors {
   max-height: 100%;
 }
 
+.sponsors a.gold,
 .sponsors a.nedap {
   flex-grow: 2;
   flex-basis: 100%;
@@ -680,21 +681,21 @@ footer .sponsors {
 }
 
 
-.sponsors a.gold {
-  flex-grow: 2;
-  flex-basis: 100%;
-  margin: 15px 40px;
-  max-width: 80%;
-}
-
-
 @media (min-width: 750px) {
   footer .sponsors {
     width: 75%;
   }
+
   .sponsors a {
     height: 150px;
     flex-basis: calc(50% - 20px);
+  }
+
+  .sponsors a.gold {
+    flex-grow: 2;
+    flex-basis: 100%;
+    margin: 15px 75px;
+    max-width: 80%;
   }
 }
 

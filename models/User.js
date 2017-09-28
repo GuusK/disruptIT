@@ -11,7 +11,7 @@ var User = new mongoose.Schema({
   linkedin:             { type: String, default: ''         },
   phonenumber:          { type: String, default: ''         },
   vereniging:           { type: String,  required: true     },
-  bus:                  { type: Boolean, required: true     },
+  bus:                  { type: Boolean, default: true      },
   vegetarian:           { type: Boolean, required: true     },
   specialNeeds:         { type: String                      },
   ticket:               { type: String,  ref: 'Ticket'      },

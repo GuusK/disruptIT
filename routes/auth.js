@@ -88,7 +88,7 @@ module.exports = function (config) {
     req.checkBody('vereniging','No association provided.').notEmpty();
     req.checkBody('vereniging','No valid association provided.').isIn(Object.keys(config.verenigingen));
 
-    req.body.bus = req.body.bus || false;
+    req.body.bus = req.body.bus || (req.body.vereniging !== 'partner');
     req.body.vegetarian = req.body.vegetarian || false;
     req.body.subscribe = req.body.subscribe || false;
     req.sanitize('bus').toBoolean();
