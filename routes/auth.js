@@ -9,8 +9,8 @@ module.exports = function (config) {
   
   var Mailchimp = require('mailchimp-api-v3')
   var mc = new Mailchimp(config.mailchimp.key, true);
-  // don't ever use this seriously. The only reason it's used is because mailchimp wants it
-  // when you PUT an email_address 
+  // don't ever use MD5 seriously. The only reason it's used is because 
+  // mailchimp wants an md5 hash of the emailaddress when you PUT it in the list 
   var md5 = require('md5'); 
 
   var User = require('../models/User');
@@ -45,9 +45,8 @@ module.exports = function (config) {
   router.get('/register', function (req, res) {
     res.render('register', {verenigingen: config.verenigingen, ticketSaleStarts:config.ticketSaleStarts, body:req.session.body || {}});
   });
-// subscribe({id:config.mailchimp.id, email:{email:req.body.email}, merge_vars : {FNAME:req.body.firstname, LNAME:req.body.surname}, double_optin: false, send_welcome: false}, next);
+
   function subscribe(email, cb) {
-    // mc.lists.subscribe(conf, function () { return cb(null); }, function (err) { return cb(err); });
     mc.put('/lists/' + config.mailchimp.id + '/members/' + md5(email.toLowerCase()), {
       email_address : email,
       status : 'subscribed'
@@ -61,23 +60,6 @@ module.exports = function (config) {
   }
 
   router.post('/register', function (req, res, next) {
-
-    // #AssumeTheWorst
-
-    // if (req.body.email === undefined || !req.body.email.match(/@/i)) {
-    //   req.flash('error', i18n.__('Geen geldig e-mailadres gegeven!'));
-    //   return res.redirect('/login');
-    // }
-
-    // if (req.body.password === undefined ||
-    //     req.body.confirm  === undefined ||
-    //     (req.body.password !== req.body.confirm)) {
-    //   req.flash('error', i18n.__('De wachtwoorden kwamen niet overeen!'));
-    //   return res.redirect('/login');
-    // }
-
-    // if (req.body.firstname === undefined || )
-
     req.checkBody('code',      'Activation code is not provided.').notEmpty();
     req.checkBody('firstname', 'First name is not provided.').notEmpty();
     req.checkBody('surname',   'Surname is not provided.').notEmpty();
@@ -215,7 +197,7 @@ module.exports = function (config) {
           from: config.email.auth.user,
           subject: 'Reset password',
           text: "You have received this email because you (or someone else) asked to reset your password for Disrupt-IT \n\n" +
-                "Click on the following link, or copy it into your browser, to complete the reset: https://disrupt-it.nl/reset/"+token+"\n\n"+
+                "Click on the following link, or copy it into your browser, to complete the reset: https://www.disrupt-it.nl/reset/"+token+"\n\n"+
                 "If you did not request to reset your password, you can ignore this email and your password will remain the same"
         };
 

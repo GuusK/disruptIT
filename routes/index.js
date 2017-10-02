@@ -6,8 +6,6 @@ var User   = require('../models/User');
 var _      = require('underscore');
 var async  = require('async');
 var i18n   = require('i18next');
-// var async = require('asyncawait/async');
-// var await = require('asyncawait/await');
 
 module.exports = function (config) {
 var router = express.Router();
@@ -31,7 +29,6 @@ function adminAuth(req, res, next) {
   next();
 }
 
-/* GET home page. */
 router.get('/', function (req, res) {
   res.render('index', { title: '', ticketSaleStarts:config.ticketSaleStarts });
 });
@@ -40,9 +37,9 @@ router.get('/partners', function (req,res) {
   res.render('partners/index',{title:'Partners |'});
 });
 
-// router.get('/partners/:partner', function (req, res) {
-//   res.render('partners'+ req.params.partner, {title: 'Partners -  |' + req.params.partner, path: '/partners'});
-// });
+router.get('/partners/:partner', function (req, res) {
+  res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
+});
 
 router.get('/profile', auth, function (req, res) {
   User.findOne({email:req.session.passport.user}, function (err,user) {
@@ -60,7 +57,10 @@ router.get('/profile', auth, function (req, res) {
   });
 });
 
-
+/**
+ * This function is used to determine if there is still room for someone to 
+ * enroll and takes in to account if someone is already enrolled. 
+ */
 async function canEnrollForLezing(lezingslot, lezingid, useremail){
   if(typeof lezingid == "undefined" || lezingid == "" || lezingid == null){
     return true;
@@ -91,7 +91,6 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
       .then(function(res){
         result = res;
       });
-      console.log(result < lezing.limit);
       return result < lezing.limit;
   }
 
@@ -133,7 +132,20 @@ router.post('/profile', auth, function (req, res) {
   }
 
   User.findOne({email:req.session.passport.user}).exec( async function (err, user) {
-    if (!err){
+  if (!err){
+/*******************************************************************************
+ * There is some form of race condition possible. the check if the session is 
+ * full can be done after someone else has been checked but before he has been
+ * enrolled.
+ *
+ * Best would be to do a conditional update, however, Mongo does not support 
+ * this feature in mongo 3.4.
+ * 
+ * For now this is not as big as a problem because one person extra is not 
+ * that big of a problem. However, watch carefully if people actively abuse 
+ * this
+ ******************************************************************************/
+
       canEnrollSession1 = await canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user);
       canEnrollSession2 = await canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user);
       canEnrollSession3 = await canEnrollForLezing("lezing3", req.body.lezing3, req.session.passport.user);
@@ -191,7 +203,10 @@ router.post('/profile', auth, function (req, res) {
 router.get('/location', function (req, res) {
   res.render('location', {title: 'Location |'});
 });
-
+/*
+ * Still needs its proper replacement, will come when bus times are available
+ * Maybe include in the location or timetable page aswell.
+ */
 // router.get('/busses', function (req, res) {
 //   res.render('busses', {title: 'Bussen'});
 // });
@@ -206,6 +221,9 @@ router.get('/speakers', function (req, res) {
   res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p});
 });
 
+/*
+ * Needs to be recreated
+ */
 // router.get('/speakers/:talk', function (req, res) {
 //   var s = config.speakers.filter(function(speaker){
 //     return (speaker.talk.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase() === req.params.talk);
@@ -218,11 +236,6 @@ router.get('/speakers', function (req, res) {
 
 //   res.render('speakers/talk', {path: '/speakers', speaker: s});
 // });
-
-
-router.get('/partners/:partner', function (req, res) {
-  res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
-});
 
 router.get('/organisation', function (req, res) {
   res.render('organisation', {title: 'Organisation |'});
@@ -287,7 +300,7 @@ router.get('/users', adminAuth, function (req,res,next) {
 });
 
 /**
- * Output alle dieetwensen
+ * Output all dietary wishes provided by users
  */
 router.get('/diet', adminAuth, function (req, res, next) {
   User.find({$or: [{'specialNeeds': {$ne: ""}}, {'vegetarian': true}]}).sort({'vereniging':1,'firstname':1}).exec( function (err, results) {
@@ -295,7 +308,6 @@ router.get('/diet', adminAuth, function (req, res, next) {
     res.render('diet',{users:results, verenigingen:config.verenigingen});
   });
 });
-
 
 router.get('/users/:id', adminAuth, function (req,res,next) {
   User.findOne({_id:req.params.id}, function (err, result) {
@@ -346,7 +358,7 @@ var barc = new Barc({
 });
 
 /**
- * Aanwezigheidslijst per vereniging
+ * List of people present, per assocation
  */
 router.get('/aanwezig', adminAuth, function (req,res,next) {
   var namen = _.keys(config.verenigingen);
@@ -364,6 +376,15 @@ router.get('/aanwezig', adminAuth, function (req,res,next) {
   });
 });
 
+/*******************************************************************************
+ * Triggered if someone requests this page. This will be printed on the badge of
+ * an attendee in the form of a QR code. Can be scanned with generic QR code
+ * scanners. When url has been gotten, will be opened in browser.
+ * 
+ * Will create a list of all people to connected with during the event. After
+ * the event, this can be used to send an email to everyone who participated
+ * to exchange contact details.
+ ******************************************************************************/
 router.get('/connect/:id', auth, function(req, res, next){
   User.findOne({ticket: req.params.id}, function(err, user){
     if (err || !user) { 
@@ -383,7 +404,7 @@ router.get('/connect/:id', auth, function(req, res, next){
 });
 
 /**
- * Lezingkeuze
+ * Session choices displayed for administrators
  */
 router.get('/choices', adminAuth, function (req,res,next) {
   var opts = {reduce: function(a,b){ b.total++;}, initial: {total: 0}};

@@ -43,7 +43,7 @@ app.use(compress({
 
 //CORS middleware
 var allowCrossDomain = function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'http://autonom.it:1337');
+  res.header('Access-Control-Allow-Origin', 'http://disrupt-it:3000');
 
   next();
 };
