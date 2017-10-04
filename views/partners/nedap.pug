@@ -3,29 +3,45 @@ block above-content
 
 block header 
   header.hero.nedap
-    h2 Nedap
-    .separator(role='separator')
+    h2.nedap "It simply works"
+    .separator.nedap(role='separator')
+    p.nedap Nedap's Andre Foeken
 
 block content
-  section.intro.slanted
+  section(class='intro slanted')
     .content
-      h2 'It simply works'
+
       p This year, Dutch tech multinational Nedap is proud to be SNiC’s main sponsor. Andre Foeken, CTO at Nedap Healthcare, is joining us at SNiC. The company employs around 800 people worldwide, 130 of which make up Nedap Healthcare. As well as empowering patients and doctors, Nedap creates interactive shopping experiences and industrial scale sustainable lighting solutions, provides security for major landmarks, helps farmers take care of their livestock, and even finds you a place to park your car.
 
       h3 Disruptive tech
+      div(role='separator' class='separator')
       p Andre will be the keynote speaker at SNiC disruptIT 2017. He will also be joining our panel of experts, sharing his views on disruptive technology and, more importantly, on what it takes to be both disruptive as developers and a successful company. 
 
-      h3 A flock of birds
-      p Nedap is known for its culture of not having the hierarchical layers of management or ‘bosses’ you might expect in a global tech firm. Instead it’s a big pool of talented technology and marketing developers, creating innovative products in self-managing teams. At Nedap, you’re in control from day one.
+  section(class='slanted twocolumn background-nedap-orange' id='flock')
+    .subpage
+      .content
+        h2 Red Dot Design Award
+        div(role='separator' class='separator')
+        p
+          | Some examples of the accomplishments of Nedap’s developers are the access control system of the Eiffel Tower, LED-based water purification for the city of New York, traffic control systems for the city of Amsterdam and RFID systems for worldwide fashion retailers such as River Island and H&M. This year, the Library Solutions team won a prestigious Red Dot Design Award for the simplicity and smoothness of their latest product. In general, an important characteristic of every Nedap product, is the unobtrusive way it can be used. It simply works, has more features and is future proof. 
 
-      p CEO Ruben Wegman likes to compare Nedap to a flock of birds. 'We hire the smartest people in the country and rely on them to tell us where we should go, or what we should be developing. Having said that, a bright mind is not enough. If you can't think as an entrepreneur or work independently, you should not be in our flock.'
+    .subpage.image
 
-      h3 Red Dot Design Award
-      p This year, the Library Solutions team won a prestigious Red Dot Design Award for the simplicity and esthetic of their latest product. In general, unobtrusive functionality is integral to every Nedap product. It simply works.
+  section#paris.slanted.twocolumn.background-nedap-grey
+    .subpage.image
+    .subpage
+      .content
+        h2 A flock of birds
+        .separator(role='separator')
+        p Nedap is known for its culture of not having the hierarchical layers of management or ‘bosses’ you might expect in a global tech firm. Instead it’s a big pool of talented technology and marketing developers, creating innovative products in self-managing teams. At Nedap, you’re in control from day one.
 
-      p Some other Nedap accomplishments are the Eiffel Tower's access control systems, New York's UV-based water purification system, Amsterdam's traffic control systems, and the RFID systems for worldwide fashion retailers such as River Island and H&M.
+        p CEO Ruben Wegman likes to compare Nedap to a flock of birds. 'We hire the smartest people in the country and rely on them to tell us where we should go, or what we should be developing. Having said that, a bright mind is not enough. If you can't think as an entrepreneur or work independently, you should not be in our flock.'
 
-      h3 What makes you tick?
+
+  section.intro.slanted
+    .content
+      h2 What makes you tick?
+      .separator(role='separator')
       p Andre: 'At Nedap we believe that people make the difference. Both in our own company and in the things we build, we focus on trust and giving back control wherever possible. Rules are restrictive and stop people from making their own decisions. We help companies to set people free through technology and simply watch what happens. It is magical.'
 
       p To discover more about working at Nedap, read some of the inspiring blogs by Nedap employees like #[a(href='https://lifeatnedap.com/blog/hacking-at-nedap/') Stefan], #[a(href='https://lifeatnedap.com/blog/1681/') Michiel] and  #[a(href='https://lifeatnedap.com/blog/de-zelftellende-winkel/') Ron] at #[a(href='https://www.lifeatnedap.com') www.lifeatnedap.com].

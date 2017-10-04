@@ -644,7 +644,7 @@ footer {
   padding: 5vh 10%;
 }
 
-footer .sponsors {
+footer .sponsor {
   color: white;
   width: 90%;
   display: flex;
@@ -654,7 +654,7 @@ footer .sponsors {
   margin:-10px auto;
 }
 
-.sponsors a {
+.sponsor a {
   height: 100px;
   display: inline-flex;
   margin: 10px;
@@ -667,31 +667,30 @@ footer .sponsors {
   justify-content: center;
 }
 
-.sponsors a img {
+.sponsor a img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.sponsors a.gold,
-.sponsors a.nedap {
+.sponsor a.gold,
+.sponsor a.nedap {
   flex-grow: 2;
   flex-basis: 100%;
   margin: 15px;
   max-width: 100%;
 }
 
-
 @media (min-width: 750px) {
-  footer .sponsors {
+  footer .sponsor {
     width: 75%;
   }
 
-  .sponsors a {
+  .sponsor a {
     height: 150px;
     flex-basis: calc(50% - 20px);
   }
 
-  .sponsors a.gold {
+  .sponsor a.gold {
     flex-grow: 2;
     flex-basis: 100%;
     margin: 15px 75px;
@@ -700,7 +699,7 @@ footer .sponsors {
 }
 
 @media (min-width: 1200px) {
-  footer .sponsors {
+  footer .sponsor {
     width: 50%;
   }
 }
@@ -1175,8 +1174,36 @@ section.intro p.participate {
  ****************************/
 
 header.hero.nedap{
-  background-image: url('/images/Hero_Nedap.jpg');
-  min-height: 50vh;
+  background-image: url('/images/bedrijven/nedap/andre.jpg');
+  min-height: 80vh;
+  opacity: 1;
+}
+
+h2.nedap,
+.separator.nedap,
+p.nedap {
+  text-align: center;
+  color: black !important;
+}
+
+section#flock .subpage.image{
+  background-image: url('/images/bedrijven/nedap/flock.jpg');
+  background-position: center 80%;
+}
+
+section#paris .subpage.image{
+  background-image: url('/images/bedrijven/nedap/paris.jpg');
+  background-position: center 80%;
+}
+
+.background-nedap-orange{
+  background: #FF8700 !important;
+  color: white;
+}
+
+.background-nedap-grey{
+  background: #69696E !important;
+  color: white;
 }
 
 /****************************

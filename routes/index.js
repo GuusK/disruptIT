@@ -222,7 +222,7 @@ router.get('/speakers', function (req, res) {
 });
 
 /*
- * Needs to be recreated
+ * TODO: Needs to be recreated
  */
 // router.get('/speakers/:talk', function (req, res) {
 //   var s = config.speakers.filter(function(speaker){
@@ -358,7 +358,7 @@ var barc = new Barc({
 });
 
 /**
- * List of people present, per assocation
+ * List of people present, per association
  */
 router.get('/aanwezig', adminAuth, function (req,res,next) {
   var namen = _.keys(config.verenigingen);
