@@ -1173,19 +1173,52 @@ section.intro p.participate {
  * Nedap Bedrijfsprofiel
  ****************************/
 
-header.hero.nedap{
-  background-image: url('/images/bedrijven/nedap/andre.jpg');
-  min-height: 80vh;
-  opacity: 1;
+/*
+ * Hero image on small devices. quote above image
+ */
+@media(max-width: 800px){
+
+  header.hero.nedap{
+    min-height: 0;
+    background-image: url('/images/bedrijven/nedap/andre.jpg');
+    background-color: #373636;
+    display:block;
+    background-size: contain;
+    background-position: 50% 100%;
+    opacity: 1;
+    padding:0px;
+    padding-bottom: calc(49% + 1em)
+  }
+
+  .hero-nedap-text{
+    width: 100%;
+    padding: 65px 0px 20px 0px;
+  }
+
+  h2.nedap,
+  p.nedap {
+    text-align: center;
+  }
 }
 
-h2.nedap,
-.separator.nedap,
-p.nedap {
-  text-align: center;
-  color: black !important;
-}
+/*
+ *Hero image on larger devices. Quote inside the image
+ */
+@media (min-width: 800px) {
+  header.hero.nedap{
+    background-image: url('/images/bedrijven/nedap/andre.jpg');
+    background-position: 100% 100%;
+    min-height: 80vh;
+    opacity: 1;
+  }
 
+  h2.nedap,
+  .separator.nedap,
+  p.nedap {
+    text-align: center;
+    color: black !important;
+  }
+}
 section#flock .subpage.image{
   background-image: url('/images/bedrijven/nedap/flock.jpg');
   background-position: center 80%;
