@@ -38,7 +38,7 @@ router.get('/partners', function (req,res) {
 });
 
 router.get('/partners/:partner', function (req, res) {
-  res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner, path: '/partners'});
+  res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner + ' |', path: '/partners'});
 });
 
 router.get('/profile', auth, function (req, res) {
