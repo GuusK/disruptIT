@@ -218,7 +218,7 @@ router.get('/speakers', function (req, res) {
   var p = config.presenters.filter(function(presenter){
     return !presenter.hidden;
   });
-  res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p});
+  res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: config.speakerids});
 });
 
 /*

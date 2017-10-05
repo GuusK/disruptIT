@@ -837,7 +837,45 @@ header.hero.speakers{
   background-image: url('/images/Foto-Spreker2.jpg');
 }
 
+.timetable {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
+.timetable .time {
+  flex: 1 0 50px;
+  flex-grow: 2;
+  padding: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.timetable .session {
+  flex: 1 0 300px;
+  box-sizing: border-box;
+  color: #171e42;
+  padding: 10px;
+  /*margin-left: 10px;
+  margin-top: 10px;*/
+}
+
+.timetable img {
+  max-width: 400px;
+  display: block;
+  margin: auto;
+  padding-bottom: 20px
+}
+
+.timetable .session p.center {
+  text-align: center;
+}
+
+@media(min-width: 800px){
+  .timetable {
+    margin: 0px 10vw;
+  }
+}
 
 /****************************
  * Partners
@@ -1271,3 +1309,5 @@ header.hero.achmea{
 .alert-dismissable .close, .alert-dismissible .close {
   float:right;
 }
+
+article + .readmore-js-toggle { padding-bottom: 1.5em; border-bottom: 1px solid #999; font-weight: bold;}

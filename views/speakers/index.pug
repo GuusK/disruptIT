@@ -1,5 +1,24 @@
 extends ../layout
 
+mixin session(speaker)
+  if speaker
+    .session
+      h3= speaker.name
+      if speaker.special
+        p.center= speaker.special
+      if speaker.image
+        img(src=speaker.image)
+      if speaker.talk
+        h5 Subject
+        p.center= speaker.talk
+      if speaker.bio
+        h5 Biography
+        .bio
+          each part in speaker.bio
+            p!= part
+      if speaker.limit
+        p.center There is a limit of #{speaker.limit} attendees for this session
+
 block above-content
 
 block header 
@@ -12,5 +31,49 @@ block content
     .content
       h2 The Disruptors
       .separator(role='separator')
-      p
-        | A conference without speakers is like a swimming pool without water. We have collected the most inspiring entrepeneurs, scientist and experts from the business sector. We are working hard to get the speakers we think would fit the conference best. We will keep you updated via our Facebook page and this page.
+      p A conference without speakers is like a swimming pool without water. We have collected the most inspiring entrepeneurs, scientist and experts from the business sector. We are working hard to get the speakers we think would fit the conference best. We will keep you updated via our Facebook page and this page.
+      .separator(role='separator')
+      h3 11:00 - 11:15
+      .timetable
+        +session({name:"Opening", special:"By presenters and organising committee"})
+      h3 11:15 - 12:00
+      .timetable
+        each speaker in speakers
+          if speaker.id == speakerids.opening
+            +session(speaker)
+      h3 12:15 - 13:00
+      .timetable
+        each id in speakerids.session1
+          each speaker in speakers
+            if speaker.id == id
+              +session(speaker)
+      .separator(role='separator')
+      h3 13:00 - 14:00
+      .timetable
+        +session({name:"Lunch", special:"Don't forget to provide any allergies and diets"})
+      .separator(role='separator')
+      h3 14:00 - 15:00
+      .timetable
+        each id in speakerids.session2
+          each speaker in speakers
+            if speaker.id == id
+              +session(speaker)
+      .separator(role='separator')
+      h3 15:15 - 16:00
+      .timetable
+        each id in speakerids.session3
+          each speaker in speakers
+            if speaker.id == id
+              +session(speaker)
+      .separator(role='separator')
+      h3 16:15 - 17:00
+      .timetable
+        each speaker in speakers
+          if speaker.id == speakerids.closing
+              +session(speaker)
+      .separator(role='separator')
+      h3 17:00 - 17:15
+        +session({name: "Afsluiting door dagvoorzitter"})
+      .separator(role='separator')
+      h3 17:00 - 17:15
+        +session({name: "Borrel and diner"})
