@@ -1249,6 +1249,16 @@ header.hero.achmea{
 }
 
 /****************************
+ * KPMG Bedrijfsprofiel
+ ****************************/
+
+header.hero.achmea{
+  background-image: url('/images/Hero_KPMG.jpg');
+  min-height: 50vh;
+}
+
+
+/****************************
  * One-off elements
  ****************************/
 
