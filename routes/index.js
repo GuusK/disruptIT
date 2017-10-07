@@ -7,6 +7,10 @@ var _      = require('underscore');
 var async  = require('async');
 var i18n   = require('i18next');
 
+// Load speaker information from speakers.json
+var fs = require('fs');
+var speakerinfo = JSON.parse(fs.readFileSync('speakers.json'));
+
 module.exports = function (config) {
 var router = express.Router();
 
@@ -47,7 +51,7 @@ router.get('/profile', auth, function (req, res) {
     {
       // Don't try to unescape here, it's not stored in user.
       // Do it in the template
-      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus, providePreferences: config.providePreferences, speakerids: config.speakerids, speakers: config.speakers, matchingterms:config.matchingterms});
+      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus, providePreferences: config.providePreferences, speakerids: speakerinfo.speakerids, speakers: speakerinfo.speakers, matchingterms:config.matchingterms});
     }
     else
     {
@@ -66,7 +70,7 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
     return true;
   };
 
-  lezing = config.speakers.filter(function(speaker){
+  lezing = speakerinfo.speakers.filter(function(speaker){
     return speaker.id == lezingid;
   })
 
@@ -118,15 +122,15 @@ router.post('/profile', auth, function (req, res) {
 
   console.log(req.body.lezing2);
 
-  if(req.body.lezing1 !== "" && req.body.lezing1 !== null && !config.speakerids.session1.includes(req.body.lezing1)){
+  if(req.body.lezing1 !== "" && req.body.lezing1 !== null && !speakerinfo.speakerids.session1.includes(req.body.lezing1)){
     req.flash('error', "Lezing1 went wrong!");
     return res.redirect('/profile');
   }
-  if(req.body.lezing2 !== "" && req.body.lezing2 !== null && !config.speakerids.session2.includes(req.body.lezing2)){
+  if(req.body.lezing2 !== "" && req.body.lezing2 !== null && !speakerinfo.speakerids.session2.includes(req.body.lezing2)){
     req.flash('error', "Lezing2 went wrong!");
     return res.redirect('/profile');
   }
-  if(req.body.lezing3 !== "" && req.body.lezing3 !== null && !config.speakerids.session3.includes(req.body.lezing3)){
+  if(req.body.lezing3 !== "" && req.body.lezing3 !== null && !speakerinfo.speakerids.session3.includes(req.body.lezing3)){
     req.flash('error', "Lezing3 went wrong!");
     return res.redirect('/profile');
   }
@@ -212,20 +216,20 @@ router.get('/location', function (req, res) {
 // });
 
 router.get('/speakers', function (req, res) {
-  var s = config.speakers.filter(function(speaker){
+  var s = speakerinfo.speakers.filter(function(speaker){
     return !speaker.hidden;
   });
-  var p = config.presenters.filter(function(presenter){
+  var p = speakerinfo.presenters.filter(function(presenter){
     return !presenter.hidden;
   });
-  res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: config.speakerids});
+  res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: speakerinfo.speakerids});
 });
 
 /*
  * TODO: Needs to be recreated
  */
 // router.get('/speakers/:talk', function (req, res) {
-//   var s = config.speakers.filter(function(speaker){
+//   var s = speakerinfo.speakers.filter(function(speaker){
 //     return (speaker.talk.replace(/\s/g, '-').replace('?', '').replace(':', '').replace('!', '').toLowerCase() === req.params.talk);
 //   })[0];
 
@@ -440,6 +444,11 @@ router.get('/tickets/:id', function (req, res, next) {
 router.get('/tickets/:id/barcode', function (req, res) {
   res.set('Content-Type', 'image/png');
   res.send(barc.code128(req.params.id, 440, 50));
+});
+
+router.get('/reload', function (req, res){
+  speakerinfo = JSON.parse(fs.readFileSync('speakers.json'));
+  return res.redirect('/speakers');
 });
 
  return router;

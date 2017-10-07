@@ -1,7 +1,7 @@
 # Config
 
 Configuration files are not included in this repository. You will need to add a file named `config.json` to the root folder with the following structure:
-```
+```javascript
 {
   "mongodb": {
     // When using the provided docker-compose file, this is fine. Otherwise change address. Port is optional
@@ -77,44 +77,6 @@ Configuration files are not included in this repository. You will need to add a 
   "ticketSaleStarts": "2015-08-01T00:00:00.001Z", // From when to register
   "providePreferences": false,     // If people can signup for sessions.
   "hideMenu": false,               // Not used in disruptIT
-  
-  
-  "speakerids": {                  // IDs of the speakers. Used for enrolling of sessions.
-    // IDs should be the same in the speaker array
-    "session1": ["ses1.1", "ses1.2", "ses1.3"],
-    "session2": ["panel", "winand", "quintor"],
-    "session3": ["ses3.1", "ses3.2"]
-  },
-  // More details on the IDs on the speakers
-  "speakers": [
-    {
-      "name": "Guus Klinkenberg",                       // Name to display
-      "id": "ses1.1",                                   // ID that is also in speakerids
-      "limit": 9001,                                    // Limit of a session
-      "company": "SNiC",                                // Company/institute that person is from and want mentioned
-      "image": "/images/logo2.png",                     // path to photo
-      "talk": "Programmer extrodinair | because he is", // Some title, used in overview
-      "hidden": false                                   // Whether or not they should be visible
-    },
-    {
-      "name": "Arian van Putten",
-      "id": "ses1.2",
-      "limit": 42,
-      "company": "",
-      "image": "/images/logo2.png",
-      "talk": "Because he started creating this back-end",
-      "hidden": false
-    }
-  ],
-  // List of presenters/dagvoorzitters
-  "presenters": [
-    {
-      "name": "Naam",                // Name to display
-      "company": "bedrijf",          // Company/institute that person is from and want mentioned
-      "image": "/images/logo2.png",  // path to photo
-      "hidden": false
-    }
-  ],
   // Used for matching
   // Choices are automatically generated based on order of this list.
   // Works although the order is not guaranteed by JSON standard.
@@ -123,6 +85,44 @@ Configuration files are not included in this repository. You will need to add a 
     "Code witcher"
   ]
 }
+```
+
+The speaker.json is used to generate the speaker page and for the enrollment tool. It is is structered in the following way
+
+```javascript
+{
+  // list of ids of speakers per session. Used to generate the speakers page
+  "speakerids": {
+    "session1": ["ses1.1", "ses1.2"], // for parallel sessions
+    "closing": "closing" // for single sessions
+  },
+  // List of all data needed to display a session
+  "speakers": [
+    {
+      "name" : "Name of speaker",
+      "id": "closing",  // ID listed in speakerids
+      "limit": 9001     // Limit of a session, used for enroll tool. Can be set to null (or left out) to ignore
+      "company" : "",   // if you want to mention the company in the session piece
+      "image": "/link/to/speaker.jpg", // preferably the speakre
+      "subject": "Subject of the talk",
+      "talk" : [
+        "list of various paragraphs",
+        "that can be used to describe the session"
+      ],
+      "bio": [
+        "list of various paragraphs",
+        "to give some background on the speakers"
+      ],
+      "hidden": false   // whether or not you want to display this speaker
+    }
+    ...
+  ],
+  "presenters": [
+    // list of the same type of object as speakers
+  ]
+}
+
+
 ```
 
 # Creating an admin user
