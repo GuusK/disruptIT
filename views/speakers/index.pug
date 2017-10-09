@@ -16,13 +16,16 @@ mixin session(speaker)
             h4 Subject
         h5!= speaker.subject
       if speaker.talk
-        each part in speaker.talk
-          p= part
+        .shorten
+          each part in speaker.talk
+            p= part
+          a(href="#") Read more
       if speaker.bio && speaker.bio.length != 0
-          h5 Biography
-          .bio
-            each part in speaker.bio
-              p!= part
+        h5 Biography
+        .shorten
+          each part in speaker.bio
+            p!= part
+          a(href="#") Read more
       if speaker.limit
         p There is a limit of #{speaker.limit} attendees for this session
 
