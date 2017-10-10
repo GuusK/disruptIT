@@ -59,7 +59,7 @@
       ],
       "bio" : [
         "Nick started his career with four years of fun in academic research, inventing the formal semantics of his own programming language. His believe that you should not only practice what you preach, but also practice before you preach, made him decide to move to industry. He loves to combine his research skills with his pragmatic nature to discover new technologies and original ways to solve everyday problems, and has been doing just that for more than six years now. First for the banking and insurance industry, and recently, for bol.com: the biggest online retailer of Belgium and the Netherlands.",
-        "Wouter is part of the Young Professional program, working as a software engineer for the largest online retailer in the Netherlands and Belgium, bol.com. In his first year he made sure that bol.com is always within the top Google search results whenever you search for something we sell. In his latest project he works on state of the art retail tooling. He studied computer science at the Universities of Utrecht and Amsterdam and enjoys explaining complex IT-systems or concepts as simple as possible. In doing so, he likes to exaggerate in all his analogies."
+        "Wouter is part of the Young Professional program working as a software engineer for bol.com. In his first year he made sure that bol.com is always within the top Google search results whenever you search for something we sell. In his latest project he works on state of the art retail tooling. He studied computer science at the Universities of Utrecht and Amsterdam and enjoys explaining complex IT-systems or concepts as simple as possible. In doing so, he likes to exaggerate in all his analogies."
       ],
       "limit": null,
       "hidden": false
@@ -77,11 +77,11 @@
       "hidden": false
     },
     {
-      "name" : "Dicussion panel",
+      "name" : "Discussion panel",
       "id": "panel",
       "company" : "",
       "image": null,
-      "subject": "Dicussion about disruptive technology",
+      "subject": "Discussion about disruptive technology",
       "talk": [],
       "bio": [],
       "limit": null,
