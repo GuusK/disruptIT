@@ -852,6 +852,7 @@ header.hero.speakers{
 }
 
 .timetable .session {
+  text-align: center;
   flex: 1 0 300px;
   box-sizing: border-box;
   color: #171e42;
@@ -859,17 +860,26 @@ header.hero.speakers{
   margin: 1em 10vw 1em 10vw;
   width: 80vw;
 }
+.timetable .session .shorten {
+  padding-bottom: 10px;
+}
 
 .timetable img {
-  max-width: 400px;
+  max-width: 100%;
   display: block;
-  margin: auto;
+  margin: 0 auto;
   padding-bottom: 20px
 }
 
 .timetable .session p {
   text-align: justify;
   text-align-last: center;
+}
+
+@media(min-width: 600px) {
+  .timetable img {
+    max-width: 400px;
+  }
 }
 
 @media(min-width: 1500px){

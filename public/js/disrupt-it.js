@@ -240,7 +240,7 @@ $('.dropdown-toggle').dropdown();
 // });
 
 $('.shorten').curtail({
-    'limit': 250,
+    'limit': 300,
     toggle: true,
     text: ['Show less', 'Show more']
 });

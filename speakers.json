@@ -1,7 +1,7 @@
 {
   "speakerids": {
     "session1": ["stephanie", "nick", "topicus"],
-    "session2": ["panel", "quintor"],
+    "session2": ["panel", "joshua", "quintor"],
     "session3": ["karlheinz", "winand", "hackastory"],
     "opening": "jarno",
     "closing": "andre"
@@ -20,6 +20,7 @@
       "bio": [
         "Jarno Duursma is trendwatcher en spreker over digitale technologie, auteur van boeken over social media, WhatsApp en Blockchain. Hij is oprichter van innovatieplatform #SMC050 en alumnus van Singularity University in Silicon Valley."
       ],
+      "limit": null,
       "hidden": false
     },
     {
@@ -30,6 +31,7 @@
       "subject":null,
       "talk": [],
       "bio": [],
+      "limit": null,
       "hidden": false
     },
     {
@@ -49,9 +51,8 @@
     {
       "name": "Nick Tinnemeier <br> Wouter Stikkelorum",
       "id": "nick",
-      "limit": null,
       "company": "",
-      "image": "/images/sprekers/stephanie.jpg",
+      "image": null,
       "subject": "The shopping mall in your pocket <br> How information technology (re)shapes your shopping experience",
       "talk": [
         "Still remember rushing to the shop before closing time? Just to discover that your favorite product is out of stock? That does not need to happen anymore. You are probably carrying around a whole shopping mall in your pocket right now. A shopping mall that never closes. Millions of products right at your fingertips. In this talk we look back at how information technology changed shopping as we know it today. How did we get there? What are the key technologies that facilitate online shops at the scale of, for example, Amazon, Zalando and bol.com? And we believe we are only at the beginning. The best has yet to come. So, we also peek at how upcoming technologies such as machine learning, augmented reality and blockchain will impact your shopping experience of tomorrow."
@@ -60,14 +61,16 @@
         "Nick started his career with four years of fun in academic research, inventing the formal semantics of his own programming language. His believe that you should not only practice what you preach, but also practice before you preach, made him decide to move to industry. He loves to combine his research skills with his pragmatic nature to discover new technologies and original ways to solve everyday problems, and has been doing just that for more than six years now. First for the banking and insurance industry, and recently, for bol.com: the biggest online retailer of Belgium and the Netherlands.",
         "Wouter is part of the Young Professional program, working as a software engineer for the largest online retailer in the Netherlands and Belgium, bol.com. In his first year he made sure that bol.com is always within the top Google search results whenever you search for something we sell. In his latest project he works on state of the art retail tooling. He studied computer science at the Universities of Utrecht and Amsterdam and enjoys explaining complex IT-systems or concepts as simple as possible. In doing so, he likes to exaggerate in all his analogies."
       ],
+      "limit": null,
       "hidden": false
     },
     {
       "name" : "To be announced",
       "id": "topicus",
-      "limit": null,
+      "image": null,
       "company" : "Topicus",
-      "image": "/images/sprekers/stephanie.jpg",
+      "subject":null,
+      "image": "",
       "talk": ["Hoe je eigen bier te brouwen ofwel hoe je de recruitingmarkt overneemt"],
       "bio" : [
         "Stephanie is Antoni van Leeuwenhoek Professor in quantum information. Her goal is to understand the world of small particles – the laws of quantum mechanics – in order to construct better networks and computers. Quantum bits behave quite differently than classical bits, and allow us to solve tasks that are provably impossible for any classical device. Stephanie’s research advances quantum information theory and its applications to both computer science and physics. She has worked extensively in quantum cryptography and communication, and one of her goals is to overcome the theoretical challenges in building large scale quantum networks. As part of the <a href='https://qutech.nl/roadmaps/?rm=quantum-internet'>Quantum Internet Team</a> at QuTech, she works with experimentalists in order to jointly realize this goal.", 
@@ -83,6 +86,19 @@
       "image": null,
       "subject": "Dicussion about disruptive technology",
       "talk": [],
+      "bio": [],
+      "limit": null,
+      "hidden": false
+    },
+    {
+      "name" : "Joshua Peper",
+      "id": "joshua",
+      "company" : "Peperzaken",
+      "image": null,
+      "subject": "Internet of Things",
+      "talk": [],
+      "bio": [],
+      "limit": null,
       "hidden": false
     },
     {
@@ -92,18 +108,19 @@
       "image": null,
       "subject": "Build your own Bitcoin",
       "talk": [],
+      "bio": [],
       "limit": 40,
       "hidden": false
     },
     {
       "name" : "Karlheinz Meier",
       "id": "karlheinz",
-      "limit": null,
       "company" : "Universität Heidelberg / Human Brain Project",
       "image": null,
       "subject": "Brain inspired chip",
       "talk": [],
       "bio": [],
+      "limit": null,
       "hidden": false
     },
     {
@@ -114,17 +131,19 @@
       "subject": "3D printing", 
       "talk": [],
       "bio": [],
+      "limit": null,
       "hidden": false
     },
     {
-      "name" : "Hackastory",
+      "name" : "Hack journalism",
       "id": "hackastory",
-      "company" : "",
+      "company" : "Hackastory",
       "image": null,
-      "talk": ["TBD"],
+      "subject": "Jouralism using Artificial Intelligence",
+      "talk": ["Let’s ‘hack’ the future of journalism. During this creative brainstorm workshop we’ll look at disruptive technology in this business and in teams you’ll develop a new Artificial Intelligence concept for the future of journalism."],
       "bio": [
-        "<a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.linkedin.com%2Fin%2Falbertinepiels%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Albertine Piels</a> is the director of <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fhackastory.com%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Hackastory</a>. Last year she quit her job as an editor in chief at RTL Z so she can fully focus on improving journalism in this digital age. Albertine has 15 years of experience in journalism, always with a strong focus on online media. She lived and worked in New York City, Madrid, Vienna, Brussels and Cairo, fell in love with tango dancing in Argentina.",
-        "<a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.linkedin.com%2Fin%2Falka-anna-goos-b52b2658%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Alka Anna Goos</a> is Hackastory’s toolexpert and brains behind our <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fdigitalstory.tools%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>digital storytelling toolkit</a>. She is specialized in interactive storytelling. For example, last year she co-created <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.trouw.nl%2Fhome%2Feen-kijkje-in-het-hart-van-de-asielprocedure~af5bf867%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>‘Het Nader Gehoor’</a>, a mobile interactive documentary about asylum seekers. Alka just wrote a book - yes, that’s right: on paper - about the rare brain disease of her father. Nothing makes her more happy than a new tattoo.",
+        "<a href='https://www.linkedin.com/in/albertinepiels/'>Albertine Piels</a> is the director of <a href='https://hackastory.com/'>Hackastory</a>. Last year she quit her job as an editor in chief at RTL Z so she can fully focus on improving journalism in this digital age. Albertine has 15 years of experience in journalism, always with a strong focus on online media. She lived and worked in New York City, Madrid, Vienna, Brussels and Cairo, fell in love with tango dancing in Argentina.",
+        "<a href='https://www.linkedin.com/in/alka-anna-goos-b52b2658/'>Alka Anna Goos</a> is Hackastory’s toolexpert and brains behind our <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fdigitalstory.tools%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>digital storytelling toolkit</a>. She is specialized in interactive storytelling. For example, last year she co-created <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.trouw.nl%2Fhome%2Feen-kijkje-in-het-hart-van-de-asielprocedure~af5bf867%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>‘Het Nader Gehoor’</a>, a mobile interactive documentary about asylum seekers. Alka just wrote a book - yes, that’s right: on paper - about the rare brain disease of her father. Nothing makes her more happy than a new tattoo.",
         "<b>About Hackastory</b>",
         "Stop talking, start building. That’s what we believe. We build the future of journalism during hackthons and workshops with coders, designers and journalists across the world. We’ve been to 9 countries on 4 continents and worked with 1000 Hackastorians. From <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.instagram.com%2Fp%2FBURri3IlgkL%2F%3Ftaken-by%3Dalbertinepiels&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>The Next Web in Amsterdam</a> to <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Ftwitter.com%2FAlbertinePiels%2Fstatus%2F692716606833725442&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Cape Town</a> and <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.instagram.com%2Fp%2FBMWhK4uhHQo%2F%3Ftaken-by%3Dalbertinepiels&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Haiti</a>. Next stop: Zwolle."
       ],

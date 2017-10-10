@@ -4,12 +4,12 @@ mixin session(speaker)
   if speaker
     .session
       h3!= speaker.name
-      if speaker.special
-        p= speaker.special
       if speaker.company
         h5= speaker.company
       if speaker.image
         img(src=speaker.image)
+      if speaker.special
+        p!= speaker.special
       if speaker.subject
         if speakers.talk
           if speakers.talk.length != 0
@@ -41,7 +41,8 @@ block content
     .content
       h2 The Disruptors
       .separator(role='separator')
-      p.justify A conference without speakers is like a swimming pool without water. We have collected the most inspiring entrepeneurs, scientist and experts from the business sector. We are working hard to get the speakers we think would fit the conference best. We will keep you updated via our Facebook page and this page.
+      p.justify A conference without speakers is like a swimming pool without water. We have collected the most inspiring entrepeneurs, scientist and experts from the business sector. We are working hard to get the last details from the speakers. We will keep you updated via our Facebook page and this page.
+
       .separator(role='separator')
       h3 11:00 - 11:15
       .timetable
@@ -51,6 +52,7 @@ block content
       .timetable
         each speaker in speakers
           if speaker.id == speakerids.opening
+            - speaker.special = '<i>English translation coming soon</i></br>'
             +session(speaker)
       .separator(role='separator')
       h3 12:15 - 13:00
