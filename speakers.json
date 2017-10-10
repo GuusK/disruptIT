@@ -24,7 +24,7 @@
       "hidden": false
     },
     {
-      "name" : "Andre Foeken",
+      "name" : "André Foeken",
       "id": "andre",
       "company" : "Nedap",
       "image": null,
@@ -43,7 +43,7 @@
       "subject": "Quantum Computing",
       "talk": [],
       "bio" : [
-        "Stephanie is Antoni van Leeuwenhoek Professor in quantum information. Her goal is to understand the world of small particles – the laws of quantum mechanics – in order to construct better networks and computers. Quantum bits behave quite differently than classical bits, and allow us to solve tasks that are provably impossible for any classical device. Stephanie’s research advances quantum information theory and its applications to both computer science and physics. She has worked extensively in quantum cryptography and communication, and one of her goals is to overcome the theoretical challenges in building large scale quantum networks. As part of the <a href='https://qutech.nl/roadmaps/?rm=quantum-internet'>Quantum Internet Team</a> at QuTech, she works with experimentalists in order to jointly realize this goal.", 
+        "Stephanie is -Antoni van Leeuwenhoek Professor- in quantum information. Her goal is to understand the world of small particles – the laws of quantum mechanics – in order to construct better networks and computers. Quantum bits behave quite differently than classical bits, and allow us to solve tasks that are provably impossible for any classical device. Stephanie’s research advances quantum information theory and its applications to both computer science and physics. She has worked extensively in quantum cryptography and communication, and one of her goals is to overcome the theoretical challenges in building large scale quantum networks. As part of the <a href='https://qutech.nl/roadmaps/?rm=quantum-internet'>Quantum Internet Team</a> at QuTech, she works with experimentalists in order to jointly realize this goal.", 
         "Stephanie is one the founders of QCRYPT, which has become the largest conference in quantum cryptography. She has written numerous scientific articles in both physics and computer science. From 2010 to 2014, her research group was located at the Centre for Quantum Technologies, National University of Singapore, where she was first Assistant and later Associate Professor. Previously, she was a postdoctoral scholar at the California Institute of Technology in the group of John Preskill. In a former life, she worked as a professional hacker in industry."
       ],
       "hidden": false
@@ -71,11 +71,8 @@
       "company" : "Topicus",
       "subject":null,
       "image": "",
-      "talk": ["Hoe je eigen bier te brouwen ofwel hoe je de recruitingmarkt overneemt"],
-      "bio" : [
-        "Stephanie is Antoni van Leeuwenhoek Professor in quantum information. Her goal is to understand the world of small particles – the laws of quantum mechanics – in order to construct better networks and computers. Quantum bits behave quite differently than classical bits, and allow us to solve tasks that are provably impossible for any classical device. Stephanie’s research advances quantum information theory and its applications to both computer science and physics. She has worked extensively in quantum cryptography and communication, and one of her goals is to overcome the theoretical challenges in building large scale quantum networks. As part of the <a href='https://qutech.nl/roadmaps/?rm=quantum-internet'>Quantum Internet Team</a> at QuTech, she works with experimentalists in order to jointly realize this goal.", 
-        "Stephanie is one the founders of QCRYPT, which has become the largest conference in quantum cryptography. She has written numerous scientific articles in both physics and computer science. From 2010 to 2014, her research group was located at the Centre for Quantum Technologies, National University of Singapore, where she was first Assistant and later Associate Professor. Previously, she was a postdoctoral scholar at the California Institute of Technology in the group of John Preskill. In a former life, she worked as a professional hacker in industry."
-      ],
+      "talk": [],
+      "bio" : [],
       "limit": 40,
       "hidden": false
     },
@@ -139,7 +136,7 @@
       "id": "hackastory",
       "company" : "Hackastory",
       "image": null,
-      "subject": "Jouralism using Artificial Intelligence",
+      "subject": "Journalism using Artificial Intelligence",
       "talk": ["Let’s ‘hack’ the future of journalism. During this creative brainstorm workshop we’ll look at disruptive technology in this business and in teams you’ll develop a new Artificial Intelligence concept for the future of journalism."],
       "bio": [
         "<a href='https://www.linkedin.com/in/albertinepiels/'>Albertine Piels</a> is the director of <a href='https://hackastory.com/'>Hackastory</a>. Last year she quit her job as an editor in chief at RTL Z so she can fully focus on improving journalism in this digital age. Albertine has 15 years of experience in journalism, always with a strong focus on online media. She lived and worked in New York City, Madrid, Vienna, Brussels and Cairo, fell in love with tango dancing in Argentina.",
