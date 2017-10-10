@@ -672,12 +672,17 @@ footer .sponsor {
   max-height: 100%;
 }
 
+
 .sponsor a.gold,
 .sponsor a.nedap {
   flex-grow: 2;
   flex-basis: 100%;
   margin: 15px;
   max-width: 100%;
+}
+
+.sponsor a.nedap {
+  background-color: transparent;
 }
 
 @media (min-width: 750px) {
@@ -918,9 +923,9 @@ header.hero.partners{
   width: 100%;
 }
 
-
 #platinum .box{
   max-width: 40em;
+  margin: 0 auto 50px;
 }
 
 #gold .box{
