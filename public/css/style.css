@@ -862,7 +862,7 @@ header.hero.speakers{
   box-sizing: border-box;
   color: #171e42;
   padding: 10px;
-  margin: 1em 10vw 1em 10vw;
+  margin: 1em 0em;
   width: 80vw;
 }
 .timetable .session .shorten {
@@ -881,9 +881,18 @@ header.hero.speakers{
   text-align-last: center;
 }
 
+.timetable .session::after {
+  font-family: FontAwesome;
+  content: "\f068";
+}
+
 @media(min-width: 600px) {
   .timetable img {
     max-width: 400px;
+  }
+
+  .timetable .session::after {
+    content: none;
   }
 }
 

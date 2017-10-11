@@ -35,7 +35,7 @@
       "hidden": false
     },
     {
-      "name": "Stephanie Wehner",
+      "name": "Dr. Stephanie Wehner",
       "id": "stephanie",
       "limit": null,
       "company": "QuTech",
@@ -103,14 +103,14 @@
       "id": "quintor",
       "company" : "Quintor",
       "image": null,
-      "subject": "Build your own Bitcoin",
+      "subject": "Build your own Blockchain",
       "talk": [],
       "bio": [],
       "limit": 40,
       "hidden": false
     },
     {
-      "name" : "Karlheinz Meier",
+      "name" : "Prof. dr. Karlheinz Meier",
       "id": "karlheinz",
       "company" : "Universität Heidelberg / Human Brain Project",
       "image": null,
