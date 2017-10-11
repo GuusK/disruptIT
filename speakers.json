@@ -66,13 +66,13 @@
       "hidden": false
     },
     {
-      "name" : "To be announced",
+      "name" : "Daan Dijkhuizen",
       "id": "topicus",
       "image": null,
       "company" : "Topicus",
-      "subject":null,
+      "subject": "Disruption or aggregation",
       "image": "",
-      "talk": [],
+      "talk": ["Managing director of Topicus"],
       "bio" : [],
       "limit": 40,
       "hidden": false
