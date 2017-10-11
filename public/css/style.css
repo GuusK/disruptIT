@@ -886,6 +886,10 @@ header.hero.speakers{
   content: "\f068";
 }
 
+.timetable .session:last-of-type:after {
+  content: "";
+}
+
 @media(min-width: 600px) {
   .timetable img {
     max-width: 400px;
