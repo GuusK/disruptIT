@@ -1,5 +1,19 @@
 extends ../layout
 
+mixin goldpartner(partner)
+  .box
+    a(href=partner.image.link, target='_blank')
+      img(src=partner.image.src)
+  p= partner.promo
+    if partner.profile
+      a.white(href=partner.profile.link) 
+        strong= partner.profile.text
+
+mixin partner(partner)
+  .box
+    a(href=partner.link, target='_blank')
+      img(src=partner.src)
+
 block header
  header.hero.partners
       h2 Partners
@@ -22,34 +36,26 @@ block content
             a(href='https://lifeatnedap.com/', target='_blank')
               img(src='/images/bedrijven/nedap_color.png')
           p This year, Dutch tech multinational Nedap is proud to be SNiC’s main sponsor. Andre Foeken, CTO at Nedap Healthcare, is joining us at SNiC. The company employs around 800 people worldwide, 130 of which make up Nedap Healthcare. As well as empowering patients and doctors, Nedap creates interactive shopping experiences and industrial scale sustainable lighting solutions, provides security for major landmarks, helps farmers take care of their livestock, and even finds you a place to park your car. 
-            a.white(href='/partners/nedap') Check out the company profile.
+            a.white(href='/partners/nedap') 
+              strong Check out the company profile.
   section#gold.slanted.background-gold
     .content.container
+      - partners.gold = partners.gold.sort(function() { return 0.5 - Math.random() });
       .row
         .twelve.colunms
           h2 Gold partners
           .separator(role='separator')
       .row
         .offset-by-two.four.columns
-          .box
-            a(href='/partners/achmea', target='_blank')
-              img(src='/images/bedrijven/Logo_Achmea.png')
-          p Verzekeren gaat in deze tijd wel wat verder dan je vakantie of ‘later’. Want hoe regelen we de aansprakelijkheid rond het gebruik van drones, de risico’s van zelfrijdende auto’s, of het uitlenen en verhuren van spullen in de deeleconomie? 
-            a.white(href='partners/achmea') Lees verder op de bedrijfspagina.
+          +goldpartner(partners.gold[0])
         .four.columns
-          .box
-            a(href='https://www.werkenbijtopicus.nl/')
-              img(src='/images/bedrijven/Logo_Topicus.png')
-          p Topicus werkt in de sectoren Finance, Zorg, Overheid, Onderwijs en Legal. Wij zijn hier constant bezig om op alle vlakken voor verregaande verbeteringen te zorgen. De regie aan de burger geven en zelfredzaamheid vergroten, dat is onze ambitie. Dit doen we met toptalenten die met behulp van de nieuwste technologie briljante ICT oplossingen bedenken en bouwen. 
+          +goldpartner(partners.gold[1])
       .row
         .offset-by-four.four.columns
-          .box
-            a(href='https://home.kpmg.com/nl/nl/home/werken-bij-kpmg.html')
-              img(src='/images/bedrijven/Logo_KPMG.png')
-          p With a worldwide presence, KPMG continues to build on our member firms' successes thanks to our clear vision, maintained values, and their people. 
-            a.white(href='/partners/KPMG') Check out the company profile (in Dutch)
+          +goldpartner(partners.gold[2])
 
   section#silver.slanted.background-silver
+    - partners.silver = partners.silver.sort(function() { return 0.5 - Math.random() });
     .content.container
       .row
         .twelve.colunms
@@ -57,31 +63,20 @@ block content
           .separator(role='separator')
       .row
         .four.columns
-          .box
-            a(href='https://www2.deloitte.com/nl/nl.html', target='_blank')
-              img(src='/images/bedrijven/Logo_Deloitte.png')
+          +partner(partners.silver[0])
         .four.columns
-          .box
-            a(href='https://www.ing.nl', target='_blank')
-              img(src='/images/bedrijven/Logo_ING.png')
+          +partner(partners.silver[1])
         .four.columns
-          .box
-            a(href='https://www.dsw.nl/werkenbij/vacatures', target='_blank')
-              img(src='/images/bedrijven/Logo_DSW.png')
+          +partner(partners.silver[2])
       .row
         .four.columns
-          .box
-            a(href='https://www.werkenvoornederland.nl/', target='_blank')
-              img(src='/images/bedrijven/Logo_Overheid.png')
+          +partner(partners.silver[3])
         .four.columns
-          .box
-            a(href='https://www.quintor.nl/carriere/', target='_blank')
-              img(src='/images/bedrijven/Logo_Quintor.png')
+          +partner(partners.silver[4])
         .four.columns
-          .box
-            a(href='http://www.talentwings.nl/', target='_blank')
-              img(src='/images/bedrijven/Logo_Procam.png')
+          +partner(partners.silver[5])
   section#other.slanted
+    - partners.bronze = partners.bronze.sort(function() { return 0.5 - Math.random() });
     .content.container
       .row
         .twelve.colunms
@@ -89,14 +84,8 @@ block content
           .separator(role='separator')
       .row
         .four.columns
-          .box
-            a(href='https://www.asml.com', target='_blank')
-              img(src='/images/bedrijven/Logo_ASML.png')
+          +partner(partners.bronze[0])
         .four.columns
-          .box
-            a(href='https://www.simplicate.nl/', target='_blank')
-              img(src='/images/bedrijven/Logo_Simplicate.png')
+          +partner(partners.bronze[1])
         .four.columns
-          .box
-            a(href='http://werkenbijbelsimpel.nl/', target='_blank')
-              img(src='/images/bedrijven/Logo_Belsimpel.png')
+          +partner(partners.bronze[2])

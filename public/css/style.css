@@ -523,7 +523,7 @@ section.slanted.twocolumn .content{
   margin: 0 auto;
 }
 
-section.intro p{
+section.intro p {
   text-align: left;
   padding-bottom: 10px;
 }
@@ -1324,7 +1324,7 @@ header.hero.achmea{
  * KPMG Bedrijfsprofiel
  ****************************/
 
-header.hero.achmea{
+header.hero.kpmg {
   background-image: url('/images/Hero_KPMG.jpg');
   min-height: 50vh;
 }

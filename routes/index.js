@@ -10,6 +10,7 @@ var i18n   = require('i18next');
 // Load speaker information from speakers.json
 var fs = require('fs');
 var speakerinfo = JSON.parse(fs.readFileSync('speakers.json'));
+var partnerinfo = JSON.parse(fs.readFileSync('partners.json'));
 
 module.exports = function (config) {
 var router = express.Router();
@@ -38,7 +39,7 @@ router.get('/', function (req, res) {
 });
 
 router.get('/partners', function (req,res) {
-  res.render('partners/index',{title:'Partners |'});
+  res.render('partners/index',{title:'Partners |', partners: partnerinfo});
 });
 
 router.get('/partners/:partner', function (req, res) {
@@ -448,6 +449,7 @@ router.get('/tickets/:id/barcode', function (req, res) {
 
 router.get('/reload', function (req, res){
   speakerinfo = JSON.parse(fs.readFileSync('speakers.json'));
+  partnerinfo = JSON.parse(fs.readFileSync('partners.json'));
   return res.redirect('/speakers');
 });
 

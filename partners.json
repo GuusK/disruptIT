@@ -1,0 +1,73 @@
+{
+	"gold" : [
+		{
+			"image" : {
+				"link": "/partners/achmea",
+				"src": "/images/bedrijven/Logo_Achmea.png"
+			},
+			"promo": "Verzekeren gaat in deze tijd wel wat verder dan je vakantie of ‘later’. Want hoe regelen we de aansprakelijkheid rond het gebruik van drones, de risico’s van zelfrijdende auto’s, of het uitlenen en verhuren van spullen in de deeleconomie? ",
+			"profile": {
+				"link" : "/partners/achmea",
+				"text" : "Lees verder op de bedrijfspagina."
+			}	
+		},
+		{
+			"image" : {
+				"link": "https://www.werkenbijtopicus.nl/",
+				"src": "/images/bedrijven/Logo_Topicus.png"
+			},
+			"promo": "Topicus werkt in de sectoren Finance, Zorg, Overheid, Onderwijs en Legal. Wij zijn hier constant bezig om op alle vlakken voor verregaande verbeteringen te zorgen. De regie aan de burger geven en zelfredzaamheid vergroten, dat is onze ambitie. Dit doen we met toptalenten die met behulp van de nieuwste technologie briljante ICT oplossingen bedenken en bouwen. "
+		},
+		{
+			"image" : {
+				"link": "https://home.kpmg.com/nl/nl/home/werken-bij-kpmg.html",
+				"src": "/images/bedrijven/Logo_KPMG.png"
+			},
+			"promo": "With a worldwide presence, KPMG continues to build on our member firms' successes thanks to our clear vision, maintained values, and their people. ",
+			"profile": {
+				"link" : "/partners/KPMG",
+				"text" : "Lees verder op de bedrijfspagina."
+			}	
+		}
+	],
+	"silver" : [
+		{
+			"link" : "https://www2.deloitte.com/nl/nl.html",
+			"src" : "/images/bedrijven/Logo_Deloitte.png"
+		},
+		{
+			"link" : "https://www.ing.nl",
+			"src" : "/images/bedrijven/Logo_ING.png"
+		},
+		{
+			"link" : "https://www.dsw.nl/werkenbij/vacatures",
+			"src" : "/images/bedrijven/Logo_DSW.png"
+		},
+		{
+			"link" : "http://www.werkenvoornederland.nl/ict",
+			"src" : "/images/bedrijven/Logo_Overheid.png"
+		},
+		{
+			"link" : "https://www.quintor.nl/carriere/",
+			"src" : "/images/bedrijven/Logo_Quintor.png"
+		},
+		{
+			"link" : "http://www.talentwings.nl/",
+			"src" : "/images/bedrijven/Logo_Procam.png"
+		}
+	],
+	"bronze" : [
+		{
+			"link" : "https://www.asml.com",
+			"src" : "/images/bedrijven/Logo_ASML.png"
+		},
+		{
+			"link" : "https://www.simplicate.nl",
+			"src" : "/images/bedrijven/Logo_Simplicate.png"
+		},
+		{
+			"link" : "http://werkenbijbelsimpel.nl",
+			"src" : "/images/bedrijven/Logo_Belsimpel.png"
+		}
+	]
+}

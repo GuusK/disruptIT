@@ -64,7 +64,7 @@ block content
       .separator(role='separator')
       h3 13:00 - 14:00
       .timetable
-        +session({name:"Lunch", special:"Don't forget to provide any allergies and diets"})
+        +session({name:"Lunch", special:"Don't forget to provide details about any allergies and diets"})
       .separator(role='separator')
       h3 14:00 - 15:00
       .timetable
@@ -90,4 +90,5 @@ block content
         +session({name: "Closing of conference by presenters"})
       .separator(role='separator')
       h3 17:00 - 17:15
-        +session({name: "Borrel and dinner", special: "Don't forget to provide any allergies and diets"})
+        .timetable
+          +session({name: "Borrel and dinner", special: "Don't forget to provide details about any allergies and diets"})

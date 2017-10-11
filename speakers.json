@@ -14,11 +14,12 @@
       "image": "/images/sprekers/jarno3.jpg",
       "subject": "Artificial intelligence first, human second?",
       "talk" : [
-        "De technologische versnelling raast voort. Slimme computersystemen kunnen steeds meer van hetgeen wij als mensen kunnen zoals kijken, luisteren, spreken, onthouden en lezen. Slimme software evenaart of overtreft de mens. Dat heeft nogal wat gevolgen.",
-        "Kunstmatige intelligentie is volgens experts de meest ontwrichtende technologie van de komende 10 jaar. Slimme software wordt onze digitale butler. Het snapt steeds beter wie wij zijn, wat we willen en waarom we dat willen. Een wereld vol mogelijkheden opent zich. Slimme KI systemen gaan ons inzichten verschaffen die we nooit voor mogelijk hadden gehouden, antwoorden geven op vragen waarvan we niet wisten dat ze bestonden. Welvaart, tijdsbesparing en gemak zijn de zoete vruchten. Maar zitten er ook rotte appels in het fruit?"
+        "Technology advances faster and faster. Smart computers are able to do more things we humans can, seeing, listening, speaking, remembering and reading. Smart software matches or surpasses human capabilities.",
+        "According to experts, Artificial Intelligence (AI) is the most disruptive technology of the next 10 years. Smart software will become our digital butler. It understands who we are who we are, what we want and why. A world full of opportunities opens itself for us. Smart AI systems will provide us with insights we would never have thought possible and give answers to questions we did not even know existed. Prosperity, time-saving and ease are the sweet fruits, but there might be a few bad apples"
+
       ],
       "bio": [
-        "Jarno Duursma is trendwatcher en spreker over digitale technologie, auteur van boeken over social media, WhatsApp en Blockchain. Hij is oprichter van innovatieplatform #SMC050 en alumnus van Singularity University in Silicon Valley."
+        "Jarno Duursma is trendwatcher and speaker about digital technology, author of books about social media, WhatsApp and Blockchain. He is founder of innovation platform #SMC050 and alumnus of Singularity University in Silicon Valley."
       ],
       "limit": null,
       "hidden": false
@@ -124,10 +125,13 @@
       "name" : "Winand Slingenbergh",
       "id": "winand",
       "company" : "FabLab",
-      "image": null,
+      "image": "/images/sprekers/winand.jpg",
       "subject": "3D printing", 
-      "talk": [],
-      "bio": [],
+      "talk": [ 
+        "In the world of 3D printing there exists a large divide between what is technically feasible and what is accessible to the average consumer. We hear impressive tales in the media of 3D printed houses, organs and food, meanwhile 3D printing is often touted as the next industrial revolution- but is the hype to be believed? Winand Slingenbergh will share some of his personal experiences in working with the most common type of 3D printers and take a critical look at the current limitations, providing a reality check to the many misconceptions.",
+        "With a more balanced perspective we can clearly define the use case for the technology and better assess to what extent 3D printing can disrupt current centralized production methodologies. Though many myths surrounding 3D printing will be dispelled, there is still much unexplored potential when it comes to automated production and will end with a view of what ubiquitous 3D printing might mean for the average consumer in the near future."
+      ],
+      "bio": ["Winand Slingenbergh graduated from the University of Groningen with a focus on nanoscale 3D printing. Since then he has chosen to forgo his access to high-tech labs and equipment to focus on lowering barriers to 3D printing and other digital fabrication techniques. In his role as labmanager of the Fabrication Laboratory in Groningen, a publicly accessible digital fabrication laboratory, he is uniquely situated to shed light on common misconceptions around 3D printing and offer insights into what is stand is the way of mass adoption."],
       "limit": null,
       "hidden": false
     },
