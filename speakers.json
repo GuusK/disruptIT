@@ -69,8 +69,8 @@
       "company" : "Topicus",
       "subject": "Disruption or aggregation",
       "image": "",
-      "talk": ["Managing director of Topicus"],
-      "bio" : [],
+      "talk": [],
+      "bio" : ["Managing director of Topicus"],
       "special": "Workshop",
       "limit": 40,
       "hidden": false
