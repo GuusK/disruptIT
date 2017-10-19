@@ -1,6 +1,6 @@
 {
   "speakerids": {
-    "session1": ["stephanie", "nick", "topicus"],
+    "session1": ["david", "nick", "topicus"],
     "session2": ["panel", "joshua", "quintor"],
     "session3": ["karlheinz", "winand", "hackastory"],
     "opening": "jarno",
@@ -36,17 +36,14 @@
       "hidden": false
     },
     {
-      "name": "Dr. Stephanie Wehner",
-      "id": "stephanie",
+      "name": "David Elkouss",
+      "id": "david",
       "limit": null,
       "company": "QuTech",
-      "image": "/images/sprekers/stephanie.jpg",
+      "image": null,
       "subject": "Quantum Computing",
       "talk": [],
-      "bio" : [
-        "Stephanie is -Antoni van Leeuwenhoek Professor- in quantum information. Her goal is to understand the world of small particles – the laws of quantum mechanics – in order to construct better networks and computers. Quantum bits behave quite differently than classical bits, and allow us to solve tasks that are provably impossible for any classical device. Stephanie’s research advances quantum information theory and its applications to both computer science and physics. She has worked extensively in quantum cryptography and communication, and one of her goals is to overcome the theoretical challenges in building large scale quantum networks. As part of the <a href='https://qutech.nl/roadmaps/?rm=quantum-internet'>Quantum Internet Team</a> at QuTech, she works with experimentalists in order to jointly realize this goal.", 
-        "Stephanie is one the founders of QCRYPT, which has become the largest conference in quantum cryptography. She has written numerous scientific articles in both physics and computer science. From 2010 to 2014, her research group was located at the Centre for Quantum Technologies, National University of Singapore, where she was first Assistant and later Associate Professor. Previously, she was a postdoctoral scholar at the California Institute of Technology in the group of John Preskill. In a former life, she worked as a professional hacker in industry."
-      ],
+      "bio" : [],
       "hidden": false
     },
     {
@@ -74,16 +71,18 @@
       "image": "",
       "talk": ["Managing director of Topicus"],
       "bio" : [],
+      "special": "Workshop",
       "limit": 40,
       "hidden": false
     },
     {
-      "name" : "Discussion panel",
+      "name" : "Panel discussion",
       "id": "panel",
       "company" : "",
       "image": null,
       "subject": "Discussion about disruptive technology",
-      "talk": [],
+      "talk": ["During this panel discussion, 5 experts will present and discuss their view on Disruptive Technology. Should large companies be afraid of disruptive startups taking over their business? Or will the large and stable companies hold strong and outlive all disruptive startups? Disruptive technology may not even be about companies, but about automatisation of entire job markets. Will the technologies we develop disrupt our own jobs or is it all based on assumptions and do we have nothing to worry about?",
+        "More informations about the experts will follow soon."],
       "bio": [],
       "limit": null,
       "hidden": false
@@ -107,6 +106,7 @@
       "subject": "Build your own Blockchain",
       "talk": [],
       "bio": [],
+      "special": "Workshop",
       "limit": 40,
       "hidden": false
     },
@@ -114,10 +114,10 @@
       "name" : "Prof. dr. Karlheinz Meier",
       "id": "karlheinz",
       "company" : "Universität Heidelberg / Human Brain Project",
-      "image": null,
-      "subject": "Brain inspired chip",
-      "talk": [],
-      "bio": [],
+      "image": "/images/sprekers/karlheinz.jpg",
+      "subject": "Neuromorphic Computing </br> Architectures and Applications",
+      "talk": ["Neuromorphic computing systems represent a departure from the von Neumann architecture. They implement aspects of form and function observed in biological neural circuits. Potential advantages include energy efficiency, fault tolerance, compactness and, most importantly, the ability to learn by interaction with the environment. Applications are in two areas : Improving the understanding of biological systems and cognitive computing to analyze causal relations and complex data and to make predictions. In the lecture I will review current approaches in neuromorphic computing and discuss current and future use cases."],
+      "bio": ["Karlheinz Meier was appointed full professor of physics at Heidelberg University in 1992, where he co-founded the Kirchhoff-Institute for Physics. He has more than 25 years of experience in experimental particle physics, including design of a large-scale electronic data processing system that enabled the discovery of the Higgs Boson in 2012. Around 2005 he became interested in large-scale electronic implementations of brain-inspired computer architectures. His group pioneered several innovations in the field. He led 2 major European initiatives, FACETS and BrainScaleS. In 2009 he was one of the initiators of the European Human Brain Project (HBP) that was approved in 2013. In the HBP he leads the subproject on neuromorphic computing with the goal of establishing brain-inspired computing paradigms as research tools for neuroscience and generic hardware systems for cognitive computing. In the HBP he is a member of the project directorate and vice-chair of the science and infrastructure board."],
       "limit": null,
       "hidden": false
     },
@@ -148,15 +148,32 @@
         "<b>About Hackastory</b>",
         "Stop talking, start building. That’s what we believe. We build the future of journalism during hackthons and workshops with coders, designers and journalists across the world. We’ve been to 9 countries on 4 continents and worked with 1000 Hackastorians. From <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.instagram.com%2Fp%2FBURri3IlgkL%2F%3Ftaken-by%3Dalbertinepiels&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>The Next Web in Amsterdam</a> to <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Ftwitter.com%2FAlbertinePiels%2Fstatus%2F692716606833725442&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Cape Town</a> and <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.instagram.com%2Fp%2FBMWhK4uhHQo%2F%3Ftaken-by%3Dalbertinepiels&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Haiti</a>. Next stop: Zwolle."
       ],
+      "special": "Workshop",
       "limit": 40,
       "hidden": false
     }
   ],
   "presenters": [
     {
-      "name": "Naam",
-      "company": "bedrijf",
-      "image": null,
+      "name": "Danny Mekić",
+      "id": "danny",
+      "company": "",
+      "bio": ["Danny Mekić is a renowned Dutch technology- and innovation expert and founded his first internet company at the age of 15. He has sat on the advisory board for the Dutch Ministry of Education, Culture and Science, and Economic Affairs, and is an expert on guiding companies to be successful and innovate in a fast moving world. On top of his regular activities, Danny is also a consultant, speaker, a chairmen, mediator and university teacher.",
+              "You have brilliant speakers, thinkers and doers. But only a few people can continuously combine and strengthen these expertises. When it comes to an expert who knows the industry, understanding the new technologies and innovations as well as laws and regulations, there are just a few experts who can combine this, just like Danny Mekić.",
+              "Danny challenges organisations to think about how future-proof they are and not surprisingly, Mekić is currently one of the most asked - and best rated - speakers and chairmen in the Netherlands."
+      ],
+      "image": "/images/sprekers/danny.jpg",
+      "hidden": false
+    },
+    {
+      "name": "Annemarie van Campen",
+      "id": "annemarie",
+      "company": "",
+      "bio": ["Annemarie van Campen bridges the gap between communication and IT. As a project manager and digital transformation consultant, she has many years of experience in governmental and commercial organizations.",
+              "Annemarie is able to smoothly connect developers with 'digilliterates', and the C-suite with their clients. Combining her youthfull view and seasoned skills she translates needs, wishes and requirements into award winning projects that stand out in effectiveness and simplicity. Most recently, she guided the redesign and digitization of the Dutch traffic fine and the accompanying website CJIB.nl.",
+              "On stage, Annemarie is inquisitive and alert: playfull if possible, strict when needed. She strives for cheerfull interaction and a comfortable atmosphere."
+      ],
+      "image": "/images/sprekers/annemarie.jpg",
       "hidden": false
     }
   ]

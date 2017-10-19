@@ -43,16 +43,20 @@ block content
       .separator(role='separator')
       p.justify A conference without speakers is like a swimming pool without water. We have collected the most inspiring entrepeneurs, scientist and experts from the business sector. We are working hard to get the last details from the speakers. We will keep you updated via our Facebook page and this page.
 
+      h3 Hosts
+      .timetable
+        each presenter in presenters
+          +session(presenter)
+
       .separator(role='separator')
       h3 11:00 - 11:15
       .timetable
-        +session({name:"Opening", special:"By presenters and organising committee"})
+        +session({name:"Opening", special:"By hosts and organising committee"})
       .separator(role='separator')
       h3 11:15 - 12:00
       .timetable
         each speaker in speakers
           if speaker.id == speakerids.opening
-            - speaker.special = '<i>English translation coming soon</i></br>'
             +session(speaker)
       .separator(role='separator')
       h3 12:15 - 13:00
