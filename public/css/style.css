@@ -1329,6 +1329,14 @@ header.hero.kpmg {
   min-height: 50vh;
 }
 
+/****************************
+ * Topicus Bedrijfsprofiel
+ ****************************/
+
+header.hero.topicus {
+  background-image: url('/images/Hero_Topicus.jpg');
+  min-height: 50vh;
+}
 
 /****************************
  * One-off elements

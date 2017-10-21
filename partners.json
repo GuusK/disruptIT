@@ -16,7 +16,11 @@
 				"link": "https://www.werkenbijtopicus.nl/",
 				"src": "/images/bedrijven/Logo_Topicus.png"
 			},
-			"promo": "Topicus werkt in de sectoren Finance, Zorg, Overheid, Onderwijs en Legal. Wij zijn hier constant bezig om op alle vlakken voor verregaande verbeteringen te zorgen. De regie aan de burger geven en zelfredzaamheid vergroten, dat is onze ambitie. Dit doen we met toptalenten die met behulp van de nieuwste technologie briljante ICT oplossingen bedenken en bouwen. "
+			"promo": "Nergens wordt zo enthousiast gewerkt aan digitale oplossingen die de zelfredzaamheid van de burger vergroten. Wij richten ons op belangrijke maatschappelijke vlakken als Zorg, Finance, Overheid, Legal, Security en Onderwijs. Bijna iedereen in Nederland komt in aanraking met onze nuttige en vooruitstrevende digitale producten. ",
+			"profile": {
+				"link" : "/partners/topicus",
+				"text" : "Lees verder op de bedrijfspagina"
+			}
 		},
 		{
 			"image" : {
