@@ -6,25 +6,31 @@ mixin ticket(ticket)
       div.content
         h2 DisruptIT Ticket
         p Showing this ticket at the entrance will give you access to the event. When you lose this ticket you can re-print it from the website by logging in.
-        div.block
-          label Activationcode
-          strong #{ticket._id}
 
-        if ticket.ownedBy
-          div.block
-            label Visitor
-            strong= ucfirst(user.firstname) + ' ' + user.surname
+        .ticket-details
+          if ticket.ownedBy
+            .detail
+              label Visitor
+              strong= ucfirst(user.firstname) + ' ' + user.surname
+          .detail
+            label Activationcode
+            strong #{ticket._id}
 
-        
-        div.footer
-          p!= "Opening at 11:00 </br> November 15, 2017"
-        - var imgStr = "/tickets/" + ticket._id + "/barcode"
-        img(src=imgStr, width=220, height=25)
+        .ticket-details
+          .barcode
+            - var imgStr = "/tickets/" + ticket._id + "/barcode"
+            img(src=imgStr)
+
+        .ticket-details
+          .detail
+            p!= "Opening at 11:00 </br> November 15, 2017"
+          .detail.nedap
+            img(src='/images/bedrijven/Banner_Nedap.png', width=200)
 
       div.aside
         div
 
-        img(src='/images/bedrijven/nedap_color.png', width=55, style='position: absolute; bottom: 10px; right: 16px;')
+        //img(src='/images/bedrijven/nedap_color.png', width=55, style='position: absolute; bottom: 10px; right: 16px;')
 
       br(clear='all')
 
