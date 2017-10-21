@@ -6,26 +6,53 @@ html
 
     style.
       @font-face {
-          font-family: 'jaapokkiregular';
-          src: url('/fonts/jaapokki-regular-webfont.eot');
-          src: url('/fonts/jaapokki-regular-webfont.eot?#iefix') format('embedded-opentype'),
-               url('/fonts/jaapokki-regular-webfont.woff2') format('woff2'),
-               url('/fonts/jaapokki-regular-webfont.woff') format('woff'),
-               url('/fonts/jaapokki-regular-webfont.ttf') format('truetype'),
-               url('/fonts/jaapokki-regular-webfont.svg#jaapokkiregular') format('svg');
-          font-weight: normal;
-          font-style: normal;
+        font-family: 'Glacial Indifference';
+        src: url('/fonts/GlacialIndifference-Italic.eot');
+        src: local('Glacial Indifference Italic'), local('GlacialIndifference-Italic'),
+          url('/fonts/GlacialIndifference-Italic.eot?#iefix') format('embedded-opentype'),
+          url('/fonts/GlacialIndifference-Italic.woff') format('woff'),
+          url('/fonts/GlacialIndifference-Italic.ttf') format('truetype'),
+          url('/fonts/GlacialIndifference-Italic.svg#GlacialIndifference-Italic') format('svg');
+        font-weight: normal;
+        font-style: italic;
+      }
 
+      @font-face {
+        font-family: 'Glacial Indifference';
+        src: url('/fonts/GlacialIndifference-Regular.eot');
+        src: local('Glacial Indifference Regular'), local('GlacialIndifference-Regular'),
+          url('/fonts/GlacialIndifference-Regular.eot?#iefix') format('embedded-opentype'),
+          url('/fonts/GlacialIndifference-Regular.woff') format('woff'),
+          url('/fonts/GlacialIndifference-Regular.ttf') format('truetype'),
+          url('/fonts/GlacialIndifference-Regular.svg#GlacialIndifference-Regular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'Glacial Indifference';
+        src: url('/fonts/GlacialIndifference-Bold.eot');
+        src: local('Glacial Indifference-Bold'), local('GlacialIndifference-Bold'),
+          url('/fonts/GlacialIndifference-Bold.eot?#iefix') format('embedded-opentype'),
+          url('/fonts/GlacialIndifference-Bold.woff') format('woff'),
+          url('/fonts/GlacialIndifference-Bold.ttf') format('truetype'),
+          url('/fonts/GlacialIndifference-Bold.svg#GlacialIndifference-Bold') format('svg');
+        font-weight: bold;
+        font-style: normal;
+      }
+      body {
+        font-family: 'Glacial Indifference', "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        font-size: 1rem;
+        color: #555;
+        margin: 20px;
       }
 
       h2 {
         margin: 0;
         padding: 0;
-        font-family: 'jaapokkiregular';
         font-weight: normal;
         font-size: 1.75em;
-        color: #2f63c6;
-        text-transform: uppercase;
+        color: #00bab3;
       }
       html { 
           font-size: 100%; 
@@ -37,15 +64,9 @@ html
           -webkit-font-smoothing: antialiased;
           text-rendering: optimizeLegibility;
       }
-      body {
-        font-family: "Open Sans";
-        font-size: 12px;
-        margin: 20px;
-        color: #555;
-      }
 
       u, strong {
-        color: #2f63c6;
+        color: #00bab3;
       }
 
       .ticket {
@@ -59,49 +80,46 @@ html
       .ticket img {
         display: block;
         float: right;
-        opacity: 0.7;
+        margin-top: -10px;
       }
 
       div.footer {
-      position: absolute;
-      bottom: 18px;
+        position: absolute;
+        bottom: 9px;
 
       }
       span.time {
-        background: #2f63c6;
-        color: white;
         padding: 3px 5px;
         font-size: 1.1em;
-        margin-right: 10px;
-        font-family: 'jaapokkiregular';
+        margin: 0px 10px;
         -webkit-print-color-adjust: exact;
       }
       span.time +span {
         font-weight: 600;
-        color: #2f63c6;
+        color: #00bab3;
       }
 
       .ticket .content {
         float: left;
         padding: 15px;
-        width: 430px;
+        width: 400px;
       }
 
       .ticket .aside {
         float: right;
-        height: 222px;
+        height: 245px;
         margin: 0 -1px -1px 0;
-        width: 85px;
-        background-image: linear-gradient(45deg, #523fda 10%, #2f63c6 35%, #0d90b1 90%) !important; 
+        width: 115px;
+        background-color: #00bab3;
         -webkit-print-color-adjust: exact;
         position: relative;
         z-index: 2;
       }
 
       .ticket .aside > div {
-        background: url(/images/logo.png);
+        background: url(/images/logo.svg);
         background-size: 80px 72px;
-        width: 68px;
+        width: 80px;
         height: 60px;
         position: absolute;
         top: 13px; 
@@ -162,8 +180,7 @@ html
 
       label {
         display: block;
-        text-transform: uppercase;
-        font-size: 0.75em;
+        font-size: 1em;
       }
 
       label + strong {
