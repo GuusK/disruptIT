@@ -41,6 +41,7 @@ html
         -webkit-print-color-adjust: exact;
       }
 
+
       .ticket-details {
         display: flex;
         flex-direction: row;
@@ -65,6 +66,25 @@ html
       .barcode img {
         width: 100%;
         height: auto;
+      }
+
+      /* Layout for unused ticket page */
+      .ticket.ophaal {
+        width: 350px;
+      }
+
+      .ticket.ophaal:nth-of-type(2n){
+        position: absolute;
+        left: 375px;
+        margin-top: -199px;
+      }
+
+      .ticket.ophaal .content {
+        width:200px;
+      }
+
+      .ticket.ophaal .aside {
+        height: 200px;
       }
 
       /* Fonts */
@@ -156,7 +176,8 @@ html
         .ticket {
           outline: none;
         }
-        .ticket::before, .ticket::after {
+
+        .ticket.ophaal::before, .ticket.ophaal::after {
           content: '';
           display: block;
           width: 15px;
@@ -167,7 +188,7 @@ html
           top: -15px;
           left: -15px;
         }
-        .ticket::before {
+        .ticket.ophaal::before {
           border-top: 1px solid #ccc;
           border-bottom: none;
           bottom: -17px;

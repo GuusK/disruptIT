@@ -384,11 +384,11 @@ router.get('/aanwezig', adminAuth, function (req,res,next) {
 /*******************************************************************************
  * Triggered if someone requests this page. This will be printed on the badge of
  * an attendee in the form of a QR code. Can be scanned with generic QR code
- * scanners. When url has been gotten, will be opened in browser.
+ * scanners. When url has been gotten, can be opened in browser.
  * 
- * Will create a list of all people to connected with during the event. After
- * the event, this can be used to send an email to everyone who participated
- * to exchange contact details.
+ * Will create a list of all people to connected with during the event per user. 
+ * After the event, this can be used to send an email to everyone who
+ * participated to exchange contact details.
  ******************************************************************************/
 router.get('/connect/:id', auth, function(req, res, next){
   User.findOne({ticket: req.params.id}, function(err, user){
@@ -423,13 +423,23 @@ router.get('/choices', adminAuth, function (req,res,next) {
   });
 });
 
+
+/**
+ * Output alle tickets die nog niet geownt zijn door gebruikers
+ */
+router.get('/tickets', adminAuth, function (req, res, next) {
+  Ticket.find({rev:1, ownedBy:undefined}, function (err, tickets) {
+    if (err) { return next(err); }
+    res.render('tickets', {tickets: tickets});
+  });
+});
+
 router.get('/ticket', auth, function(req, res, next){
   User.findOne({email: req.session.passport.user}, function(err, doc) {
     res.redirect('/tickets/' + doc.ticket);
   });
 });
 
-// Old system of displaying tickets. Not used nowadays
 router.get('/tickets/:id', function (req, res, next) {
   Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
     if (err) { err.code = 403; return next(err); }
