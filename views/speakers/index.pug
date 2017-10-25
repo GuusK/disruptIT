@@ -7,7 +7,7 @@ mixin session(speaker)
       if speaker.company
         h5= speaker.company
       if speaker.image
-        img(src=speaker.image)
+        img(src=speaker.image class=speaker.id)
       if speaker.special
         p!= speaker.special
       if speaker.subject
@@ -18,7 +18,7 @@ mixin session(speaker)
       if speaker.talk
         .shorten
           each part in speaker.talk
-            p= part
+            p!= part
           a(href="#") Read more
       if speaker.bio && speaker.bio.length != 0
         h5 Biography

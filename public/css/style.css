@@ -865,6 +865,7 @@ header.hero.speakers{
   margin: 1em 0em;
   width: 80vw;
 }
+
 .timetable .session .shorten {
   padding-bottom: 10px;
 }
@@ -874,6 +875,10 @@ header.hero.speakers{
   display: block;
   margin: 0 auto;
   padding-bottom: 20px
+}
+
+.timetable img.nick {
+  margin-top: 31px;
 }
 
 .timetable .session p {

@@ -52,7 +52,13 @@ router.get('/profile', auth, function (req, res) {
     {
       // Don't try to unescape here, it's not stored in user.
       // Do it in the template
-      res.render('profile', {isbus_quickhack: config.verenigingen[user.vereniging].bus, providePreferences: config.providePreferences, speakerids: speakerinfo.speakerids, speakers: speakerinfo.speakers, matchingterms:config.matchingterms});
+      res.render('profile', {
+        isbus_quickhack: config.verenigingen[user.vereniging].bus, 
+        providePreferences: config.providePreferences, 
+        speakerids: speakerinfo.speakerids, 
+        speakers: speakerinfo.speakers, 
+        matchingterms:config.matchingterms
+      });
     }
     else
     {
@@ -61,6 +67,22 @@ router.get('/profile', auth, function (req, res) {
     }
   });
 });
+
+async function countEnrolls(lezingslot, lezingid) {
+  var result;
+  var query = {};
+  
+  query[lezingslot] = lezingid;
+
+  await User
+    .find(query)
+    .count()
+    .then(function(res){
+      result = res;
+    });
+  return result;
+}
+
 
 /**
  * This function is used to determine if there is still room for someone to 
@@ -96,7 +118,7 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
       .then(function(res){
         result = res;
       });
-      return result < lezing.limit;
+    return result < lezing.limit;
   }
 
   return true;
@@ -121,7 +143,6 @@ router.post('/profile', auth, function (req, res) {
     req.body.lezing3 = '';
   }
 
-  console.log(req.body.lezing2);
 
   if(req.body.lezing1 !== "" && req.body.lezing1 !== null && !speakerinfo.speakerids.session1.includes(req.body.lezing1)){
     req.flash('error', "Lezing1 went wrong!");

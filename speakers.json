@@ -16,7 +16,6 @@
       "talk" : [
         "Technology advances faster and faster. Smart computers are able to do more things we humans can, seeing, listening, speaking, remembering and reading. Smart software matches or surpasses human capabilities.",
         "According to experts, Artificial Intelligence (AI) is the most disruptive technology of the next 10 years. Smart software will become our digital butler. It understands who we are who we are, what we want and why. A world full of opportunities opens itself for us. Smart AI systems will provide us with insights we would never have thought possible and give answers to questions we did not even know existed. Prosperity, time-saving and ease are the sweet fruits, but there might be a few bad apples"
-
       ],
       "bio": [
         "Jarno Duursma is trendwatcher and speaker about digital technology, author of books about social media, WhatsApp and Blockchain. He is founder of innovation platform #SMC050 and alumnus of Singularity University in Silicon Valley."
@@ -40,10 +39,12 @@
       "id": "david",
       "limit": null,
       "company": "QuTech",
-      "image": null,
+      "image": "/images/sprekers/david.jpg",
       "subject": "Quantum Computing",
-      "talk": [],
-      "bio" : [],
+      "talk" : ["The internet - a vast network that enables simultaneous long-range classical communication - has had a revolutionary impact on our world. The quantum internet will fundamentally enhance internet technology by enabling quantum communication between any two points on earth. Here, I will introduce what are the key aspects of quantum communications and will present the challenges that need to be overcome before the quantum internet becomes a reality."],
+      "bio": ["David Elkouss is an assistant professor at QuTech. Elkouss received a double masters degree in electrical engineering from Universidad Politécnica de Madrid (UPM) and Telecom ParisTech in 2005-2006 and a Ph.D. in computer science in 2011-2012 from UPM. His Ph.D. thesis in classical error correcting codes for the postprocessing of quantum key distribution was awarded the UPM extraordinary dissertation prize.", 
+        "In 2012, he moved to the Universidad Complutense de Madrid to work on quantum Shannon theory and more concretely on capacities of quantum channels. A highlight was the proof that it is necessary to solve an unbounded optimization problem in order to see whether or not a channel has a positive capacity.", 
+        "In 2015, he moved to TU Delft where he was part of the team that performed the first loophole-free Bell experiment. The aim of his group is to develop the tools, such as entanglement purification protocols, novel error correction codes, quantum network protocol benchmarks and quantum network simulators that will enable the implementation of the first quantum networks."],
       "hidden": false
     },
     {
@@ -99,13 +100,13 @@
       "hidden": false
     },
     {
-      "name" : "To be announced",
+      "name" : "Pim Otte",
       "id": "quintor",
       "company" : "Quintor",
       "image": null,
       "subject": "Build your own Blockchain",
-      "talk": [],
-      "bio": [],
+      "talk": ["Blockchain is all the hype. But how do we get started? In this session we will visit a full stack of blockchain development. Our choice of technology here is the Ethereum platform combined with the Truffle Framework for smart contracts. Using Quintor's <a href=\"http://truffleframework.com/boxes/angular-truffle-box\"> Truffle Box for Angular</a>, we will visit writing and deploying smart contracts. Next, we will dive into the Truffle Framework, showing how to interact with these smart contracts from a Dapp. All of this will be done at the hand of a live demo and useful code snippets. We will only lightly touch general aspects of blockchains, the main focus of this talk will be the practical knowledge needed to develop applications."],
+      "bio": ["Pim is a junior consultant/software developer at Quintor. In his current assignment he is working at KrampHub, building a scalable e-commerce platform with micro services. His other responsibilities include building a development stack for Quintor’s future blockchain activities on the Ethereum platform. Before this he finished his MSc Applied Mathematics at Delft University of Technology. He co-authored \"TrustChain: A Sybil-resistant Scalable Blockchain\", which has been accepted by Elsevier for publication in Future Generation Computer Systems."],
       "special": "Workshop",
       "limit": 40,
       "hidden": false
