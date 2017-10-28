@@ -46,20 +46,20 @@ block content
       .row(class='0%')
         script(type='text/javascript', src='https://www.google.com/jsapi')
         -count = 0
-        if lezing1[0] && lezing1[0]._id !== null
-          -count += lezing1[0].count
-        if lezing1[1] && lezing1[1]._id !== null
-          -count += lezing1[1].count
-        if lezing1[2] && lezing1[2]._id !== null
-          -count += lezing1[2].count
-        if lezing1[3] && lezing1[3]._id !== null
-          -count += lezing1[3].count
+        if session1[0] && session1[0]._id !== null
+          -count += session1[0].count
+        if session1[1] && session1[1]._id !== null
+          -count += session1[1].count
+        if session1[2] && session1[2]._id !== null
+          -count += session1[2].count
+        if session1[3] && session1[3]._id !== null
+          -count += session1[3].count
 
         h2
           = 'Lezingkeuzes'
           small
             = '(' + count + ' ingevuld)'
 
-        +speakerCount(lezing1, "lezing1")
-        +speakerCount(lezing2, "lezing2")
-        +speakerCount(lezing3, "lezing3")
+        +speakerCount(session1, "session1")
+        +speakerCount(session2, "session2")
+        +speakerCount(session3, "session3")

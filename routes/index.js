@@ -34,6 +34,41 @@ function adminAuth(req, res, next) {
   next();
 }
 
+/**
+ * Count the amount of people enrolled for a session and returns object with sessionid
+ */
+async function countEnrolls(sessionslot, sessionID) {
+  var result;
+  var query = {};
+  query[sessionslot] = sessionID;
+  var result = await User.find(query).count()
+  return { 
+    'id' : sessionID, 
+    'count': result
+  }
+}
+
+/**
+ * Queries the database to get all the visitor counts for non plenary sessions.
+ */
+async function getVisitorCounts(){
+  // Query database to check how many people are going to each session
+  promises = [];
+  for (var sessionidx = Object.keys(speakerinfo.speakerids).length - 1; sessionidx >= 0; sessionidx--) {
+    var session = Object.keys(speakerinfo.speakerids)[sessionidx];
+    // Filter out the plenary sessions
+    if ( speakerinfo.speakerids[session] instanceof Array) {
+      for (var speakeridx = speakerinfo.speakerids[session].length - 1; speakeridx >= 0; speakeridx--) {
+        var speaker = speakerinfo.speakerids[session][speakeridx];
+        promises.push(countEnrolls(session, speaker));
+      }
+    }
+  }
+
+  // Gather all the data and make a dicht with 
+  return Promise.all(promises);
+}
+
 router.get('/', function (req, res) {
   res.render('index', { title: '', ticketSaleStarts:config.ticketSaleStarts });
 });
@@ -52,13 +87,17 @@ router.get('/profile', auth, function (req, res) {
     {
       // Don't try to unescape here, it's not stored in user.
       // Do it in the template
-      res.render('profile', {
+      getVisitorCounts().then(visitorCounts => {
+        console.log(visitorCounts);
+        res.render('profile', {
         isbus_quickhack: config.verenigingen[user.vereniging].bus, 
         providePreferences: config.providePreferences, 
         speakerids: speakerinfo.speakerids, 
         speakers: speakerinfo.speakers, 
-        matchingterms:config.matchingterms
-      });
+        matchingterms:config.matchingterms,
+        visitorCounts: visitorCounts
+        });
+      })
     }
     else
     {
@@ -67,22 +106,6 @@ router.get('/profile', auth, function (req, res) {
     }
   });
 });
-
-async function countEnrolls(lezingslot, lezingid) {
-  var result;
-  var query = {};
-  
-  query[lezingslot] = lezingid;
-
-  await User
-    .find(query)
-    .count()
-    .then(function(res){
-      result = res;
-    });
-  return result;
-}
-
 
 /**
  * This function is used to determine if there is still room for someone to 
@@ -131,29 +154,29 @@ router.post('/profile', auth, function (req, res) {
   req.body.linkedin = encodeURIComponent(req.body.linkedin);
   req.body.phonenumber = encodeURIComponent(req.body.phonenumber);
 
-  if(typeof req.body.lezing1 === 'undefined'){
-    req.body.lezing1 = '';
+  if(typeof req.body.session1 === 'undefined'){
+    req.body.session1 = '';
   }
 
-  if(typeof req.body.lezing2 === 'undefined'){
-    req.body.lezing2 = '';
+  if(typeof req.body.session2 === 'undefined'){
+    req.body.session2 = '';
   }
 
-  if(typeof req.body.lezing3 == 'undefined'){
-    req.body.lezing3 = '';
+  if(typeof req.body.session3 == 'undefined'){
+    req.body.session3 = '';
   }
 
 
-  if(req.body.lezing1 !== "" && req.body.lezing1 !== null && !speakerinfo.speakerids.session1.includes(req.body.lezing1)){
-    req.flash('error', "Lezing1 went wrong!");
+  if(req.body.session1 !== "" && req.body.session1 !== null && !speakerinfo.speakerids.session1.includes(req.body.session1)){
+    req.flash('error', "session1 went wrong!");
     return res.redirect('/profile');
   }
-  if(req.body.lezing2 !== "" && req.body.lezing2 !== null && !speakerinfo.speakerids.session2.includes(req.body.lezing2)){
-    req.flash('error', "Lezing2 went wrong!");
+  if(req.body.session2 !== "" && req.body.session2 !== null && !speakerinfo.speakerids.session2.includes(req.body.session2)){
+    req.flash('error', "session2 went wrong!");
     return res.redirect('/profile');
   }
-  if(req.body.lezing3 !== "" && req.body.lezing3 !== null && !speakerinfo.speakerids.session3.includes(req.body.lezing3)){
-    req.flash('error', "Lezing3 went wrong!");
+  if(req.body.session3 !== "" && req.body.session3 !== null && !speakerinfo.speakerids.session3.includes(req.body.session3)){
+    req.flash('error', "session3 went wrong!");
     return res.redirect('/profile');
   }
 
@@ -172,27 +195,27 @@ router.post('/profile', auth, function (req, res) {
  * this
  ******************************************************************************/
 
-      canEnrollSession1 = await canEnrollForLezing("lezing1", req.body.lezing1, req.session.passport.user);
-      canEnrollSession2 = await canEnrollForLezing("lezing2", req.body.lezing2, req.session.passport.user);
-      canEnrollSession3 = await canEnrollForLezing("lezing3", req.body.lezing3, req.session.passport.user);
+      canEnrollSession1 = await canEnrollForLezing("session1", req.body.session1, req.session.passport.user);
+      canEnrollSession2 = await canEnrollForLezing("session2", req.body.session2, req.session.passport.user);
+      canEnrollSession3 = await canEnrollForLezing("session3", req.body.session3, req.session.passport.user);
       
       // naar functie zetten en samenvoegen
       if( canEnrollSession1 ){
-        user.lezing1 = req.body.lezing1;
+        user.session1 = req.body.session1;
       } else {
         req.flash('error', "It is not possible to signup the talk you choice for the first session. It's possible it's full.");
         err = true;
       }
 
       if( canEnrollSession2 ){
-        user.lezing2 = req.body.lezing2;
+        user.session2 = req.body.session2;
       } else {
         req.flash('error', "It is not possible to signup the talk you choice for the second session. It's possible it's full.");
         err = true;
       }
 
       if (canEnrollSession3){
-        user.lezing3 = req.body.lezing3;
+        user.session3 = req.body.session3;
       } else {
         req.flash('error', "It is not possible to signup the talk you choice for the third session. It's possible it's full.");
         err = true;
@@ -435,10 +458,10 @@ router.get('/connect/:id', auth, function(req, res, next){
 router.get('/choices', adminAuth, function (req,res,next) {
   var opts = {reduce: function(a,b){ b.total++;}, initial: {total: 0}};
 
-  User.aggregate([{ $group: { _id: '$lezing1', count: {$sum: 1} }}], function (err, lezing1) {
-    User.aggregate([{ $group: { _id: '$lezing2', count: {$sum: 1} }}], function (err, lezing2) {
-      User.aggregate([{ $group: { _id: '$lezing3', count: {$sum: 1} }}], function (err, lezing3) {
-        res.render('choices', { lezing1 : lezing1, lezing2 : lezing2, lezing3 : lezing3  });
+  User.aggregate([{ $group: { _id: '$session1', count: {$sum: 1} }}], function (err, session1) {
+    User.aggregate([{ $group: { _id: '$session2', count: {$sum: 1} }}], function (err, session2) {
+      User.aggregate([{ $group: { _id: '$session3', count: {$sum: 1} }}], function (err, session3) {
+        res.render('choices', { session1 : session1, session2 : session2, session3 : session3  });
       });
     });
   });

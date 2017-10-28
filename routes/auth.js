@@ -76,9 +76,6 @@ module.exports = function (config) {
     req.sanitize('bus').toBoolean();
     req.sanitize('vegetarian').toBoolean();
     req.sanitize('subscribe').toBoolean();
-
-    req.body.lezing1 = req.body.lezing2 = "";
-    debug(req.body.lezing2);
     
     var errors = req.validationErrors();
 
@@ -91,15 +88,6 @@ module.exports = function (config) {
       return res.redirect('/register');
     }
 
-    if(req.body.lezing1 !== "" && req.body.lezing1 !== null &&req.body.lezing1 !== 'laurenz-eveleens' && req.body.lezing1 !== 'jan-smits'){
-      req.flash('error', 'Something went wrong!');
-      return res.redirect('/register');
-    }
-    if(req.body.lezing2 !== "" && req.body.lezing2 !== null &&req.body.lezing2 !== 'mark-bakker' && req.body.lezing2 !== 'emile-nijssen'){
-      req.flash('error', 'Something went wrong!');
-      return res.redirect('/register');
-    }
-
     var user = new User({
       firstname: req.body.firstname,
       surname: req.body.surname,
@@ -108,8 +96,6 @@ module.exports = function (config) {
       bus: req.body.bus,
       vegetarian: req.body.vegetarian,
       specialNeeds: req.body.specialNeeds,
-      lezing1: req.body.lezing1,
-      lezing2: req.body.lezing2
     });
 
     async.waterfall([

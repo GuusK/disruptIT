@@ -37,7 +37,6 @@
     {
       "name": "David Elkouss",
       "id": "david",
-      "limit": null,
       "company": "QuTech",
       "image": "/images/sprekers/david.jpg",
       "subject": "Quantum Computing",
@@ -45,6 +44,7 @@
       "bio": ["David Elkouss is an assistant professor at QuTech. Elkouss received a double masters degree in electrical engineering from Universidad Politécnica de Madrid (UPM) and Telecom ParisTech in 2005-2006 and a Ph.D. in computer science in 2011-2012 from UPM. His Ph.D. thesis in classical error correcting codes for the postprocessing of quantum key distribution was awarded the UPM extraordinary dissertation prize.", 
         "In 2012, he moved to the Universidad Complutense de Madrid to work on quantum Shannon theory and more concretely on capacities of quantum channels. A highlight was the proof that it is necessary to solve an unbounded optimization problem in order to see whether or not a channel has a positive capacity.", 
         "In 2015, he moved to TU Delft where he was part of the team that performed the first loophole-free Bell experiment. The aim of his group is to develop the tools, such as entanglement purification protocols, novel error correction codes, quantum network protocol benchmarks and quantum network simulators that will enable the implementation of the first quantum networks."],
+      "limit": 275,
       "hidden": false
     },
     {
@@ -52,7 +52,7 @@
       "id": "nick",
       "company": "",
       "image": "/images/sprekers/nickwouter.jpg",
-      "subject": "The shopping mall in your pocket <br> How information technology (re)shapes your shopping experience",
+      "subject": "The shopping mall in your pocket </br> How information technology (re)shapes your shopping experience",
       "talk": [
         "Still remember rushing to the shop before closing time? Just to discover that your favorite product is out of stock? That does not need to happen anymore. You are probably carrying around a whole shopping mall in your pocket right now. A shopping mall that never closes. Millions of products right at your fingertips. In this talk we look back at how information technology changed shopping as we know it today. How did we get there? What are the key technologies that facilitate online shops at the scale of, for example, Amazon, Zalando and bol.com? And we believe we are only at the beginning. The best has yet to come. So, we also peek at how upcoming technologies such as machine learning, augmented reality and blockchain will impact your shopping experience of tomorrow."
       ],
@@ -60,7 +60,7 @@
         "Nick started his career with four years of fun in academic research, inventing the formal semantics of his own programming language. His believe that you should not only practice what you preach, but also practice before you preach, made him decide to move to industry. He loves to combine his research skills with his pragmatic nature to discover new technologies and original ways to solve everyday problems, and has been doing just that for more than six years now. First for the banking and insurance industry, and recently, for bol.com: the biggest online retailer of Belgium and the Netherlands.",
         "Wouter is part of the Young Professional program working as a software engineer for bol.com. In his first year he made sure that bol.com is always within the top Google search results whenever you search for something we sell. In his latest project he works on state of the art retail tooling. He studied computer science at the Universities of Utrecht and Amsterdam and enjoys explaining complex IT-systems or concepts as simple as possible. In doing so, he likes to exaggerate in all his analogies."
       ],
-      "limit": null,
+      "limit": 200,
       "hidden": false
     },
     {
@@ -85,7 +85,7 @@
       "talk": ["During this panel discussion, 5 experts will present and discuss their view on Disruptive Technology. Should large companies be afraid of disruptive startups taking over their business? Or will the large and stable companies hold strong and outlive all disruptive startups? Disruptive technology may not even be about companies, but about automatisation of entire job markets. Will the technologies we develop disrupt our own jobs or is it all based on assumptions and do we have nothing to worry about?",
         "More informations about the experts will follow soon."],
       "bio": [],
-      "limit": null,
+      "limit": 275,
       "hidden": false
     },
     {
@@ -96,7 +96,7 @@
       "subject": "Internet of Things",
       "talk": [],
       "bio": [],
-      "limit": null,
+      "limit": 1,
       "hidden": false
     },
     {
@@ -119,7 +119,7 @@
       "subject": "Neuromorphic Computing </br> Architectures and Applications",
       "talk": ["Neuromorphic computing systems represent a departure from the von Neumann architecture. They implement aspects of form and function observed in biological neural circuits. Potential advantages include energy efficiency, fault tolerance, compactness and, most importantly, the ability to learn by interaction with the environment. Applications are in two areas : Improving the understanding of biological systems and cognitive computing to analyze causal relations and complex data and to make predictions. In the lecture I will review current approaches in neuromorphic computing and discuss current and future use cases."],
       "bio": ["Karlheinz Meier was appointed full professor of physics at Heidelberg University in 1992, where he co-founded the Kirchhoff-Institute for Physics. He has more than 25 years of experience in experimental particle physics, including design of a large-scale electronic data processing system that enabled the discovery of the Higgs Boson in 2012. Around 2005 he became interested in large-scale electronic implementations of brain-inspired computer architectures. His group pioneered several innovations in the field. He led 2 major European initiatives, FACETS and BrainScaleS. In 2009 he was one of the initiators of the European Human Brain Project (HBP) that was approved in 2013. In the HBP he leads the subproject on neuromorphic computing with the goal of establishing brain-inspired computing paradigms as research tools for neuroscience and generic hardware systems for cognitive computing. In the HBP he is a member of the project directorate and vice-chair of the science and infrastructure board."],
-      "limit": null,
+      "limit": 275,
       "hidden": false
     },
     {
@@ -133,7 +133,7 @@
         "With a more balanced perspective we can clearly define the use case for the technology and better assess to what extent 3D printing can disrupt current centralized production methodologies. Though many myths surrounding 3D printing will be dispelled, there is still much unexplored potential when it comes to automated production and will end with a view of what ubiquitous 3D printing might mean for the average consumer in the near future."
       ],
       "bio": ["Winand Slingenbergh graduated from the University of Groningen with a focus on nanoscale 3D printing. Since then he has chosen to forgo his access to high-tech labs and equipment to focus on lowering barriers to 3D printing and other digital fabrication techniques. In his role as labmanager of the Fabrication Laboratory in Groningen, a publicly accessible digital fabrication laboratory, he is uniquely situated to shed light on common misconceptions around 3D printing and offer insights into what is stand is the way of mass adoption."],
-      "limit": null,
+      "limit": 200,
       "hidden": false
     },
     {
