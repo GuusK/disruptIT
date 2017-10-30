@@ -879,10 +879,6 @@ header.hero.speakers{
   padding-bottom: 20px
 }
 
-.timetable img.nick {
-  margin-top: 31px;
-}
-
 .timetable .session p {
   text-align: justify;
   text-align-last: center;
@@ -915,6 +911,14 @@ header.hero.speakers{
   .timetable .session {
     width: 30vw;
     margin: 0px;
+  }
+
+  .timetable img.nick {
+    margin-top: 45px;
+  }
+
+  .timetable h5.david {
+    margin-top: 65px;
   }
 }
 

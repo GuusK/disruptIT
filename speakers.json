@@ -35,7 +35,7 @@
       "hidden": false
     },
     {
-      "name": "David Elkouss",
+      "name": "David Elkouss, PhD",
       "id": "david",
       "company": "QuTech",
       "image": "/images/sprekers/david.jpg",
@@ -64,14 +64,16 @@
       "hidden": false
     },
     {
-      "name" : "Daan Dijkhuizen",
+      "name" : "Stefan Hessels </br> Michel Brinkhuis",
       "id": "topicus",
-      "image": null,
+      "image": "/images/sprekers/topicus.png",
       "company" : "Topicus",
-      "subject": "Disruption or aggregation",
-      "image": "",
-      "talk": [],
-      "bio" : ["Managing director of Topicus"],
+      "subject": "Disrupting Universities",
+      "talk": [
+        "Innovation in eduction is everywhere, except for.. universities. At Topicus we're changing the way students learn, by supporting schools with right tools. For example: Gynzy provides adaptive course materials, to improve students step by step. Individually. And SomToday supports teachers optimally in monitoring high school students' performance.",
+        "Universities don't innovate their teaching methods as fast as primary and middle schools do. In this workshop we'll  together create a vision for innovative university education. You'll learn that not only technology does the job, but also behavioural change is required in order to change the world. We want to disrupt your education, help us doing so!"
+      ],
+      "bio" : ["Stefan and Michel both graduated recently from the University of Twente, by finishing their master's degrees in Business Information Technology. At Topicus they're working with cutting edge technology, like machine learning, on data science problems while at the same time focussing on improving business processess. They know IT only cannot solve the world's problems, but involving people is a crucial aspect. You like keywords? Let's call it: People-centric, data-driven!"],
       "special": "Workshop",
       "limit": 40,
       "hidden": false

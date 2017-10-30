@@ -5,7 +5,9 @@ mixin session(speaker)
     .session
       h3!= speaker.name
       if speaker.company
-        h5= speaker.company
+        h5(class=speaker.id)= speaker.company
+      else
+        p(class=speaker.id)
       if speaker.image
         img(src=speaker.image class=speaker.id)
       if speaker.special
