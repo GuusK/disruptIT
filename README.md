@@ -1,3 +1,6 @@
+# Credits
+This framework was started by [Arian van Putten](https://github.com/arianvp), extended and improved upon by [Dennis Collaris](https://github.com/iamDecode). It however does not show up as a fork due to the need temporarily have the repository private.
+
 # Config
 
 Configuration files are not included in this repository. You will need to add a file named `config.json` to the root folder with the following structure:
