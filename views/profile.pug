@@ -1,17 +1,16 @@
 extends layout
 
-mixin dropdown(speakers, speakerid, user, session, visitorCounts)
-  - var speaker = speakers.filter(function(doc){return doc.id == speakerid})[0]
+mixin dropdown(speaker, user, session, visitorCounts)
   - var description = speaker.company === '' ? '' : ' (' + speaker.company + ') '
   - description = description + ' - ' + speaker.subject.replace(" \</br\>", ":")
-  - var remaining = speaker.limit - visitorCounts.filter(speaker => speaker.id == speakerid)[0].count
+  - var remaining = speaker.limit - visitorCounts.filter(candidate => speaker.id == candidate.id)[0].count
   if remaining > 0 || user[session] == speakerid
-    if remaining < 50
+    if remaining < 25
       - description = description + ' (' + remaining + ' seats left)'
-    option(value=speakerid, selected=user[session] == speakerid ? 'selected' : undefine)= speaker.name.replace("</br>", "&") + description 
+    option(value=speaker.id, selected=user[session] == speaker.id ? 'selected' : undefine)= speaker.name.replace("</br>", "&") + description 
   else 
     - description = description + ' (FULL)'
-    option(disabled value=speakerid, selected=user[session] == speakerid ? 'selected' : undefine)= speaker.name.replace("</br>", "&") + description 
+    option(disabled value=speaker.id, selected=user[session] == speaker.id ? 'selected' : undefine)= speaker.name.replace("</br>", "&") + description 
 
 block above-content
 
@@ -24,34 +23,44 @@ block content
     h2= ucfirst(user.firstname) + ' ' + user.surname +' ('+ verenigingen[user.vereniging].name +')'
 
     br(clear='all')
-
+    h3 Congress
     form.form.form-profile#settings(method='post')
-      if providePreferences
-        .form-group
-          label(for='session1') Preference talk in first parallel session
-          div.select-wrapper
-            select.form-control(name='session1')
-              option(value='', selected=!user.session1?'selected':undefined) No preference
-              each val in speakerids.session1
-                +dropdown(speakers, val, user, 'session1', visitorCounts)
-                
-        .form-group
-          label(for='session2') Preference talk in second parallel session
-          div.select-wrapper
-            select.form-control(name='session2')
-              option(value='', selected) No preference
-              each val in speakerids.session2
-                +dropdown(speakers, val, user, 'session2', visitorCounts)
-
-        .form-group
-          label(for='session3') Preference talk in second parallel session
-          div.select-wrapper
-            select.form-control(name='session3')
-              option(value='', selected) No preference
-              each val in speakerids.session3
-                +dropdown(speakers, val, user, 'session3', visitorCounts)
+      p.text-center Download your ticket #[a(href='/ticket') here]. 
+      br(clear='all')
+      p.text-center Please bring it along to the conference preferably in print.
+      br(clear='all')
+      if user.type == 'partner'
+        p.text-center Partners don't have to enroll for sessions, but you are welcome to join in if there are seats left.
       else 
-        p.text-center You can enroll for sessions on a later date.
+        if providePreferences
+          .form-group
+            label(for='session1') Preference talk in first parallel session
+            div.select-wrapper
+              select.form-control(name='session1')
+                option(value='', selected=!user.session1?'selected':undefined) No preference
+                each val in speakerids.session1
+                  - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+                  +dropdown(speaker, user, 'session1', visitorCounts)
+                  
+          .form-group
+            label(for='session2') Preference talk in second parallel session
+            div.select-wrapper
+              select.form-control(name='session2')
+                option(value='', selected) No preference
+                each val in speakerids.session2
+                  - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+                  +dropdown(speaker, user, 'session2', visitorCounts)
+
+          .form-group
+            label(for='session3') Preference talk in second parallel session
+            div.select-wrapper
+              select.form-control(name='session3')
+                option(value='', selected) No preference
+                each val in speakerids.session3
+                  - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
+                  +dropdown(speaker, user, 'session3', visitorCounts)
+        else 
+          p.text-center You can enroll for sessions on a later date.
       br
       if user.type == 'student' 
         if isbus_quickhack

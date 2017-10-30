@@ -88,7 +88,6 @@ router.get('/profile', auth, function (req, res) {
       // Don't try to unescape here, it's not stored in user.
       // Do it in the template
       getVisitorCounts().then(visitorCounts => {
-        console.log(visitorCounts);
         res.render('profile', {
         isbus_quickhack: config.verenigingen[user.vereniging].bus, 
         providePreferences: config.providePreferences, 
@@ -110,27 +109,28 @@ router.get('/profile', auth, function (req, res) {
 /**
  * This function is used to determine if there is still room for someone to 
  * enroll and takes in to account if someone is already enrolled. 
+ * TODO: possibly combine with countEnrolls?
  */
-async function canEnrollForLezing(lezingslot, lezingid, useremail){
-  if(typeof lezingid == "undefined" || lezingid == "" || lezingid == null){
+async function canEnrollForSession(sessionslot, sessionid, useremail){
+  if(typeof sessionid == "undefined" || sessionid == "" || sessionid == null){
     return true;
   };
 
-  lezing = speakerinfo.speakers.filter(function(speaker){
-    return speaker.id == lezingid;
+  session = speakerinfo.speakers.filter(function(speaker){
+    return speaker.id == sessionid;
   })
 
-  // Lezing not found
-  if (lezing.length != 1) {
+  // session not found
+  if (session.length != 1) {
     return false;
   }
 
-  lezing = lezing[0];
+  session = session[0];
 
   // Check if there is a limit and if so, if it has been reached
-  if (lezing.limit) {
+  if (session.limit) {
     var query = {};
-    query[lezingslot] = lezingid;
+    query[sessionslot] = sessionid;
     var result;
 
     await User
@@ -141,7 +141,7 @@ async function canEnrollForLezing(lezingslot, lezingid, useremail){
       .then(function(res){
         result = res;
       });
-    return result < lezing.limit;
+    return result < session.limit;
   }
 
   return true;
@@ -168,6 +168,7 @@ router.post('/profile', auth, function (req, res) {
 
 
   if(req.body.session1 !== "" && req.body.session1 !== null && !speakerinfo.speakerids.session1.includes(req.body.session1)){
+    console.log(req.body.session1);
     req.flash('error', "session1 went wrong!");
     return res.redirect('/profile');
   }
@@ -195,9 +196,9 @@ router.post('/profile', auth, function (req, res) {
  * this
  ******************************************************************************/
 
-      canEnrollSession1 = await canEnrollForLezing("session1", req.body.session1, req.session.passport.user);
-      canEnrollSession2 = await canEnrollForLezing("session2", req.body.session2, req.session.passport.user);
-      canEnrollSession3 = await canEnrollForLezing("session3", req.body.session3, req.session.passport.user);
+      canEnrollSession1 = await canEnrollForSession("session1", req.body.session1, req.session.passport.user);
+      canEnrollSession2 = await canEnrollForSession("session2", req.body.session2, req.session.passport.user);
+      canEnrollSession3 = await canEnrollForSession("session3", req.body.session3, req.session.passport.user);
       
       // naar functie zetten en samenvoegen
       if( canEnrollSession1 ){
@@ -484,7 +485,7 @@ router.get('/ticket', auth, function(req, res, next){
   });
 });
 
-router.get('/tickets/:id', function (req, res, next) {
+router.get('/tickets/:id', auth, function (req, res, next) {
   Ticket.findById(req.params.id).populate('ownedBy').exec(function (err, ticket) {
     if (err) { err.code = 403; return next(err); }
     if (!ticket || !ticket.ownedBy || ticket.ownedBy.email !== req.session.passport.user) {

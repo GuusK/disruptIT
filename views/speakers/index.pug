@@ -26,7 +26,7 @@ mixin session(speaker)
           each part in speaker.bio
             p!= part
           a(href="#") Read more
-      if speaker.limit
+      if speaker.limit && speaker.limit < 50
         p There is a limit of #{speaker.limit} attendees for this session
 
 block above-content
