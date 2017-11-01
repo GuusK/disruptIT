@@ -61,6 +61,8 @@ app.use(session({
   store: new MongoStore({
     url: config.mongodb.url
   }),
+  cookie: { maxAge: 4*7*24*60*60*1000 },
+  rolling: true,
   saveUninitialized: true,
   resave: true
 }));

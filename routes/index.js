@@ -443,7 +443,7 @@ router.get('/connect/:id', auth, function(req, res, next){
     } else {
       User.findOneAndUpdate({email:req.session.passport.user}, {$addToSet: {connectlist: req.params.id}},function(err, doc){
         if(err){
-          res.render('connect', {connected: false, error: 'Could not update your connections'});
+          res.render('connect', {connected: false, error: 'Could not connect with ' + user.firstname});
           console.log(req.params.id + "could not be added to the connectlist!");
         } else {
           res.render('connect', {connected: true, connectee: user});
