@@ -56,6 +56,10 @@
 			"src" : "/images/bedrijven/Logo_Quintor.png"
 		},
 		{
+			"link" : "https://careers.ortec.com/",
+			"src" : "/images/bedrijven/Logo_Ortec.png"
+		},
+		{
 			"link" : "http://www.talentwings.nl/",
 			"src" : "/images/bedrijven/Logo_Procam.png"
 		}

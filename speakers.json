@@ -28,9 +28,9 @@
       "id": "andre",
       "company" : "Nedap",
       "image": null,
-      "subject":null,
-      "talk": [],
-      "bio": [],
+      "subject": "Disrupting the way we work",
+      "talk": ["What are the effects of new technologies on our society and the way we work? Companies are gradually changing. A new way of thinking about work is taking hold. The IT sector is the first frontier. Together we will take a peek at what is in the cards and how to make sure you can start riding the wave into the next paradigm and not be left behind."],
+      "bio": ["André Foeken has been working in the tech industry for over twelve years, CTO of Nedap Healthcare and organiser of BubbleConf. He is interested in entrepreneurship, technology, design, and human psychology."],
       "limit": null,
       "hidden": false
     },
