@@ -29,10 +29,10 @@ mixin session(speaker, count)
             p!= part
           a(href="#") Read more
       if speaker.limit - count == 0
-        p Sadly, this session is already full
+        p(style={color:'#C8102E'}) Sadly, this session is already full
       else 
         if speaker.limit - count < 50
-          p There are only #{speaker.limit - count} seats left
+          p(style={color:'#C8102E'}) There are only #{speaker.limit - count} seats left
 
 block above-content
 
