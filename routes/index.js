@@ -83,18 +83,17 @@ router.get('/partners/:partner', function (req, res) {
 
 router.get('/profile', auth, function (req, res) {
   User.findOne({email:req.session.passport.user}, function (err,user) {
-    if (!err && user)
-    {
+    if (!err && user) {
       // Don't try to unescape here, it's not stored in user.
       // Do it in the template
       getVisitorCounts().then(visitorCounts => {
         res.render('profile', {
-        isbus_quickhack: config.verenigingen[user.vereniging].bus, 
-        providePreferences: config.providePreferences, 
-        speakerids: speakerinfo.speakerids, 
-        speakers: speakerinfo.speakers, 
-        matchingterms:config.matchingterms,
-        visitorCounts: visitorCounts
+          isbus_quickhack: config.verenigingen[user.vereniging].bus, 
+          providePreferences: config.providePreferences, 
+          speakerids: speakerinfo.speakerids, 
+          speakers: speakerinfo.speakers, 
+          matchingterms:config.matchingterms,
+          visitorCounts: visitorCounts
         });
       })
     }
@@ -268,7 +267,9 @@ router.get('/speakers', function (req, res) {
   var p = speakerinfo.presenters.filter(function(presenter){
     return !presenter.hidden;
   });
-  res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: speakerinfo.speakerids});
+  getVisitorCounts().then(visitorCounts => {
+    res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: speakerinfo.speakerids, visitorCounts:visitorCounts});
+  });
 });
 
 /*

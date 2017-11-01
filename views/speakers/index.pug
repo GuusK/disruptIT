@@ -1,6 +1,6 @@
 extends ../layout
 
-mixin session(speaker)
+mixin session(speaker, count)
   if speaker
     .session
       h3!= speaker.name
@@ -28,8 +28,11 @@ mixin session(speaker)
           each part in speaker.bio
             p!= part
           a(href="#") Read more
-      if speaker.limit && speaker.limit < 50
-        p There is a limit of #{speaker.limit} attendees for this session
+      if speaker.limit - count == 0
+        p Sadly, this session is already full
+      else 
+        if speaker.limit - count < 50
+          p There are only #{speaker.limit - count} seats left
 
 block above-content
 
@@ -66,7 +69,8 @@ block content
         each id in speakerids.session1
           each speaker in speakers
             if speaker.id == id
-              +session(speaker)
+              - var count = visitorCounts.filter(item => item.id == speaker.id)[0].count
+              +session(speaker, count)
       .separator(role='separator')
       h3 13:00 - 14:00
       .timetable
@@ -77,14 +81,16 @@ block content
         each id in speakerids.session2
           each speaker in speakers
             if speaker.id == id
-              +session(speaker)
+              - var count = visitorCounts.filter(item => item.id == speaker.id)[0].count
+              +session(speaker, count)
       .separator(role='separator')
       h3 15:15 - 16:00
       .timetable
         each id in speakerids.session3
           each speaker in speakers
             if speaker.id == id
-              +session(speaker)
+              - var count = visitorCounts.filter(item => item.id == speaker.id)[0].count
+              +session(speaker, count)
       .separator(role='separator')
       h3 16:15 - 17:00
       .timetable
