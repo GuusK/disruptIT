@@ -1,0 +1,49 @@
+extends layout
+
+mixin interestData(interest)
+  if(interest.value instanceof Object)
+    != '["' + interest._id + '", ' + interest.value.key + "],"
+  else
+    != '["' + interest._id + '", ' + interest.value + "],"
+
+block above-content
+
+block header 
+  header.text
+    h2 Choices
+
+block content
+  section
+    .container
+      if error
+        p= errors
+      else
+        script(type='text/javascript', src='https://www.google.com/jsapi')
+        script(type='text/javascript')
+          | google.load("visualization", "1", {packages: ["corechart"]});
+          | google.setOnLoadCallback(drawChart);
+          | function drawChart() {
+          |   var data = google.visualization.arrayToDataTable([
+          |     ['Field', 'Count'],
+          -val = 0
+          while val < interests.length
+            +interestData(interests[val])
+            -val = val + 1
+          |   ]);
+          |var options = {
+          |    title: 'Interest per field',
+          |    hAxis: {
+          |      title: 'Field',
+          |      slantedText: true
+          |    },
+          |    vAxis: {
+          |      title: 'Interest count'
+          |    }
+          |  };
+          |
+          |  var chart = new google.visualization.ColumnChart(
+          |    document.getElementById('interest_div'));
+          |
+          |  chart.draw(data, options);
+          |}
+        div(id='interest_div', style='margin: 0 auto; height: 700px;')

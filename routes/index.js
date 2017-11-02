@@ -470,6 +470,38 @@ router.get('/choices', adminAuth, function (req,res,next) {
 });
 
 
+async function getMatchingStats(){
+  // based on https://github.com/Automattic/mongoose/blob/master/examples/mapreduce/mapreduce.js
+  var map = function(){
+    for (var i = this.matchingterms.length - 1; i >= 0; i--) {
+      emit(this.matchingterms[i], 1)
+    }
+  }
+
+  var reduce = function(key, values){
+    return {
+      key: values.reduce((a,b) => a+b, 0) 
+    };
+  }
+
+  // map-reduce command
+  var command = {
+    map: map, // a function for mapping
+    reduce: reduce, // a function  for reducing
+  };
+
+  return User.mapReduce(command);
+}
+
+router.get('/matchingstats', adminAuth, function(req,res,next){
+  getMatchingStats().then(results =>{
+    console.log(results);
+    res.render('matchingstats', {interests: results});
+  }).catch(function(err){
+    res.render('matchingstats', {error: err});
+  });
+});
+
 /**
  * Output alle tickets die nog niet geownt zijn door gebruikers
  */
