@@ -1,22 +1,16 @@
 extends layout
 
-mixin speakerCount(lezing, title)
+mixin speakerCount(session, title)
   script(type='text/javascript')
     | google.load("visualization", "1", {packages: ["corechart"]});
     | google.setOnLoadCallback(drawChart);
     | function drawChart() {
     |   var data = google.visualization.arrayToDataTable([
     |     ['Talk', 'Choice'],
-    if lezing[0]
-      +speakerData(lezing[0])
-    if lezing[1]
-      +speakerData(lezing[1])
-    if lezing[2]
-      +speakerData(lezing[2])
-    if lezing[3]
-      +speakerData(lezing[3])
-    if lezing[4]
-      +speakerData(lezing[4])
+    - val = 0
+    while val < session.length
+      +speakerData(session[val])
+      - val = val + 1
     |   ]);
     |   var options = {
     !=   "title: '" + title + "',"
@@ -29,12 +23,12 @@ mixin speakerCount(lezing, title)
     | }
   div(id!=title, style='width: 100%; height: 300px;')
 
-mixin speakerData(lezing)
-  if lezing._id == ''
-    -lezing._id = 'Geen voorkeur'
+mixin speakerData(session)
+  if session._id == ''
+    -session._id = 'Geen voorkeur'
 
-  if lezing._id !== null
-    != "['" + lezing._id + "', " + lezing.count + "],"
+  if session._id !== null
+    != "['" + session._id + "', " + session.count + "],"
 
 block above-content
 
@@ -63,6 +57,6 @@ block content
             = '(' + count + ' ingevuld)'
         p.text-center= 'on a total of ' + visitorCount + ' visitors'
 
-        +speakerCount(session1, "session1")
-        +speakerCount(session2, "session2")
-        +speakerCount(session3, "session3")
+        +speakerCount(session1.filter(session => session._id != null), "session1")
+        +speakerCount(session2.filter(session => session._id != null), "session2")
+        +speakerCount(session3.filter(session => session._id != null), "session3")
