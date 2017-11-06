@@ -479,9 +479,7 @@ async function getMatchingStats(){
   }
 
   var reduce = function(key, values){
-    return {
-      key: values.reduce((a,b) => a+b, 0) 
-    };
+    return Array.sum(values);
   }
 
   // map-reduce command
