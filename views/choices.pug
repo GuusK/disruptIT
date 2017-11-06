@@ -47,17 +47,21 @@ block content
     .container
       .row(class='0%')
         script(type='text/javascript', src='https://www.google.com/jsapi')
+        -visitorCount = 0
         -count = 0
         -val = 0
         while val < session1.length
-          if session1[val] && session1[val] !== null
+          if session1[val] && session1[val]._id != null
             -count += session1[val].count
+          -visitorCount = visitorCount + session1[val].count
           -val = val + 1
+          
 
         h2
           = 'Lezingkeuzes'
           small
             = '(' + count + ' ingevuld)'
+        p.text-center= 'on a total of ' + visitorCount + ' visitors'
 
         +speakerCount(session1, "session1")
         +speakerCount(session2, "session2")
