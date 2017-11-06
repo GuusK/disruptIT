@@ -72,11 +72,11 @@ block content
               - var count = visitorCounts.filter(item => item.id == speaker.id)[0].count
               +session(speaker, count)
       .separator(role='separator')
-      h3 13:00 - 14:00
+      h3 13:00 - 14:15
       .timetable
         +session({name:"Lunch", special:"Don't forget to provide details about any allergies and diets <a href='/profile'>here</a>"})
       .separator(role='separator')
-      h3 14:00 - 15:00
+      h3 14:15 - 15:00
       .timetable
         each id in speakerids.session2
           each speaker in speakers

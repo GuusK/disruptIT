@@ -105,11 +105,11 @@
       "name" : "Pim Otte",
       "id": "quintor",
       "company" : "Quintor",
-      "image": null,
+      "image": "/images/sprekers/pim.jpg",
       "subject": "Build your own Blockchain",
       "talk": ["Blockchain is all the hype. But how do we get started? In this session we will visit a full stack of blockchain development. Our choice of technology here is the Ethereum platform combined with the Truffle Framework for smart contracts. Using Quintor's <a href=\"http://truffleframework.com/boxes/angular-truffle-box\"> Truffle Box for Angular</a>, we will visit writing and deploying smart contracts. Next, we will dive into the Truffle Framework, showing how to interact with these smart contracts from a Dapp. All of this will be done at the hand of a live demo and useful code snippets. We will only lightly touch general aspects of blockchains, the main focus of this talk will be the practical knowledge needed to develop applications."],
       "bio": ["Pim is a junior consultant/software developer at Quintor. In his current assignment he is working at KrampHub, building a scalable e-commerce platform with micro services. His other responsibilities include building a development stack for Quintor’s future blockchain activities on the Ethereum platform. Before this he finished his MSc Applied Mathematics at Delft University of Technology. He co-authored \"TrustChain: A Sybil-resistant Scalable Blockchain\", which has been accepted by Elsevier for publication in Future Generation Computer Systems."],
-      "special": "Workshop",
+      "special": "Workshop</br><p style=\"color:#C8102E\">Starts at 14:00!</p>",
       "limit": 40,
       "hidden": false
     },
