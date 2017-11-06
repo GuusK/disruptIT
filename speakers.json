@@ -94,10 +94,10 @@
       "name" : "Joshua Peper",
       "id": "joshua",
       "company" : "Peperzaken",
-      "image": null,
+      "image": "/images/sprekers/joshua.jpg",
       "subject": "Internet of Things",
-      "talk": [],
-      "bio": [],
+      "talk": ["First a story about how the city of Groningen became one of the first cities in the world with a LoRaWAN IoT network. Second half there will be (real life) examples of sensors on the network and code samples. In the end you will have enough info to start building your own sensor and add it to the biggest IoT network in the world"],
+      "bio": ["Joshua Peper, born and raised in Groningen founded his company Peperzaken in 2003 at the age of 19. First pioneering the ecommerce market, Peperzaken later switched to iPhone and Android development in 2008. In 2016 they were bought by Belsimpel.nl, the number one online independent phone webshop (with some physical stores). There he develops innovative solutions to service their customers even better (with machine learning, computer vision, apps etc.)."],
       "limit": 200,
       "hidden": false
     },
