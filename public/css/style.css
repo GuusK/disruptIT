@@ -923,6 +923,52 @@ header.hero.speakers{
 }
 
 /****************************
+ * Panel
+ ****************************/
+section.panel h3 {
+  flex-basis: 100%;
+  margin-top: 20px;
+}
+
+section.panel .speaker {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 900px;
+}
+section.panel .photo {
+  margin: 0 auto;
+}
+
+section.panel .photo img {
+  max-width: 100%;
+  display: block;
+}
+
+
+@media(min-width: 900px){
+  section.panel .content .speaker p {
+    max-width: 650px;
+    flex-grow: 1;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  section.panel .photo {
+    max-width: 200px;
+    flex-grow: 1;
+  }
+
+  section.panel .speaker:nth-child(odd) {
+    flex-direction: row;
+  }
+
+  section.panel .speaker:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+/****************************
  * Partners
  ****************************/
 header.hero.partners{

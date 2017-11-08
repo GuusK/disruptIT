@@ -5,7 +5,7 @@ mixin session(speaker, count)
     .session
       h3!= speaker.name
       if speaker.company
-        h5(class=speaker.id)= speaker.company
+        h5(class=speaker.id)!= speaker.company
       else
         p(class=speaker.id)
       if speaker.image

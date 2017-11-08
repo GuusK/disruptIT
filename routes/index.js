@@ -272,6 +272,10 @@ router.get('/speakers', function (req, res) {
   });
 });
 
+router.get('/panel', function(req, res) {
+  res.render('panel', {title: 'Panel discussion | '});
+})
+
 /*
  * TODO: Needs to be recreated
  */

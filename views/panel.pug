@@ -1,0 +1,31 @@
+extends layout
+block above-content
+
+block header 
+  header.hero.speakers
+    h2 Panel discussion
+      .separator(role='separator')
+
+block content
+  section.panel.slanted
+    .content
+      h2 The Experts
+      .separator(role='separator')
+      .speaker
+        h3 André Foeken 
+        p André Foeken has been working in the tech industry for over twelve years, CTO of Nedap Healthcare and organiser of BubbleConf. He is interested in entrepreneurship, technology, design, and human psychology.
+        .photo
+          img(src='/images/sprekers/andre.jpg')
+      .speaker 
+        h3 Saco Bekius
+        p Saco started in the ICT during the ’80’s as a software engineer. Became acquainted with all aspects of the design and deployment of large scale systems. Saco acted most of the time as a civil servant of the Dutch Tax and Customs Administration. There he developed management and advisory skills. From this position he contributed to the development of the Enterprise Architecture discipline. He is the designer of the “vooringevulde aangifte” and thought leader on digital civil administrations and the role of disruptive technologies. As an entrepreneur in the Organic Agriculture he runs a small successful company and is involved with a variety of local initiatives.
+        .photo
+          img(src='/images/sprekers/saco.jpg')
+      .speaker 
+        h3 Tijn van der Zant
+        p Tijn van der Zant has more than 20 years of experience in AI and robotics. In 2006 he founded RoboCup@Home to benchmark domestic service robots. At the moment more than 250 laboratories use this as part of their robot development process. Recently several companies, such as Toyota and Softbank Robotics also joined. In 2010 he received his PhD at Groningen university and did a post-doc at INSERM in Lyon. He became a lector in robotics. He has been creating industrial AI applications since 2010 and decided to move into the industry in 2015. He is currently the CTO at SIM-CI and he runs a successful AI company called RoboLect.
+        .photo
+          img(src='/images/sprekers/tijn.jpg')
+      h3 To be announced
+      .speaker 
+        p Information on the fourth expert will follow soon.

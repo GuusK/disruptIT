@@ -39,7 +39,7 @@
       "id": "david",
       "company": "QuTech",
       "image": "/images/sprekers/david.jpg",
-      "subject": "Quantum Computing",
+      "subject": "Quantum Internet",
       "talk" : ["The internet - a vast network that enables simultaneous long-range classical communication - has had a revolutionary impact on our world. The quantum internet will fundamentally enhance internet technology by enabling quantum communication between any two points on earth. Here, I will introduce what are the key aspects of quantum communications and will present the challenges that need to be overcome before the quantum internet becomes a reality."],
       "bio": ["David Elkouss is an assistant professor at QuTech. Elkouss received a double masters degree in electrical engineering from Universidad Politécnica de Madrid (UPM) and Telecom ParisTech in 2005-2006 and a Ph.D. in computer science in 2011-2012 from UPM. His Ph.D. thesis in classical error correcting codes for the postprocessing of quantum key distribution was awarded the UPM extraordinary dissertation prize.", 
         "In 2012, he moved to the Universidad Complutense de Madrid to work on quantum Shannon theory and more concretely on capacities of quantum channels. A highlight was the proof that it is necessary to solve an unbounded optimization problem in order to see whether or not a channel has a positive capacity.", 
@@ -81,11 +81,10 @@
     {
       "name" : "Panel discussion",
       "id": "panel",
-      "company" : "",
-      "image": null,
+      "company" : "</br>",
+      "image": "/images/sprekers/panel.jpg",
       "subject": "Discussion about disruptive technology",
-      "talk": ["During this panel discussion, 5 experts will present and discuss their view on Disruptive Technology. Should large companies be afraid of disruptive startups taking over their business? Or will the large and stable companies hold strong and outlive all disruptive startups? Disruptive technology may not even be about companies, but about automatisation of entire job markets. Will the technologies we develop disrupt our own jobs or is it all based on assumptions and do we have nothing to worry about?",
-        "More informations about the experts will follow soon."],
+      "talk": ["<a href='/panel'>Click here for more information</a>","During this panel discussion, 4 experts will present and discuss their view on Disruptive Technology. Should large companies be afraid of disruptive startups taking over their business? Or will the large and stable companies hold strong and outlive all disruptive startups? Disruptive technology may not even be about companies, but about automatisation of entire job markets. Will the technologies we develop disrupt our own jobs or is it all based on assumptions and do we have nothing to worry about?"],
       "bio": [],
       "limit": 275,
       "hidden": false
