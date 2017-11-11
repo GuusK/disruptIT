@@ -9,3 +9,5 @@ public/js/*.min.js
 node_modules/localhost.daplie.me-certificates/*
 node_modules/.bin
 *.pem
+partnerAttendees.json
+attendees.json
