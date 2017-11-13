@@ -25,6 +25,7 @@
     "https": "^1.0.0",
     "i18next": "^1.10.4",
     "jade": "~1.11.0",
+    "json2csv": "^3.11.5",
     "less-middleware": "^2.2.0",
     "mailchimp-api-v3": "^1.7.0",
     "markdown": "^0.5.0",

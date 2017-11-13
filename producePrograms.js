@@ -1,6 +1,6 @@
 var fs       = require('fs');
+var json2csv = require('json2csv')
 var mongoose = require('mongoose');
-const exec = require('child_process').exec;
 var config = JSON.parse(fs.readFileSync('config.json'));
 var speakerinfo = JSON.parse(fs.readFileSync('speakers.json'));
 var User     = require('./models/User');
@@ -9,43 +9,91 @@ mongoose.connect(config.mongodb.url);
 
 var locations = ['Theatre', 'Loading dock', 'Cortegaerdt zaal'];
 
-function sessionInformation(user, description, session){
+var fields = ["ticketcode", "fullname", "association", "session1-speaker", "session1-subject", "session1-location","session2-time", "session2-speaker", "session2-subject", "session2-location","session3-speaker", "session3-subject", "session3-location","qrfile", "company1","company2","company3"];
+
+function sessionInformation(user, session){
+  var sessionContent = {};
   if(!user[session] || user[session] == '""'){
-    description += ',"","",""';
+    return {};
   } else {
-    if(session == 'session2'){
-      if(user[session] == 'quintor'){
-        description += ',"14:00"';
-      } else {
-        description += ',"14:15"';
-      }
-    }
     var id = user[session];
     var speaker = speakerinfo.speakers.filter(session => session.id == id)[0];
-    var speakername = speaker.name.replace("</br>", "&");
-    var speakersubject = speaker.subject.split(" </br>")[0];
-    description += ',"' + speakername + '"' + ',"' + speakersubject + '"' + ',"' + locations[speakerinfo.speakerids[session].indexOf(user[session])] + '"';
+
+    sessionContent[session + '-speaker'] = speaker.name.replace("</br>", "&");;
+    sessionContent[session + '-subject'] = speaker.subject.split(" </br>")[0];;
+    sessionContent[session + '-location'] = locations[speakerinfo.speakerids[session].indexOf(user[session])];
+    if(session == 'session2'){
+      if(user[session] == 'quintor'){
+        sessionContent[session + '-time'] = '14:00';
+      } else {
+        sessionContent[session + '-time'] = '14:15';
+      }
+    }
+
+    if(user[session] == 'nick'){
+       sessionContent[session + '-speaker'] = 'Nick & Wouter';
+    }
+
+    if(user[session] == 'topicus'){
+       sessionContent[session + '-speaker'] = 'Nick & Wouter';
+    }
+
+    if(user[session] == 'hackastory'){
+       sessionContent[session + '-speaker'] = 'Hackastory';
+    }
+
   }
-  return description
+  return sessionContent;
 }
-// Header
-console.log('"Full name","vereniging","session1-speaker", "session1-subject", "session1-location","session2-time", "session2-speaker", "session2-subject", "session2-location","session3-speaker", "session3-subject", "session3-location","qr-filename", "company1","company2","company3"');
-User.find({}).sort({'surname':1}).exec( function (err, results) {
+
+async function processUser(user, list){
+  var badge = {}
+
+  // Basic info
+  badge.ticketcode = user.ticket;
+  badge.fullname = user.firstname + " " + user.surname;
+  badge.association = config.verenigingen[user.vereniging].name;
+  
+  // session info
+  var session1 = sessionInformation(user, "session1");
+  var session2 = sessionInformation(user, "session2");
+  var session3 = sessionInformation(user, "session3");
+
+  Object.assign(badge, session1, session2, session3);
+  // Filelocation of qr code
+  badge.qrfile = user.ticket + '.png';
+
+  // Matchinginfo
+  badge.company1 = badge.company2 = badge.company3 = ''
+  list.push(badge);
+}
+
+attendeesPrograms = []
+// User.find({type: {$ne: 'partner'}}).sort({'surname':1}).exec( function (err, results) {
+User.find().where('type').eq('student').sort({'surname':1}).exec( function (err, results) {  
   if (err) { return err; }
-  results.forEach(user=>{
-    // Basic info
-    var description = '"' + user.firstname + " " + user.surname + '",' + '"' + config.verenigingen[user.vereniging].name + '"';
-    
-    // session info
-    description = sessionInformation(user, description, "session1");
-    description = sessionInformation(user, description, "session2");
-    description = sessionInformation(user, description, "session3");
-
-    // Filelocation of qr code
-    description += ',"' + user.ticket + '.png"';
-
-    // Matchinginfo
-    description ++ ',"","",""'
-    console.log(description);
+  results.forEach(user => {
+    processUser(user, attendeesPrograms);
   });
+}).then(nothing => {
+  var csv = json2csv({data:attendeesPrograms, fields: fields})
+  fs.writeFile('attendeesPrograms.csv', csv, function(err){
+    if (err) throw err;
+    console.log('file saved');
+  })
+});
+
+partnerPrograms = []
+// User.find({type: "partner"}).sort({'surname':1}).exec( function (err, results) {
+User.find().where('type').ne('student').sort({'surname':1}).exec( function (err, results) {  
+  if (err) { return err; }
+  results.forEach(user => {
+    processUser(user, partnerPrograms);
+  });
+}).then(nothing => {
+  var csv = json2csv({data:partnerPrograms, fields: fields})
+  fs.writeFile('partnerPrograms.csv', csv, function(err){
+    if (err) throw err;
+    console.log('file saved');
+  })
 });
