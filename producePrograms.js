@@ -36,7 +36,7 @@ function sessionInformation(user, session){
     }
 
     if(user[session] == 'topicus'){
-       sessionContent[session + '-speaker'] = 'Nick & Wouter';
+       sessionContent[session + '-speaker'] = 'Stefan & Michel';
     }
 
     if(user[session] == 'hackastory'){
