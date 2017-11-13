@@ -8,7 +8,7 @@ var User     = require('./models/User');
 
 mongoose.connect(config.mongodb.url);
 
-var locations = ['Theatre', 'Loading dock', 'Cortegaerdt zaal'];
+var locations = ['Theater', 'Loading dock', 'Cortegaerdt zaal'];
 
 var fields = ["ticketcode", "fullname", "association", "session1-speaker", "session1-subject", "session1-location","session2-time", "session2-speaker", "session2-subject", "session2-location","session3-speaker", "session3-subject", "session3-location","qrfile", "company1","company2","company3"];
 

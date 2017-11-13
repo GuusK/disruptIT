@@ -1225,6 +1225,17 @@ section.profile {
  * Users
  ****************************/
 
+.buses.table {
+  max-width: 50em;
+  margin: auto;
+  width:100%;
+  margin-bottom: 20px;
+}
+
+/****************************
+ * Users
+ ****************************/
+
 .section.users {
   overflow:auto;
 }

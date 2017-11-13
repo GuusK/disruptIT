@@ -256,9 +256,9 @@ router.get('/location', function (req, res) {
  * Still needs its proper replacement, will come when bus times are available
  * Maybe include in the location or timetable page aswell.
  */
-// router.get('/busses', function (req, res) {
-//   res.render('busses', {title: 'Bussen'});
-// });
+router.get('/buses', function (req, res) {
+  res.render('buses', {title: 'Buses | '});
+});
 
 router.get('/speakers', function (req, res) {
   var s = speakerinfo.speakers.filter(function(speaker){
