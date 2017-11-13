@@ -3,6 +3,7 @@ var json2csv = require('json2csv')
 var mongoose = require('mongoose');
 var config = JSON.parse(fs.readFileSync('config.json'));
 var speakerinfo = JSON.parse(fs.readFileSync('speakers.json'));
+var matching = JSON.parse(fs.readFileSync('matching.json'));
 var User     = require('./models/User');
 
 mongoose.connect(config.mongodb.url);
@@ -64,7 +65,10 @@ async function processUser(user, list){
   badge.qrfile = user.ticket + '.png';
 
   // Matchinginfo
-  badge.company1 = badge.company2 = badge.company3 = ''
+  var companies = matching[user.ticket];
+  badge.company1 = companies[0];
+  badge.company2 = companies[1];
+  badge.company3 = companies[2];
   list.push(badge);
 }
 
