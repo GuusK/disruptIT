@@ -66,7 +66,10 @@ block content
                 td=row.surname
                 td=row.email 
                 td=row.ticket
-                td=verenigingen[row.vereniging].name
+                if(verenigingen[row.vereniging])
+                  td=verenigingen[row.vereniging].name
+                else
+                  td='Partner'
                 td
                   if row.aanwezig
                     span.fa.fa-check(style='color:#79bf46;')
