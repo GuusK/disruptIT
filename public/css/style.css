@@ -930,9 +930,13 @@ section.panel h3 {
   margin-top: 20px;
 }
 
+section.panel .speaker p {
+  margin-bottom:20px;
+}
+
 section.panel .speaker {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 900px;
