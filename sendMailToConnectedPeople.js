@@ -10,7 +10,7 @@ var User     = require('./models/User');
 var config   = JSON.parse(fs.readFileSync('config.json'));
 var speakerinfo = JSON.parse(fs.readFileSync('speakers.json'));
 
-mongoose.connect("mongodb://mongodb/SNiC");
+mongoose.connect(config.mongodb.url);
 mongoose.Promise = require('q').Promise;
 
 var nodemailer = require('nodemailer');

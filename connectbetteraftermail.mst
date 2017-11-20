@@ -14,7 +14,7 @@
 	{{#phonenumber}}
 	<a href="tel:{{phonenumber}}">{{phonenumber}}</a><br/>
 	{{/phonenumber}}
-
+	<br/>
 {{/people}}
 <p>With kind regards,</p>
 
