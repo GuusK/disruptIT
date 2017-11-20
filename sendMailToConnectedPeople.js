@@ -49,7 +49,7 @@ async function processUser(user){
 		var mailOptions = {
 			to: user.email,
 			from: config.email.auth.user,
-			subject: '[Test] Connections made at DisruptIT',
+			subject: 'Connections made at DisruptIT',
 			text: mustache.render(template, {html: false, name: user.firstname, people: results}),
 			html: mustache.render(template, {html: true, name: user.firstname, people: results})
 		};
