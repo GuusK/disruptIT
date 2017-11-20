@@ -148,7 +148,8 @@ module.exports = function (config) {
   });
 
   var transport = nodemailer.createTransport(
-  mg({auth : config.mailgun}));
+    mg({auth : config.mailgun})
+  )
 
   router.get('/forgot', function(req, res) {
     res.render('forgot', {

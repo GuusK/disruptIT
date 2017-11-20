@@ -1,0 +1,44 @@
+{{#html}}
+<p>Dear {{name}},</p>
+
+<p>Thank you for using the new system to connect better at the SNiC conference. We hope you had a wonderful day and got to know a lot of people. Hereby a list of all the people you connected with and any details they have provided.</p>
+
+{{#people}}
+	{{firstname}} {{surname}}</br>
+	{{#linkedin}}
+	<a href="{{& linkedin}}">{{& linkedin}}</a><br/>
+	{{/linkedin}}
+	{{#shareEmail}}
+	<a href="mailto:{{email}}">{{email}}</a><br/>
+	{{/shareEmail}}
+	{{#phonenumber}}
+	<a href="tel:{{phonenumber}}">{{phonenumber}}</a><br/>
+	{{/phonenumber}}
+
+{{/people}}
+<p>With kind regards,</p>
+
+<p>The organization of the SNiC committee</p>
+{{/html}}
+{{^html}}
+Dear {{name}},
+
+Thank you for using the new system to connect better at the SNiC conference. We hope you had a wonderful day and got to know a lot of people. Hereby a list of all the people you connected with and any details they have provided.
+
+{{#people}}
+	{{firstname}} {{surname}}
+	{{#linkedin}}
+	{{& linkedin}}
+	{{/linkedin}}
+	{{#shareEmail}}
+	{{email}}
+	{{/shareEmail}}
+	{{#phonenumber}}
+	{{phonenumber}}
+	{{/phonenumber}}
+
+{{/people}}
+With kind regards,
+
+The organization of the SNiC committee
+{{/html}}
