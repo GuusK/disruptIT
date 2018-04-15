@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 
-const debug = require('debug')('disruptit') 
+// const debug = require('debug')('disruptit')
 
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -114,7 +114,7 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  debug(err.status)
+  // debug(err.status)
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,

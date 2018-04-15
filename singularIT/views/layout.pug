@@ -2,7 +2,7 @@ doctype html
 
 html(lang=locale)
   head
-    title #{title} DisruptIT 2017
+    title #{title} SingularIT 2018
     meta(name='charset' content='utf-8')
     meta(name='description' content='')
     meta(name='author' content='')
@@ -14,13 +14,14 @@ html(lang=locale)
     link(rel='stylesheet' href='/css/style.css')
     link(rel='stylesheet' href='/css/bootstrap-dropdown.css')
     link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
-
+    link(rel="stylesheet" href="https://fontlibrary.org/face/trueno" type="text/css")
+    link(rel="stylesheet" href="/css/particlejs.css" type="text/css")
   body
     nav(class='navbar')
       // left-side logo
       .logonav
         a(href='/')
-          img(src='/images/logo_textonly.svg' alt='DisruptIT home')
+          //- img(src='/images/logo_textonly.svg' alt='DisruptIT home')
 
       button(class='toggle navicon-button' data-target='#navbar-main-collapse')
         span(class='navicon navicon-times')
@@ -36,7 +37,7 @@ html(lang=locale)
             li
               a(href='/location') Location
             li
-              a(href='/organisation') Organisation
+              a(href='/organisation') About
             li
               .dropdown
                 button.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
@@ -70,7 +71,7 @@ html(lang=locale)
             li
               a(href='/location') Location
             li
-              a(href='/organisation') Organisation
+              a(href='/organisation') About
             li
               .dropdown
                 button.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
@@ -91,7 +92,7 @@ html(lang=locale)
           li
             a(href='/location') Location
           li
-            a(href='/organisation') Organisation
+            a(href='/organisation') About
           li
             a(href='/register') Activate
           li
@@ -163,5 +164,6 @@ html(lang=locale)
     //- script(src='/js/jquery-3.2.1.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
     script(src='/js/jQuery.curtail.min.js')
-
-    script(src='/js/disrupt-it.js')
+    script(src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js")
+    script(src='/js/particlejs.js')
+    script(src='/js/app.js')

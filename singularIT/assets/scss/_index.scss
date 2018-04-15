@@ -1,0 +1,75 @@
+
+/****************************
+* Index
+****************************/
+
+header.hero.index{
+    // background-image: url('/images/foto1.jpg');
+}
+
+section#speakers .subpage.image{
+    background-image: url('/images/Foto-Spreker.jpg');
+    background-position: center 80%;
+}
+
+section#location .subpage.image{
+    background-image: url('http://www.maandvandegeschiedenis.nl/image/2017/10/11/37547830742_dc7574a698_k.jpg%28%29%28AAB4F7E33CFB56E688D6F81EAD7F5875%29.jpg');
+    background-position: center 30%;
+}
+
+
+section#snic .subpage.image{
+    background-image: url('/images/foto_kijken.jpg');
+    background-position: right 20%;
+}
+
+
+.video{
+    position: relative;
+    min-height: 70vh;
+
+    padding: 8em 2em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('/images/fotozaal.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    color: white;
+    opacity: .9;
+}
+
+.video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: $congres-color-transparent;
+}
+
+.youtube{
+    text-align: center;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+.youtube a,
+.youtube a:visited,
+.youtube a:hover,
+.youtube a:focus{
+    color: white;
+}
+
+.youtube a:hover,
+.youtube a:focus{
+    opacity: 0.8;
+}

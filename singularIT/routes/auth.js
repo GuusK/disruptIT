@@ -1,5 +1,5 @@
 module.exports = function (config) {
-  var debug = require('debug')
+  // var debug = require('debug')
   var express = require('express');
   var passport = require('passport');
   var crypto = require('crypto');

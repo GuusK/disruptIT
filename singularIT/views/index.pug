@@ -1,33 +1,41 @@
 extends layout
 block above-content
 
-block header 
-  header(class='hero index')
-    img(class='logo' src='images/logo.svg' alt='DisruptIT')
-    div(role='separator' class='separator')
-    p 
-      | DisruptIT is the 11th conference organised by the Stichting Nationaal Informatica Congres, this year Cover will organise it and it will be held on the 15th of November
+block header
+    header(id="particles-js" class='hero index')
+      //- img(class='logo' src='images/logo.svg' alt='DisruptIT')
+      div()
+        span(class='title sub') SNIC PRESENTS:
+        h1(class='title main') Singular
+          span(class="subcol") IT
+      i(class="arrow").fa.fa-angle-down.fa-5x.white
+      //- div(role='separator' class='separator')
+      //- p
+      //-   | 12th edition<br />
+      //-   | organized by 
+      //-   strong via<br />
+      //-   | 15th of November
 
 block content
   // Short summary
   section(class='intro slanted')
     .content
-      h2 Disruptive Technology
+      h2 Technological Singularity
       div(role='separator' class='separator')
       p
-        | This year’s theme is Disruptive Technology. Disruptive Technology is technology that displaces an established technology. This will shake up the current industry or is so groundbreaking that it creates its own industry. This topic is focussing on current and future technologies that will change the work field of current students. It is hard for students to predict the future of a rapidly changing market. We want to give the students a mind-changing insight into the future.
+        | This year's theme is Singularity.
 
   // Inspirational quote
   section(class='quote slanted')
     .content
       .text
-        | “If I asked people what they had wanted they would have said faster horses.”
+        | “The development of full artificial intelligence could spell the end of the human race.... It would take off on its own, and re-design itself at an ever increasing rate. Humans, who are limited by slow biological evolution, couldn't compete, and would be superseded.”
       .person
         .text
-          | Henry Ford
+          | Stephen Hawking
 
   // more context in two columns
-  section(class='slanted twocolumn background-snic-blue' id='speakers')
+  section(class='slanted twocolumn background-snic' id='speakers')
     .subpage
       .content
         h2 Speakers
@@ -44,7 +52,7 @@ block content
         h2 Location
         .separator(role='separator')
         p
-          | The conference will be held in theater "De Spiegel" in Zwolle. The building not only looks incredible from the outside, with its iconic cupola, but will definitely inspire participants with its modern inside. The conference will take place on November 15th 2017. The conference will take place during the full day, including drinks at the end of the conference. Don't worry, we checked that none of you will miss any exams. The committee is working hard, hoping to be able to give you more information soon!
+          | The conference will be held in Philharmonie Haarlem in Haarlem. The building not only looks incredible from the outside, with its iconic cupola, but will definitely inspire participants with its modern inside. The conference will take place on November 20th 2018. The conference will take place during the full day, including drinks at the end of the conference. Don't worry, we checked that none of you will miss any exams. The committee is working hard, hoping to be able to give you more information soon!
 
   section#snic.slanted.twocolumn.background-snic-grey
     .subpage
@@ -52,7 +60,7 @@ block content
         h2 SNiC
         .separator(role='separator')
         p
-          | SNiC is an acronym for Stichting Nationaal informatica Congres (Foundation National Computer Science Conference). This organisation was established in 2004 with the purpose of stimulating the interest in IT knowledge, IT applications and the business side of IT. Every year, a conference with an IT related subject is organised. For each conference one study association is chosen to take care of the organsisation. The conference is visited by over 400 academic computer science students. More information about previous confereneces and the participating study associations can be found on the 
+          | SNiC is an acronym for Stichting Nationaal informatica Congres (Foundation National Computer Science Conference). This organisation was established in 2004 with the purpose of stimulating the interest in IT knowledge, IT applications and the business side of IT. Every year, a conference with an IT related subject is organised. For each conference one study association is chosen to take care of the organsisation. The conference is visited by over 400 academic computer science students. More information about previous confereneces and the participating study associations can be found on the
           a.SnicBlue(href='http://stichting.snic.nl/', target='_blank') SNiC website
           | .
     .subpage.image
@@ -61,7 +69,7 @@ block content
       h2 Get in touch
       .separator(role='separator')
       p
-        | Please do not hesitate to contact us if you have any questions or if you are looking for more information. Just send us an 
+        | Please do not hesitate to contact us if you have any questions or if you are looking for more information. Just send us an
         a(href='mailto:info@disrupt-it.nl') email
         |  and we will contact you.
   section.video

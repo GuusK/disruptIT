@@ -10,7 +10,7 @@ node_modules/localhost.daplie.me-certificates/*
 node_modules/.bin
 *.pem
 partnerAttendees.json
-attendees.json
+**/attendees.json
 users.json
-matching.json
+**/matching.json
 *.csv

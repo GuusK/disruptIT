@@ -1,0 +1,122 @@
+
+/********************
+* Header
+********************/
+
+#particles-js canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+header.text h2 {
+  position: relative;
+  min-height: 5vh;
+
+  padding: 4em 2em 2em 2em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 186, 179, 0.7);
+  color: white;
+  opacity: .9;
+
+  margin-bottom: 1em;
+
+}
+
+header.hero {
+  position: relative;
+  min-height: 100vh;
+
+  padding: 8em 2em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+
+  color: white;
+  // opacity: .9;
+  margin-bottom: 1em;
+
+  .title {
+    font-family: 'TruenoRegular';
+    text-shadow: 2px 2px 4px #000000;
+    &.main {
+      font-weight: bold;
+      font-size: 3em;
+      margin-top: 0;
+      letter-spacing: 10px;
+      .subcol {
+        color: $congres-sub-color;
+      }
+    }
+    &.sub {
+      font-size: 1.25em;
+    }
+  }
+
+  .arrow {
+    transition: 1s;
+  }
+  .arrow:hover {
+    transform: scale(1.25);
+  }
+}
+
+header.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: $congres-color;
+}
+
+header.hero .logo{
+  max-width: 80%;
+  width: 20em;
+}
+
+header.hero p {
+  color: white;
+  max-width: 30em;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 100;
+}
+
+header.hero h2{
+  font-size: 5rem;
+}
+
+@media (min-width: 400px) {
+  header.hero p{
+    font-size: 1rem;
+  }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+  header.hero p{
+    font-size: 1rem;
+  }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+  header.hero p{
+    font-size: 1.5rem;
+  }
+}

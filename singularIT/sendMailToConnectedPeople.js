@@ -1,4 +1,4 @@
-var debug	 = require('debug')('disruptit');
+// var debug	 = require('debug')('disruptit');
 var fs       = require('fs');
 
 var mustache = require('mustache');
@@ -18,7 +18,7 @@ var mg = require('nodemailer-mailgun-transport');
 
 async function processUser(user){
 	if(!user.connectlist){
-		debug("no connectlist found");
+		// debug("no connectlist found");
 		return;
 	}
 
@@ -27,7 +27,7 @@ async function processUser(user){
 
 	if(user.connectlist.length == 0){
 		// Stop if connected with no-one (except maybe itself)
-		debug("connectlist minus self has length of zero");
+		// debug("connectlist minus self has length of zero");
 		return;
 	}
 

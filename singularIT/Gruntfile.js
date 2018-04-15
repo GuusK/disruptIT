@@ -3,10 +3,10 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporterOutput: ""
-      },
+      // options: {
+      //   jshintrc: '.jshintrc',
+      //   reporterOutput: ""
+      // },
       gruntfile: {
         src: 'Gruntfile.js'
       },

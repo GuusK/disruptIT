@@ -1,4 +1,4 @@
-var debug = require('debug')('disruptit');
+// var debug = require('debug')('disruptit');
 var express = require('express');
 var Barc = require('barcode-generator');
 var Ticket = require('../models/Ticket');
@@ -42,8 +42,8 @@ async function countEnrolls(sessionslot, sessionID) {
   var query = {};
   query[sessionslot] = sessionID;
   var result = await User.find(query).count()
-  return { 
-    'id' : sessionID, 
+  return {
+    'id' : sessionID,
     'count': result
   }
 }
@@ -65,7 +65,7 @@ async function getVisitorCounts(){
     }
   }
 
-  // Gather all the data and make a dicht with 
+  // Gather all the data and make a dicht with
   return Promise.all(promises);
 }
 
@@ -88,10 +88,10 @@ router.get('/profile', auth, function (req, res) {
       // Do it in the template
       getVisitorCounts().then(visitorCounts => {
         res.render('profile', {
-          isbus_quickhack: config.verenigingen[user.vereniging].bus, 
-          providePreferences: config.providePreferences, 
-          speakerids: speakerinfo.speakerids, 
-          speakers: speakerinfo.speakers, 
+          isbus_quickhack: config.verenigingen[user.vereniging].bus,
+          providePreferences: config.providePreferences,
+          speakerids: speakerinfo.speakerids,
+          speakers: speakerinfo.speakers,
           matchingterms:config.matchingterms,
           visitorCounts: visitorCounts
         });
@@ -106,8 +106,8 @@ router.get('/profile', auth, function (req, res) {
 });
 
 /**
- * This function is used to determine if there is still room for someone to 
- * enroll and takes in to account if someone is already enrolled. 
+ * This function is used to determine if there is still room for someone to
+ * enroll and takes in to account if someone is already enrolled.
  * TODO: possibly combine with countEnrolls?
  */
 async function canEnrollForSession(sessionslot, sessionid, useremail){
@@ -183,22 +183,22 @@ router.post('/profile', auth, function (req, res) {
   User.findOne({email:req.session.passport.user}).exec( async function (err, user) {
   if (!err){
 /*******************************************************************************
- * There is some form of race condition possible. the check if the session is 
+ * There is some form of race condition possible. the check if the session is
  * full can be done after someone else has been checked but before he has been
  * enrolled.
  *
- * Best would be to do a conditional update, however, Mongo does not support 
+ * Best would be to do a conditional update, however, Mongo does not support
  * this feature in mongo 3.4.
- * 
- * For now this is not as big as a problem because one person extra is not 
- * that big of a problem. However, watch carefully if people actively abuse 
+ *
+ * For now this is not as big as a problem because one person extra is not
+ * that big of a problem. However, watch carefully if people actively abuse
  * this
  ******************************************************************************/
 
       canEnrollSession1 = await canEnrollForSession("session1", req.body.session1, req.session.passport.user);
       canEnrollSession2 = await canEnrollForSession("session2", req.body.session2, req.session.passport.user);
       canEnrollSession3 = await canEnrollForSession("session3", req.body.session3, req.session.passport.user);
-      
+
       // naar functie zetten en samenvoegen
       if( canEnrollSession1 ){
         user.session1 = req.body.session1;
@@ -226,7 +226,7 @@ router.post('/profile', auth, function (req, res) {
       user.specialNeeds = req.body.specialNeeds;
       user.phonenumber  = req.body.phonenumber;
       user.linkedin     = req.body.linkedin;
-      user.shareEmail   = req.body.shareEmail; 
+      user.shareEmail   = req.body.shareEmail;
       var matching = [];
       for (var i = 0; i < config.matchingterms.length; i++) {
         if (req.body[config.matchingterms[i]]){
@@ -241,7 +241,7 @@ router.post('/profile', auth, function (req, res) {
       }
       res.redirect('/profile');
     } else {
-      debug(err);
+      // debug(err);
       console.log(err);
       req.flash('error', 'Something went wrong!');
       res.redirect('/profile');
@@ -435,15 +435,15 @@ router.get('/aanwezig', adminAuth, function (req,res,next) {
  * Triggered if someone requests this page. This will be printed on the badge of
  * an attendee in the form of a QR code. Can be scanned with generic QR code
  * scanners. When url has been gotten, can be opened in browser.
- * 
- * Will create a list of all people to connected with during the event per user. 
+ *
+ * Will create a list of all people to connected with during the event per user.
  * After the event, this can be used to send an email to everyone who
  * participated to exchange contact details.
  ******************************************************************************/
 router.get('/connect/:id', auth, function(req, res, next){
   User.findOne({ticket: req.params.id}, function(err, user){
-    if (err || !user) { 
-      debug(err);
+    if (err || !user) {
+      // debug(err);
       res.render('connect', {connected: false, error: 'Ticket id is not valid'});
     } else {
       User.findOneAndUpdate({email:req.session.passport.user}, {$addToSet: {connectlist: req.params.id}},function(err, doc){

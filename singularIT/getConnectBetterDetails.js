@@ -1,4 +1,4 @@
-var debug	 = require('debug')('disruptit');
+// var debug	 = require('debug')('disruptit');
 var fs       = require('fs');
 
 var mongoose = require('mongoose');
@@ -22,7 +22,7 @@ if (process.argv[2].indexOf('@') < 0){
 
 user.then(user => {
 	if(!user.connectlist){
-		debug("no connectlist found");
+		// debug("no connectlist found");
 		return;
 	}
 
@@ -31,7 +31,7 @@ user.then(user => {
 
 	if(user.connectlist.length == 0){
 		// Stop if connected with no-one (except maybe itself)
-		debug("connectlist minus self has length of zero");
+		// debug("connectlist minus self has length of zero");
 		return;
 	}
 
@@ -54,5 +54,3 @@ user.then(user => {
 		});
 	});
 });
-
-

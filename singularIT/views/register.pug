@@ -2,7 +2,7 @@ extends layout
 
 block above-content
 
-block header 
+block header
   header.hero.register
     h2 Register
 
@@ -10,7 +10,7 @@ block content
   .section.intro.slanted
     .content
       .register
-        p You can buy a ticket with an activation code at your study association. You can print out your ticket after you've registered. Preferences for lectures, diets and other remarks can be changed after the registration has been completed. 
+        p You can buy a ticket with an activation code at your study association. You can print out your ticket after you've registered. Preferences for lectures, diets and other remarks can be changed after the registration has been completed.
 
       if new Date(ticketSaleStarts).getTime() < Date.now()
         form.form-register(method='POST')
@@ -59,7 +59,7 @@ block content
           button.button.special(type='submit') Register now
 
         script.
-          document.addEventListener("DOMContentLoaded", function(event) { 
+          document.addEventListener("DOMContentLoaded", function(event) {
             var verenigingen = !{JSON.stringify(verenigingen)};
 
             document.getElementById("#vereniging").addEventListener('change', function(){
