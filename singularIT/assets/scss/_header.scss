@@ -3,12 +3,6 @@
 * Header
 ********************/
 
-#particles-js canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
 
 header.text h2 {
   position: relative;
@@ -50,10 +44,10 @@ header.hero {
 
   .title {
     font-family: 'TruenoRegular';
-    text-shadow: 2px 2px 4px #000000;
+    // text-shadow: 2px 2px 4px #000000;
     &.main {
       font-weight: bold;
-      font-size: 3em;
+      font-size: 4em;
       margin-top: 0;
       letter-spacing: 10px;
       .subcol {
@@ -71,6 +65,10 @@ header.hero {
   .arrow:hover {
     transform: scale(1.25);
   }
+}
+
+header::before {
+  background: $congres-light-color;
 }
 
 header.hero::before {

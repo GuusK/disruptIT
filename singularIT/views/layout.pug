@@ -21,7 +21,7 @@ html(lang=locale)
       // left-side logo
       .logonav
         a(href='/')
-          //- img(src='/images/logo_textonly.svg' alt='DisruptIT home')
+          img(src='/images/singularit_logo.png')
 
       button(class='toggle navicon-button' data-target='#navbar-main-collapse')
         span(class='navicon navicon-times')
@@ -86,16 +86,16 @@ html(lang=locale)
       else
         ul(class='pages collapse' id='navbar-main-collapse')
           li
-            a(href='/speakers') Speakers
+            a(href='#speakers') Speakers
           li
-            a(href='/partners') Partners
+            a(href='#partners') Partners
           li
-            a(href='/location') Location
+            a(href='#location') Location
           li
-            a(href='/organisation') About
-          li
+            a(href='#about') About
+          //li
             a(href='/register') Activate
-          li
+          //li
             a(href='/login') Log In
 
     // header
@@ -131,13 +131,13 @@ html(lang=locale)
     footer
       .sponsor
         p Platinum partner
-        a.nedap(href="https://lifeatnedap.com/")
-          img.nedap(src='/images/bedrijven/nedap_grey.png')
+        a.nedap(href="https://quintor.nl/")
+          img.nedap(src='https://www.hanze.nl/assets/instituut-voor-communicatie-media-it/PublishingImages/Public/Quintor.png')
 
       .sponsor
         .separator(role='separator')
 
-      .sponsor
+      //-.sponsor
         p Gold partner
         - var rand = Math.random();
         if rand < 1/3
@@ -149,7 +149,7 @@ html(lang=locale)
         else
           a.gold(href="https://home.kpmg.com/nl/nl/home/werken-bij-kpmg.html")
             img(src='/images/bedrijven/Banner_KPMG.png')
-      .foot
+      //-.foot
         a(href='https://www.facebook.com/StichtingNationaalinformaticaCongres/' target='_blank')
           i(class='fa fa-facebook-official fa-fw fa-3x')
 

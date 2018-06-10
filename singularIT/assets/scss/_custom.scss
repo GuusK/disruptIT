@@ -1,0 +1,102 @@
+.accent {
+  font-family: 'TruenoRegular' !important;
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+.congres-bg {
+  background-color: $congres-color;
+}
+
+.skew-content {
+  transform: skewY(5deg);
+  background-color: $congres-color;
+  height: 100vh;
+  overflow: hidden !important;
+  .speakers {
+    font-family: 'TruenoUltLt' !important;
+    font-weight: 100;
+    margin: 0;
+  }
+}
+
+.location-content {
+  text-align: right;
+  color: white;
+
+  p {
+    text-align: right;
+  }
+}
+
+
+.text-content {
+  margin-left: 20px;
+  color: white;
+  transform: skewY(-5deg);
+}
+
+.speaker-img {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+}
+
+.header-title {
+  font-size: 4em;
+  margin-bottom: 2em;
+}
+
+.skewed-background {
+  background-color: $congres-color;
+  height: 200px;
+  -webkit-clip-path: polygon(49% 0, 100% 50%, 100% 100%, 0 49%);
+  clip-path: polygon(49% 0, 100% 50%, 100% 100%, 0 49%);
+}
+
+.skewed-background-2 {
+  position: absolute;
+  width: 100%;
+  background-color: $congres-color;
+  height: 200px;
+  // -webkit-clip-path: polygon(49% 0, 100% 50%, 100% 100%, 0 49%);
+  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 0%);
+}
+
+
+.particles canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.singularit-logo {
+}
+.singularit-logo img {
+  width: 100px;
+}
+
+.register-button {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  border: 2px solid white;
+  padding: 10px;
+  font-size: 1.25em;
+  margin-bottom: 50px;
+  color: white;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+// .skewed-background-2 {
+//   width: 0;
+// height: 0;
+// border-style: solid;
+// border-width: 20vh 85vh 0 85vh;
+// border-color: $congres-color transparent transparent;
+//
+// }

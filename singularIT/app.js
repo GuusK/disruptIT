@@ -23,8 +23,8 @@ var MongoStore = require('connect-mongo')(session);
 var config = JSON.parse(fs.readFileSync('config.json'));
 
 /// configure database
-mongoose.connect(config.mongodb.url);
-mongoose.Promise = require('q').Promise;
+// mongoose.connect(config.mongodb.url);
+// mongoose.Promise = require('q').Promise;
 
 var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
@@ -58,9 +58,9 @@ app.use(cookieParser());
 app.use(allowCrossDomain);
 app.use(session({
   secret: config.session.secret,
-  store: new MongoStore({
-    url: config.mongodb.url
-  }),
+  // store: new MongoStore({
+  //   url: config.mongodb.url
+  // }),
   cookie: { maxAge: 4*7*24*60*60*1000 },
   rolling: true,
   saveUninitialized: true,

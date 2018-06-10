@@ -17,7 +17,7 @@ services:
      - ME_CONFIG_BASICAUTH_USERNAME=admin
      - ME_CONFIG_BASICAUTH_PASSWORD=test
   app:
-    image: snic/disruptit:0.0.1
+    image: snic/singularit:0.0.1
     volumes:
       - ./singularIT:/usr/src/app
     links:

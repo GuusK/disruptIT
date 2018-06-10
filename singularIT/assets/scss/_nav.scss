@@ -6,11 +6,13 @@
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0 10px;
+  padding: 0 40px;
 
-  // background-color: rgba(35, 36, 67, 0.9);
+  background-color: $congres-color-menu;
   // box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 
+  font-family: 'TruenoUltLt' !important;
+  font-weight: 100;
   font-size: 1.75rem;
   line-height: 50px;
 
@@ -30,7 +32,7 @@
 
 .navbar .dropdown .dropdown-toggle {
   width: 100%;
-  padding: 0px 10px;
+  padding: 0px 40px;
   border: none;
   text-align: left;
 }
@@ -125,7 +127,7 @@
 
   .navbar .pages a {
     width: auto;
-    padding: 0 10px;
+    padding: 0 20px;
   }
 
   .navbar .pages.collapse .dropdown a {

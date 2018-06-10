@@ -1,46 +1,68 @@
 @import 'variables';
 
 /**************************************************************************
- *
- * GLOBAL DEFINITIONS
- *
- **************************************************************************/
+*
+* GLOBAL DEFINITIONS
+*
+**************************************************************************/
 
 @font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Italic.eot');
-  src: local('Glacial Indifference Italic'), local('GlacialIndifference-Italic'),
-    url('/fonts/GlacialIndifference-Italic.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/GlacialIndifference-Italic.woff') format('woff'),
-    url('/fonts/GlacialIndifference-Italic.ttf') format('truetype'),
-    url('/fonts/GlacialIndifference-Italic.svg#GlacialIndifference-Italic') format('svg');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Regular.eot');
-  src: local('Glacial Indifference Regular'), local('GlacialIndifference-Regular'),
-    url('/fonts/GlacialIndifferenoce-Regular.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/GlacialIndifference-Regular.woff') format('woff'),
-    url('/fonts/GlacialIndifference-Regular.ttf') format('truetype'),
-    url('/fonts/GlacialIndifference-Regular.svg#GlacialIndifference-Regular') format('svg');
+  font-family: 'TruenoRegular';
+  src: url('/fonts/TruenoRg.otf');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Bold.eot');
-  src: local('Glacial Indifference-Bold'), local('GlacialIndifference-Bold'),
-    url('/fonts/GlacialIndifference-Bold.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/GlacialIndifference-Bold.woff') format('woff'),
-    url('/fonts/GlacialIndifference-Bold.ttf') format('truetype'),
-    url('/fonts/GlacialIndifference-Bold.svg#GlacialIndifference-Bold') format('svg');
+  font-family: 'TruenoLt';
+  src: url('/fonts/TruenoLt.otf');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TruenoUltLt';
+  src: url('/fonts/TruenoUltLt.otf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'TruenoBd';
+  src: url('/fonts/TruenoBd.otf');
   font-weight: bold;
   font-style: normal;
 }
+
+
+
+
+
+//
+// @font-face {
+//   font-family: 'Glacial Indifference';
+//   src: url('/fonts/GlacialIndifference-Regular.eot');
+//   src: local('Glacial Indifference Regular'), local('GlacialIndifference-Regular'),
+//     url('/fonts/GlacialIndifferenoce-Regular.eot?#iefix') format('embedded-opentype'),
+//     url('/fonts/GlacialIndifference-Regular.woff') format('woff'),
+//     url('/fonts/GlacialIndifference-Regular.ttf') format('truetype'),
+//     url('/fonts/GlacialIndifference-Regular.svg#GlacialIndifference-Regular') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+//
+// @font-face {
+//   font-family: 'Glacial Indifference';
+//   src: url('/fonts/GlacialIndifference-Bold.eot');
+//   src: local('Glacial Indifference-Bold'), local('GlacialIndifference-Bold'),
+//     url('/fonts/GlacialIndifference-Bold.eot?#iefix') format('embedded-opentype'),
+//     url('/fonts/GlacialIndifference-Bold.woff') format('woff'),
+//     url('/fonts/GlacialIndifference-Bold.ttf') format('truetype'),
+//     url('/fonts/GlacialIndifference-Bold.svg#GlacialIndifference-Bold') format('svg');
+//   font-weight: bold;
+//   font-style: normal;
+// }
 
 * {
   -webkit-box-sizing: border-box;
@@ -50,19 +72,26 @@
 }
 
 body {
-  font-family: 'Glacial Indifference', "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  // font-family: 'TruenoRegular', "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: 'TruenoRegular' !important;
+  background-color: $congres-light-color !important;
 }
 
 h1, h2, h3, h4, h5, h6{
   letter-spacing: 0;
 }
 
-p{
+p {
+  font-family: 'TruenoLt' !important;
+  font-weight: lighter;
+  text-transform: uppercase;
   text-align: left;
   font-size: 2rem;
-  max-width: 50em;
+  max-width: 40em;
   margin: 0 auto;
+  line-height: 3em;
 }
+
 
 a,
 a:visited{
@@ -138,17 +167,17 @@ a:focus{
 }
 
 /**************************************************************************
- *
- * COMPONENT SPECIFIC DEFINITIONS
- *
- **************************************************************************/
+*
+* COMPONENT SPECIFIC DEFINITIONS
+*
+**************************************************************************/
 @import 'nav';
 
 @import 'header';
 
 /******************
- * sections
- ******************/
+* sections
+******************/
 
 section h1,
 section h2,
@@ -159,16 +188,20 @@ section h6{
   text-align: center;
 }
 
-section.slanted{
-  transform: skewY(3deg);
-  margin-top: -2px;
+section {
+  min-height: 100vh;
 }
 
-section.slanted .content{
-  transform: skewY(-3deg);
-  padding: 5rem 15px;
-  overflow: auto;
-}
+// section.slanted {
+//   transform: skewY(3deg);
+//   margin-top: -2px;
+// }
+//
+// section.slanted .content{
+//   transform: skewY(-3deg);
+//   padding: 5rem 15px;
+//   overflow: auto;
+// }
 
 section.slanted.twocolumn{
   display: flex;
@@ -278,9 +311,9 @@ section.quote .person{
 }
 
 /****************************
- * Button
- ****************************/
- .button.button-primary,
+* Button
+****************************/
+.button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
@@ -308,17 +341,18 @@ input[type="button"].button-primary:focus
 }
 
 /****************************
- * Footer
- ****************************/
+* Footer
+****************************/
 
 footer {
   width: 100%;
-  background-color: #373636;
+  background-color: $congres-light-color;
   padding: 5vh 10%;
+  color: black;
 }
 
 footer .sponsor {
-  color: white;
+  color: black;
   width: 90%;
   display: flex;
   justify-content: space-evenly;
@@ -425,16 +459,16 @@ footer a:focus{
 
 
 /**************************************************************************
- *
- * PAGE SPECIFIC DEFINITIONS
- *
- **************************************************************************/
+*
+* PAGE SPECIFIC DEFINITIONS
+*
+**************************************************************************/
 
 @import 'index';
 
 /****************************
- * Speakers
- ****************************/
+* Speakers
+****************************/
 header.hero.speakers{
   background-image: url('/images/Foto-Spreker2.jpg');
 }
@@ -518,8 +552,8 @@ header.hero.speakers{
 }
 
 /****************************
- * Panel
- ****************************/
+* Panel
+****************************/
 section.panel h3 {
   flex-basis: 100%;
   margin-top: 20px;
@@ -568,8 +602,8 @@ section.panel .photo img {
   }
 }
 /****************************
- * Partners
- ****************************/
+* Partners
+****************************/
 header.hero.partners{
   background-image: url('/images/Foto-Sponsor.jpg');
 }
@@ -606,8 +640,8 @@ header.hero.partners{
 }
 
 /****************************
- * Organisation
- ****************************/
+* Organisation
+****************************/
 .committee-profile .name{
   margin: 0;
 }
@@ -691,8 +725,8 @@ section#xabi .subpage.image{
 
 
 /****************************
- * Location
- ****************************/
+* Location
+****************************/
 
 header.hero.location{
   background-image: url('/images/Foto-Spiegel.jpg');
@@ -723,8 +757,8 @@ header.hero.location{
 
 
 /****************************
- * Login
- ****************************/
+* Login
+****************************/
 
 header.hero.login{
   min-height: 0;
@@ -770,8 +804,8 @@ header.hero.login{
 }
 
 /****************************
- * Register
- ****************************/
+* Register
+****************************/
 header.hero.register{
   min-height: 0;
   background-image: url('/images/23369577356_2d8183a751_o.jpg');
@@ -791,8 +825,8 @@ header.hero.register{
 }
 
 /****************************
- * Profile
- ****************************/
+* Profile
+****************************/
 
 section.profile {
   margin:10px;
@@ -821,8 +855,8 @@ section.profile {
 
 
 /****************************
- * Users
- ****************************/
+* Users
+****************************/
 
 .buses.table {
   max-width: 50em;
@@ -832,8 +866,8 @@ section.profile {
 }
 
 /****************************
- * Users
- ****************************/
+* Users
+****************************/
 
 .section.users {
   overflow:auto;
@@ -850,8 +884,8 @@ section.profile {
 }
 
 /****************************
- * Diet
- ****************************/
+* Diet
+****************************/
 
 #diet-table {
   float: none;
@@ -874,8 +908,8 @@ section.profile {
 }
 
 /****************************
- * Aanwezig
- ****************************/
+* Aanwezig
+****************************/
 
 #aanwezig-table {
   float: none;
@@ -887,8 +921,8 @@ table.aanwezig {
 }
 
 /****************************
- * Participate
- ****************************/
+* Participate
+****************************/
 
 ul.associations {
   list-style: none;
@@ -902,19 +936,19 @@ section.intro p.participate {
 }
 
 /****************************
- * Connect better
- ****************************/
+* Connect better
+****************************/
 .connectbetter p {
   padding: 10px;
 }
 
 /****************************
- * Nedap Bedrijfsprofiel
- ****************************/
+* Nedap Bedrijfsprofiel
+****************************/
 
 /*
- * Hero image on small devices. quote above image
- */
+* Hero image on small devices. quote above image
+*/
 @media(max-width: 800px){
 
   header.hero.nedap{
@@ -941,8 +975,8 @@ section.intro p.participate {
 }
 
 /*
- *Hero image on larger devices. Quote inside the image
- */
+*Hero image on larger devices. Quote inside the image
+*/
 @media (min-width: 800px) {
   header.hero.nedap{
     background-image: url('/images/bedrijven/nedap/andre.jpg');
@@ -979,8 +1013,8 @@ section#paris .subpage.image{
 }
 
 /****************************
- * Achmea Bedrijfsprofiel
- ****************************/
+* Achmea Bedrijfsprofiel
+****************************/
 
 header.hero.achmea{
   background-image: url('/images/Hero_Achmea.jpg');
@@ -988,8 +1022,8 @@ header.hero.achmea{
 }
 
 /****************************
- * KPMG Bedrijfsprofiel
- ****************************/
+* KPMG Bedrijfsprofiel
+****************************/
 
 header.hero.kpmg {
   background-image: url('/images/Hero_KPMG.jpg');
@@ -997,8 +1031,8 @@ header.hero.kpmg {
 }
 
 /****************************
- * Topicus Bedrijfsprofiel
- ****************************/
+* Topicus Bedrijfsprofiel
+****************************/
 
 header.hero.topicus {
   background-image: url('/images/Hero_Topicus.jpg');
@@ -1006,8 +1040,8 @@ header.hero.topicus {
 }
 
 /****************************
- * One-off elements
- ****************************/
+* One-off elements
+****************************/
 
 .privacy {
   font-size: 1.5em;
@@ -1020,3 +1054,5 @@ header.hero.topicus {
 }
 
 article + .readmore-js-toggle { padding-bottom: 1.5em; border-bottom: 1px solid #999; font-weight: bold;}
+
+@import 'custom';

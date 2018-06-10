@@ -2,12 +2,16 @@ extends layout
 block above-content
 
 block header
-    header(id="particles-js" class='hero index')
+    header(id='particles-js' class='hero index particles')
       //- img(class='logo' src='images/logo.svg' alt='DisruptIT')
+      div(class="singularit-logo")
+        img(src='/images/singularit_logo.png')
       div()
         span(class='title sub') SNIC PRESENTS:
-        h1(class='title main') Singular
+        h1(class='title main') SINGULAR
           span(class="subcol") IT
+        a(href="/register")
+          div(class="register-button") REGISTER
       i(class="arrow").fa.fa-angle-down.fa-5x.white
       //- div(role='separator' class='separator')
       //- p
@@ -18,64 +22,89 @@ block header
 
 block content
   // Short summary
+  header(id='particles-js-light' class='particles')
   section(class='intro slanted')
     .content
-      h2 Technological Singularity
-      div(role='separator' class='separator')
-      p
-        | This year's theme is Singularity.
+      h2 SINGULARITY
+      p 
+        | The theme of this year's conference is 
+        span(class="accent") SINGULARIT
+        |: The technological singular-ity. Singularity is a term that has its origin in mathematics:
+        | There, it means 'the point where 
+        span(class="accent") humanity
+        | will no longer be able to know what is being calculated'.
+        | The past decennia, the term has been used more and more in the world of 
+        span(class="accent") technology
+        |.
+    div(class="skewed-background")
 
   // Inspirational quote
-  section(class='quote slanted')
+  section(class='')
+    //div(class="skewed-background-2")
     .content
-      .text
-        | “The development of full artificial intelligence could spell the end of the human race.... It would take off on its own, and re-design itself at an ever increasing rate. Humans, who are limited by slow biological evolution, couldn't compete, and would be superseded.”
-      .person
-        .text
-          | Stephen Hawking
+      p 
+        span(class="accent") “Everyone 
+        |  takes the limits of his 
+        span(class="accent") own 
+      p(style="padding-left: 100px;")
+        | vision for the 
+        span(class="accent") limits 
+        |  of the 
+        span(class="accent") world”
+        |.
+      p(style="text-align: right;")
+        | - Arthur 
+        span(class="accent") Schopenhauer 
+    
+    div(class="skew-content")
+      div(class="text-content")
+        div(id="speakers" class="header-title") Speakers
+        p(class="speakers" style="float: left;")
+          |
+          span(class="accent") SingularIT 
+          | tries to change the 
+          span(class="accent") minds 
+          | of the students attending the conference.
+          | We want to inform the attendees about how the IT 
+          span(class="accent") industry 
+          | might change in the coming years.
+          | This will be done with interesting talks by 
+          span(class="accent") scientists, 
+          | entrepreneurs and experts from the business sector.
+          | We have two keynote speakers and two 
+          span(class="accent") parallel tracks 
+          | of three sessions to fit everybody's personal needs.
+          | You will be able to choose whichever talk you find more appealing. 
+      img(class="speaker-img" src="/images/20161115-IMG_8885.jpg")
+        
+  div(id="location" class="skew-content")
+    section#location.slanted.twocolumn
+      .subpage.image
+      .subpage(class="congres-bg location-content")
+        .content(style="transform: skewY(-5deg);")
+          div(class="header-title") Location
+          p(class="location")
+            | The conference will be held in 
+            span(class="accent") Philharmonie Haarlem 
+            | in Haarlem. 
+            | It will take place on 
+            span(class="accent") November 21st, 2018.
 
-  // more context in two columns
-  section(class='slanted twocolumn background-snic' id='speakers')
-    .subpage
-      .content
-        h2 Speakers
-        div(role='separator' class='separator')
-        p
-          | DisruptIT will try to change the minds of the students attending the conference. We want to inform the attendees about how the IT industry might change in the coming years. This will be done with interesting talks by scientists, entrepreneurs and experts from the business sector. The exact schedule is still being developed but we expect to have two keynotes speakers and two parallel tracks of three sessions to fit everybody's personal needs. You will be able to choose whichever talk you find most appealing.
-
-    .subpage.image
-
-  section#location.slanted.twocolumn
-    .subpage.image
-    .subpage
-      .content
-        h2 Location
-        .separator(role='separator')
-        p
-          | The conference will be held in Philharmonie Haarlem in Haarlem. The building not only looks incredible from the outside, with its iconic cupola, but will definitely inspire participants with its modern inside. The conference will take place on November 20th 2018. The conference will take place during the full day, including drinks at the end of the conference. Don't worry, we checked that none of you will miss any exams. The committee is working hard, hoping to be able to give you more information soon!
-
-  section#snic.slanted.twocolumn.background-snic-grey
-    .subpage
-      .content
-        h2 SNiC
-        .separator(role='separator')
-        p
-          | SNiC is an acronym for Stichting Nationaal informatica Congres (Foundation National Computer Science Conference). This organisation was established in 2004 with the purpose of stimulating the interest in IT knowledge, IT applications and the business side of IT. Every year, a conference with an IT related subject is organised. For each conference one study association is chosen to take care of the organsisation. The conference is visited by over 400 academic computer science students. More information about previous confereneces and the participating study associations can be found on the
-          a.SnicBlue(href='http://stichting.snic.nl/', target='_blank') SNiC website
-          | .
-    .subpage.image
-  section.intro.slanted
+  div(id="about" class="skewed-background-2")
+  header(id='particles-js-light-2' class='particles')
+  section(class='intro slanted')
     .content
-      h2 Get in touch
-      .separator(role='separator')
-      p
-        | Please do not hesitate to contact us if you have any questions or if you are looking for more information. Just send us an
-        a(href='mailto:info@disrupt-it.nl') email
-        |  and we will contact you.
-  section.video
-    div
-      h2 Video Impression
-      .separator(role='separator')
-    .youtube
-      a(href='https://www.youtube.com/watch?v=cTSR1ZIOalU', target='_blank')
-        i.fa.fa-youtube-play.fa-5x.white
+      h2 SNIC
+      // div(role='separator' class='separator')
+      p 
+        span(class="accent") SNIC 
+        | is an acronym for Stichting Nationaal Informatica congres (foundation national computer science conference).
+        | This organisation was established in 
+        span(class="accent") 2004 
+        | with the purpose of stimulating the interest in IT knowledge, IT applications and the business side of it.
+        | Every year, a 
+        span(class="accent") conference 
+        | with an IT related subject is organised. For each conference one study association is chosen to take care of the organisation.
+        | This year, the organisation is in the hands of study assocation 
+        span(class="accent") VIA
+        |
