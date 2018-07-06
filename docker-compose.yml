@@ -25,7 +25,7 @@ services:
     working_dir: /usr/src/app
     environment:
       - NODE_ENV=development
-    command: bash -c "cd /app && npm install && npm start" # ["npm", "start"]
+    command: bash -c "cd /usr/src/app && gulp sass && gulp js && npm start" # ["npm", "start"]
     ports:
       - "3000:3000"
   # nginx:

@@ -1,6 +1,6 @@
 // var debug = require('debug')('disruptit');
 var express = require('express');
-var Barc = require('barcode-generator');
+// var Barc = require('barcode-generator');
 var Ticket = require('../models/Ticket');
 var User   = require('../models/User');
 var _      = require('underscore');
@@ -408,9 +408,11 @@ router.post('/aanmelden', adminAuth, function (req,res,next) {
     });
   });
 });
-var barc = new Barc({
-  hri: false
-});
+
+//
+// var barc = new Barc({
+//   hri: false
+// });
 
 /**
  * List of people present, per association
