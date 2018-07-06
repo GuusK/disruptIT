@@ -12,7 +12,17 @@ block header
           span(class="subcol") IT
         a(href="/register")
           div(class="register-button") REGISTER
-      i(class="arrow").fa.fa-angle-down.fa-5x.white
+      a(href="#intro" style="color: white;")
+        i(class="arrow").fa.fa-angle-down.fa-5x.white
+        
+      div(class="homepage-sponsor-banner")
+        img(class="homepage-sponsor-logo main-sponsor" src='/images/snic_sponsor_logo/Logo_Quintor.png')
+        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Nedap.png')
+        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_ING.png')
+        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Achmea.png')
+        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Chipsoft.png')
+        div(id="silver_logo_container")
+          img(id="silver_logos" class="homepage-sponsor-logo")
       //- div(role='separator' class='separator')
       //- p
       //-   | 12th edition<br />
@@ -23,7 +33,7 @@ block header
 block content
   // Short summary
   header(id='particles-js-light' class='particles')
-  section(class='intro slanted')
+  section(id="intro" class='intro slanted')
     .content
       h2 SINGULARITY
       p 

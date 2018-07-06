@@ -17,7 +17,7 @@ services:
      - ME_CONFIG_BASICAUTH_USERNAME=admin
      - ME_CONFIG_BASICAUTH_PASSWORD=test
   app:
-    image: snic/singularit:0.0.1
+    build: .
     volumes:
       - ./singularIT:/usr/src/app
     links:
@@ -25,7 +25,7 @@ services:
     working_dir: /usr/src/app
     environment:
       - NODE_ENV=development
-    command: ["npm", "start"]
+    command: bash -c "cd /app && npm install && npm start" # ["npm", "start"]
     ports:
       - "3000:3000"
   # nginx:

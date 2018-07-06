@@ -5,6 +5,11 @@ RUN apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 
+ADD singularIT /usr/src/app
+RUN cd /usr/src/app
+WORKDIR /usr/src/app
+RUN npm install
+
 EXPOSE 80 443
 
 CMD ["npm", "start"]

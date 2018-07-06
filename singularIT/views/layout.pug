@@ -23,7 +23,7 @@ html(lang=locale)
         a(href='/')
           img(src='/images/singularit_logo.png')
 
-      button(class='toggle navicon-button' data-target='#navbar-main-collapse')
+      button(id="navbarToggle" class='toggle navicon-button' data-target='#navbar-main-collapse')
         span(class='navicon navicon-times')
 
       if user
@@ -128,14 +128,34 @@ html(lang=locale)
     block content
 
     // Footer
-    footer
+    footer(id="partners")
       .sponsor
         p Platinum partner
-        a.nedap(href="https://quintor.nl/")
-          img.nedap(src='https://www.hanze.nl/assets/instituut-voor-communicatie-media-it/PublishingImages/Public/Quintor.png')
+        a.nedap(href="https://quintor.nl/", target="_blank")
+          img.nedap(src='/images/snic_sponsor_logo/Logo_Quintor.png')
 
       .sponsor
         .separator(role='separator')
+      .sponsor
+        p Gold partners
+        div(class="silver-sponsors")
+          a.nedap(href="https://nedap.com/", target="_blank")
+            img.nedap(src='/images/snic_sponsor_logo/Logo_Nedap.png')
+          a.nedap(href="https://ing.nl/", target="_blank")
+            img.nedap(src='/images/snic_sponsor_logo/Logo_ING.png')
+          a.nedap(href="https://www.achmea.nl/", target="_blank")
+            img.nedap(src='/images/snic_sponsor_logo/Logo_Achmea.png')
+      .sponsor
+        .separator(role='separator')
+      .sponsor
+        p Silver partners
+        div(class="silver-sponsors")
+          a.nedap(href="https://dsw.nl/", target="_blank")
+            img.nedap(src='/images/snic_sponsor_logo/Logo_DSW.png')
+          a.nedap(href="https://procam.nl/", target="_blank")
+            img.nedap(src='/images/snic_sponsor_logo/Logo_Procam.png')
+          a.nedap(href="https://topicus.nl/", target="_blank")
+            img.nedap(src='/images/snic_sponsor_logo/Logo_Topicus.jpg')
 
       //-.sponsor
         p Gold partner
@@ -161,9 +181,7 @@ html(lang=locale)
 
     // Scripts
     script(src='//code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')  
-    //- script(src='/js/jquery-3.2.1.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
-    script(src='/js/jQuery.curtail.min.js')
-    script(src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js")
-    script(src='/js/particlejs.js')
+    //script(src='/js/jQuery.curtail.min.js')
+    script(src='/js/particles.js')
     script(src='/js/app.js')

@@ -342,13 +342,13 @@ header.hero {
     font-family: 'TruenoRegular'; }
     header.hero .title.main {
       font-weight: bold;
-      font-size: 4em;
+      font-size: 4rem;
       margin-top: 0;
       letter-spacing: 10px; }
       header.hero .title.main .subcol {
         color: #99e9ff; }
     header.hero .title.sub {
-      font-size: 1.25em; }
+      font-size: 1.25rem; }
   header.hero .arrow {
     transition: 1s; }
   header.hero .arrow:hover {
@@ -1134,9 +1134,12 @@ article + .readmore-js-toggle {
   border-bottom: 1px solid #999;
   font-weight: bold; }
 
+#location {
+  background-color: #22244b; }
+
 .accent {
   font-family: 'TruenoRegular' !important;
-  font-size: 1.5em;
+  font-size: 2.25rem;
   font-weight: normal; }
 
 .congres-bg {
@@ -1150,7 +1153,8 @@ article + .readmore-js-toggle {
   .skew-content .speakers {
     font-family: 'TruenoUltLt' !important;
     font-weight: 100;
-    margin: 0; }
+    margin: 0;
+    font-size: 1rem; }
 
 .location-content {
   text-align: right;
@@ -1169,7 +1173,7 @@ article + .readmore-js-toggle {
   height: 100vh; }
 
 .header-title {
-  font-size: 4em;
+  font-size: 4rem;
   margin-bottom: 2em; }
 
 .skewed-background {
@@ -1183,7 +1187,7 @@ article + .readmore-js-toggle {
   width: 100%;
   background-color: #22244b;
   height: 200px;
-  clip-path: polygon(50% 0, 100% 0%, 100% 100%, 50% 0%); }
+  clip-path: polygon(50% 0, 100% 0%, 100% 50%, 50% 0%); }
 
 .particles canvas {
   position: absolute;
@@ -1200,9 +1204,52 @@ article + .readmore-js-toggle {
   text-align: center;
   border: 2px solid white;
   padding: 10px;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   margin-bottom: 50px;
   color: white;
   pointer-events: none;
   cursor: default;
   text-decoration: none; }
+
+.silver-sponsors {
+  display: flex; }
+
+.homepage-sponsor-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.homepage-sponsor-logo {
+  height: 50px;
+  margin: 10px;
+  background-color: white;
+  padding: 2px; }
+
+.main-sponsor {
+  background-color: transparent; }
+
+@media (max-width: 600px) {
+  body {
+    overflow: none; }
+  .homepage-sponsor-logo {
+    display: none;
+    text-align: center;
+    width: 100px;
+    height: auto; }
+  .silver_logo_container {
+    display: none !important; }
+  .main-sponsor {
+    display: inline; }
+  h1 {
+    font-size: 2.5rem !important; }
+  p {
+    font-size: 1.25rem !important;
+    padding-left: 10px;
+    padding-right: 10px; }
+  .skewed-background-2 {
+    display: none; }
+  .silver-sponsors {
+    flex-direction: column; } }
