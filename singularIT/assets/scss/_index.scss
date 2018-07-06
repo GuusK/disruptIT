@@ -7,9 +7,15 @@ header.hero.index{
     // background-image: url('/images/foto1.jpg');
 }
 
-section#speakers .subpage.image{
-    background-image: url('/images/Foto-Spreker.jpg');
+section#speakers {
+  background-color: $congres-color;
+}
+
+section#speakers .subpage.image {
+    background-image: url('/images/20161115-IMG_8885.jpg');
     background-position: center 80%;
+    transform: skewY(-5deg);
+
 }
 
 section#location .subpage.image{

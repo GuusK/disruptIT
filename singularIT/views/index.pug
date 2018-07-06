@@ -65,28 +65,31 @@ block content
       p(style="text-align: right;")
         | - Arthur 
         span(class="accent") Schopenhauer 
-    
-    div(class="skew-content")
-      div(class="text-content")
-        div(id="speakers" class="header-title") Speakers
-        p(class="speakers" style="float: left;")
-          |
-          span(class="accent") SingularIT 
-          | tries to change the 
-          span(class="accent") minds 
-          | of the students attending the conference.
-          | We want to inform the attendees about how the IT 
-          span(class="accent") industry 
-          | might change in the coming years.
-          | This will be done with interesting talks by 
-          span(class="accent") scientists, 
-          | entrepreneurs and experts from the business sector.
-          | We have two keynote speakers and two 
-          span(class="accent") parallel tracks 
-          | of three sessions to fit everybody's personal needs.
-          | You will be able to choose whichever talk you find more appealing. 
-      img(class="speaker-img" src="/images/20161115-IMG_8885.jpg")
         
+        
+    div(id="speakers" class="skew-content")
+      section#speakers.slanted.twocolumn
+        .subpage(class="congres-bg location-content")
+          .content(style="transform: skewY(-5deg);")
+            div(class="header-title" style="text-align: left;") Speakers
+            p(class="speakers" style="float: left; text-align: left;")
+              |
+              span(class="accent") SingularIT 
+              | tries to change the 
+              span(class="accent") minds 
+              | of the students attending the conference.
+              | We want to inform the attendees about how the IT 
+              span(class="accent") industry 
+              | might change in the coming years.
+              | This will be done with interesting talks by 
+              span(class="accent") scientists, 
+              | entrepreneurs and experts from the business sector.
+              | We have two keynote speakers and two 
+              span(class="accent") parallel tracks 
+              | of three sessions to fit everybody's personal needs.
+              | You will be able to choose whichever talk you find more appealing. 
+        .subpage.image
+
   div(id="location" class="skew-content")
     section#location.slanted.twocolumn
       .subpage.image
