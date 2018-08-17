@@ -89,6 +89,12 @@ module.exports = function (config) {
     return err;
   }
 
+  function unauthorized(message) {
+    var err = new Error(message);
+    err.status = 401;
+    return err;
+  }
+
   router.all('/', function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.type('json');
@@ -100,7 +106,7 @@ module.exports = function (config) {
     var password =  req.body.password;
 
     if (!username || !password) {
-      throw badRequest("Username and/or password not provided.");
+      throw unauthorized("Username and/or password were not provided.");
     }
 
     var authenticate = ScannerUser.authenticate();
@@ -110,7 +116,7 @@ module.exports = function (config) {
       function (next) {
         authenticate(username, password, function (result, scannerUser, err) {
           if (err) {
-            next(badRequest(err.message), scannerUser);
+            next(unauthorized(err.message), scannerUser);
           } else {
             next(null, scannerUser);
           }
@@ -151,7 +157,7 @@ module.exports = function (config) {
     }
 
     if(!isTokenValid(token)) {
-      throw badRequest("Invalid token provided.");
+      throw unauthorized("Invalid token provided.");
     }
 
     var scanner_user_id = getScannerUserIdFromToken(token);
