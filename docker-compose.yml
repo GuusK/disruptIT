@@ -1,5 +1,5 @@
 # Normally run from the folder outside the repo.
-version: '2.0'
+version: '3.4'
 services:
   mongodb:
     image: mongo:3.4
@@ -17,23 +17,14 @@ services:
      - ME_CONFIG_BASICAUTH_USERNAME=admin
      - ME_CONFIG_BASICAUTH_PASSWORD=test
   app:
-    build: .
-    volumes:
-      - ./singularIT:/usr/src/app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
     links:
       - "mongodb"
-    working_dir: /usr/src/app
     environment:
-      - NODE_ENV=development
-    command: bash -c "cd /usr/src/app && gulp sass && gulp js && npm start" # ["npm", "start"]
+      - NODE_ENV=production
+    command: bash entrypoint.production.sh
     ports:
       - "3000:3000"
-  # nginx:
-  #   image: nginx:1.13.5
-  #   network_mode: "host"
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   volumes:
-  #     - "/root/disruptIT/Dockerfile/nginx.conf:/etc/nginx/nginx.conf"
-  #     - "/etc/letsencrypt/archive/disrupt-it.nl:/etc/letsencrypt/live/disrupt-it.nl"
