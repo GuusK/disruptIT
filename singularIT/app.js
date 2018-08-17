@@ -23,11 +23,12 @@ var MongoStore = require('connect-mongo')(session);
 var config = JSON.parse(fs.readFileSync('config.json'));
 
 /// configure database
-// mongoose.connect(config.mongodb.url);
-// mongoose.Promise = require('q').Promise;
+mongoose.connect(config.mongodb.url);
+mongoose.Promise = require('q').Promise;
 
 var routes = require('./routes/index')(config);
 var auth = require('./routes/auth')(config);
+var scanner_api_routes = require('./routes/scanner')(config);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -47,6 +48,10 @@ var allowCrossDomain = function(req, res, next) {
 
   next();
 };
+
+// This must come BEFORE the bodyParser stuff, so the scanner API route
+// can have its own bodyParser and handle its errors
+app.use('/scanner/api/', scanner_api_routes);
 
 app.use(morgan('combined'));
 app.use(bodyParser.json());
