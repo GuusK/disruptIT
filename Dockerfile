@@ -6,7 +6,6 @@ WORKDIR /usr/src/
 
 RUN npm install gulp -g
 
-COPY idle.sh /usr/src/
 COPY entrypoint.development.sh entrypoint.production.sh /usr/src/
 
 
