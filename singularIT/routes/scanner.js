@@ -83,22 +83,37 @@ module.exports = function (config) {
     });
   }
 
-  function badRequest(message) {
+  function createError(message, code) {
     var err = new Error(message);
-    err.status = 400;
+    err.status = code;
     return err;
+  }
+
+  function badRequest(message) {
+    return createError(message, 400);
   }
 
   function unauthorized(message) {
-    var err = new Error(message);
-    err.status = 401;
-    return err;
+    return createError(message, 401);
   }
 
-  router.all('/', function (req, res, next) {
+  function notFound(message) {
+    return createError(message, 404);
+  }
+
+  router.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods',
+      'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers',
+      'Content-Type, Authorization, Content-Length, X-Requested-With');
     res.type('json');
+
     next();
+  });
+
+  router.options('/*', function(req, res) {
+    res.sendStatus(200);
   });
 
   router.post('/token', function (req, res, next) {
@@ -171,8 +186,8 @@ module.exports = function (config) {
     async.waterfall([
       function (next) {
           User.findById(user_id).exec(function (err, user) {
-              if (err) {
-                  next(badRequest("Invalid user ID provided."), user);
+              if (err || user === null || user === undefined) {
+                  next(notFound("Unknown user ID provided."), user);
               } else {
                   next(null, user);
               }
@@ -231,9 +246,7 @@ module.exports = function (config) {
   // 404 catcher
   router.use(function(req, res, next) {
     // throw error and forward to error handler
-    var err = new Error('Invalid API route');
-    err.status = 404;
-    next(err);
+    next(notFound("Invalid API route"));
   });
 
   router.use(function(err, req, res, next) {
