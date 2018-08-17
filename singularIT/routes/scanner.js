@@ -95,7 +95,7 @@ module.exports = function (config) {
     next();
   });
 
-  router.post('/token', function (req, res) {
+  router.post('/token', function (req, res, next) {
     var username =  req.body.username;
     var password =  req.body.password;
 
@@ -108,9 +108,15 @@ module.exports = function (config) {
 
     async.waterfall([
       function (next) {
-        authenticate(username, password, next);
+        authenticate(username, password, function (result, scannerUser, err) {
+          if (err) {
+            next(badRequest(err.message), scannerUser);
+          } else {
+            next(null, scannerUser);
+          }
+        });
       },
-      function (scannerUser, next, err) {
+      function (scannerUser, next) {
         var token = createToken(scannerUser);
         var body = {
           display_name: scannerUser.display_name,
@@ -119,8 +125,11 @@ module.exports = function (config) {
         success(res, body);
         next();
       }
-    ]);
-
+    ], function (err) {
+      if (err) {
+        return next(err);
+      }
+    });
   });
 
   router.get('/token', function (req, res) {
