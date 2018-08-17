@@ -20,11 +20,12 @@ var User = new mongoose.Schema({
   type:                 { type: String,  default: 'student' },
   company:              { type: String                      },
   sprekers:             { type: [String],required: false    },
-  session1:              { type: String,  required: false    },
-  session2:              { type: String,  required: false    },
-  session3:              { type: String,  required: false    },
+  session1:             { type: String,  required: false    },
+  session2:             { type: String,  required: false    },
+  session3:             { type: String,  required: false    },
   connectlist:          [String],
-  matchingterms:        [String]
+  matchingterms:        [String],
+  studyProgramme:       { type: String ,  required: true    },
 });
 
 User.plugin(plm, {

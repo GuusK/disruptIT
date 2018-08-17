@@ -37,6 +37,17 @@ block content
                   input#bus(type='checkbox', name='bus', checked=body.bus?'checked': undefined)
                   | I would like to use the arranged bus at my study association
           .form-group
+            label(for='programme') Study programme
+            .select-wrapper
+              select.form-control(id='programme', required, name='programme')
+                option(value='', selected) Select...
+                each programme in studyProgrammes
+                  option(value=programme, selected = body.programme==programme ? 'selected' : undefined)=programme
+                option(value="other" id="study-programme-other") Other
+          .form-group(style='display:none', id='programme-other-group')
+            label Please enter the name of your study programme
+            input.form-control(type='text', name='programmeOther', value=body.programmeOther)
+          .form-group
             .checkbox
               label(for='vegetarian')
                 input#vegetarian(type='checkbox',name='vegetarian', checked=body.vegetarian? "checked": undefined)
@@ -71,16 +82,42 @@ block content
 block footer
   if new Date(ticketSaleStarts).getTime() < Date.now()
     script(type="text/javascript").
+      function setOtherProgrammeEnabled(enabled) {
+        $("#programme-other-group input").prop("required", enabled);
+        if (enabled)
+          $("#programme-other-group").show();
+        else
+          $("#programme-other-group").hide();
+      }
+
       $(document).ready(function () {
         var verenigingen = !{JSON.stringify(verenigingen)};
         var bus = $("#bus-form-group");
 
-        $("#vereniging").on('change', function () {
-            var index = this.value;
-            var vereniging = verenigingen[index];
-            if (vereniging && vereniging.bus)
+        var other_programme = $("#programme-other-group");
+        var other_programme_input = $("#programme-other-group input");
+
+        function updateBusCheckbox() {
+          var index = $("#vereniging").val();
+          var vereniging = verenigingen[index];
+          if (vereniging && vereniging.bus)
               bus.show();
-            else
+           else
               bus.hide();
+          }
+
+        $("#vereniging").on('change', updateBusCheckbox);
+        $("#programme").on('change', function () {
+            setOtherProgrammeEnabled(this.value === 'other');
         });
+
+        updateBusCheckbox();
       });
+
+    if body.programmeOther
+      script(type="text/javascript").
+        $(document).ready(function () {
+          $("#programme").val("other");
+            setOtherProgrammeEnabled(true);
+        });
+

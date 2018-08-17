@@ -43,7 +43,12 @@ module.exports = function (config) {
   });
 
   router.get('/register', function (req, res) {
-    res.render('register', {verenigingen: config.verenigingen, ticketSaleStarts:config.ticketSaleStarts, body:req.session.body || {}});
+    res.render('register', {
+        verenigingen: config.verenigingen,
+        studyProgrammes: config.studyProgrammes,
+        ticketSaleStarts:config.ticketSaleStarts,
+        body:req.session.body || {}
+    });
   });
 
   function subscribe(email, cb) {
@@ -73,6 +78,15 @@ module.exports = function (config) {
     req.body.bus = req.body.bus || (req.body.vereniging !== 'partner');
     req.body.vegetarian = req.body.vegetarian || false;
     req.body.subscribe = req.body.subscribe || false;
+
+    if (req.body.programme === 'other') {
+        req.checkBody('programmeOther', 'No study programme provided.').notEmpty();
+        req.body.programme = req.body.programmeOther;
+    } else {
+        req.checkBody('programme', 'No study programme provided.').notEmpty();
+        req.body.programmeOther = null;
+    }
+
     req.sanitize('bus').toBoolean();
     req.sanitize('vegetarian').toBoolean();
     req.sanitize('subscribe').toBoolean();
@@ -96,6 +110,7 @@ module.exports = function (config) {
       bus: req.body.bus,
       vegetarian: req.body.vegetarian,
       specialNeeds: req.body.specialNeeds,
+      studyProgramme: req.body.programme
     });
 
     async.waterfall([
