@@ -1,31 +1,39 @@
-# Installation
-Run
+# Website for the SNiC: SingularIT 2018 congress
+
+## Setup
+Install [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/).
+
+### Running for development
+Run the following to build the development image:
+```bash
+./docker-compose-dev.sh build
 ```
-build.sh
+
+And run it with:
+```bash
+./docker-compose-dev.sh up
 ```
-in the singularIT/Dockerfile/ folder.
 
-Then, run
+This container has the `singularIT` directory mounted as a volume, so you don't have
+to rebuild the container on every change. It will also automatically reload
+when files have changed using `nodemon`.
+
+### Running in production
+Build the image with:
+
+```bash
+docker-compose build
 ```
-docker-compose up
+
+And run it (detached) with
 ```
-in the root directory.
+docker-compose up -d
+```
 
-# Running the system
-The easiest way to run the whole website is, in Guus's opinion, to use docker. This runs on many systems and allows you to run VM-like containers which can be hidden from the normal network (therefore increasing security, by a lot). Furthermore, problems like: "BUT IT WORKS ON MY MACHINE!" are no longer happening. Every instance of every container should be running the same.
-
-* Install [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/).
-* To create the images needed to run the website run the `build.sh` script in the `Dockerfile`-folder.
-* [Optional] Copy the `docker-compose.yml` and `nginx.conf` to outside of the repositoy.
-* Edit the `docker-compose.yml` to provide the nginx container with the right certificates. Keep in mind that symlinks break most of the time since not the whole filesystem is linked (and you don't want that either).
-* edit `nginx.conf` to use the proper certificates
-* run `docker-compose up` to have it in the foreground and be able to read the logs directly. `docker-compose start` to run it in the background.
-
-
-# Credits
+## Credits
 This framework was started by [Arian van Putten](https://github.com/arianvp), extended and improved upon by [Dennis Collaris](https://github.com/iamDecode). It however does not show up as a fork due to the need temporarily have the repository private.
 
-# Config
+## Config
 
 Configuration files are not included in this repository. You will need to add a file named `config.json` to the root folder with the following structure:
 ```javascript
@@ -157,14 +165,4 @@ The easiest way is to log in to mongo-express and change the boolean of a user t
 
 # Generating tickets
 
-To generate tickets run `node generate-tickets.js <number-of-tickets>'. To produce tickets non-default types, run `node generate-tickets.js <number-of-tickets> partner', where partner is the type of the ticket.
-
-# Running the system
-The easiest way to run the whole website is, in Guus's opinion, to use docker. This runs on many systems and allows you to run VM-like containers which can be hidden from the normal network (therefore increasing security, by a lot). Furthermore, problems like: "BUT IT WORKS ON MY MACHINE!" are no longer happening. Every instance of every container should be running the same.
-
-* Install [Docker](https://docs.docker.com/engine/installation/) and [Docker Compose](https://docs.docker.com/compose/install/).
-* To create the images needed to run the website run the `build.sh` script in the `Dockerfile`-folder.
-* [Optional] Copy the `docker-compose.yml` and `nginx.conf` to outside of the repositoy.
-* Edit the `docker-compose.yml` to provide the nginx container with the right certificates. Keep in mind that symlinks break most of the time since not the whole filesystem is linked (and you don't want that either).
-* edit `nginx.conf` to use the proper certificates
-* run `docker-compose up` to have it in the foreground and be able to read the logs directly. `docker-compose start` to run it in the background.
+To generate tickets run `node generate-tickets.js <number-of-tickets>'`. To produce tickets non-default types, run `node generate-tickets.js <number-of-tickets> partner', where partner is the type of the ticket.
