@@ -52,10 +52,11 @@ module.exports = function (config) {
     delete tokens[token];
   }
 
-  function getTokenTimestamp(token) {
+  function getTokenValidUntil(token) {
     var tokenInfo = tokens[token];
     if (tokenInfo) {
-      return tokenInfo.created_timestamp;
+      return new Date(
+        tokenInfo.created_timestamp.getTime() + token_expiry_time);
     }
 
     return null;
@@ -161,7 +162,14 @@ module.exports = function (config) {
     }
 
     var valid = isTokenValid(token);
-    success(res, {"valid": valid});
+    var result = {valid: valid};
+
+    if (valid) {
+        result.valid_until = getTokenValidUntil(token).toISOString();
+    }
+
+    success(res, result);
+
   });
 
   router.post('/ticketinfo', function (req, res, next) {
@@ -252,8 +260,8 @@ module.exports = function (config) {
   router.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.send({
-      "success": false,
-      "error": err.message
+      success: false,
+      error: err.message
     });
   });
 
