@@ -49,11 +49,12 @@ var allowCrossDomain = function(req, res, next) {
   next();
 };
 
+app.use(morgan('combined'));
+
 // This must come BEFORE the bodyParser stuff, so the scanner API route
 // can have its own bodyParser and handle its errors
 app.use('/scanner/api/', scanner_api_routes);
 
-app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
