@@ -109,6 +109,12 @@ Configuration files are not included in this repository. You will need to add a 
       "bus": false
     }
   ],
+  "studyProgrammes": [
+    "BSc Computer Science",
+    "BSc Artificial Intelligence",
+    "BSc Information Sciences",
+    "BSc Mathematics"
+  ],
   "ticketSaleStarts": "2015-08-01T00:00:00.001Z", // From when to register
   "providePreferences": false,     // If people can signup for sessions.
   "hideMenu": false,               // Not used in disruptIT
