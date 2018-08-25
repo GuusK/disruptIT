@@ -9,7 +9,7 @@ services:
   mongoadmin:  # web UI for mongo
     image: mongo-express
     ports:
-     - "8081:8081"
+     - "127.0.0.1:8081:8081"
     links:
      - mongodb:mongo
     environment:
@@ -27,4 +27,4 @@ services:
       - NODE_ENV=production
     command: bash entrypoint.production.sh
     ports:
-      - "3000:3000"
+     - "127.0.0.1:3000:3000"
