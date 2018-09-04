@@ -52,6 +52,12 @@
   margin-bottom: 2em;
 }
 
+.line-background {
+  // background-color: $congres-color;
+  // height: 1px;
+  // width: 100%;
+}
+
 .skewed-background {
   background-color: $congres-color;
   height: 200px;
@@ -107,20 +113,48 @@
   left: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
+
+
+// .skewed-background-2 {
+//   width: 0;
+// height: 0;
+// border-style: solid;
+// border-width: 20vh 85vh 0 85vh;
+// border-color: $congres-color transparent transparent;
+//
+// }
+
+.homepage-sponsor-banner {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
 .homepage-sponsor-logo {
-  height: 50px;
+  // height: 50px;
+  flex: 1;
+  max-height: 100px;
+  max-width: 100px;
   margin: 10px;
   background-color: rgba(255, 255, 255, 1.0);
-  padding: 2px;
 }
 .main-sponsor {
   background-color: transparent;
 }
 
+#silver_logo_container {
+  display: none !important;
+}
 
-@media (max-width: 600px) {
+
+@media (max-width: 700px) {
 
   body {
     overflow: none;
@@ -131,14 +165,14 @@
     text-align: center;
     width: 100px;
     height: auto;
-  }
 
-  .silver_logo_container {
-    display: none !important;
+    height: 100%;
+    flex: 1 0 21%;
   }
 
   .main-sponsor {
     display: inline;
+    height: auto;
   }
 
   h1 {
@@ -158,15 +192,10 @@
   .silver-sponsors {
     flex-direction: column;
   }
+
+  #silver_logo_container {
+    display: inline !important;
+  }
+  
 }
 
-
-
-// .skewed-background-2 {
-//   width: 0;
-// height: 0;
-// border-style: solid;
-// border-width: 20vh 85vh 0 85vh;
-// border-color: $congres-color transparent transparent;
-//
-// }

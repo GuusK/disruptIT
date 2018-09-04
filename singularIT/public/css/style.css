@@ -550,7 +550,7 @@ footer .sponsor {
 .sponsor a.nedap {
   flex-grow: 2;
   flex-basis: 100%;
-  margin: 15px;
+  margin: 3px;
   max-width: 100%; }
 
 .sponsor a.nedap {
@@ -1223,29 +1223,43 @@ article + .readmore-js-toggle {
   bottom: 0;
   left: 0;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
+
+.homepage-sponsor-banner {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  flex-wrap: wrap;
+  width: 100%; }
 
 .homepage-sponsor-logo {
-  height: 50px;
+  flex: 1;
+  max-height: 100px;
+  max-width: 100px;
   margin: 10px;
-  background-color: white;
-  padding: 2px; }
+  background-color: white; }
 
 .main-sponsor {
   background-color: transparent; }
 
-@media (max-width: 600px) {
+#silver_logo_container {
+  display: none !important; }
+
+@media (max-width: 700px) {
   body {
     overflow: none; }
   .homepage-sponsor-logo {
     display: none;
     text-align: center;
     width: 100px;
-    height: auto; }
-  .silver_logo_container {
-    display: none !important; }
+    height: auto;
+    height: 100%;
+    flex: 1 0 21%; }
   .main-sponsor {
-    display: inline; }
+    display: inline;
+    height: auto; }
   h1 {
     font-size: 2.5rem !important; }
   p {
@@ -1255,4 +1269,6 @@ article + .readmore-js-toggle {
   .skewed-background-2 {
     display: none; }
   .silver-sponsors {
-    flex-direction: column; } }
+    flex-direction: column; }
+  #silver_logo_container {
+    display: inline !important; } }
