@@ -8,6 +8,7 @@
   "dependencies": {
     "async": "^2.4.0",
     "body-parser": "~1.17.0",
+    "bwip-js": "^1.7.1",
     "compressible": "^2.0.11",
     "compression": "^1.6.2",
     "connect-mongo": "^1.3.2",

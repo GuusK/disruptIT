@@ -1,6 +1,6 @@
 // var debug = require('debug')('disruptit');
 var express = require('express');
-// var Barc = require('barcode-generator');
+var bwipjs = require('bwip-js');
 var Ticket = require('../models/Ticket');
 var User   = require('../models/User');
 var _      = require('underscore');
@@ -535,8 +535,18 @@ router.get('/tickets/:id', auth, function (req, res, next) {
 });
 
 router.get('/tickets/:id/barcode', function (req, res) {
-  res.set('Content-Type', 'image/png');
-  res.send(barc.code128(req.params.id, 440, 50));
+    bwipjs.toBuffer({
+        bcid: 'code128',
+        text: req.params.id,
+        height: 10,
+    }, function (err, png) {
+        if (err) {
+            return next(err);
+        } else {
+            res.set('Content-Type', 'image/png');
+            res.send(png);
+        }
+    });
 });
 
 router.get('/reload', function (req, res){
