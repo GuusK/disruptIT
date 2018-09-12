@@ -7,8 +7,8 @@ module.exports = function (config) {
   var nodemailer = require('nodemailer');
   var mg = require('nodemailer-mailgun-transport');
 
-  var Mailchimp = require('mailchimp-api-v3')
-  // var mc = new Mailchimp(config.mailchimp.key, true);
+  var Mailchimp = require('mailchimp-api-v3');
+  var mc = new Mailchimp(config.mailchimp.key, true);
   // don't ever use MD5 seriously. The only reason it's used is because
   // mailchimp wants an md5 hash of the emailaddress when you PUT it in the list
   var md5 = require('md5');
@@ -52,16 +52,16 @@ module.exports = function (config) {
   });
 
   function subscribe(email, cb) {
-    // mc.put('/lists/' + config.mailchimp.id + '/members/' + md5(email.toLowerCase()), {
-    //   email_address : email,
-    //   status : 'subscribed'
-    // }).then(function (res) {
-    //   cb();
-    // }).catch(function (err) {
-    //   console.log("SOME ERROR HAS OCCURED. NOTICE ME SENPAI!");
-    //   console.log(err);
-    //   cb(err);
-    // });
+    mc.put('/lists/' + config.mailchimp.id + '/members/' + md5(email.toLowerCase()), {
+      email_address : email,
+      status : 'subscribed'
+    }).then(function (res) {
+      cb();
+    }).catch(function (err) {
+      console.log("SOME ERROR HAS OCCURED. NOTICE ME SENPAI!");
+      console.log(err);
+      cb(err);
+    });
   }
 
   router.post('/register', function (req, res, next) {
