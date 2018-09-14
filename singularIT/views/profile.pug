@@ -80,36 +80,36 @@ block content
         label(for='specialNeeds') Other remarks (e.g. allergies)
         input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
       
-      h3 Connect better
-      | This year are introducing some new features to the SNiC so you can connect to companies and fellow students in a better and more interesting way for you. Read more about this 
-      a(href='/connectbetter') here
+      //- h3 Connect better
+      //- | This year are introducing some new features to the SNiC so you can connect to companies and fellow students in a better and more interesting way for you. Read more about this 
+      //- a(href='/connectbetter') here
       
-      .privacy We only share information that <b>you</b> want to share. 
+      //- .privacy We only share information that <b>you</b> want to share. 
 
-      | By leaving the following boxes empty, we will not share that information
+      //- | By leaving the following boxes empty, we will not share that information
 
-      .form-group
-        label(for='linkedIn') LinkedIn profile URL
-        input.form-control(type='text', name="linkedin", value=decodeURIComponent(user.linkedin))
-      .form-group
-        label(for='linkedIn') Phonenumber
-        input.form-control(type='text', name="phonenumber", value=decodeURIComponent(user.phonenumber))
-      .form-group
-        .checkbox
-          label(for='shareEmail')
-            input#shareEmail(type='checkbox',name='shareEmail', checked=user.shareEmail? "checked": undefined)
-            | I want to share my email-address
-      if user.type == 'student'
-        p Get matched with companies by filling in your interests!
-        .form-group
-          .interests
-            each val in matchingterms
-              - var checked = user.matchingterms.indexOf(val) >= 0;
-              .interest
-                .checkbox
-                  label(for=val)
-                    input(id=val type='checkbox',name=val, checked=checked? "checked": undefined) 
-                    = val
+      //- .form-group
+      //-   label(for='linkedIn') LinkedIn profile URL
+      //-   input.form-control(type='text', name="linkedin", value=decodeURIComponent(user.linkedin))
+      //- .form-group
+      //-   label(for='linkedIn') Phonenumber
+      //-   input.form-control(type='text', name="phonenumber", value=decodeURIComponent(user.phonenumber))
+      //- .form-group
+      //-   .checkbox
+      //-     label(for='shareEmail')
+      //-       input#shareEmail(type='checkbox',name='shareEmail', checked=user.shareEmail? "checked": undefined)
+      //-       | I want to share my email-address
+      //- if user.type == 'student'
+      //-   p Get matched with companies by filling in your interests!
+      //-   .form-group
+      //-     .interests
+      //-       each val in matchingterms
+      //-         - var checked = user.matchingterms.indexOf(val) >= 0;
+      //-         .interest
+      //-           .checkbox
+      //-             label(for=val)
+      //-               input(id=val type='checkbox',name=val, checked=checked? "checked": undefined) 
+      //-               = val
 
       button.button.special(type='submit') Save settings
       

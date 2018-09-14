@@ -8,6 +8,13 @@
   font-weight: normal;
 }
 
+.accent-logo {
+  font-family: 'TruenoRegular' !important;
+  font-size: 2.25rem;
+  font-weight: normal;
+  text-transform: none;
+}
+
 .congres-bg {
   background-color: $congres-color;
 }
@@ -15,13 +22,15 @@
 .skew-content {
   transform: skewY(5deg);
   background-color: $congres-color;
-  height: 100vh;
   overflow: hidden !important;
+  margin: -1px;
+  padding-bottom: 2em;
   .speakers {
     font-family: 'TruenoUltLt' !important;
     font-weight: 100;
     margin: 0;
     font-size: 1.75rem;
+    margin-bottom: 3em;
   }
 }
 
@@ -199,3 +208,20 @@
   
 }
 
+.direction-img {
+  height: 2em;
+}
+
+.directions {
+  text-transform: none;
+  text-decoration: none;
+  color: white;
+}
+
+#speaker-table {
+  margin: 4em;
+}
+
+#program-table {
+  width: 100%;
+}

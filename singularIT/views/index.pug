@@ -16,17 +16,27 @@ block header
         i(class="arrow").fa.fa-angle-down.fa-5x.white
         
       div(class="homepage-sponsor-banner")
-        img(class="homepage-sponsor-logo main-sponsor" src='/images/snic_sponsor_logo/Logo_Quintor.png')
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Nedap.png')
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_ING.png')
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Achmea.png')
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Chipsoft.png')
+        a(href="https://quintor.nl/", target="_blank")
+          img(class="homepage-sponsor-logo main-sponsor" src='/images/snic_sponsor_logo/Logo_Quintor.png')
+        a(href="https://nedap.com/", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Nedap.png')
+        a(href="https://ing.nl/", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_ING.png')
+        a(href="https://www.achmea.nl/", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Achmea.png')
+        a(href="https://www.chipsoft.nl/", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Chipsoft.png')
 
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_KPMG.png')
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_DNB.png')
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Topicus.jpg')
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Procam.png')
-        img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_DSW.png')
+        a(href="https://home.kpmg.com/nl/nl/home.html", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_KPMG.png')
+        a(href="https://www.dnb.nl/home/", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_DNB.png')
+        a(href="https://topicus.nl/", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Topicus.jpg')
+        a(href="https://procam.nl/", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_Procam.png')
+        a(href="https://dsw.nl/", target="_blank")
+          img(class="homepage-sponsor-logo" src='/images/snic_sponsor_logo/Logo_DSW.png')
 
 
         div(id="silver_logo_container")
@@ -54,7 +64,7 @@ block content
         span(class="accent") SINGULARIT
         |: The technological singular-ity. Singularity is a term that has its origin in mathematics:
         | There, it means 'the point where 
-        span(class="accent") humanity
+        span(class="accent") humanity 
         | will no longer be able to know what is being calculated'.
         | The past decennia, the term has been used more and more in the world of 
         span(class="accent") technology
@@ -87,7 +97,7 @@ block content
             div(class="header-title" style="text-align: left;") Speakers
             p(class="speakers" style="float: left; text-align: left;")
               |
-              span(class="accent") SingularIT 
+              span(class="accent-logo") SingularIT 
               | tries to change the 
               span(class="accent") minds 
               | of the students attending the conference.
@@ -103,6 +113,178 @@ block content
               | You will be able to choose whichever talk you find more appealing. 
         .subpage.image
 
+  //- div(id="speaker-table")
+  //-   .container
+  //-   a#program.anchor
+  //-   .row
+  //-     .col-lg-12.text-center
+  //-       h2 Program
+  //-       hr
+  //-       .table-responsive
+  //-         table#program-table.table
+  //-           thead
+  //-             tr
+  //-               th
+  //-               th
+  //-                 h4 One room
+  //-               th
+  //-                 h4 Concert Hall
+  //-               th
+  //-                 h4 Another room
+  //-           tbody
+  //-             tr
+  //-               td
+  //-                 small 10:00
+  //-               td(style='width: 32%')
+  //-               td.grey(style='width: 32%', rowspan='4')
+  //-                 h3 Central opening
+  //-                 h4 ____
+  //-                 small 10:00 - 11:00
+  //-                 p TITLE
+  //-               td(style='width: 32%')
+  //-             tr
+  //-               td
+  //-                 small 10:15
+  //-             tr
+  //-               td
+  //-                 small 10:30
+  //-             tr
+  //-               td
+  //-                 small 10:45
+  //-             tr
+  //-               td
+  //-                 small 11:00
+  //-               td
+  //-               td.grey
+  //-                 h4 Short break
+  //-                 small 11:00 - 11:15
+  //-               td
+  //-             tr
+  //-               td
+  //-                 small 11:15
+  //-               td(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 11:15 - 12:15
+  //-                 p TITLE
+  //-               td.grey(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 11:15 - 12:15
+  //-                 p TITLE
+  //-               td(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 11:15 - 12:15
+  //-                 p TITLE
+  //-             tr
+  //-               td
+  //-                 small 11:30
+  //-             tr
+  //-               td
+  //-                 small 11:45
+  //-             tr
+  //-               td
+  //-                 small 12:00
+  //-             tr
+  //-               td
+  //-                 small 12:15
+  //-               td(rowspan='4')
+  //-               td.grey(rowspan='4')
+  //-                 h4 Lunch break
+  //-                 small 12:15 - 13:15
+  //-               td(rowspan='4')
+  //-             tr
+  //-               td
+  //-                 small 12:30
+  //-             tr
+  //-               td
+  //-                 small 12:45
+  //-             tr
+  //-               td
+  //-                 small 13:00
+  //-             tr
+  //-               td
+  //-                 small 13:15
+  //-               td(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 13:15 - 14:15
+  //-                 p TITLE
+  //-               td.grey(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 13:15 - 14:15
+  //-                 p TITLE
+  //-               td(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 13:15 - 14:15
+  //-                 p TITLE
+  //-             tr
+  //-               td
+  //-                 small 13:30
+  //-             tr
+  //-               td
+  //-                 small 13:45
+  //-             tr
+  //-               td
+  //-                 small 14:00
+  //-             tr
+  //-               td
+  //-                 small 14:15
+  //-               td(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 14:15 - 15:15
+  //-                 p TITLE
+  //-               td.grey(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 14:15 - 15:15
+  //-                 p TITLE
+  //-               td(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 14:15 - 15:15
+  //-                 p TITLE
+  //-             tr
+  //-               td
+  //-                 small 14:30
+  //-             tr
+  //-               td
+  //-                 small 14:45
+  //-             tr
+  //-               td
+  //-                 small 15:00
+  //-             tr
+  //-               td
+  //-                 small 15:15
+  //-               td
+  //-               td.grey
+  //-                 h4 Small break
+  //-                 small 15:15 - 15:30
+  //-               td
+  //-             tr
+  //-               td
+  //-                 small 15:30
+  //-               td(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 15:30 - 16:30
+  //-                 p TITLE
+  //-               td.grey(rowspan='4')
+  //-               td(rowspan='4')
+  //-                 h4 SPEAKER
+  //-                 small 15:30 - 16:30
+  //-                 p
+  //-                   | TITLE
+  //-             tr
+  //-               td
+  //-                 small 15:45
+  //-             tr
+  //-               td
+  //-                 small 16:00
+  //-             tr
+  //-               td
+  //-                 small 16:15
+  //-             tr
+  //-               td
+  //-               td
+  //-               td.grey
+  //-                 h4(style="text-align: center;") Drinks
+  //-               td
+
   div(id="location" class="skew-content")
     section#location.slanted.twocolumn
       .subpage.image
@@ -111,10 +293,13 @@ block content
           div(class="header-title") Location
           p(class="location")
             | The conference will be held in 
-            span(class="accent") Philharmonie Haarlem 
-            | in Haarlem. 
+            span(class="accent") Philharmonie Haarlem. 
             | It will take place on 
             span(class="accent") November 20th, 2018.
+          a(href="https://www.google.com/maps/search/Philharmonie+Haarlem/@52.3805698,4.8891666,15z")
+            span(class="accent directions") Get Directions 
+            img(class="direction-img" src="/images/google_maps.png")
+
 
   div(id="about" class="skewed-background-2")
   header(id='particles-js-light-2' class='particles')

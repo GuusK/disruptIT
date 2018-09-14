@@ -95,12 +95,12 @@ p {
 
 a,
 a:visited{
-  color: #00bab3;
+  color: $congres-color;
 }
 
 a:hover,
 a:focus{
-  color: #00bab3;
+  color: $congres-color;
   text-decoration: none;
 }
 
@@ -319,9 +319,9 @@ input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary
 {
-  color: #00bab3;
+  color: $congres-color;
   background-color: #FFF;
-  border-color: #00bab3;
+  border-color: $congres-color;
 }
 
 .button.button-primary:hover,
@@ -336,8 +336,8 @@ input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus
 {
   color: #FFF;
-  background-color: #00bab3;
-  border-color: #00bab3;
+  background-color: $congres-color;
+  border-color: $congres-color;
 }
 
 /****************************
@@ -426,7 +426,7 @@ footer a:visited{
 
 footer a:hover,
 footer a:focus{
-  color:#00bab3;
+  color:$congres-color;
 }
 
 .foot{
@@ -734,7 +734,7 @@ header.hero.location{
 
 #map{
   height:70vh;
-  border-top: 3px solid #00bab3;
+  border-top: 3px solid $congres-color;
 }
 
 #map .gm-style {

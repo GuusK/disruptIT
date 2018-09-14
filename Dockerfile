@@ -22,6 +22,7 @@ ADD singularIT /usr/src/app
 
 WORKDIR /usr/src/app/
 
+RUN rm -rvf node_modules
 RUN npm install
 RUN npm link gulp
 RUN gulp sass

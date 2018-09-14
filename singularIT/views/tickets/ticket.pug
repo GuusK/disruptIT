@@ -4,8 +4,8 @@ mixin ticket(ticket)
   if ticket
     .ticket
       div.content
-        h2 DisruptIT Ticket
-        p Showing this ticket at the entrance will give you access to the event. When you lose this ticket you can re-print it from the website by logging in.
+        h2 SingularIT Ticket
+        p Showing this ticket at the entrance will grant you access to the event. If you lose this ticket you can re-print it from the website by logging in.
 
         .ticket-details
           if ticket.ownedBy
@@ -23,14 +23,14 @@ mixin ticket(ticket)
 
         .ticket-details
           .detail
-            p!= "Opening at 11:00 </br> November 15, 2017"
+            p!= "Opening at 11:00 </br> November 20, 2018"
           .detail.nedap
-            img(src='/images/bedrijven/Banner_Nedap.png', width=200)
+            img(src='/images/snic_sponsor_logo/Logo_Quintor.png', width=200)
 
       div.aside
         div
 
-        //img(src='/images/bedrijven/nedap_color.png', width=55, style='position: absolute; bottom: 10px; right: 16px;')
+        //img(src='/images/snic_sponsor_logo/Logo_Quintor.png', width=55, style='position: absolute; bottom: 10px; right: 16px;')
 
       br(clear='all')
 
