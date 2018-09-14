@@ -52,11 +52,11 @@ p {
 
 a,
 a:visited {
-  color: #00bab3; }
+  color: #22244b; }
 
 a:hover,
 a:focus {
-  color: #00bab3;
+  color: #22244b;
   text-decoration: none; }
 
 .separator {
@@ -132,7 +132,6 @@ a:focus {
 .navbar .dropdown,
 .navbar a,
 .navbar a:visited {
-  text-shadow: 1px 1px 1px #000000;
   width: 100%;
   display: inline-block;
   color: #dadada;
@@ -320,7 +319,7 @@ header.text h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 186, 179, 0.7);
+  background: #22244bEE;
   color: white;
   opacity: .9;
   margin-bottom: 1em; }
@@ -494,9 +493,9 @@ button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  color: #00bab3;
+  color: #22244b;
   background-color: #FFF;
-  border-color: #00bab3; }
+  border-color: #22244b; }
 
 .button.button-primary:hover,
 button.button-primary:hover,
@@ -509,8 +508,8 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #00bab3;
-  border-color: #00bab3; }
+  background-color: #22244b;
+  border-color: #22244b; }
 
 /****************************
 * Footer
@@ -581,7 +580,7 @@ footer a:visited {
 
 footer a:hover,
 footer a:focus {
-  color: #00bab3; }
+  color: #22244b; }
 
 .foot {
   overflow: hidden;
@@ -619,11 +618,10 @@ section#speakers {
 
 section#speakers .subpage.image {
   background-image: url("/images/20161115-IMG_8885.jpg");
-  background-position: center 80%;
-  transform: skewY(-5deg); }
+  background-position: center 80%; }
 
 section#location .subpage.image {
-  background-image: url("http://www.maandvandegeschiedenis.nl/image/2017/10/11/37547830742_dc7574a698_k.jpg%28%29%28AAB4F7E33CFB56E688D6F81EAD7F5875%29.jpg");
+  background-image: url("/images/philharmonie.png");
   background-position: center 50%;
   transform: skewY(-5deg); }
 
@@ -881,7 +879,7 @@ header.hero.location {
 
 #map {
   height: 70vh;
-  border-top: 3px solid #00bab3; }
+  border-top: 3px solid #22244b; }
 
 #map .gm-style {
   font-family: 'Glacial Indifference', "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
@@ -1146,19 +1144,27 @@ article + .readmore-js-toggle {
   font-size: 2.25rem;
   font-weight: normal; }
 
+.accent-logo {
+  font-family: 'TruenoRegular' !important;
+  font-size: 2.25rem;
+  font-weight: normal;
+  text-transform: none; }
+
 .congres-bg {
   background-color: #22244b; }
 
 .skew-content {
   transform: skewY(5deg);
   background-color: #22244b;
-  height: 100vh;
-  overflow: hidden !important; }
+  overflow: hidden !important;
+  margin: -1px;
+  padding-bottom: 2em; }
   .skew-content .speakers {
     font-family: 'TruenoUltLt' !important;
     font-weight: 100;
     margin: 0;
-    font-size: 1.75rem; }
+    font-size: 1.75rem;
+    margin-bottom: 3em; }
 
 .location-content {
   text-align: right;
@@ -1272,3 +1278,17 @@ article + .readmore-js-toggle {
     flex-direction: column; }
   #silver_logo_container {
     display: inline !important; } }
+
+.direction-img {
+  height: 2em; }
+
+.directions {
+  text-transform: none;
+  text-decoration: none;
+  color: white; }
+
+#speaker-table {
+  margin: 4em; }
+
+#program-table {
+  width: 100%; }
