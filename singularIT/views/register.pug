@@ -65,6 +65,11 @@ block content
             label(for='confirm') Confirm password
             input.form-control( type='password', required, name='confirm')
           .form-group
+              .checkbox
+                label(for='privacyPolicyAgree')
+                  input#privacyPolicyAgree(type='checkbox', name='privacyPolicyAgree', checked=body.privacyPolicyAgree? "checked" : undefined)
+                  | I agree with the #[a(href='/Privacy_Policy.pdf', target='_blank') Privacy Policy].
+          .form-group
             .checkbox
               label(for='subscribe')
                 input#subscribe(type='checkbox',name='subscribe', checked='checked')
