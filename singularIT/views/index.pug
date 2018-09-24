@@ -113,177 +113,189 @@ block content
               | You will be able to choose whichever talk you find the most appealing in each sessions.
         .subpage.image
 
-  //- div(id="speaker-table")
-  //-   .container
-  //-   a#program.anchor
-  //-   .row
-  //-     .col-lg-12.text-center
-  //-       h2 Program
-  //-       hr
-  //-       .table-responsive
-  //-         table#program-table.table
-  //-           thead
-  //-             tr
-  //-               th
-  //-               th
-  //-                 h4 One room
-  //-               th
-  //-                 h4 Concert Hall
-  //-               th
-  //-                 h4 Another room
-  //-           tbody
-  //-             tr
-  //-               td
-  //-                 small 10:00
-  //-               td(style='width: 32%')
-  //-               td.grey(style='width: 32%', rowspan='4')
-  //-                 h3 Central opening
-  //-                 h4 ____
-  //-                 small 10:00 - 11:00
-  //-                 p TITLE
-  //-               td(style='width: 32%')
-  //-             tr
-  //-               td
-  //-                 small 10:15
-  //-             tr
-  //-               td
-  //-                 small 10:30
-  //-             tr
-  //-               td
-  //-                 small 10:45
-  //-             tr
-  //-               td
-  //-                 small 11:00
-  //-               td
-  //-               td.grey
-  //-                 h4 Short break
-  //-                 small 11:00 - 11:15
-  //-               td
-  //-             tr
-  //-               td
-  //-                 small 11:15
-  //-               td(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 11:15 - 12:15
-  //-                 p TITLE
-  //-               td.grey(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 11:15 - 12:15
-  //-                 p TITLE
-  //-               td(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 11:15 - 12:15
-  //-                 p TITLE
-  //-             tr
-  //-               td
-  //-                 small 11:30
-  //-             tr
-  //-               td
-  //-                 small 11:45
-  //-             tr
-  //-               td
-  //-                 small 12:00
-  //-             tr
-  //-               td
-  //-                 small 12:15
-  //-               td(rowspan='4')
-  //-               td.grey(rowspan='4')
-  //-                 h4 Lunch break
-  //-                 small 12:15 - 13:15
-  //-               td(rowspan='4')
-  //-             tr
-  //-               td
-  //-                 small 12:30
-  //-             tr
-  //-               td
-  //-                 small 12:45
-  //-             tr
-  //-               td
-  //-                 small 13:00
-  //-             tr
-  //-               td
-  //-                 small 13:15
-  //-               td(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 13:15 - 14:15
-  //-                 p TITLE
-  //-               td.grey(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 13:15 - 14:15
-  //-                 p TITLE
-  //-               td(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 13:15 - 14:15
-  //-                 p TITLE
-  //-             tr
-  //-               td
-  //-                 small 13:30
-  //-             tr
-  //-               td
-  //-                 small 13:45
-  //-             tr
-  //-               td
-  //-                 small 14:00
-  //-             tr
-  //-               td
-  //-                 small 14:15
-  //-               td(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 14:15 - 15:15
-  //-                 p TITLE
-  //-               td.grey(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 14:15 - 15:15
-  //-                 p TITLE
-  //-               td(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 14:15 - 15:15
-  //-                 p TITLE
-  //-             tr
-  //-               td
-  //-                 small 14:30
-  //-             tr
-  //-               td
-  //-                 small 14:45
-  //-             tr
-  //-               td
-  //-                 small 15:00
-  //-             tr
-  //-               td
-  //-                 small 15:15
-  //-               td
-  //-               td.grey
-  //-                 h4 Small break
-  //-                 small 15:15 - 15:30
-  //-               td
-  //-             tr
-  //-               td
-  //-                 small 15:30
-  //-               td(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 15:30 - 16:30
-  //-                 p TITLE
-  //-               td.grey(rowspan='4')
-  //-               td(rowspan='4')
-  //-                 h4 SPEAKER
-  //-                 small 15:30 - 16:30
-  //-                 p
-  //-                   | TITLE
-  //-             tr
-  //-               td
-  //-                 small 15:45
-  //-             tr
-  //-               td
-  //-                 small 16:00
-  //-             tr
-  //-               td
-  //-                 small 16:15
-  //-             tr
-  //-               td
-  //-               td
-  //-               td.grey
-  //-                 h4(style="text-align: center;") Drinks
-  //-               td
+  div(id="program" class="program-table")
+    .container
+    a#program.anchor
+    .row
+      .col-lg-12.text-center
+        h2 Program
+        hr
+        .table-responsive
+          table#program-table.table
+            thead
+              tr
+                th
+                th
+                  h4 Grand Technical Challenges
+                th
+                  h4 Societal Impact
+                th
+                  h4 Experience the Singularity
+            tbody
+              tr
+                td
+                td
+                  h6 Van Beinum Zaal
+                td
+                  h6 Grote Zaal
+                td
+                  h6 Van Warmerdam Zaal
+              tr
+                td
+                td
+                  h6 Robert Belleman
+                td
+                  h6 Ashley Burgoyne
+                td
+                  h6 T.B.A.
+              tr
+                td
+                  small 10:00
+                td(rowspan='4')
+                td.grey(rowspan='4')
+                  h4 Committee
+                  small 10:00 - 10:15
+                  p Central Opening
+                td(rowspan='4')
+              //- tr
+              //-   td
+              //-     small 10:15
+              //-   td(rowspan='4')
+              //-   td.grey(rowspan='4')
+              //-     h4 Quintor
+              //-     small 10:15 - 11:00
+              //-     p
+              //-   td(rowspan='4')
+              tr
+                td
+                  small 10:15
+              tr
+                td
+                  small 10:30
+              tr
+                td
+                  small 10:45
+              tr
+                td
+                  small 11:00
+                td
+                td.grey
+                  h4 Short break
+                  small 11:00 - 11:15
+                td
+              tr
+                td
+                  small 11:15
+                td(rowspan='4')
+                  h4 Melanie Rieback
+                  small 11:15 - 12:15
+                  p
+                td.grey(rowspan='4')
+                  h4 Michael Lees
+                  small 11:15 - 12:15
+                  p
+                td(rowspan='4')
+                  h4 Cees Snoek
+                  small 11:15 - 12:15
+                  p
+              tr
+                td
+                  small 11:30
+              tr
+                td
+                  small 11:45
+              tr
+                td
+                  small 12:00
+              tr
+                td
+                  small 12:15
+                td(rowspan='4')
+                td.grey(rowspan='4')
+                  h4 Lunch break
+                  small 12:15 - 13:15
+                td(rowspan='4')
+              tr
+                td
+                  small 12:30
+              tr
+                td
+                  small 12:45
+              tr
+                td
+                  small 13:00
+              tr
+                td
+                  small 13:15
+                td(rowspan='4')
+                  h4 Brett Scott
+                  small 13:15 - 14:15
+                  p 
+                td.grey(rowspan='4')
+                  h4 Panel
+                  small 13:15 - 14:15
+                  p
+                td(rowspan='4')
+                  h4 Jop Briët
+                  small 13:15 - 14:15
+                  p
+              tr
+                td
+                  small 13:30
+              tr
+                td
+                  small 13:45
+              tr
+                td
+                  small 14:00
+              tr
+                td
+                  small 14:15
+              tr
+                td
+                  small 14:30
+                td(rowspan='4')
+                  h4 Christaan Henkel
+                  small 14:30 - 15:30
+                  p 
+                td.grey(rowspan='4')
+                  h4 Richard Stallman
+                  small 14:39 - 15:30
+                  p 
+                td(rowspan='4')
+                  h4 T.B.A.
+                  small 14:30 - 15:30
+                  p
+              tr
+                td
+                  small 15:30
+              tr
+                td
+                  small 15:45
+              //- tr
+              //-   td
+              //-     small 16:00
+              //-   td(rowspan='4')
+              //-   td.grey(rowspan='4')
+              //-     h4 Bruce Duncan
+              //-       small 16:00 - 17:00
+              //-       p
+              //-   td(rowspan='4')
+              //- tr
+              //-   td
+              //-     small 16:00
+              //-   td(rowspan='4')
+              //-   td.grey(rowspan='4')
+              //-     h4 Committee
+              //-     small 17:00 - 17:15
+              //-     p Central Closing
+              //-   td(rowspan='4')
+              //- tr
+              //-   td
+              //-   td
+              //-   td.grey
+              //-     h4(style="text-align: center;") Drinks
+              //-   td
 
   div(id="location" class="skew-content")
     section#location.slanted.twocolumn
