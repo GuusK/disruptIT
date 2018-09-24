@@ -260,21 +260,22 @@ router.get('/buses', function (req, res) {
   res.render('buses', {title: 'Buses | '});
 });
 
-router.get('/speakers', function (req, res) {
-  var s = speakerinfo.speakers.filter(function(speaker){
-    return !speaker.hidden;
-  });
-  var p = speakerinfo.presenters.filter(function(presenter){
-    return !presenter.hidden;
-  });
-  getVisitorCounts().then(visitorCounts => {
-    res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: speakerinfo.speakerids, visitorCounts:visitorCounts});
-  });
-});
 
-router.get('/panel', function(req, res) {
-  res.render('panel', {title: 'Panel discussion | '});
-})
+// router.get('/speakers', function (req, res) {
+//   var s = speakerinfo.speakers.filter(function(speaker){
+//     return !speaker.hidden;
+//   });
+//   var p = speakerinfo.presenters.filter(function(presenter){
+//     return !presenter.hidden;
+//   });
+//   getVisitorCounts().then(visitorCounts => {
+//     res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: speakerinfo.speakerids, visitorCounts:visitorCounts});
+//   });
+// });
+
+// router.get('/panel', function(req, res) {
+//   res.render('panel', {title: 'Panel discussion | '});
+// })
 
 /*
  * TODO: Needs to be recreated
@@ -292,9 +293,9 @@ router.get('/panel', function(req, res) {
 //   res.render('speakers/talk', {path: '/speakers', speaker: s});
 // });
 
-router.get('/organisation', function (req, res) {
-  res.render('organisation', {title: 'Organisation |'});
-});
+// router.get('/organisation', function (req, res) {
+//   res.render('organisation', {title: 'Organisation |'});
+// });
 
 router.get('/connectbetter', function(req, res) {
   res.render('connectbetter', {title: 'Connect better |'})
@@ -308,22 +309,22 @@ router.get('/participate', function (req, res) {
   res.render('participate');
 });
 
-router.get('/programme', function (req,res) {
-  res.render('programme', {title:'Programme |'});
-});
+// router.get('/programme', function (req,res) {
+//   res.render('programme', {title:'Programme |'});
+// });
 
-router.get('/program', function (req,res) {
-  res.render('programme', {title:'Programme |'});
-});
-router.get('/schedule', function (req,res) {
-  res.render('programme', {title:'Programme |'});
-});
-router.get('/dagprogramma', function (req,res) {
-  res.render('programme', {title:'Programme |'});
-});
-router.get('/programma', function (req,res) {
-  res.render('programme', {title:'Programme |'});
-});
+// router.get('/program', function (req,res) {
+//   res.render('programme', {title:'Programme |'});
+// });
+// router.get('/schedule', function (req,res) {
+//   res.render('programme', {title:'Programme |'});
+// });
+// router.get('/dagprogramma', function (req,res) {
+//   res.render('programme', {title:'Programme |'});
+// });
+// router.get('/programma', function (req,res) {
+//   res.render('programme', {title:'Programme |'});
+// });
 
 router.get('/users', adminAuth, function (req,res,next) {
   var query = {};

@@ -2,9 +2,20 @@
   background-color: $congres-color;
 }
 
+
+#program-table {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+#program-table td {
+  padding: 0.5em !important;
+}
+
 .program-table {
   margin-top: 3em;
   margin-bottom: 3em;
+  overflow-x: hidden !important;
 }
 
 .accent {
@@ -207,6 +218,10 @@
 
   #silver_logo_container {
     display: inline !important;
+  }
+
+  .program-table {
+    overflow-x: auto !important;
   }
   
 }
