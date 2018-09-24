@@ -78,6 +78,7 @@ module.exports = function (config) {
     req.body.bus = req.body.bus || (req.body.vereniging !== 'partner');
     req.body.vegetarian = req.body.vegetarian || false;
     req.body.subscribe = req.body.subscribe || false;
+    req.body.privacyPolicyAgree = req.body.privacyPolicyAgree || false;
 
     if (req.body.programme === 'other') {
         req.checkBody('programmeOther', 'No study programme provided.').notEmpty();
@@ -90,8 +91,17 @@ module.exports = function (config) {
     req.sanitize('bus').toBoolean();
     req.sanitize('vegetarian').toBoolean();
     req.sanitize('subscribe').toBoolean();
+    req.sanitize('privacyPolicyAgree').toBoolean();
 
     var errors = req.validationErrors();
+
+    if (!req.body.privacyPolicyAgree) {
+      errors.push({
+          param: "privacyPolicyAgree",
+          msg: "Please agree to the Privacy Policy.",
+          value: req.body.privacyPolicyAgree});
+    }
+
 
     if (errors) {
       var msg = '';
