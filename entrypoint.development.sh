@@ -8,4 +8,5 @@ npm link gulp
 
 gulp sass
 gulp js
-nodemon ./bin/www
+
+gulp serve

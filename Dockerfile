@@ -6,7 +6,7 @@ WORKDIR /usr/src/
 
 RUN npm install gulp -g
 RUN npm install gulp-nodemon -g
-
+RUN npm install nodemon -g
 
 COPY entrypoint.development.sh entrypoint.production.sh /usr/src/
 
@@ -15,8 +15,6 @@ EXPOSE 3000
 
 # Development image
 FROM base AS development
-
-RUN npm install nodemon -g
 
 # Production image
 FROM base AS production
