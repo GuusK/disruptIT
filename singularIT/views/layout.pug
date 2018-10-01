@@ -7,7 +7,7 @@ html(lang=locale)
     meta(name='description' content='')
     meta(name='author' content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-  
+
     link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
     link(rel="icon", type="image/png", sizes="32x32", href="/favicon-32x32.png")
     link(rel="icon", type="image/png", sizes="16x16", href="/favicon-16x16.png")
@@ -59,16 +59,16 @@ html(lang=locale)
                   li.divider(role='separator')
                   li
                     a(href='/choices') Choices
-                  li
-                    a(href='/matchingstats') Matching stats
+                  // li
+                  //   a(href='/matchingstats') Matching stats
                   li
                     a(href='/users') Scan tickets
                   li
                     a(href='/aanwezig') Attendees
                   li
                     a(href='/diet') Diets
-                  li
-                    a(href='/reload') Reload speakers
+                  // li
+                  //   a(href='/reload') Reload speakers
                   li.divider(role='separator')
                   li
                     a(href='logout') Logout
@@ -137,7 +137,7 @@ html(lang=locale)
               .alert.alert-success.alert-dismissable
                 = msg
                 a.close(href='#', data-dismiss='alert', aria-label='close') &times;
-                
+
     // content of the page
     block content
 
@@ -189,7 +189,7 @@ html(lang=locale)
             img.nedap(class='footer-sponsors', src='/images/snic_sponsor_logo/Logo_Belsimpel.png')
           a.nedap(href="", target="_blank")
             img.nedap(class='footer-sponsors', src='')
-           
+
       //-.sponsor
         p Gold partner
         - var rand = Math.random();
@@ -213,7 +213,7 @@ html(lang=locale)
           i(class='fa fa-envelope fa-fw fa-3x')
 
     // Scripts
-    script(src='//code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')  
+    script(src='//code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=' crossorigin='anonymous')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
     //script(src='/js/jQuery.curtail.min.js')
     script(src='/js/particles.js')

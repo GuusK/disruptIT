@@ -143,6 +143,8 @@ a:focus {
   border: none;
   text-align: left; }
 
+.navbar .dropdown .dropdown-toggle:hover,
+.navbar .dropdown .dropdown-toggle:focus,
 .navbar a:hover {
   color: white; }
 
@@ -1139,6 +1141,18 @@ article + .readmore-js-toggle {
 #location {
   background-color: #22244b; }
 
+#program-table {
+  margin-left: 3em;
+  margin-right: 3em; }
+
+#program-table td {
+  padding: 0.5em !important; }
+
+.program-table {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  overflow-x: hidden !important; }
+
 .accent {
   font-family: 'TruenoRegular' !important;
   font-size: 2.25rem;
@@ -1157,8 +1171,7 @@ article + .readmore-js-toggle {
   transform: skewY(5deg);
   background-color: #22244b;
   overflow: hidden !important;
-  margin: -1px;
-  padding-bottom: 2em; }
+  margin: -1px; }
   .skew-content .speakers {
     font-family: 'TruenoUltLt' !important;
     font-weight: 100;
@@ -1196,7 +1209,6 @@ article + .readmore-js-toggle {
   position: absolute;
   width: 100%;
   background-color: #22244b;
-  height: 200px;
   clip-path: polygon(50% 0, 100% 0%, 100% 50%, 50% 0%); }
 
 .particles canvas {
@@ -1277,7 +1289,9 @@ article + .readmore-js-toggle {
   .silver-sponsors {
     flex-direction: column; }
   #silver_logo_container {
-    display: inline !important; } }
+    display: inline !important; }
+  .program-table {
+    overflow-x: auto !important; } }
 
 .direction-img {
   height: 2em; }
