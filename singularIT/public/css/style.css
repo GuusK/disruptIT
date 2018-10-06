@@ -958,6 +958,17 @@ header.hero.register {
 ****************************/
 section.profile {
   margin: 10px; }
+  section.profile .form-profile {
+    max-width: 65em; }
+    section.profile .form-profile h4 {
+      margin-top: 20px; }
+    section.profile .form-profile p {
+      margin-top: 3em;
+      line-height: normal;
+      text-transform: none;
+      max-width: inherit; }
+      section.profile .form-profile p a {
+        color: #337ab7; }
 
 .interests {
   display: flex;

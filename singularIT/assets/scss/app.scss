@@ -830,6 +830,25 @@ header.hero.register{
 
 section.profile {
   margin:10px;
+
+  .form-profile {
+    max-width: 65em;
+
+    h4 {
+      margin-top: 20px;
+    }
+
+    p {
+      margin-top: 3em;
+      line-height: normal;
+      text-transform: none;
+      max-width: inherit;
+
+      a {
+        color: #337ab7;
+      }
+    }
+  }
 }
 
 .interests {

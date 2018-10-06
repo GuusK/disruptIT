@@ -26,6 +26,7 @@ var User = new mongoose.Schema({
   connectlist:          [String],
   matchingterms:        [String],
   studyProgramme:       { type: String ,  required: true    },
+  allowBadgeScanning:   { type: Boolean, default: false      }
 });
 
 User.plugin(plm, {

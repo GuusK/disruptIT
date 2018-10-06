@@ -88,7 +88,7 @@ router.get('/profile', auth, function (req, res) {
       // Do it in the template
       getVisitorCounts().then(visitorCounts => {
         res.render('profile', {
-          isbus_quickhack: config.verenigingen[user.vereniging].bus,
+          userHasBus: config.verenigingen[user.vereniging].bus,
           providePreferences: config.providePreferences,
           speakerids: speakerinfo.speakerids,
           speakers: speakerinfo.speakers,
@@ -149,9 +149,7 @@ async function canEnrollForSession(sessionslot, sessionid, useremail){
 router.post('/profile', auth, function (req, res) {
   req.sanitize('vegetarian').toBoolean();
   req.sanitize('bus').toBoolean();
-  req.sanitize('shareEmail').toBoolean();
-  req.body.linkedin = encodeURIComponent(req.body.linkedin);
-  req.body.phonenumber = encodeURIComponent(req.body.phonenumber);
+  req.sanitize('allowBadgeScanning').toBoolean();
 
   if(typeof req.body.session1 === 'undefined'){
     req.body.session1 = '';
@@ -224,9 +222,7 @@ router.post('/profile', auth, function (req, res) {
       user.vegetarian   = req.body.vegetarian ? true : false;
       user.bus          = req.body.bus ? true : false;
       user.specialNeeds = req.body.specialNeeds;
-      user.phonenumber  = req.body.phonenumber;
-      user.linkedin     = req.body.linkedin;
-      user.shareEmail   = req.body.shareEmail;
+      user.allowBadgeScanning  = req.body.allowBadgeScanning ? true: false;
       var matching = [];
       for (var i = 0; i < config.matchingterms.length; i++) {
         if (req.body[config.matchingterms[i]]){
@@ -246,7 +242,7 @@ router.post('/profile', auth, function (req, res) {
       req.flash('error', 'Something went wrong!');
       res.redirect('/profile');
     }
-  })
+  });
 });
 
 router.get('/location', function (req, res) {

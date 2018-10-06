@@ -7,10 +7,10 @@ mixin dropdown(speaker, user, session, visitorCounts)
   if remaining > 0 || user[session] == speakerid
     if remaining < 25
       - description = description + ' (' + remaining + ' seats left)'
-    option(value=speaker.id, selected=user[session] == speaker.id ? 'selected' : undefine)= speaker.name.replace("</br>", "&") + description 
-  else 
+    option(value=speaker.id, selected=user[session] == speaker.id ? 'selected' : undefine)= speaker.name.replace("</br>", "&") + description
+  else
     - description = description + ' (FULL)'
-    option(disabled value=speaker.id, selected=user[session] == speaker.id ? 'selected' : undefine)= speaker.name.replace("</br>", "&") + description 
+    option(disabled value=speaker.id, selected=user[session] == speaker.id ? 'selected' : undefine)= speaker.name.replace("</br>", "&") + description
 
 block above-content
 
@@ -23,15 +23,16 @@ block content
     h2= ucfirst(user.firstname) + ' ' + user.surname +' ('+ verenigingen[user.vereniging].name +')'
 
     br(clear='all')
-    h3 Congress
+    h4 Congress
+    hr
     form.form.form-profile#settings(method='post')
-      p.text-center Download your ticket #[a(href='/ticket') here]. 
-      br(clear='all')
-      p.text-center Please bring it along to the conference preferably in print.
-      br(clear='all')
+      p.text-center
+        | Download your ticket #[a(href='/ticket', target='_blank') here].
+        | Please bring it along to the conference on your phone or in print.
+
       if user.type == 'partner'
         p.text-center Partners don't have to enroll for sessions, but you are welcome to join in if there are seats left.
-      else 
+      else
         if providePreferences
           .form-group
             label(for='session1') Preference talk in first parallel session
@@ -41,7 +42,7 @@ block content
                 each val in speakerids.session1
                   - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
                   +dropdown(speaker, user, 'session1', visitorCounts)
-                  
+
           .form-group
             label(for='session2') Preference talk in second parallel session
             div.select-wrapper
@@ -59,17 +60,34 @@ block content
                 each val in speakerids.session3
                   - var speaker = speakers.filter(function(doc){return doc.id == val})[0]
                   +dropdown(speaker, user, 'session3', visitorCounts)
-        else 
+        else
           p.text-center You can enroll for sessions on a later date.
       br
-      if user.type == 'student' 
-        if isbus_quickhack
+      if user.type == 'student'
+        h4 Companies
+        hr
+        .form-group
+          p
+            | To allow to connect better with companies, we introduce a new badge scanning system
+            | allow you to share your name, email address, and study programme.
+            | However, we only share this information with your permission.
+          br
+
+          .checkbox
+            label(for='allowBadgeScanning')
+              input#allowBadgeScanning(type='checkbox', name='allowBadgeScanning', checked=user.allowBadgeScanning? "checked": undefined)
+              | Allow my badge to be scanned by companies
+
+        if userHasBus
+          h4 Bus
+          hr
           .checkbox
             label(for='bus')
               input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
               | I would like to use the arranged bus at my study association
 
-      h3 Diets
+      h4 Diets
+      hr
       .form-group
         .checkbox
           label(for='vegetarian')
@@ -79,38 +97,8 @@ block content
       .form-group
         label(for='specialNeeds') Other remarks (e.g. allergies)
         input.form-control(type='text', name="specialNeeds", value=user.specialNeeds)
-      
-      //- h3 Connect better
-      //- | This year are introducing some new features to the SNiC so you can connect to companies and fellow students in a better and more interesting way for you. Read more about this 
-      //- a(href='/connectbetter') here
-      
-      //- .privacy We only share information that <b>you</b> want to share. 
 
-      //- | By leaving the following boxes empty, we will not share that information
-
-      //- .form-group
-      //-   label(for='linkedIn') LinkedIn profile URL
-      //-   input.form-control(type='text', name="linkedin", value=decodeURIComponent(user.linkedin))
-      //- .form-group
-      //-   label(for='linkedIn') Phonenumber
-      //-   input.form-control(type='text', name="phonenumber", value=decodeURIComponent(user.phonenumber))
-      //- .form-group
-      //-   .checkbox
-      //-     label(for='shareEmail')
-      //-       input#shareEmail(type='checkbox',name='shareEmail', checked=user.shareEmail? "checked": undefined)
-      //-       | I want to share my email-address
-      //- if user.type == 'student'
-      //-   p Get matched with companies by filling in your interests!
-      //-   .form-group
-      //-     .interests
-      //-       each val in matchingterms
-      //-         - var checked = user.matchingterms.indexOf(val) >= 0;
-      //-         .interest
-      //-           .checkbox
-      //-             label(for=val)
-      //-               input(id=val type='checkbox',name=val, checked=checked? "checked": undefined) 
-      //-               = val
-
+      hr
       button.button.special(type='submit') Save settings
-      
+
 
