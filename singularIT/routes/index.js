@@ -3,6 +3,7 @@ var express = require('express');
 var bwipjs = require('bwip-js');
 var Ticket = require('../models/Ticket');
 var User   = require('../models/User');
+var SpeedDateTimeSlot   = require('../models/SpeedDateTimeSlot');
 var _      = require('underscore');
 var async  = require('async');
 var i18n   = require('i18next');
@@ -81,27 +82,45 @@ router.get('/partners/:partner', function (req, res) {
   res.render('partners/'+ req.params.partner, {title: 'Partners - ' + req.params.partner + ' |', path: '/partners'});
 });
 
-router.get('/profile', auth, function (req, res) {
-  User.findOne({email:req.session.passport.user}, function (err,user) {
-    if (!err && user) {
-      // Don't try to unescape here, it's not stored in user.
-      // Do it in the template
-      getVisitorCounts().then(visitorCounts => {
-        res.render('profile', {
-          userHasBus: config.verenigingen[user.vereniging].bus,
-          providePreferences: config.providePreferences,
-          speakerids: speakerinfo.speakerids,
-          speakers: speakerinfo.speakers,
-          matchingterms:config.matchingterms,
-          visitorCounts: visitorCounts
-        });
-      })
-    }
-    else
-    {
-      req.flash('error', 'Something went wrong, very horribly. Contact the committee asap.');
-      res.redirect('/profile');
-    }
+router.get('/profile', auth, async function (req, res) {
+  var user = await User.findOne({email:req.session.passport.user});
+  var spTimeSlot = null;
+  var allSpTimeSlots = null;
+  var freeSpTimeSlots = null;
+
+  if (user.speedDateTimeSlot) {
+    spTimeSlot = await SpeedDateTimeSlot.findById(user.speedDateTimeSlot);
+  } else {
+    allSpTimeSlots = await SpeedDateTimeSlot.find().sort({'startTime':1});
+
+    allSpTimeSlots = await Promise.all(allSpTimeSlots.map(
+      async function (ts) {
+        var userCount = await User.find(
+          {speedDateTimeSlot: ts.id}).count();
+
+        ts.isFree = userCount < ts.capacity;
+
+        return ts;
+      }));
+
+      freeSpTimeSlots = allSpTimeSlots.filter(ts => ts.isFree);
+  }
+
+  // Don't try to unescape here, it's not stored in user.
+  // Do it in the template
+  var visitorCounts = await getVisitorCounts();
+
+
+  res.render('profile', {
+    userHasBus: config.verenigingen[user.vereniging].bus,
+    providePreferences: config.providePreferences,
+    speakerids: speakerinfo.speakerids,
+    speakers: speakerinfo.speakers,
+    matchingterms:config.matchingterms,
+    visitorCounts: visitorCounts,
+    spTimeSlot: spTimeSlot,
+    allSpTimeSlots: allSpTimeSlots,
+    freeSpTimeSlots: freeSpTimeSlots
   });
 });
 
@@ -146,7 +165,7 @@ async function canEnrollForSession(sessionslot, sessionid, useremail){
   return true;
 }
 
-router.post('/profile', auth, function (req, res) {
+router.post('/profile', auth, async function (req, res) {
   req.sanitize('vegetarian').toBoolean();
   req.sanitize('bus').toBoolean();
   req.sanitize('allowBadgeScanning').toBoolean();
@@ -165,7 +184,6 @@ router.post('/profile', auth, function (req, res) {
 
 
   if(req.body.session1 !== "" && req.body.session1 !== null && !speakerinfo.speakerids.session1.includes(req.body.session1)){
-    console.log(req.body.session1);
     req.flash('error', "session1 went wrong!");
     return res.redirect('/profile');
   }
@@ -193,9 +211,12 @@ router.post('/profile', auth, function (req, res) {
  * this
  ******************************************************************************/
 
-      canEnrollSession1 = await canEnrollForSession("session1", req.body.session1, req.session.passport.user);
-      canEnrollSession2 = await canEnrollForSession("session2", req.body.session2, req.session.passport.user);
-      canEnrollSession3 = await canEnrollForSession("session3", req.body.session3, req.session.passport.user);
+      var canEnrollSession1 = await canEnrollForSession("session1", req.body.session1,
+        req.session.passport.user);
+      var canEnrollSession2 = await canEnrollForSession("session2", req.body.session2,
+        req.session.passport.user);
+      var canEnrollSession3 = await canEnrollForSession("session3", req.body.session3,
+        req.session.passport.user);
 
       // naar functie zetten en samenvoegen
       if( canEnrollSession1 ){
@@ -223,6 +244,27 @@ router.post('/profile', auth, function (req, res) {
       user.bus          = req.body.bus ? true : false;
       user.specialNeeds = req.body.specialNeeds;
       user.allowBadgeScanning  = req.body.allowBadgeScanning ? true: false;
+
+      if (req.body.speedDateTimeSlot) {
+        var spTimeSlot = await SpeedDateTimeSlot.findById(req.body.speedDateTimeSlot);
+        if (!spTimeSlot) {
+          req.flash('error', "Invalid speed date timeslot chosen");
+          err = true;
+        } else {
+
+          var userCount = await User.find({speedDateTimeSlot: spTimeSlot.id}).count();
+
+          if (userCount >= spTimeSlot.capacity) {
+            req.flash('error', "The speed date timeslot you chose is already full.");
+            err = true;
+          } else {
+            user.speedDateTimeSlot = spTimeSlot.id;
+          }
+
+        }
+      }
+
+
       var matching = [];
       for (var i = 0; i < config.matchingterms.length; i++) {
         if (req.body[config.matchingterms[i]]){
@@ -293,17 +335,17 @@ router.get('/buses', function (req, res) {
 //   res.render('organisation', {title: 'Organisation |'});
 // });
 
-router.get('/connectbetter', function(req, res) {
-  res.render('connectbetter', {title: 'Connect better |'})
-});
+// router.get('/connectbetter', function(req, res) {
+//   res.render('connectbetter', {title: 'Connect better |'})
+// });
 
-router.get('/mailing', function (req,res) {
-  res.render('mailing');
-});
-
-router.get('/participate', function (req, res) {
-  res.render('participate');
-});
+// router.get('/mailing', function (req,res) {
+//   res.render('mailing');
+// });
+//
+// router.get('/participate', function (req, res) {
+//   res.render('participate');
+// });
 
 // router.get('/programme', function (req,res) {
 //   res.render('programme', {title:'Programme |'});
@@ -350,6 +392,24 @@ router.get('/users', adminAuth, function (req,res,next) {
     res.render('users',{users:results, verenigingen:config.verenigingen});
   });
 });
+
+router.get('/speeddate', adminAuth, async function (req, res) {
+  var timeslots = await SpeedDateTimeSlot.find().sort({'startTime':1});
+
+  var createSlot = async function (slot) {
+    var users = await User.find({'speedDateTimeSlot': slot.id});
+    return {
+      'name': slot.name,
+      'capacity': slot.capacity,
+      'usersRegistered': users
+    };
+  };
+
+  var result = await Promise.all(timeslots.map(createSlot));
+
+  res.render('speeddate', {timeslots: result});
+});
+
 
 /**
  * Output all dietary wishes provided by users

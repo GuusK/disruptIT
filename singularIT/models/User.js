@@ -25,8 +25,9 @@ var User = new mongoose.Schema({
   session3:             { type: String,  required: false    },
   connectlist:          [String],
   matchingterms:        [String],
-  studyProgramme:       { type: String ,  required: true    },
-  allowBadgeScanning:   { type: Boolean, default: false      }
+  studyProgramme:       { type: String ,  required: true     },
+  allowBadgeScanning:   { type: Boolean, default: false      },
+  speedDateTimeSlot:    { type: String, ref: 'SpeedDateTimeSlot'}
 });
 
 User.plugin(plm, {

@@ -903,27 +903,44 @@ section.profile {
 }
 
 /****************************
-* Diet
+* Diet & Speeddate
 ****************************/
 
-#diet-table {
+#diet-table, #speeddate-table {
   float: none;
 }
 
-.diet.table {
+.diet.table,
+.speeddate.table {
   margin: 0 0 2em 0;
   width: 100%;
 }
 
-.diet.table thead th {
+.diet.table thead th,
+.speeddate.table thead th {
   padding: 10px 0px 10px 0px;
   width:20%;
 }
 
-.diet.table thead th .checkbox {
+.diet.table thead th .checkbox,
+.speeddate.table thead th .checkbox {
   padding: 10px 0px 10px 0px;
   width: 10%;
   text-align: center;
+}
+
+.speeddate.table {
+  .row-header {
+    border-bottom: none;
+  }
+
+  .slot {
+    font-size: larger;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
 }
 
 /****************************

@@ -68,8 +68,9 @@ block content
         hr
         .form-group
           p
-            | To allow to connect better with companies, we introduce a new badge scanning system
-            | allow you to share your name, email address, and study programme.
+            | To allow you to connect better with companies, we introduce a new badge scanning system
+            | which allows you to share your name, email address, and study programme. You can share this
+            | information with a company by letting them scan your badge.
             | However, we only share this information with your permission.
           br
 
@@ -78,9 +79,40 @@ block content
               input#allowBadgeScanning(type='checkbox', name='allowBadgeScanning', checked=user.allowBadgeScanning? "checked": undefined)
               | Allow my badge to be scanned by companies
 
+          p
+              | To allow students to get to know companies better, we offer several
+              | speed dating sessions with the participating companies. When you sign up for speed dating,
+              | you will get private conversation of around 10 minutes with each participating company.
+              | There are 6 participating companies in total.
+
+          if spTimeSlot
+            p You are signed up for speed dating in timeslot: #[b=spTimeSlot.name]
+          else if allSpTimeSlots.length > 0
+            if freeSpTimeSlots.length > 0
+              p
+                | You can sign up for speed dating by choosing a timeslot below and
+                | pressing the 'Save settings' button.
+              br
+              label(for='speedDateTimeSlot') Select speed date timeslot:
+              .select-wrapper
+                select.form-control(id='speedDateTimeSlot', name='speedDateTimeSlot')
+                  option(value='', selected) Select...
+                  for ts in freeSpTimeSlots
+                    option(value=ts.id)=ts.name
+            else
+              p
+                b Unfortunately, there are no more free speed date timeslots.
+          else
+            p You can select the timeslots for speed dating on a later date.
+
+
         if userHasBus
           h4 Bus
           hr
+          p
+            | For some study associations which are further away from the location,
+            | we offer a bus which will bring you to the location and back to your city after the conference.
+          br
           .checkbox
             label(for='bus')
               input#bus(type='checkbox',name='bus',checked=user.bus?'checked':undefined)
