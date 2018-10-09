@@ -261,17 +261,17 @@ router.get('/buses', function (req, res) {
 });
 
 
-// router.get('/speakers', function (req, res) {
-//   var s = speakerinfo.speakers.filter(function(speaker){
-//     return !speaker.hidden;
-//   });
-//   var p = speakerinfo.presenters.filter(function(presenter){
-//     return !presenter.hidden;
-//   });
-//   getVisitorCounts().then(visitorCounts => {
-//     res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: speakerinfo.speakerids, visitorCounts:visitorCounts});
-//   });
-// });
+router.get('/speakers', function (req, res) {
+  var s = speakerinfo.speakers.filter(function(speaker){
+    return !speaker.hidden;
+  });
+  var p = speakerinfo.presenters.filter(function(presenter){
+    return !presenter.hidden;
+  });
+  getVisitorCounts().then(visitorCounts => {
+    res.render('speakers/index', {title: 'Speakers | ', speakers: s, presenters: p, speakerids: speakerinfo.speakerids, visitorCounts:visitorCounts});
+  });
+});
 
 // router.get('/panel', function(req, res) {
 //   res.render('panel', {title: 'Panel discussion | '});

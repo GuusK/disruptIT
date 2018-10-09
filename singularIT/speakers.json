@@ -8,147 +8,130 @@
   },
   "speakers": [
     {
-      "name" : "Jarno Duursma",
-      "id": "jarno",
-      "company" : "",
-      "image": "/images/sprekers/jarno3.jpg",
-      "subject": "Artificial intelligence first, human second?",
+      "name" : "Quintor",
+      "id": "quintor",
+      "company" : "Quintor",
+      "image": "/images/sprekers/quintor.jpg",
+      "subject": "",
       "talk" : [
-        "Technology advances faster and faster. Smart computers are able to do more things we humans can, seeing, listening, speaking, remembering and reading. Smart software matches or surpasses human capabilities.",
-        "According to experts, Artificial Intelligence (AI) is the most disruptive technology of the next 10 years. Smart software will become our digital butler. It understands who we are who we are, what we want and why. A world full of opportunities opens itself for us. Smart AI systems will provide us with insights we would never have thought possible and give answers to questions we did not even know existed. Prosperity, time-saving and ease are the sweet fruits, but there might be a few bad apples"
+        "",
+        ""
       ],
       "bio": [
-        "Jarno Duursma is trendwatcher and speaker about digital technology, author of books about social media, WhatsApp and Blockchain. He is founder of innovation platform #SMC050 and alumnus of Singularity University in Silicon Valley."
+        ""
       ],
       "limit": null,
       "hidden": false
     },
     {
-      "name" : "Andre Foeken",
-      "id": "andre",
+      "name" : "dr. Melanie Rieback",
+      "id": "melanie",
       "company" : "Nedap",
-      "image": "/images/bedrijven/nedap/andre.jpg",
-      "subject": "Disrupting the way we work",
-      "talk": ["What are the effects of new technologies on our society and the way we work? Companies are gradually changing. A new way of thinking about work is taking hold. The IT sector is the first frontier. Together we will take a peek at what is in the cards and how to make sure you can start riding the wave into the next paradigm and not be left behind."],
-      "bio": ["Andre Foeken has been working in the tech industry for over twelve years, CTO of Nedap Healthcare and organiser of BubbleConf. He is interested in entrepreneurship, technology, design, and human psychology."],
+      "image": "/images/sprekers/melanie.jpeg",
+      "subject": "",
+      "talk": [""],
+      "bio": ["Dr. Melanie Rieback is the CEO/Co-founder of Radically Open Security, the world’s first non-profit computer security consultancy company. She is also a former Assistant Professor of Computer Science at VU who performed RFID security research (RFID Virus and RFID Guardian), that attracted worldwide press coverage, and won several awards (VU Mediakomeet, ISOC Award, NWO I/O award, IEEE Percom Best Paper, USENIX Lisa Best Paper). Melanie worked as a Senior Engineering Manager on XenClient at Citrix, where she led their Vancouver office. She was also the head researcher in the CSIRT at ING Bank, where she spearheaded their Analysis Lab and the ING Core Threat Intelligence Project. For fun, she co-founded the Dutch Girl Geek Dinner in 2008. Melanie was named 2010 ICT Professional of the Year (Finalist) by WomeninIT, one of the 400 most successful women in the Netherlands by Viva Magazine (Viva400) in 2010 and 2017, one of the fifty most inspiring women in tech (Inspiring Fifty Netherlands) in 2016 and 2017, and the Most Innovative IT Leader by CIO Magazine NL (TIM Award) in 2017. Her company, Radically Open Security was also named the 50th Most Innovative SME by the Dutch Chamber of Commerce (MKB Innovatie Top 100) in 2016."],
       "limit": null,
       "hidden": false
     },
     {
-      "name": "David Elkouss, PhD",
-      "id": "david",
-      "company": "QuTech",
-      "image": "/images/sprekers/david.jpg",
-      "subject": "Quantum Internet",
-      "talk" : ["The internet - a vast network that enables simultaneous long-range classical communication - has had a revolutionary impact on our world. The quantum internet will fundamentally enhance internet technology by enabling quantum communication between any two points on earth. Here, I will introduce what are the key aspects of quantum communications and will present the challenges that need to be overcome before the quantum internet becomes a reality."],
-      "bio": ["David Elkouss is an assistant professor at QuTech. Elkouss received a double masters degree in electrical engineering from Universidad Politécnica de Madrid (UPM) and Telecom ParisTech in 2005-2006 and a Ph.D. in computer science in 2011-2012 from UPM. His Ph.D. thesis in classical error correcting codes for the postprocessing of quantum key distribution was awarded the UPM extraordinary dissertation prize.", 
-        "In 2012, he moved to the Universidad Complutense de Madrid to work on quantum Shannon theory and more concretely on capacities of quantum channels. A highlight was the proof that it is necessary to solve an unbounded optimization problem in order to see whether or not a channel has a positive capacity.", 
-        "In 2015, he moved to TU Delft where he was part of the team that performed the first loophole-free Bell experiment. The aim of his group is to develop the tools, such as entanglement purification protocols, novel error correction codes, quantum network protocol benchmarks and quantum network simulators that will enable the implementation of the first quantum networks."],
+      "name": "Michael Lees",
+      "id": "michael",
+      "company": "",
+      "image": "/images/sprekers/michael.jpg",
+      "subject": "",
+      "talk" : [""],
+      "bio": ["", 
+        ""
+      ],
       "limit": 275,
       "hidden": false
     },
     {
-      "name": "Nick Tinnemeier </br> Wouter Stikkelorum",
-      "id": "nick",
+      "name": "Cees Snoek",
+      "id": "cees",
       "company": "",
-      "image": "/images/sprekers/nickwouter.jpg",
-      "subject": "The shopping mall in your pocket </br> How information technology (re)shapes your shopping experience",
+      "image": "/images/sprekers/cees.jpg",
+      "subject": "",
       "talk": [
-        "Still remember rushing to the shop before closing time? Just to discover that your favorite product is out of stock? That does not need to happen anymore. You are probably carrying around a whole shopping mall in your pocket right now. A shopping mall that never closes. Millions of products right at your fingertips. In this talk we look back at how information technology changed shopping as we know it today. How did we get there? What are the key technologies that facilitate online shops at the scale of, for example, Amazon, Zalando and bol.com? And we believe we are only at the beginning. The best has yet to come. So, we also peek at how upcoming technologies such as machine learning, augmented reality and blockchain will impact your shopping experience of tomorrow."
+        ""
       ],
       "bio" : [
-        "Nick started his career with four years of fun in academic research, inventing the formal semantics of his own programming language. His believe that you should not only practice what you preach, but also practice before you preach, made him decide to move to industry. He loves to combine his research skills with his pragmatic nature to discover new technologies and original ways to solve everyday problems, and has been doing just that for more than six years now. First for the banking and insurance industry, and recently, for bol.com: the biggest online retailer of Belgium and the Netherlands.",
-        "Wouter is part of the Young Professional program working as a software engineer for bol.com. In his first year he made sure that bol.com is always within the top Google search results whenever you search for something we sell. In his latest project he works on state of the art retail tooling. He studied computer science at the Universities of Utrecht and Amsterdam and enjoys explaining complex IT-systems or concepts as simple as possible. In doing so, he likes to exaggerate in all his analogies."
+        ""
       ],
       "limit": 200,
       "hidden": false
     },
     {
-      "name" : "Stefan Hessels </br> Michel Brinkhuis",
-      "id": "topicus",
-      "image": "/images/sprekers/topicus.png",
-      "company" : "Topicus",
-      "subject": "Disrupting Universities",
+      "name" : "Brett Scott",
+      "id": "brett",
+      "image": "/images/sprekers/brett.png",
+      "company" : "",
+      "subject": "Futuristic finance",
       "talk": [
-        "Innovation in eduction is everywhere, except for.. universities. At Topicus we're changing the way students learn, by supporting schools with right tools. For example: Gynzy provides adaptive course materials, to improve students step by step. Individually. And SomToday supports teachers optimally in monitoring high school students' performance.",
-        "Universities don't innovate their teaching methods as fast as primary and middle schools do. In this workshop we'll  together create a vision for innovative university education. You'll learn that not only technology does the job, but also behavioural change is required in order to change the world. We want to disrupt your education, help us doing so!"
+        "Technology firms often seem inspired by the science fiction genre, and are nowadays building technologies first described within novels of the 60, 70s, and 80s, whether it be robotics, facial recognition technology or virtual reality systems. Science fiction, though, has often been reluctant to elaborate much on future finance and money.",
+        " In this talk, Brett Scott will delve into current trajectories within the financial technology industry and how they relate to science fiction utopias or dystopias. How does money and finance relate to the futuristic concept of 'the singularity', and how does finance interact with virtual reality, internet-of-things and technological megacorporations?"
       ],
-      "bio" : ["Stefan and Michel both graduated recently from the University of Twente, by finishing their master's degrees in Business Information Technology. At Topicus they're working with cutting edge technology, like machine learning, on data science problems while at the same time focussing on improving business processess. They know IT only cannot solve the world's problems, but involving people is a crucial aspect. You like keywords? Let's call it: People-centric, data-driven!"],
-      "special": "Workshop",
-      "limit": 40,
+      "bio" : ["Brett Scott is a journalist and financial activist exploring the intersections between money systems, finance and digital technology. He is the author of The Heretic’s Guide to Global Finance: Hacking the Future of Money (2013), a guide to the world of high finance and the emergent forms of alternative finance, alternative currency systems and economic activism that are challenging it. He is widely known for his media commentary on banking, financial reform, digital finance, financial inclusion, blockchain, hacker culture and the dynamics of cashless society. He has spoken at over 240 events in 30 countries, has written for publications such as The Guardian, New Scientist, Aeon, Wired Magazine and CNN.com, and has appeared in a wide range of TV shows, radio broadcasts and documentaries. He produced the 2016 UNRISD report on blockchain technology for economic development, has provided input into UNEP, UN-OCHA and UN PRI reports on sustainable finance and fintech, and has presented on financial inclusion at EU Parliament, EU Commission and IMF events. He is a Senior Fellow of the Finance Innovation Lab (UK), an Associate at the Institute of Social Banking (Germany) and an advisory group member of the Brixton Pound local currency project. He helps facilitate a course on hacker culture at the University of the Arts London, and facilitates alternative finance workshops with The London School of Financial Arts. He was a winner of the 2016/2017 Ethics and Trust in Finance Prize. He tweets as @suitpossum."],
+      "special": "",
+      "limit": 200,
       "hidden": false
     },
     {
       "name" : "Panel discussion",
       "id": "panel",
       "company" : "</br>",
-      "image": "/images/sprekers/panel.jpg",
-      "subject": "Discussion about disruptive technology",
-      "talk": ["<a href='/panel'>Click here for more information</a>","During this panel discussion, 4 experts will present and discuss their view on Disruptive Technology. Should large companies be afraid of disruptive startups taking over their business? Or will the large and stable companies hold strong and outlive all disruptive startups? Disruptive technology may not even be about companies, but about automatisation of entire job markets. Will the technologies we develop disrupt our own jobs or is it all based on assumptions and do we have nothing to worry about?"],
+      "image": "/images/sprekers/panel.png",
+      "subject": "",
+      "talk": ["<a href='/panel'>Click here for more information</a>",""],
       "bio": [],
       "limit": 275,
       "hidden": false
     },
     {
-      "name" : "Joshua Peper",
-      "id": "joshua",
-      "company" : "Peperzaken",
-      "image": "/images/sprekers/joshua.jpg",
-      "subject": "Internet of Things",
-      "talk": ["First a story about how the city of Groningen became one of the first cities in the world with a LoRaWAN IoT network. Second half there will be (real life) examples of sensors on the network and code samples. In the end you will have enough info to start building your own sensor and add it to the biggest IoT network in the world"],
-      "bio": ["Joshua Peper, born and raised in Groningen founded his company Peperzaken in 2003 at the age of 19. First pioneering the ecommerce market, Peperzaken later switched to iPhone and Android development in 2008. In 2016 they were bought by Belsimpel.nl, the number one online independent phone webshop (with some physical stores). There he develops innovative solutions to service their customers even better (with machine learning, computer vision, apps etc.)."],
+      "name" : "Jop Briët",
+      "id": "jop",
+      "company" : "",
+      "image": "/images/sprekers/jop.jpg",
+      "subject": "Quantum information processing",
+      "talk": ["To increase computing power, computer chips get crammed with ever-growing numbers of transistors. But miniaturization makes chips vulnerable to undesirable quantum-mechanical effects that prevent them from behaving in the intended 'classical' way. Celebrated proposals of Feynman and Deutsch from the 1980s suggested that, instead of fighting these effects, we should use them to our advantage and design computers based on their principles, giving birth to the currently thriving field of quantum computing. In this talk I will introduce the basic ideas behind quantum information processing and discuss some of its most striking applications and phenomena."],
+      "bio": ["Jop Briët is a researcher at CWI (the national research center for mathematics and computer science). He obtained his PhD from CWI and the University of Amsterdam in 2011 and was a post-doc at the Courant Institute of Mathematical Sciences of New York University on an NWO Rubicon Fellowship. His research lies in the intersection of theoretical computer science and mathematics, and often involves quantum algorithms, entanglement, coding theory, approximation algorithms, Banach spaces, and additive combinatorics. For his PhD thesis he was awarded the Stieltjes prize and the Andreas Bonn medal. He is a member of the NETWORKS consortium (funded by an NWO zwaartekracht grant) and QuSoft (the Dutch research center for quantum software)."],
       "limit": 200,
       "hidden": false
     },
     {
-      "name" : "Pim Otte",
-      "id": "quintor",
-      "company" : "Quintor",
-      "image": "/images/sprekers/pim.jpg",
-      "subject": "Build your own Blockchain",
-      "talk": ["Blockchain is all the hype. But how do we get started? In this session we will visit a full stack of blockchain development. Our choice of technology here is the Ethereum platform combined with the Truffle Framework for smart contracts. Using Quintor's <a href=\"http://truffleframework.com/boxes/angular-truffle-box\"> Truffle Box for Angular</a>, we will visit writing and deploying smart contracts. Next, we will dive into the Truffle Framework, showing how to interact with these smart contracts from a Dapp. All of this will be done at the hand of a live demo and useful code snippets. We will only lightly touch general aspects of blockchains, the main focus of this talk will be the practical knowledge needed to develop applications."],
-      "bio": ["Pim is a junior consultant/software developer at Quintor. In his current assignment he is working at KrampHub, building a scalable e-commerce platform with micro services. His other responsibilities include building a development stack for Quintor’s future blockchain activities on the Ethereum platform. Before this he finished his MSc Applied Mathematics at Delft University of Technology. He co-authored \"TrustChain: A Sybil-resistant Scalable Blockchain\", which has been accepted by Elsevier for publication in Future Generation Computer Systems."],
-      "special": "Workshop</br><p style=\"color:#C8102E\">Starts at 14:00!</p>",
-      "limit": 40,
-      "hidden": false
-    },
-    {
-      "name" : "Prof. dr. Karlheinz Meier",
-      "id": "karlheinz",
-      "company" : "Universität Heidelberg / Human Brain Project",
-      "image": "/images/sprekers/karlheinz.jpg",
-      "subject": "Neuromorphic Computing </br> Architectures and Applications",
-      "talk": ["Neuromorphic computing systems represent a departure from the von Neumann architecture. They implement aspects of form and function observed in biological neural circuits. Potential advantages include energy efficiency, fault tolerance, compactness and, most importantly, the ability to learn by interaction with the environment. Applications are in two areas : Improving the understanding of biological systems and cognitive computing to analyze causal relations and complex data and to make predictions. In the lecture I will review current approaches in neuromorphic computing and discuss current and future use cases."],
-      "bio": ["Karlheinz Meier was appointed full professor of physics at Heidelberg University in 1992, where he co-founded the Kirchhoff-Institute for Physics. He has more than 25 years of experience in experimental particle physics, including design of a large-scale electronic data processing system that enabled the discovery of the Higgs Boson in 2012. Around 2005 he became interested in large-scale electronic implementations of brain-inspired computer architectures. His group pioneered several innovations in the field. He led 2 major European initiatives, FACETS and BrainScaleS. In 2009 he was one of the initiators of the European Human Brain Project (HBP) that was approved in 2013. In the HBP he leads the subproject on neuromorphic computing with the goal of establishing brain-inspired computing paradigms as research tools for neuroscience and generic hardware systems for cognitive computing. In the HBP he is a member of the project directorate and vice-chair of the science and infrastructure board."],
+      "name" : "Christaan Henkel",
+      "id": "christiaan",
+      "company" : "",
+      "image": "/images/sprekers/christiaan.jpg",
+      "subject": "The genomic program",
+      "talk": ["Living organisms are made up of cells, each of which inherited an extensive store of biochemical information encoded in DNA. This genome directs the cell’s function and behaviour, superficially much like a computer program. Most of today’s biological science revolves around understanding the genetic program. These studies have been transformed by the emergence of genomics – the large-scale study of the genome. The key technology enabling this revolution is DNA sequencing, which will soon allow any organism’s genes to be studied at any time. In parallel, new technologies for editing the genome have recently been invented. In this talk, I will explore these developments, and discuss how they will become part of our future lives."],
+      "bio": ["Christiaan Henkel is a molecular biologist turned bioinformatician. He started off his scientific career with a PhD in Leiden on molecular computing: the implementation of abstract algorithms in biochemical ‘wetware’ (for example, DNA). Subsequently, he specialized in genomics, and for the past ten years has used DNA sequencing technologies to study a wide variety of organisms, ranging from bacteria to snakes (and including quite a few fish species). Currently, he is a research scientist at the Norwegian University of Life Sciences in Oslo, where he leads studies on fish developmental biology. In addition, he continues to collaborate with Leiden-based companies Future Genomics Technologies and BaseClear on the tulip genome."],
       "limit": 275,
       "hidden": false
     },
     {
-      "name" : "Winand Slingenbergh",
-      "id": "winand",
-      "company" : "FabLab",
-      "image": "/images/sprekers/winand.jpg",
-      "subject": "3D printing", 
+      "name" : "Richard Stallman",
+      "id": "richard",
+      "company" : "",
+      "image": "/images/sprekers/richard.jpg",
+      "subject": "Should we have more surveillance than the USSR?", 
       "talk": [ 
-        "In the world of 3D printing there exists a large divide between what is technically feasible and what is accessible to the average consumer. We hear impressive tales in the media of 3D printed houses, organs and food, meanwhile 3D printing is often touted as the next industrial revolution- but is the hype to be believed? Winand Slingenbergh will share some of his personal experiences in working with the most common type of 3D printers and take a critical look at the current limitations, providing a reality check to the many misconceptions.",
-        "With a more balanced perspective we can clearly define the use case for the technology and better assess to what extent 3D printing can disrupt current centralized production methodologies. Though many myths surrounding 3D printing will be dispelled, there is still much unexplored potential when it comes to automated production and will end with a view of what ubiquitous 3D printing might mean for the average consumer in the near future."
+        "Digital technology has enabled governments to impose surveillance that Stalin could only dream of, making it next to impossible to talk with a reporter undetected. This puts democracy in danger. Stallman will present the absolute limit on general surveillance in a democracy, and suggest ways to design systems not to collect dossiers on all citizens."
       ],
-      "bio": ["Winand Slingenbergh graduated from the University of Groningen with a focus on nanoscale 3D printing. Since then he has chosen to forgo his access to high-tech labs and equipment to focus on lowering barriers to 3D printing and other digital fabrication techniques. In his role as labmanager of the Fabrication Laboratory in Groningen, a publicly accessible digital fabrication laboratory, he is uniquely situated to shed light on common misconceptions around 3D printing and offer insights into what is stand is the way of mass adoption."],
+      "bio": ["Dr. Richard Stallman launched the free software movement in 1983 and started the development of the GNU operating system (see <a href='www.gnu.org'>www.gnu.org</a>) in 1984.  GNU is free software: everyone has the freedom to copy it and redistribute it, with or without changes.  The GNU/Linux system, basically the GNU operating system with Linux added, is used on tens of millions of computers today.  Stallman has received the ACM Grace Hopper Award and the ACM Software and Systems Award, a MacArthur Foundation fellowship, the Electronic Frontier Foundation's Pioneer Award, and the the Takeda Award for Social/Economic Betterment, as well as several doctorates honoris causa, and has been inducted into the Internet Hall of Fame."],
       "limit": 200,
       "hidden": false
     },
     {
-      "name" : "Hack journalism",
-      "id": "hackastory",
-      "company" : "Hackastory",
-      "image": "/images/sprekers/hackastory.jpg",
-      "subject": "Journalism using Artificial Intelligence",
-      "talk": ["Let’s ‘hack’ the future of journalism. During this creative brainstorm workshop we’ll look at disruptive technology in this business and in teams you’ll develop a new Artificial Intelligence concept for the future of journalism."],
+      "name" : "Bruce Duncan",
+      "id": "bruce",
+      "company" : "",
+      "image": "/images/sprekers/bruce.jpg",
+      "subject": "Back Up Your Mind and Live Forever?",
+      "talk": ["Bruce Duncan, M.Ed., is Managing Director of the Terasem Movement Foundation Inc. and project leader for the LifeNaut Project (<a href='http://www.lifenaut.com'>http://www.lifenaut.com</a>), which is the brainchild of Dr. Martine Rothblatt, Inventor of SIRIUS Satellite Radio, Author, and Biotech CEO. As the Principle Investigator of the LifeNaut Project Bruce Duncan is responsible for the ongoing development of Bina48, the worlds first advanced humanoid robot based on the “mindfile” information of a real person.Bruce is also Managing Producer for Terasem Media and Films, which produced the independent science fiction feature film “2B: The Era of Flesh is Over (www.2Bmovie.com). He also curates the first cyber museum dedicated to addressing racism , bigotry and prejudice at the World Against Racism Museum,www.endracism.org. As and Educator he has taught Conflict Resolution at the University of Vermont and worked as a Peace Facilitator with the Seeds of Peace International Peace Camp, New York/Casco Maine."],
       "bio": [
-        "<a href='https://www.linkedin.com/in/albertinepiels/'>Albertine Piels</a> is the director of <a href='https://hackastory.com/'>Hackastory</a>. Last year she quit her job as an editor in chief at RTL Z so she can fully focus on improving journalism in this digital age. Albertine has 15 years of experience in journalism, always with a strong focus on online media. She lived and worked in New York City, Madrid, Vienna, Brussels and Cairo, fell in love with tango dancing in Argentina.",
-        "<a href='https://www.linkedin.com/in/alka-anna-goos-b52b2658/'>Alka Anna Goos</a> is Hackastory’s toolexpert and brains behind our <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fdigitalstory.tools%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>digital storytelling toolkit</a>. She is specialized in interactive storytelling. For example, last year she co-created <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.trouw.nl%2Fhome%2Feen-kijkje-in-het-hart-van-de-asielprocedure~af5bf867%2F&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>‘Het Nader Gehoor’</a>, a mobile interactive documentary about asylum seekers. Alka just wrote a book - yes, that’s right: on paper - about the rare brain disease of her father. Nothing makes her more happy than a new tattoo.",
-        "<b>About Hackastory</b>",
-        "Stop talking, start building. That’s what we believe. We build the future of journalism during hackthons and workshops with coders, designers and journalists across the world. We’ve been to 9 countries on 4 continents and worked with 1000 Hackastorians. From <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.instagram.com%2Fp%2FBURri3IlgkL%2F%3Ftaken-by%3Dalbertinepiels&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>The Next Web in Amsterdam</a> to <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Ftwitter.com%2FAlbertinePiels%2Fstatus%2F692716606833725442&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Cape Town</a> and <a href='http://t.sidekickopen68.com/e1t/c/5/f18dQhb0S7lC8dDMPbW2n0x6l2B9nMJW7t5XZs1q0Mw4W2zX3Wl1pgRm-VcVPpW56dKh-f2RRRh602?t=https%3A%2F%2Fwww.instagram.com%2Fp%2FBMWhK4uhHQo%2F%3Ftaken-by%3Dalbertinepiels&si=5411826794496000&pi=ec5952b3-0a93-44b7-a27e-9b87517d1750'>Haiti</a>. Next stop: Zwolle."
+        "Bina48 is a social android based on a sampling of the thoughts, memories, values and attitudes of woman named Bina Rothblatt as part of the LifeNaut Project. This multi-decade experiment in ‘mind uploading’ offers participants the opportunity to create personal digital online “mindfiles” that one day may be reanimated using A.I. and downloaded into a robot, avatar or hologram. If the project is successful it may contribute to an understanding of applied A.I. technology that allows future generations to interact with their cyber-twin hundreds of years from now.. In this session there will be an open Q&A with Bina48 and Bruce Duncan, Project Director and  Principal Investigator of this futurist Lifenaut Project"
       ],
       "special": "Workshop",
       "limit": 40,
@@ -157,25 +140,21 @@
   ],
   "presenters": [
     {
-      "name": "Danny Mekić",
-      "id": "danny",
+      "name": "Ashley Burgoyne",
+      "id": "ashley",
       "company": "",
-      "bio": ["Danny Mekić is a renowned Dutch technology- and innovation expert and founded his first internet company at the age of 15. He has sat on the advisory board for the Dutch Ministry of Education, Culture and Science, and Economic Affairs, and is an expert on guiding companies to be successful and innovate in a fast moving world. On top of his regular activities, Danny is also a consultant, speaker, a chairmen, mediator and university teacher.",
-              "You have brilliant speakers, thinkers and doers. But only a few people can continuously combine and strengthen these expertises. When it comes to an expert who knows the industry, understanding the new technologies and innovations as well as laws and regulations, there are just a few experts who can combine this, just like Danny Mekić.",
-              "Danny challenges organisations to think about how future-proof they are and not surprisingly, Mekić is currently one of the most asked - and best rated - speakers and chairmen in the Netherlands."
+      "bio": [""
       ],
-      "image": "/images/sprekers/danny.jpg",
+      "image": "/images/sprekers/ashley.jpg",
       "hidden": false
     },
     {
-      "name": "Annemarie van Campen",
-      "id": "annemarie",
+      "name": "Robert Belleman",
+      "id": "robert",
       "company": "",
-      "bio": ["Annemarie van Campen bridges the gap between communication and IT. As a project manager and digital transformation consultant, she has many years of experience in governmental and commercial organizations.",
-              "Annemarie is able to smoothly connect developers with 'digilliterates', and the C-suite with their clients. Combining her youthfull view and seasoned skills she translates needs, wishes and requirements into award winning projects that stand out in effectiveness and simplicity. Most recently, she guided the redesign and digitization of the Dutch traffic fine and the accompanying website CJIB.nl.",
-              "On stage, Annemarie is inquisitive and alert: playfull if possible, strict when needed. She strives for cheerfull interaction and a comfortable atmosphere."
+      "bio": ["Robert Belleman, PhD, is a lecturer/researcher at the Informatics Institute and program director for the Bachelor Informatica (undergraduate Computer Science) at the University of Amsterdam. His research interests include scientific visualization, computer graphics and virtual/augmented reality. He teaches courses on the same subjects at the graduate and undergraduate level."
       ],
-      "image": "/images/sprekers/annemarie.jpg",
+      "image": "/images/sprekers/robert.png",
       "hidden": false
     }
   ]

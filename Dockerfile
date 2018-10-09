@@ -24,6 +24,7 @@ WORKDIR /usr/src/app/
 
 RUN rm -rvf node_modules
 RUN npm install
+RUN npm install gulp-nodemon
 RUN npm link gulp
 RUN npm link gulp-nodemon
 RUN gulp sass
