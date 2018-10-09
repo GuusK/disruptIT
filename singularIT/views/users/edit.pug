@@ -2,8 +2,8 @@ extends ../layout
 
 block above-content
 
-block header 
-  header.h2
+block header
+  header.text
     h2 Check in
 
 block content
@@ -25,7 +25,7 @@ block content
                 tr
                   td=user.firstname
                   td=user.surname
-                  td=user.email 
+                  td=user.email
                   td=user.ticket
                   td=verenigingen[user.vereniging].name
                   td

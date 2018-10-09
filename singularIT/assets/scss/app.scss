@@ -830,6 +830,25 @@ header.hero.register{
 
 section.profile {
   margin:10px;
+
+  .form-profile {
+    max-width: 65em;
+
+    h4 {
+      margin-top: 20px;
+    }
+
+    p {
+      margin-top: 3em;
+      line-height: normal;
+      text-transform: none;
+      max-width: inherit;
+
+      a {
+        color: #337ab7;
+      }
+    }
+  }
 }
 
 .interests {
@@ -884,27 +903,44 @@ section.profile {
 }
 
 /****************************
-* Diet
+* Diet & Speeddate
 ****************************/
 
-#diet-table {
+#diet-table, #speeddate-table {
   float: none;
 }
 
-.diet.table {
+.diet.table,
+.speeddate.table {
   margin: 0 0 2em 0;
   width: 100%;
 }
 
-.diet.table thead th {
+.diet.table thead th,
+.speeddate.table thead th {
   padding: 10px 0px 10px 0px;
   width:20%;
 }
 
-.diet.table thead th .checkbox {
+.diet.table thead th .checkbox,
+.speeddate.table thead th .checkbox {
   padding: 10px 0px 10px 0px;
   width: 10%;
   text-align: center;
+}
+
+.speeddate.table {
+  .row-header {
+    border-bottom: none;
+  }
+
+  .slot {
+    font-size: larger;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
 }
 
 /****************************

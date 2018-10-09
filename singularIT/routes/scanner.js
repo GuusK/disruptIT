@@ -98,6 +98,10 @@ module.exports = function (config) {
     return createError(message, 401);
   }
 
+  function forbidden(message) {
+    return createError(message, 403);
+  }
+
   function notFound(message) {
     return createError(message, 404);
   }
@@ -212,7 +216,10 @@ module.exports = function (config) {
           });
       },
       function (scanner_result, user, next) {
-        // TODO: add permission to be scanned
+        if (!user.allowBadgeScanning) {
+          next(forbidden("User does not allow badge scanning."));
+          return;
+        }
 
         if (!scanner_result) {
           scanner_result = new ScannerResult({

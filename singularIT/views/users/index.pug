@@ -2,8 +2,8 @@ extends ../layout
 
 block above-content
 
-block header 
-  header.h2
+block header
+  header.text
     h2 Check in
 
 block content
@@ -42,7 +42,7 @@ block content
             input(type='text',name='ticket', placeholder='Ticket', style='display:none;')
           .two.columns
             button.button-users(type='submit') Zoek
-        
+
         br(clear='all')
         br(clear='all')
 
@@ -57,14 +57,14 @@ block content
               th Aanwezig
           tbody
             -var i = 1;
-            for row in users 
+            for row in users
               tr
                 td
                   a(href="/users/" + row._id)= i
                   - i++;
                 td=row.firstname
                 td=row.surname
-                td=row.email 
+                td=row.email
                 td=row.ticket
                 if(verenigingen[row.vereniging])
                   td=verenigingen[row.vereniging].name
@@ -75,7 +75,7 @@ block content
                     span.fa.fa-check(style='color:#79bf46;')
                   else
                     span.fa.fa-close(style='color:#bf464c;')
-  
+
   script(src='//code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
   script.
     $('.searchOptions > div').eq(0).find('select').on('change', function(){

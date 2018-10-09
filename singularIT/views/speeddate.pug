@@ -1,0 +1,39 @@
+extends layout
+
+block header
+  header.text
+    h2 Speeddate timeslots
+
+block content
+  section.speeddate
+
+    #speeddate-table.offset-by-three.six.columns
+      table.speeddate.table
+        thead
+          th Slot
+          th Total capacity
+          th Registered users
+          th Has free spots
+          th Users
+        tbody
+          for row in timeslots
+            tr
+              td.row-header.slot=row.name
+              td.row-header=row.capacity
+              td.row-header=row.usersRegistered.length
+              td.row-header
+                if row.usersRegistered.length == row.capacity
+                  span.fa.fa-close(style='color:#bf464c;')
+                else
+                  span.fa.fa-check(style='color:#79bf46;')
+              td.row-header
+            tr
+              td
+              td
+              td
+              td
+              td
+                ul
+                  for user in row.usersRegistered
+                    li
+                      a(href='/users/' + user.id)=user.firstname + ' ' + user.surname
