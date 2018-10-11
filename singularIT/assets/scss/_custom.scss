@@ -1,3 +1,9 @@
+.speaker-image {
+    max-width: 450px;
+    height: auto;
+    margin-bottom: 5em;
+}
+
 #location {
   background-color: $congres-color;
 }
@@ -223,7 +229,6 @@
   .program-table {
     overflow-x: auto !important;
   }
-  
 }
 
 .direction-img {
@@ -245,7 +250,7 @@
 }
 
 .speaker-page-p {
-  line-height: 40px;
+  line-height: 25px;
   text-transform: none;
   font-size: 1.5rem;
 }

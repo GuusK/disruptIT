@@ -9,25 +9,23 @@ mixin session(speaker, count)
       else
         p(class=speaker.id)
       if speaker.image
-        img(src=speaker.image class=speaker.id)
+        img(src=speaker.image class="speaker-image")
       if speaker.special
         p(class="speaker-page-p")!= speaker.special
       if speaker.subject
         if speakers.talk
           if speakers.talk.length != 0
-            h4 Subject
+            h2 Subject
         h5!= speaker.subject
       if speaker.talk
         .shorten
           each part in speaker.talk
             p(class="speaker-page-p")!= part
-          a(href="#") Read more
       if speaker.bio && speaker.bio.length != 0
         h5 Biography
         .shorten
           each part in speaker.bio
             p(class="speaker-page-p")!= part
-          a(href="#") Read more
       if speaker.limit - count == 0
         p(style={color:'#C8102E'}) This session is already full
       else 
@@ -41,14 +39,14 @@ block content
   section.intro.slanted
     .content
       h3 Hosts
+      hr
       .timetable
         each presenter in presenters
           +session(presenter)
 
-
+      h3 Speakers
       each speaker in speakers
         +session(speaker)
-      
       //- .separator(role='separator')
       //- h3 11:00 - 11:15
       //- .timetable
