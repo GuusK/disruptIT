@@ -2,7 +2,7 @@ extends ../layout
 
 mixin session(speaker, count)
   if speaker
-    .session
+    div(id=speaker.id class="session")
       h3!= speaker.name
       if speaker.company
         h5(class=speaker.id)!= speaker.company
