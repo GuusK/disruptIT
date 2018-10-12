@@ -1,0 +1,84 @@
+{
+	"gold" : [
+		{
+			"image" : {
+				"link": "/partners/achmea",
+				"src": "/images/snic_sponsor_logo/Logo_Achmea.png"
+			},
+			"promo": "Verzekeren gaat in deze tijd wel wat verder dan je vakantie of ‘later’. Want hoe regelen we de aansprakelijkheid rond het gebruik van drones, de risico’s van zelfrijdende auto’s, of het uitlenen en verhuren van spullen in de deeleconomie? ",
+			"profile": {
+				"link" : "/partners/achmea",
+				"text" : "Lees verder op de bedrijfspagina."
+			}	
+		},
+		{
+			"image" : {
+				"link": "/partners/chipsoft",
+				"src": "/images/snic_sponsor_logo/Logo_Chipsoft.png"
+			},
+			"promo": "De schouders eronder zetten en de beste zorgsoftware ontwikkelen. Wat is typisch ChipSoft? Een medisch specialist de fijne kneepjes van onze software bijbrengen, bijvoorbeeld. Of het ontwikkelen van een oplossing die patiëntlogistiek in ziekenhuizen optimaliseert. Doe je mee?",
+			"profile": {
+				"link" : "/partners/chipsoft",
+				"text" : "Lees verder op de bedrijfspagina"
+			}
+		},
+		{
+			"image" : {
+				"link": "/partners/ING",
+				"src": "/images/snic_sponsor_logo/Logo_ING.png"
+			},
+			"promo": "Long before it became fashionable to talk about the need to be ‘digital first’, ING has recognised and invested in the power of new technologies to transform our customers’ banking experience.",
+			"profile": {
+				"link" : "/partners/ING",
+				"text" : "Lees verder op de bedrijfspagina."
+			}
+        },
+		{
+			"image" : {
+				"link": "https://lifeatnedap.com",
+				"src": "/images/snic_sponsor_logo/Logo_Nedap.png"
+			},
+			"promo": "",
+			"profile": {
+				"link" : "https://lifeatnedap.com",
+				"text" : "Lees verder op de bedrijfspagina."
+			}
+		}
+	],
+	"silver" : [
+		{
+			"link" : "https:/www.dsw.nl/werkenbij/vacatures",
+			"src" : "/images/snic_sponsor_logo/Logo_DSW.png"
+		},
+		{
+			"link" : "https://procam.nl/",
+			"src" : "/images/snic_sponsor_logo/Logo_Procam.png"
+		},
+		{
+			"link" : "https://www.werkenbijtopicus.nl",
+			"src" : "/images/snic_sponsor_logo/Logo_Topicus.jpg"
+		},
+		{
+			"link" : "https://home.kpmg.com/nl/nl/home/werken-bij-kpmg.html",
+			"src" : "/images/snic_sponsor_logo/Logo_KPMG.png"
+		},
+		{
+			"link" : "https://www.dnb.nl/werken-bij/index.jsp",
+			"src" : "/images/snic_sponsor_logo/Logo_DNB.png"
+		},
+		{
+			"link" : "https://careers.ortec.com/",
+			"src" : "/images/snic_sponsor_logo/Logo_Ortec.png"
+		}
+	],
+	"bronze" : [
+		{
+			"link" : "https://www.asml.com",
+			"src" : "/images/snic_sponsor_logo/Logo_ASML.png"
+		},
+		{
+			"link" : "http://werkenbijbelsimpel.nl",
+			"src" : "/images/snic_sponsor_logo/Logo_Belsimpel.png"
+		}
+	]
+}

@@ -1,0 +1,98 @@
+extends ../layout
+
+mixin session(speaker, count)
+  if speaker
+    div(id=speaker.id class="session")
+      h3!= speaker.name
+      if speaker.company
+        h5(class=speaker.id)!= speaker.company
+      else
+        p(class=speaker.id)
+      if speaker.image
+        img(src=speaker.image class="speaker-image")
+      if speaker.special
+        p(class="speaker-page-p")!= speaker.special
+      if speaker.subject
+        if speakers.talk
+          if speakers.talk.length != 0
+            h2 Subject
+        h5!= speaker.subject
+      if speaker.talk
+        .shorten
+          each part in speaker.talk
+            p(class="speaker-page-p")!= part
+      if speaker.bio && speaker.bio.length != 0
+        h5 Biography
+        .shorten
+          each part in speaker.bio
+            p(class="speaker-page-p")!= part
+      if speaker.limit - count == 0
+        p(style={color:'#C8102E'}) This session is already full
+      else 
+        if speaker.limit - count < 50
+          p(style={color:'#C8102E'}) There are only #{speaker.limit - count} seats left
+    hr
+
+block above-content
+
+block content
+  section.intro.slanted
+    .content
+      h3 Hosts
+      hr
+      .timetable
+        each presenter in presenters
+          +session(presenter)
+
+      h3 Speakers
+      each speaker in speakers
+        +session(speaker)
+      //- .separator(role='separator')
+      //- h3 11:00 - 11:15
+      //- .timetable
+      //-   +session({name:"Opening", special:"By hosts and organising committee"})
+      //- .separator(role='separator')
+      //- h3 11:15 - 12:00
+      //- .timetable
+
+      //- .separator(role='separator')
+      //- h3 12:15 - 13:00
+      //- .timetable
+      //-   each id in speakerids.session1
+      //-     each speaker in speakers
+      //-       if speaker.id == id
+      //-         - var count = visitorCounts.filter(item => item.id == speaker.id)[0].count
+      //-         +session(speaker, count)
+      //- .separator(role='separator')
+      //- h3 13:00 - 14:15
+      //- .timetable
+      //-   +session({name:"Lunch", special:"Don't forget to provide details about any allergies and diets <a href='/profile'>here</a>"})
+      //- .separator(role='separator')
+      //- h3 14:15 - 15:00
+      //- .timetable
+      //-   each id in speakerids.session2
+      //-     each speaker in speakers
+      //-       if speaker.id == id
+      //-         - var count = visitorCounts.filter(item => item.id == speaker.id)[0].count
+      //-         +session(speaker, count)
+      //- .separator(role='separator')
+      //- h3 15:15 - 16:00
+      //- .timetable
+      //-   each id in speakerids.session3
+      //-     each speaker in speakers
+      //-       if speaker.id == id
+      //-         - var count = visitorCounts.filter(item => item.id == speaker.id)[0].count
+      //-         +session(speaker, count)
+      //- .separator(role='separator')
+      //- h3 16:15 - 17:00
+      //- .timetable
+      //-   each speaker in speakers
+      //-     if speaker.id == speakerids.closing
+      //-         +session(speaker)
+      //- .separator(role='separator')
+      //- h3 17:00 - 17:15
+      //-   +session({name: "Closing of conference by presenters"})
+      //- .separator(role='separator')
+      //- h3 17:15 - 20:00
+      //-   .timetable
+      //-     +session({name: "Borrel and dinner", special: "Don't forget to provide details about any allergies and diets <a href='/profile'>here</a>"})

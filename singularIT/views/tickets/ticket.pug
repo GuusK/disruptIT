@@ -1,0 +1,37 @@
+extends layout
+
+mixin ticket(ticket)
+  if ticket
+    .ticket
+      div.content
+        h2 SingularIT Ticket
+        p Showing this ticket at the entrance will grant you access to the event. If you lose this ticket you can re-print it from the website by logging in.
+
+        .ticket-details
+          if ticket.ownedBy
+            .detail
+              label Visitor
+              strong= ucfirst(user.firstname) + ' ' + user.surname
+          .detail
+            label Activationcode
+            strong #{ticket._id}
+
+        .ticket-details
+          .barcode
+            - var imgStr = "/tickets/" + ticket._id + "/barcode"
+            img(src=imgStr)
+
+        .ticket-details
+          .detail
+            p!= "Opening at 11:00 </br> November 20, 2018"
+          .detail.quintor
+            img(src='/images/snic_sponsor_logo/Logo_Quintor.png')
+
+      div.aside
+        img(src='/images/singularit_logo.png')
+
+      br(clear='all')
+
+block content
+  div
+    +ticket(ticket)

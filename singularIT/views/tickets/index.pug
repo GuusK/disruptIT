@@ -1,0 +1,25 @@
+extends layout
+
+mixin activationcode(ticket)
+  if ticket
+    .ticket.ophaal
+      div.content
+        h2 Activationcode
+        p Use this code to register and provide your preferences at #[u= 'https://snic-singular.it/'].
+
+        .ticket-details
+          .detail
+            label Activationcode
+            strong #{ticket._id}
+
+      div.aside
+        div
+
+      br(clear='all')
+
+block content
+  - for (var i = 0, x = 10; i < tickets.length; i += x)
+    div
+     - for (var j = 0; j < x; j++)
+      +activationcode(tickets[i+j])
+    footer

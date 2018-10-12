@@ -1,0 +1,87 @@
+extends ../layout
+
+block above-content
+
+block header
+  header.text
+    h2 Check in
+
+block content
+  .section.users.intro.slanted
+    .content.offset-by-two.eight.columns
+      h2 Ticket aanmelden
+      label(for='ticket') Ticket
+      form(method='POST', action='/aanmelden')
+        .row
+          .ten.columns
+            input#ticketCode.form-control(type='text',name='ticket', autofocus)
+
+          .two.columns
+            button.button-users(type='submit') Aanmelden
+
+      h2 Handmatig zoeken
+      form(method='GET')
+        .row.searchOptions
+          .two.columns
+            .select-wrapper
+              select
+                option Email
+                option(selected='selected') Voornaam
+                option Achternaam
+                option Vereniging
+                option Ticket
+          .eight.columns
+            input.form-control(type='email',name='email', placeholder='Email', style='display:none;')
+            input.form-control(type='text',name='firstname', placeholder='Voornaam')
+            input.form-control(type='text',name='surname', placeholder='Achternaam', style='display:none;')
+            .select-wrapper(style='display:none;', placeholder='Vereniging')
+              select(name='vereniging')
+                option(value='') Kies...
+                each vereniging, shortName in verenigingen
+                  option(value=shortName)=vereniging.name
+            input(type='text',name='ticket', placeholder='Ticket', style='display:none;')
+          .two.columns
+            button.button-users(type='submit') Zoek
+
+        br(clear='all')
+        br(clear='all')
+
+        table.users.table
+          thead
+              th #
+              th Voornaam
+              th Achternaam
+              th Email
+              th Ticket
+              th Vereniging
+              th Aanwezig
+          tbody
+            -var i = 1;
+            for row in users
+              tr
+                td
+                  a(href="/users/" + row._id)= i
+                  - i++;
+                td=row.firstname
+                td=row.surname
+                td=row.email
+                td=row.ticket
+                if(verenigingen[row.vereniging])
+                  td=verenigingen[row.vereniging].name
+                else
+                  td='Partner'
+                td
+                  if row.aanwezig
+                    span.fa.fa-check(style='color:#79bf46;')
+                  else
+                    span.fa.fa-close(style='color:#bf464c;')
+
+  script(src='//code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+  script.
+    $('.searchOptions > div').eq(0).find('select').on('change', function(){
+    var choice = $(this).val();
+    $('.searchOptions > div:nth-last-of-type(2) input, .searchOptions > div:last-of-type .select-wrapper').hide();
+    $('.searchOptions > div:nth-last-of-type(2) *[placeholder='+choice+']').show();
+    });
+    $('.searchOptions > div').eq(0).find('select').change();
+
