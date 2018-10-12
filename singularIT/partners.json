@@ -3,7 +3,7 @@
 		{
 			"image" : {
 				"link": "/partners/achmea",
-				"src": "/images/bedrijven/Logo_Achmea.png"
+				"src": "/images/snic_sponsor_logo/Logo_Achmea.png"
 			},
 			"promo": "Verzekeren gaat in deze tijd wel wat verder dan je vakantie of ‘later’. Want hoe regelen we de aansprakelijkheid rond het gebruik van drones, de risico’s van zelfrijdende auto’s, of het uitlenen en verhuren van spullen in de deeleconomie? ",
 			"profile": {
@@ -13,69 +13,72 @@
 		},
 		{
 			"image" : {
-				"link": "https://www.werkenbijtopicus.nl/",
-				"src": "/images/bedrijven/Logo_Topicus.png"
+				"link": "/partners/chipsoft",
+				"src": "/images/snic_sponsor_logo/Logo_Chipsoft.png"
 			},
-			"promo": "Nergens wordt zo enthousiast gewerkt aan digitale oplossingen die de zelfredzaamheid van de burger vergroten. Wij richten ons op belangrijke maatschappelijke vlakken als Zorg, Finance, Overheid, Legal, Security en Onderwijs. Bijna iedereen in Nederland komt in aanraking met onze nuttige en vooruitstrevende digitale producten. ",
+			"promo": "De schouders eronder zetten en de beste zorgsoftware ontwikkelen. Wat is typisch ChipSoft? Een medisch specialist de fijne kneepjes van onze software bijbrengen, bijvoorbeeld. Of het ontwikkelen van een oplossing die patiëntlogistiek in ziekenhuizen optimaliseert. Doe je mee?",
 			"profile": {
-				"link" : "/partners/topicus",
+				"link" : "/partners/chipsoft",
 				"text" : "Lees verder op de bedrijfspagina"
 			}
 		},
 		{
 			"image" : {
-				"link": "https://home.kpmg.com/nl/nl/home/werken-bij-kpmg.html",
-				"src": "/images/bedrijven/Logo_KPMG.png"
+				"link": "/partners/ING",
+				"src": "/images/snic_sponsor_logo/Logo_ING.png"
 			},
-			"promo": "With a worldwide presence, KPMG continues to build on our member firms' successes thanks to our clear vision, maintained values, and their people. ",
+			"promo": "Long before it became fashionable to talk about the need to be ‘digital first’, ING has recognised and invested in the power of new technologies to transform our customers’ banking experience.",
 			"profile": {
-				"link" : "/partners/KPMG",
+				"link" : "/partners/ING",
 				"text" : "Lees verder op de bedrijfspagina."
-			}	
+			}
+        },
+		{
+			"image" : {
+				"link": "https://lifeatnedap.com",
+				"src": "/images/snic_sponsor_logo/Logo_Nedap.png"
+			},
+			"promo": "",
+			"profile": {
+				"link" : "https://lifeatnedap.com",
+				"text" : "Lees verder op de bedrijfspagina."
+			}
 		}
 	],
 	"silver" : [
 		{
-			"link" : "https://www2.deloitte.com/nl/nl.html",
-			"src" : "/images/bedrijven/Logo_Deloitte.png"
+			"link" : "https:/www.dsw.nl/werkenbij/vacatures",
+			"src" : "/images/snic_sponsor_logo/Logo_DSW.png"
 		},
 		{
-			"link" : "http://www.ing.nl/careers",
-			"src" : "/images/bedrijven/Logo_ING.png"
+			"link" : "https://procam.nl/",
+			"src" : "/images/snic_sponsor_logo/Logo_Procam.png"
 		},
 		{
-			"link" : "https://www.dsw.nl/werkenbij/vacatures",
-			"src" : "/images/bedrijven/Logo_DSW.png"
+			"link" : "https://www.werkenbijtopicus.nl",
+			"src" : "/images/snic_sponsor_logo/Logo_Topicus.jpg"
 		},
 		{
-			"link" : "http://www.werkenvoornederland.nl/ict",
-			"src" : "/images/bedrijven/Logo_Overheid.png"
+			"link" : "https://home.kpmg.com/nl/nl/home/werken-bij-kpmg.html",
+			"src" : "/images/snic_sponsor_logo/Logo_KPMG.png"
 		},
 		{
-			"link" : "https://www.quintor.nl/carriere/",
-			"src" : "/images/bedrijven/Logo_Quintor.png"
+			"link" : "https://www.dnb.nl/werken-bij/index.jsp",
+			"src" : "/images/snic_sponsor_logo/Logo_DNB.png"
 		},
 		{
 			"link" : "https://careers.ortec.com/",
-			"src" : "/images/bedrijven/Logo_Ortec.png"
-		},
-		{
-			"link" : "http://www.talentwings.nl/",
-			"src" : "/images/bedrijven/Logo_Procam.png"
+			"src" : "/images/snic_sponsor_logo/Logo_Ortec.png"
 		}
 	],
 	"bronze" : [
 		{
 			"link" : "https://www.asml.com",
-			"src" : "/images/bedrijven/Logo_ASML.png"
-		},
-		{
-			"link" : "https://www.simplicate.nl",
-			"src" : "/images/bedrijven/Logo_Simplicate.png"
+			"src" : "/images/snic_sponsor_logo/Logo_ASML.png"
 		},
 		{
 			"link" : "http://werkenbijbelsimpel.nl",
-			"src" : "/images/bedrijven/Logo_Belsimpel.png"
+			"src" : "/images/snic_sponsor_logo/Logo_Belsimpel.png"
 		}
 	]
 }

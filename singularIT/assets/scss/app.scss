@@ -84,12 +84,11 @@ h1, h2, h3, h4, h5, h6{
 p {
   font-family: 'TruenoLt' !important;
   font-weight: lighter;
-  text-transform: uppercase;
   text-align: left;
   font-size: 2rem;
   max-width: 40em;
   margin: 0 auto;
-  line-height: 3em;
+  line-height: 1.5em;
 }
 
 
@@ -605,7 +604,7 @@ section.panel .photo img {
 * Partners
 ****************************/
 header.hero.partners{
-  background-image: url('/images/Foto-Sponsor.jpg');
+    height: 20vh;
 }
 
 .box{
@@ -1054,6 +1053,24 @@ section#paris .subpage.image{
 
 header.hero.achmea{
   background-image: url('/images/Hero_Achmea.jpg');
+  min-height: 50vh;
+}
+
+/****************************
+* ING Bedrijfsprofiel
+****************************/
+
+header.hero.ing{
+  background-image: url('/images/bedrijven/ing_banner.jpeg');
+  min-height: 50vh;
+}
+
+/****************************
+* Chipsoft Bedrijfsprofiel
+****************************/
+
+header.hero.chipsoft{
+  background-image: url('/images/bedrijven/chipsoft_banner.jpg');
   min-height: 50vh;
 }
 
